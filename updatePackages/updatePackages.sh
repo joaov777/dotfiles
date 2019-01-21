@@ -1,51 +1,51 @@
 #!/bin/bash
 
 	sudo pacman -S trizen --noconfirm
-	sudo trizen -S git --noconfirm
-	sudo trizen -S mellowplayer --noconfirm
-	sudo trizen -S etcher --noconfirm
-	sudo trizen -S notepadqq --noconfirm
-	sudo trizen -S gparted --noconfirm
-	sudo trizen -S keeweb-desktop --noconfirm
-	sudo trizen -S ipscan --noconfirm 
-	sudo trizen -S tilda --noconfirm
-	sudo trizen -S upterm --noconfirm
-	sudo trizen -S obs-studio --noconfirm
-	sudo trizen -S filezilla --noconfirm
-	sudo trizen -S gnome-pie --noconfirm
-	sudo trizen -S telegram-desktop --noconfirm	
-	sudo trizen -S google-chrome --noconfirm
-	sudo trizen -S veracrypt --noconfirm
-	sudo trizen -S ranger --noconfirm
-	sudo trizen -S parcellite --noconfirm
-	sudo trizen -S flameshot --noconfirm
-	sudo trizen -S guake --noconfirm
-	sudo trizen -S remmina --noconfirm
-	sudo trizen -S skype-desktop-bin --noconfirm
-	sudo trizen -S simplenote-electron-bin --noconfirm
-	sudo trizen -S gedit --noconfirm
-	sudo trizen -S barrier --noconfirm	
-	sudo trizen -S anydesk --noconfirm
-	sudo trizen -S pwgen --noconfirm
-	sudo trizen -S openssh --noconfirm
-	sudo trizen -S vim --noconfirm
-	sudo trizen -S rdesktop --noconfirm
-	sudo trizen -S ardour --noconfirm
-	sudo trizen -S gtop --noconfirm
-	sudo trizen -S mps-youtube --noconfirm
-	sudo trizen -S translate-shell --noconfirm #trans -T = language table / trans :en "[Enter] Meu coracao e forte!"
-	sudo trizen -S synapse --noconfirm 
-	sudo trizen -S mtr --noconfirm
-	sudo trizen -S nmap --noconfirm
-	sudo trizen -S i3lock --noconfirm #set shortcut to: i3lock --color=000000
-	sudo trizen -S plank --noconfirm
-	sudo trizen -S evince --noconfirm
-	sudo trizen -S caprine --noconfirm
-	sudo trizen -S atom --noconfirm
-	sudo trizen -S micro --noconfirm #terminal-based IDE
-	sudo trizen -S neovim --noconfirm
-	sudo trizen -S dynalist-desktop --noconfirm
-	sudo trizen -S bmon --noconfirm
+	trizen -S git --noconfirm
+	trizen -S mellowplayer --noconfirm
+	trizen -S etcher --noconfirm
+	trizen -S notepadqq --noconfirm
+	trizen -S gparted --noconfirm
+	trizen -S keeweb-desktop --noconfirm
+	trizen -S ipscan --noconfirm 
+	trizen -S tilda --noconfirm
+	trizen -S upterm --noconfirm
+	trizen -S obs-studio --noconfirm
+	trizen -S filezilla --noconfirm
+	trizen -S gnome-pie --noconfirm
+	trizen -S telegram-desktop --noconfirm	
+	trizen -S google-chrome --noconfirm
+	trizen -S veracrypt --noconfirm
+	trizen -S ranger --noconfirm
+	trizen -S parcellite --noconfirm
+	trizen -S flameshot --noconfirm
+	trizen -S guake --noconfirm
+	trizen -S remmina --noconfirm
+	trizen -S skype-desktop-bin --noconfirm
+	trizen -S simplenote-electron-bin --noconfirm
+	trizen -S gedit --noconfirm
+	trizen -S barrier --noconfirm	
+	trizen -S anydesk --noconfirm
+	trizen -S pwgen --noconfirm
+	trizen -S openssh --noconfirm
+	trizen -S vim --noconfirm
+	trizen -S rdesktop --noconfirm
+	trizen -S ardour --noconfirm
+	trizen -S gtop --noconfirm
+	trizen -S mps-youtube --noconfirm
+	trizen -S translate-shell --noconfirm #trans -T = language table / trans :en "[Enter] Meu coracao e forte!"
+	trizen -S synapse --noconfirm 
+	trizen -S mtr --noconfirm
+	trizen -S nmap --noconfirm
+	trizen -S i3lock --noconfirm #set shortcut to: i3lock --color=000000
+	trizen -S plank --noconfirm
+	trizen -S evince --noconfirm
+	trizen -S caprine --noconfirm
+	trizen -S atom --noconfirm
+	trizen -S micro --noconfirm #terminal-based IDE
+	trizen -S neovim --noconfirm
+	trizen -S dynalist-desktop --noconfirm
+	trizen -S bmon --noconfirm
 
 	#setting up Glances
 	trizen -S python-bottle --noconfirm #used for glances
