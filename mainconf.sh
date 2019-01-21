@@ -5,7 +5,7 @@
     do
 
     clear
-    echo "$(tput setaf 6)###### CONFIG XFCE 3 #######"
+    echo "$(tput setaf 6)###### MAIN CONF #######"
     echo "#(1) - Setup GIT User"
     echo "#(2) - Install ZSH"
     echo "#(3) - Update .ZSHRC"
@@ -22,7 +22,7 @@
         1)
 
         clear
-        echo '###### CONFIG XFCE 3 ######'
+        echo '###### MAIN CONF ######'
         echo "- OPTION 1 - SETUP GIT USER -"
         sleep 1
 
@@ -44,7 +44,7 @@
         2)
 
         clear
-        echo '###### CONFIG XFCE 3 ######'
+        echo '###### MAIN CONF ######'
         echo "- OPTION 2 - SETUP ZSH -"
         read -p "Insert your username: " username
 
@@ -59,7 +59,7 @@
         3)
 
         clear
-        echo '###### CONFIG XFCE 3 ######'
+        echo '###### MAIN CONF ######'
         echo "- OPTION 2 - UPDATE .ZSHRC -"
         sleep 1
 
@@ -77,7 +77,7 @@
         4)
 
         clear
-        echo '###### CONFIG XFCE 3 ######'
+        echo '###### MAIN CONF ######'
         echo "- OPTION 3 - SYSTEM UPDATE -"
         sleep 1
 
@@ -91,7 +91,7 @@
         5)
 
         clear
-        echo '###### CONFIG XFCE 3 #######'
+        echo '###### MAIN CONF #######'
         echo "- OPTION 4 - UPDATE PACKAGES -"
         sleep 1
 
@@ -106,7 +106,7 @@
         6)
 
         clear
-        echo '###### CONFIG XFCE 3 ######'
+        echo '###### MAIN CONF ######'
         echo "- OPTION 5 - UPDATE TILDA -"
         sleep 1
 
@@ -126,7 +126,7 @@
         7)
 
         clear
-        echo '###### CONFIG XFCE 3 ######'
+        echo '###### MAIN CONF ######'
         echo "- OPTION 6 - INSTALLED PACKAGES -"
 
 	          read -p "> Package name: " packageName
@@ -141,7 +141,7 @@
 	    8)
 
         clear
-        echo '###### CONFIG XFCE 3 ######'
+        echo '###### MAIN CONF ######'
         echo "- OPTION 7 - EXIT -"
 
             echo '> Exiting...'
@@ -153,7 +153,7 @@
         *)
 
         clear
-        echo '### CONFIG XFCE 3 ###'
+        echo '###### MAIN CONF ######'
         echo "> INVALID OPTION <"
         sleep 1
         clear
