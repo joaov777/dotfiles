@@ -107,7 +107,7 @@ source $ZSH/oh-my-zsh.sh
   alias gb="git branch"
   alias gl="git log --decorate --graph"
   alias ga="git add ."
-  alias gc="~/configXfce3/scripts/gitCommit.sh"
+  alias gc="~/mainconf/scripts/gitCommit.sh"
   alias gh="git push -u origin master"
   
   #alias cr=curl -u 'joao' https://api.github.com/user/repos -d '{"name":"$1"}' 
@@ -117,17 +117,17 @@ source $ZSH/oh-my-zsh.sh
   alias barrierconfig="barrier --config ~/.config/Debauchee/Barrier.conf"
 
 # SCRIPTS
-  alias dp="~/configXfce3/scripts/downloadPackage.sh"
-  alias sp="~/configXfce3/scripts/searchPackage.sh"
-  alias gk="~/configXfce3/scripts/generateSshKeys.sh"
-  alias sk="~/configXfce3/scripts/sendSshKeysToServer.sh"
-  alias sg="~/configXfce3/scripts/sudoGedit.sh"
-  alias sv="~/configXfce3/scripts/sudoVim.sh"
-  alias md="~/configXfce3/scripts/monitorDirectory.sh"
-  alias gitconfig="~/configXfce3/scripts/gitGlobalConfig.sh"
-  alias ur="~/configXfce3/scripts/updateRepository.sh"
-  alias svms="sudo vim ~/configXfce3/mainScript.sh"
-  alias msms="~/configXfce3/mainScript.sh"
+  alias dp="~/mainconf/scripts/downloadPackage.sh"
+  alias sp="~/mainconf/scripts/searchPackage.sh"
+  alias gk="~/mainconf/scripts/generateSshKeys.sh"
+  alias sk="~/mainconf/scripts/sendSshKeysToServer.sh"
+  alias sg="~/mainconf/scripts/sudoGedit.sh"
+  alias sv="~/mainconf/scripts/sudoVim.sh"
+  alias md="~/mainconf/scripts/monitorDirectory.sh"
+  alias gitconfig="~/mainconf/scripts/gitGlobalConfig.sh"
+  alias ur="~/mainconf/scripts/updateRepository.sh"
+  alias svms="sudo vim ~/mainconf/mainScript.sh"
+  alias msms="~/mainconf/mainScript.sh"
 
 # UPDATES
   alias um="sudo pacman-mirrors --fasttrack 5 && sudo pacman -Syyu --noconfirm"
@@ -138,4 +138,4 @@ source $ZSH/oh-my-zsh.sh
   alias sshnas="ssh nassuporte@nassuporte.ifce.edu.br"
   alias sshnas2="ssh nassuporte2@nassuporte2.ifce.edu.br"
 # alias gcds="rdesktop -u 'adproducao.ifce.edu.br\Administrator' -p '????' -g 1024x768 200.17.33.66"
-  alias rdprdp="~/configXfce3/scripts/rdprdp.sh"
+  alias rdprdp="~/mainconf/scripts/rdprdp.sh"
