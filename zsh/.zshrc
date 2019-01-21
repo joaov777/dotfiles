@@ -126,8 +126,8 @@ source $ZSH/oh-my-zsh.sh
   alias md="~/mainconf/scripts/monitorDirectory.sh"
   alias gitconfig="~/mainconf/scripts/gitGlobalConfig.sh"
   alias ur="~/mainconf/scripts/updateRepository.sh"
-  alias svms="sudo vim ~/mainconf/mainScript.sh"
-  alias msms="~/mainconf/mainScript.sh"
+  alias svms="sudo vim ~/mainconf/mainconf.sh"
+  alias msms="~/mainconf/mainconf.sh"
 
 # UPDATES
   alias um="sudo pacman-mirrors --fasttrack 5 && sudo pacman -Syyu --noconfirm"
