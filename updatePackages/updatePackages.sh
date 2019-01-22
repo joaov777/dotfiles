@@ -46,6 +46,7 @@
 	trizen -S neovim --noconfirm
 	trizen -S dynalist-desktop --noconfirm
 	trizen -S bmon --noconfirm
+	trizen -S mypaint --noconfirm
 
 	#setting up Glances
 	trizen -S python-bottle --noconfirm #used for glances
