@@ -21,7 +21,8 @@
 	trizen -S flameshot --noconfirm
 	trizen -S guake --noconfirm
 	trizen -S remmina --noconfirm
-	trizen -S skype-desktop-bin --noconfirm
+	#trizen -S skype-desktop-bin --noconfirm
+	trizen -S skypeforlinux-preview-bin --noconfirm
 	trizen -S simplenote-electron-bin --noconfirm
 	trizen -S gedit --noconfirm
 	trizen -S barrier --noconfirm	
@@ -47,6 +48,9 @@
 	trizen -S dynalist-desktop --noconfirm
 	trizen -S bmon --noconfirm
 	trizen -S mypaint --noconfirm
+	trizen -S viber --noconfirm
+	trizen -S typora --noconfirm
+	trizen -S okular --noconfirm #pdfviewer	
 
 	#setting up Glances
 	trizen -S python-bottle --noconfirm #used for glances
