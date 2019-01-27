@@ -51,6 +51,7 @@
 	trizen -S viber --noconfirm
 	trizen -S typora --noconfirm
 	trizen -S okular --noconfirm #pdfviewer	
+	trizen -S snes9x-gtk #snes emulator
 
 	#setting up Glances
 	trizen -S python-bottle --noconfirm #used for glances
