@@ -56,13 +56,15 @@
 	#setting up Glances
 	trizen -S python-bottle --noconfirm #used for glances
 	trizen -S glances --noconfirm #awesome for monitoring
-	#run glances -w (web server monitoring)
+	#sudo glances -w (web server monitoring)
+	#sudo glances -w --username --password --port 2222 (example)
 	
 	#Setting up Keyboard layout
 	#sudo keyboardctl -l br
 	#trizen -S keyboardctl --noconfirm
 	#setxkbmap br
 	#kbctl -l br
+
 	
 	#setting up TeamViewer
 	trizen -S teamviewer --noconfirm

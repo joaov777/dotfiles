@@ -30,13 +30,13 @@
 	      sudo pacman -S trizen --noconfirm
 	      trizen -S git --noconfirm
 
-            sudo git config --global user.name "joaov777"
+          sudo git config --global user.name "joaov777"
 	        sudo git config --global user.email "joaov777@gmail.com"
 	        sudo git config --global core.editor vim
 
-            cd ~/
+          cd ~/
 	        git clone git@github.com:joaov777/mainconf.git
-            sudo chmod -R 777 ~/mainconf
+          sudo chmod -R 777 ~/mainconf
 
         clear
 
@@ -48,7 +48,7 @@
         echo "- OPTION 2 - SETUP ZSH -"
         read -p "Insert your username: " username
 
-            trizen -S zsh --noconfirm
+          trizen -S zsh --noconfirm
 	        sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 	        sudo usermod -s /bin/zsh $username
 	        sudo chsh -s /bin/zsh $username
