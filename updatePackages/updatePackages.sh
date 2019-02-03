@@ -53,6 +53,7 @@
 	trizen -S okular --noconfirm #pdfviewer	
 	trizen -S snes9x-gtk #snes emulator
 	trizen -S oranchelo-icon-theme-git #oranchelo icon theme
+	trizen -S viewnior --noconfirm #image viewer
 
 	#setting up Glances
 	trizen -S python-bottle --noconfirm #used for glances
