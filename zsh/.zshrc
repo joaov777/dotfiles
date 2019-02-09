@@ -103,12 +103,6 @@ source $ZSH/oh-my-zsh.sh
   alias pgpg="ping 8.8.8.8"
   alias zshconfig="sudo vim ~/.zshrc"
   alias rf="sudo rm -r $1" #remove folder
-  alias gs="git status"
-  alias gb="git branch"
-  alias gl="git log --decorate --graph"
-  alias ga="git add ."
-  alias gc="~/mainconf/scripts/gitCommit.sh"
-  alias gh="git push -u origin master"
   
   #alias cr=curl -u 'joao' https://api.github.com/user/repos -d '{"name":"$1"}' 
   #curl -u '<username>' https://api.github.com/user/repos -d '{"name":"<REPONAME>"}'
@@ -127,7 +121,10 @@ source $ZSH/oh-my-zsh.sh
   alias gitconfig="~/mainconf/scripts/gitGlobalConfig.sh"
   alias ur="~/mainconf/scripts/updateRepository.sh"
   alias svms="sudo vim ~/mainconf/mainconf.sh"
-  alias msms="sudo ~/mainconf/mainconf.sh"
+  alias msms="~/mainconf/mainconf.sh"
+  alias lsc="exa --long --tree --all $1"
+  alias lst="exa --long --tree $1"
+  alias lsb="exa --long --all $1"
 
 # UPDATES
   alias um="sudo pacman-mirrors --fasttrack 5 && sudo pacman -Syyu --noconfirm"
