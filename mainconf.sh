@@ -5,7 +5,7 @@
     do
 
     clear
-    echo "$(tput setaf 6)###### MAIN CONF #######"
+    echo "$(tput setaf 6)=============|> MAINCONF <|============="
     echo "#(0) - Exit"
     echo "#(1) - Setup GIT User"
     echo "#(2) - Install ZSH"
@@ -15,7 +15,7 @@
     echo "#(6) - Update Tilda"
     echo "#(7) - Check Installed Packages"
     echo "#(8) - Setup Plank"
-    echo "############################"
+    echo "-----------------------------------------"
     read -p "Option: " menuChoice
 
 
