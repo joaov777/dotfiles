@@ -2,7 +2,7 @@
 
 clear
         echo '###### MAIN CONF ######'
-        echo "- OPTION 9 - EXIT -"
+        echo "- OPTION 0 - EXIT -"
 
             echo '> Exiting...'
             sleep 1
