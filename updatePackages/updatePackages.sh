@@ -57,6 +57,7 @@
 	trizen -S ag --noconfirm
 	trizen -S ncdu --noconfirm 
 	trizen -S exa --noconfirm
+	trizen -S inxi --noconfirm
 
 	#setting up Glances
 	trizen -S python-bottle --noconfirm #used for glances
