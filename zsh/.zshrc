@@ -135,5 +135,7 @@ source $ZSH/oh-my-zsh.sh
   alias sshlistas="ssh operador@listas.ifce.edu.br"
   alias sshnas="ssh nassuporte@nassuporte.ifce.edu.br"
   alias sshnas2="ssh nassuporte2@nassuporte2.ifce.edu.br"
-# alias gcds="rdesktop -u 'adproducao.ifce.edu.br\Administrator' -p '????' -g 1024x768 200.17.33.66"
+  alias gcds="rdesktop -u 'adproducao.ifce.edu.br\Administrator' -g 1024x768 200.17.33.66"
   alias rdprdp="~/mainconf/scripts/rdprdp.sh"
+
+  
