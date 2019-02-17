@@ -12,13 +12,14 @@ clear
 
         clear
 
-        ;;
-        3)
-
-        clear
-        echo '###### MAIN CONF ######'
-        echo "- OPTION 3 - UPDATE .ZSHRC -"
         sleep 1
 
             cat ~/mainconf/zsh/.zshrc > ~/.zshrc
             sudo ln -sf ~/mainconf/zsh/.zshrc ~/.zshrc
+
+	sleep 1
+
+	    #installing zsh-autosuggestions plugin
+	    cd ~/.oh-my-zsh/custom/plugins
+	    git clone https://github.com/zsh-users/zsh-autosuggestions
+	    exec zsh
