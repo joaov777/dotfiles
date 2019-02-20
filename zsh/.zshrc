@@ -107,7 +107,14 @@ source $ZSH/oh-my-zsh.sh
   alias lsc="exa --long --tree --all $1"
   alias lst="exa --long --tree $1"
   alias lsb="exa --long --all $1"
+  alias .="cd .."
+  alias ..="cd ../../"
+  alias ...="cd ../../../"
+  alias ....="cd ../../../../"
+  alias .....="cd ../../../../../
   
+
+
   #alias cr=curl -u 'joao' https://api.github.com/user/repos -d '{"name":"$1"}' 
   #curl -u '<username>' https://api.github.com/user/repos -d '{"name":"<REPONAME>"}'
 
