@@ -54,7 +54,6 @@
 	#trizen -S snes9x-gtk #snes emulator
 	#trizen -S oranchelo-icon-theme-git #oranchelo icon theme
 	trizen -S viewnior --noconfirm #image viewer
-	trizen -S ag --noconfirm
 	trizen -S ncdu --noconfirm 
 	trizen -S exa --noconfirm
 	trizen -S inxi --noconfirm
