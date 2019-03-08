@@ -7,22 +7,14 @@
 	trizen -S notepadqq --noconfirm
 	trizen -S gparted --noconfirm
 	trizen -S keeweb-desktop --noconfirm
-	#trizen -S ipscan --noconfirm 
-	#trizen -S tilda --noconfirm
-	#trizen -S upterm --noconfirm
-	#trizen -S obs-studio --noconfirm
 	trizen -S filezilla --noconfirm
-	#trizen -S gnome-pie --noconfirm
 	trizen -S telegram-desktop --noconfirm	
 	trizen -S google-chrome --noconfirm
-	#trizen -S veracrypt --noconfirm
 	trizen -S ranger --noconfirm
 	trizen -S parcellite --noconfirm
 	trizen -S flameshot --noconfirm
 	trizen -S guake --noconfirm
 	trizen -S remmina --noconfirm
-	#trizen -S skype-desktop-bin --noconfirm
-	#trizen -S skypeforlinux-preview-bin --noconfirm
 	trizen -S simplenote-electron-bin --noconfirm
 	trizen -S gedit --noconfirm
 	trizen -S barrier --noconfirm	
@@ -31,15 +23,29 @@
 	trizen -S openssh --noconfirm
 	trizen -S vim --noconfirm
 	trizen -S rdesktop --noconfirm
-	#trizen -S ardour --noconfirm
-	#trizen -S gtop --noconfirm
-	#trizen -S mps-youtube --noconfirm
-	#trizen -S translate-shell --noconfirm #trans -T = language table / trans :en "[Enter] Meu coracao e forte!"
+	trizen -S scrot --noconfirm
+	trizen -S i3lock-fancy-git --noconfirm #i3lock-fancy -- scrot -z
 	trizen -S synapse --noconfirm 
 	trizen -S mtr --noconfirm
 	trizen -S nmap --noconfirm
-	trizen -S i3lock --noconfirm #set shortcut to: i3lock --color=000000
 	trizen -S plank --noconfirm
+	trizen -S okular --noconfirm #pdfviewer	
+	trizen -S viewnior --noconfirm #image viewer
+	trizen -S ncdu --noconfirm 
+	trizen -S exa --noconfirm
+	trizen -S inxi --noconfirm
+	trizen -S otf-fira-mono --noconfirm
+	trizen -S visual-studio-code-bin --noconfirm
+	
+	#trizen -S abntex2 --noconfirm #for latex
+	#trizen -S veracrypt --noconfirm
+	#trizen -S i3lock --noconfirm #set shortcut to: i3lock --color=000000
+	#trizen -S gnome-pie --noconfirm
+	#trizen -S ipscan --noconfirm 
+	#trizen -S tilda --noconfirm
+	#trizen -S upterm --noconfirm
+	#trizen -S obs-studio --noconfirm
+	#trizen -S skypeforlinux-preview-bin --noconfirm
 	#trizen -S evince --noconfirm
 	#trizen -S caprine --noconfirm
 	#trizen -S atom --noconfirm
@@ -50,14 +56,12 @@
 	#trizen -S mypaint --noconfirm
 	#trizen -S viber --noconfirm
 	#trizen -S typora --noconfirm
-	trizen -S okular --noconfirm #pdfviewer	
 	#trizen -S snes9x-gtk #snes emulator
 	#trizen -S oranchelo-icon-theme-git #oranchelo icon theme
-	trizen -S viewnior --noconfirm #image viewer
-	trizen -S ncdu --noconfirm 
-	trizen -S exa --noconfirm
-	trizen -S inxi --noconfirm
-	trizen -S otf-fira-mono --noconfirm
+	#trizen -S ardour --noconfirm
+	#trizen -S gtop --noconfirm
+	#trizen -S mps-youtube --noconfirm
+	#trizen -S translate-shell --noconfirm #trans -T = language table / trans :en "[Enter] Meu coracao e forte!"
 	
 
 	#setting up Glances
@@ -71,7 +75,6 @@
 	#trizen -S keyboardctl --noconfirm
 	#setxkbmap br
 	#kbctl -l br
-
 	
 	#setting up TeamViewer
 	trizen -S teamviewer --noconfirm
