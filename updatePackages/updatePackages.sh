@@ -35,6 +35,7 @@
 	trizen -S exa --noconfirm
 	trizen -S inxi --noconfirm
 	trizen -S otf-fira-mono --noconfirm
+	trizen -S synapse --noconfirm
 	trizen -S visual-studio-code-bin --noconfirm
 	
 	#trizen -S abntex2 --noconfirm #for latex
