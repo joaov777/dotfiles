@@ -111,15 +111,9 @@ source $ZSH/oh-my-zsh.sh
   alias ..="cd ../../"
   alias ...="cd ../../../"
   alias ....="cd ../../../../"
-  alias .....="cd ../../../../../
-  
-
-
-  #alias cr=curl -u 'joao' https://api.github.com/user/repos -d '{"name":"$1"}' 
-  #curl -u '<username>' https://api.github.com/user/repos -d '{"name":"<REPONAME>"}'
+  alias .....="cd ../../../../../"
 
 # APP SETTINGS
-  alias barrierconfig="barrier --config ~/.config/Debauchee/Barrier.conf"
 
 # SCRIPTS
   alias dp="~/mainconf/scripts/downloadPackage.sh"

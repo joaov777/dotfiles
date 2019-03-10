@@ -52,16 +52,11 @@
 	#trizen -S atom --noconfirm
 	#trizen -S micro --noconfirm #terminal-based IDE
 	#trizen -S neovim --noconfirm
-	#trizen -S dynalist-desktop --noconfirm
-	#trizen -S bmon --noconfirm
 	#trizen -S mypaint --noconfirm
 	#trizen -S viber --noconfirm
 	#trizen -S typora --noconfirm
 	#trizen -S snes9x-gtk #snes emulator
 	#trizen -S oranchelo-icon-theme-git #oranchelo icon theme
-	#trizen -S ardour --noconfirm
-	#trizen -S gtop --noconfirm
-	#trizen -S mps-youtube --noconfirm
 	#trizen -S translate-shell --noconfirm #trans -T = language table / trans :en "[Enter] Meu coracao e forte!"
 	
 
@@ -88,17 +83,3 @@
 	#sudo timedatectl set-ntp true
 	#sudo timedatectl set-timezone AmericaqFortaleza
 	
-	#setting up ZSH
-	#trizen -S zsh --noconfirm
-	#sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-	#sudo usermod -s /bin/zsh joao
-	#sudo chsh -s /bin/zsh joao
-	
-	#setting up Ulauncher
-	#trizen -S ulauncher --noconfirm
-	## extensions for ulauncher
-	#https://github.com/brpaz/ulauncher-file-search
-	#https://github.com/isacikgoz/ukill
-	#https://github.com/jetbug123/ulauncher-ssh
-	#https://github.com/RolfKoenders/ulauncher-myip
-	#https://github.com/manulaiko/ulauncher-openInBrowser
