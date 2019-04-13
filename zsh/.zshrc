@@ -107,6 +107,8 @@ source $ZSH/oh-my-zsh.sh
   alias lsc="exa --long --tree --all $1"
   alias lst="exa --long --tree $1"
   alias lsb="exa --long --all $1"
+  alias ds="youtube-dl --extract-audio --audio-format mp3 $1"
+  
   alias .="cd .."
   alias ..="cd ../../"
   alias ...="cd ../../../"
