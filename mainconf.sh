@@ -1,5 +1,7 @@
 #!/bin/bash
 
+    #main config file
+
 
     while [ true ];
     do
