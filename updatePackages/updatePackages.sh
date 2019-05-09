@@ -28,26 +28,46 @@
 	trizen -S synapse --noconfirm 
 	trizen -S mtr --noconfirm
 	trizen -S nmap --noconfirm
-	trizen -S plank --noconfirm
 	trizen -S okular --noconfirm #pdfviewer	
 	trizen -S viewnior --noconfirm #image viewer
 	trizen -S ncdu --noconfirm 
-	trizen -S exa --noconfirm
 	trizen -S inxi --noconfirm
 	trizen -S otf-fira-mono --noconfirm
-	trizen -S synapse --noconfirm
 	trizen -S visual-studio-code-bin --noconfirm
 	trizen -S pdfarranger-git #awesome tool for pdf arrangement
 
+	#Setting up Teamviewer
+	trizen -S teamviewer --noconfirm
+	sudo teamviewer --daemon enable
+	systemctl enable teamviewerd
+	systemctl start teamviewerd
+
+	#setting up Glances
+	#trizen -S python-bottle --noconfirm #used for glances
+	#trizen -S glances --noconfirm #awesome for monitoring
+	#sudo glances -w (web server monitoring)
+	#sudo glances -w --username --password --port 2222 (example)
+
+	#Setting up Keyboard layout
+	#sudo keyboardctl -l br
+	#trizen -S keyboardctl --noconfirm
+	#setxkbmap br
+	#kbctl -l br
+
+	#setting up time (NTP)
+	#trizen -S ntp --noconfirm
+	#sudo timedatectl set-ntp true
+	#sudo timedatectl set-timezone America/Fortaleza
+
 	#trizen -S abntex2 --noconfirm #for latex
-	#trizen -S veracrypt --noconfirm
+	trizen -S veracrypt --noconfirm
 	#trizen -S i3lock --noconfirm #set shortcut to: i3lock --color=000000
 	#trizen -S gnome-pie --noconfirm
 	#trizen -S ipscan --noconfirm 
 	#trizen -S tilda --noconfirm
 	#trizen -S upterm --noconfirm
 	#trizen -S obs-studio --noconfirm
-	#trizen -S skypeforlinux-preview-bin --noconfirm
+	trizen -S skypeforlinux-preview-bin --noconfirm
 	#trizen -S evince --noconfirm
 	#trizen -S caprine --noconfirm
 	#trizen -S atom --noconfirm
@@ -59,28 +79,5 @@
 	#trizen -S snes9x-gtk #snes emulator
 	#trizen -S oranchelo-icon-theme-git #oranchelo icon theme
 	#trizen -S translate-shell --noconfirm #trans -T = language table / trans :en "[Enter] Meu coracao e forte!"
-	
 
-	#setting up Glances
-	#trizen -S python-bottle --noconfirm #used for glances
-	#trizen -S glances --noconfirm #awesome for monitoring
-	#sudo glances -w (web server monitoring)
-	#sudo glances -w --username --password --port 2222 (example)
-	
-	#Setting up Keyboard layout
-	#sudo keyboardctl -l br
-	#trizen -S keyboardctl --noconfirm
-	#setxkbmap br
-	#kbctl -l br
-	
-	#setting up TeamViewer
-	trizen -S teamviewer --noconfirm
-	sudo teamviewer --daemon enable
-	systemctl enable teamviewerd
-	systemctl start teamviewerd
-	
-	#setting up time (NTP)
-	#trizen -S ntp --noconfirm
-	#sudo timedatectl set-ntp true
-	#sudo timedatectl set-timezone AmericaqFortaleza
 	
