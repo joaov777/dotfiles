@@ -37,7 +37,8 @@
 	trizen -S otf-fira-mono --noconfirm
 	trizen -S synapse --noconfirm
 	trizen -S visual-studio-code-bin --noconfirm
-	
+	trizen -S pdfarranger-git #awesome tool for pdf arrangement
+
 	#trizen -S abntex2 --noconfirm #for latex
 	#trizen -S veracrypt --noconfirm
 	#trizen -S i3lock --noconfirm #set shortcut to: i3lock --color=000000
