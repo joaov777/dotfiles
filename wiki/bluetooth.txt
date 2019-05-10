@@ -1,5 +1,5 @@
 
-Pacotes necessários
+>> Pacotes necessários
 
 sudo trizen -S pulseaudio-alsa
 sudo trizen -S pulseaudio-bluetooth
