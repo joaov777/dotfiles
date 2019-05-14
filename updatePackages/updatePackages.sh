@@ -35,6 +35,7 @@
 	trizen -S otf-fira-mono --noconfirm
 	trizen -S visual-studio-code-bin --noconfirm
 	trizen -S pdfarranger-git #awesome tool for pdf arrangement
+	trizen -S ipcalc
 
 	#Setting up Teamviewer
 	trizen -S teamviewer --noconfirm
