@@ -36,6 +36,7 @@
 	trizen -S visual-studio-code-bin --noconfirm
 	trizen -S pdfarranger-git #awesome tool for pdf arrangement
 	trizen -S ipcalc
+	trizen -S sipcalc # sipcalc -a 10.10.10.10/27
 
 	#Setting up Teamviewer
 	trizen -S teamviewer --noconfirm
