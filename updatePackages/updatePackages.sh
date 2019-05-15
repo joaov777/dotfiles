@@ -38,6 +38,7 @@
 	trizen -S ipcalc
 	trizen -S sipcalc #sipcalc -a 10.10.10.10/27
 	trizen -S whatmask #ex.: whatmask /27 # whatmask 10.10.10.10/28 
+	trizen -S shc #useful for encrypting scripts Ex.: shc -f <file_path>
 
 	#Setting up Teamviewer
 	trizen -S teamviewer --noconfirm
