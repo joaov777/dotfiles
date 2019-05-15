@@ -24,7 +24,7 @@
 	trizen -S vim --noconfirm
 	trizen -S rdesktop --noconfirm
 	trizen -S scrot --noconfirm
-	trizen -S i3lock-fancy-git --noconfirm #i3lock-fancy -- scrot -z
+	trizen -S i3lock --noconfirm #set shortcut to: i3lock --color=000000
 	trizen -S synapse --noconfirm 
 	trizen -S mtr --noconfirm
 	trizen -S nmap --noconfirm
@@ -39,6 +39,9 @@
 	trizen -S sipcalc #sipcalc -a 10.10.10.10/27
 	trizen -S whatmask #ex.: whatmask /27 # whatmask 10.10.10.10/28 
 	trizen -S shc #useful for encrypting scripts Ex.: shc -f <file_path>
+	trizen -S veracrypt --noconfirm
+	trizen -S skypeforlinux-preview-bin --noconfirm
+	trizen -S micro --noconfirm #terminal-based IDE
 
 	#Setting up Teamviewer
 	trizen -S teamviewer --noconfirm
@@ -64,18 +67,15 @@
 	#sudo timedatectl set-timezone America/Fortaleza
 
 	#trizen -S abntex2 --noconfirm #for latex
-	trizen -S veracrypt --noconfirm
-	#trizen -S i3lock --noconfirm #set shortcut to: i3lock --color=000000
+	#trizen -S i3lock-fancy-git --noconfirm #i3lock-fancy -- scrot -z
 	#trizen -S gnome-pie --noconfirm
 	#trizen -S ipscan --noconfirm 
 	#trizen -S tilda --noconfirm
 	#trizen -S upterm --noconfirm
 	#trizen -S obs-studio --noconfirm
-	trizen -S skypeforlinux-preview-bin --noconfirm
 	#trizen -S evince --noconfirm
 	#trizen -S caprine --noconfirm
 	#trizen -S atom --noconfirm
-	#trizen -S micro --noconfirm #terminal-based IDE
 	#trizen -S neovim --noconfirm
 	#trizen -S mypaint --noconfirm
 	#trizen -S viber --noconfirm
