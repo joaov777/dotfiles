@@ -114,7 +114,7 @@ source $ZSH/oh-my-zsh.sh
   alias sshdrestart="sudo systemctl restart sshd"
   alias env="sudo redshift -O 3000" #enabling night view
   alias dnv="sudo redshift -x" #disabling night view
-
+  alias fkw="sudo rm ~/.config/KeeWeb/runtime-data.json"
   
   alias .="cd .."
   alias ..="cd ../../"
