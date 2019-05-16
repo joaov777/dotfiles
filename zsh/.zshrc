@@ -115,7 +115,8 @@ source $ZSH/oh-my-zsh.sh
   alias env="sudo redshift -O 3000" #enabling night view
   alias dnv="sudo redshift -x" #disabling night view
   alias fkw="sudo rm ~/.config/KeeWeb/runtime-data.json"
-  
+  alias wanwan="curl https://ipinfo.io/ip"
+
   alias .="cd .."
   alias ..="cd ../../"
   alias ...="cd ../../../"
