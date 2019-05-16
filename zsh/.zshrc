@@ -126,6 +126,7 @@ source $ZSH/oh-my-zsh.sh
 
 # SCRIPTS
   alias dp="~/mainconf/scripts/downloadPackage.sh"
+  alias rp="sudo trizen -R $1 --noconfirm"
   alias sp="~/mainconf/scripts/searchPackage.sh"
   alias gk="~/mainconf/scripts/generateSshKeys.sh"
   alias sk="~/mainconf/scripts/sendSshKeysToServer.sh"
