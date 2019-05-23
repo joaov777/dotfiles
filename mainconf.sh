@@ -14,9 +14,7 @@
     echo "#(3) - Update .ZSHRC"
     echo "#(4) - Update System (Mirrors and packages)"
     echo "#(5) - Update Packages"
-    echo "#(6) - Update Tilda"
-    echo "#(7) - Check Installed Packages"
-    echo "#(8) - Setup Plank"
+    echo "#(6) - Check Installed Packages"
     echo "-----------------------------------------"
     read -p "Option: " menuChoice
 
@@ -28,9 +26,7 @@
             3) ~/mainconf/mainconftree/updatezshrc.sh ;;
             4) ~/mainconf/mainconftree/updatesystem.sh ;;
             5) ~/mainconf/mainconftree/updatepackages.sh ;;
-            6) ~/mainconf/mainconftree/updatetilda.sh ;;
-            7) ~/mainconf/mainconftree/checkinstalledpackages.sh ;;
-	        8) ~/mainconf/mainconftree/setupplank.sh ;;
+            6) ~/mainconf/mainconftree/checkinstalledpackages.sh ;;
             *) ~/mainconf/mainconftree/invalidoption.sh ;;
     esac
 
