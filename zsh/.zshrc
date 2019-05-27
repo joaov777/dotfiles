@@ -116,6 +116,7 @@ source $ZSH/oh-my-zsh.sh
   alias dnv="sudo redshift -x" #disabling night view
   alias fkw="sudo rm ~/.config/KeeWeb/runtime-data.json"
   alias wanwan="curl https://ipinfo.io/ip"
+  alias rn="sudo systemctl restart NetworkManager.service"
 
   alias .="cd .."
   alias ..="cd ../../"
