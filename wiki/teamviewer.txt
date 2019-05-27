@@ -1,0 +1,9 @@
+
+
+sudo teamviewer --passwd <new_password>
+
+
+#check for the current's machine ID
+sudo teamviewer --info 
+
+sudo teamviewer -i <remote_machine_id> -P <remote_machine_password>
