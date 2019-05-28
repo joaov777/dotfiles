@@ -1,0 +1,24 @@
+<<<<<<< CONFIG FOR THE MAIN MACHINE HOSTING VIRTUALBOX >>>>>>>>
+
+## Installing virtualbox
+sudo pacman -S virtualbox
+
+## Check Kernel version
+uname -r
+
+## Download current's system's kernel's headers and modules
+sudo pacman -S linux419-virtualbox-host-modules
+sudo vboxreaload
+sudo gpasswd -a $user vboxusers
+
+===============================================================
+
+<<<<<<< CONFIG FOR THE VIRTUAL MACHINES >>>>>>>>
+sudo pacman -Syu virtualbox-guest-utils ; sudo pacman -S linux-headers
+
+
+## Make sure the disk device is added with the Virtual Guest Additions image. Then proceed below
+cd /run/media/$user/VBox Guest Additions
+sudo sh VboxLinuxAdditions.run
+
+sudo reboot now
