@@ -1,0 +1,161 @@
+>>> This is a guide to arch linux installation commands <<<
+
+1 - Check wether you have a UEFI or traditional BIOS system
+ls /sys/firmware/efi/efivars
+- If nothing shows up, you have BIOS and don't have UEFI.
+- In case you have UEFI, the partitioning is a little different.
+
+2 - ping 8.8.8.8
+
+3 - In case you need to connect to wifi
+wifi-menu
+
+4 - timedatectl set-ntp true
+
+5 - Check drives and their partitions
+lsblk
+
+6 - fdisk /dev/sda
+n
+p
+1
+<enter>
++200M / 15G /
+
+----> CREATE FOUR PARTITIONS
+boot
+swap
+root
+home 
+
+write at the end of the creation of the partitions
+
+7 - lsblk to check all partitions created
+
+8 - Make filesystems
+boot - mkfs.ext4 /dev/sda1
+swap - mkswap /dev/sda2 and also swapon /dev/sda2
+root - mkfs.ext4 /dev/sda3
+home - mkfs.ext4 /dev/sda4
+
+9 - Mount all partitions
+root - mount /dev/sda3 /mnt (ls /mnt to check whether "lost+found" exists there)
+
+mkdir /mnt/home
+mkdir /mnt/boot
+
+boot - mount /dev/sda1 /mnt/boot
+home - mount /dev/sda4 /mnt/home
+
+10 - Main command to install arch (this takes a while)
+pacstrap /mnt base base-devel vim
+
+11 - Fstab configuration
+genfstab -U /mnt
+genfstab -U /mnt >> /mnt/etc/fstab
+cat /mnt/etc/fstab --> to check everything is there
+
+12 - Jumping into the system 
+arch-chroot /mnt
+--> Now you're no longer on the USB flash drive. You are on the arch installation.
+
+13 - Network manager
+pacman -S networkmanager
+systemctl enable NetworkManager
+
+14 - Grub (bootloader)
+pacman -S grub.
+grub-install --target=i386-pc /dev/sda
+grub-mkconfig -o /boot/grub/grub.cfg
+
+15 - Setting up a password for the current user (root)
+passwd
+
+16 - Setting up locale
+vim /etc/locale.gen
+---> uncomment the languages that you want to enable on your system.
+
+en_US.UTF-8 UTF-8
+en_US ISO-8859-1
+
+locale.gen
+vim /etc/locale.conf
+LANG=en-US.UTF8
+
+17 - Setting up timezone
+ls /usr/share/zoneinfo 
+ln -sf /usr/share/zoneinfo/America/Fortaleza /etc/localtime
+
+18 - setting up hostname
+vim /etc/hostname
+
+19 -
+
+exit
+lsblk
+umount -R /mnt
+reboot 
+
+20 - 
+Login with your root account and the password previously set up
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
