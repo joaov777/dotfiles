@@ -1,5 +1,22 @@
 >>> This is a guide to arch linux installation commands <<<
 
+--> ENABLE SSH FROM THE VIRTUALBOX MACHINE <---
+passwd
+arch / arch
+
+pacman -Syu
+
+sudo pacman -S openssh
+systemctl enable sshd.service
+systemctl start sshd.service
+
+ip a
+
+--> Uncomment the directive "PermitRootLogin" to yes
+
+--> <---
+
+
 1 - Check wether you have a UEFI or traditional BIOS system
 ls /sys/firmware/efi/efivars
 - If nothing shows up, you have BIOS and don't have UEFI.
@@ -100,7 +117,49 @@ reboot
 Login with your root account and the password previously set up
 
 
+>>>> APÓS INSTALACAO <<<<
+sudo pacman -S xorg-server xorg-xinit xorg-apps
 
+sudo pacman -S xorg-twm xorg-xclock xterm
+
+sudo pacman -S xf86-video-vesa virtualbox-guest-utils
+
+sudo pacman -S alsa-utils
+
+sudo pacman -Syy
+
+useradd -m -g users -G storage,power,wheel,audio,video -s /bin/bash joao
+visudo
+root ALL=(ALL) ALL
+joao ALL=(ALL) ALL
+
+
+sudo pacman -S xfce4 xfce4-goodies
+
+
+sudo pacman -S firefox flashplugin 
+
+sudo pacman -S network-manager-applet
+
+sudo vim .xinitrc --> add: "startxfce4"
+
+reboot
+
+loadkeys br-abnt2
+
+pacman -S virtualbox-guest-iso --> caso seja necessário para virtualbox
+modprobe -a vboxguest vboxsf vboxvideo
+pacman -S virtualbox-guest-utils
+systemctl enable vboxservice
+reboot
+
+sudo mkinitcpio -p linux
+sudo pacman -Syuu
+sudo pacman -S lightdm lightdm-gtk-greeter
+systemctl enable lightdm.service
+systemctl enable vboxservice
+sudo pacman -S xdg-user-dirs
+xdg-user-dirs-update
 
 
 
