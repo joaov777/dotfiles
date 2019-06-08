@@ -117,6 +117,8 @@ source $ZSH/oh-my-zsh.sh
   alias fkw="sudo rm ~/.config/KeeWeb/runtime-data.json"
   alias wanwan="curl https://ipinfo.io/ip"
   alias rn="sudo systemctl restart NetworkManager.service"
+  alias keyus="sudo kbctl -l us"
+  alias keybr="sudo kbctl -l br"
 
   alias .="cd .."
   alias ..="cd ../../"

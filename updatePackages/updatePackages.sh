@@ -57,7 +57,7 @@
 
 	#Setting up Keyboard layout
 	#sudo keyboardctl -l br
-	#trizen -S keyboardctl --noconfirm
+	trizen -S keyboardctl --noconfirm
 	#setxkbmap br
 	#kbctl -l br
 
