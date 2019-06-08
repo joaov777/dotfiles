@@ -130,7 +130,8 @@ source $ZSH/oh-my-zsh.sh
 
 # SCRIPTS
   alias dp="~/mainconf/scripts/downloadPackage.sh"
-  alias rp="sudo trizen -R $1 --noconfirm"
+  alias rp="sudo pacman -Rsu $1 --noconfirm" #Removing a package and its dependencies
+  alias ru="sudo pacman -R $(pacman -Qdtq) --noconfirm" #Removing unnecessary dependencies
   alias sp="~/mainconf/scripts/searchPackage.sh"
   alias gk="~/mainconf/scripts/generateSshKeys.sh"
   alias sk="~/mainconf/scripts/sendSshKeysToServer.sh"
