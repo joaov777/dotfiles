@@ -41,8 +41,10 @@
 	trizen -S shc #useful for encrypting scripts Ex.: shc -f <file_path>
 	trizen -S veracrypt --noconfirm
 	trizen -S skypeforlinux-preview-bin --noconfirm
-	trizen -S micro --noconfirm #terminal-based IDE
-
+	trizen -S obs-studio --noconfirm
+	trizen -S snes9x-gtk #snes emulator
+	trizen -S vinagre #rdp clientvina
+	
 	#Setting up Teamviewer
 	trizen -S teamviewer --noconfirm
 	sudo teamviewer --daemon enable
@@ -66,13 +68,13 @@
 	#sudo timedatectl set-ntp true
 	#sudo timedatectl set-timezone America/Fortaleza
 
+	#trizen -S micro --noconfirm #terminal-based IDE
 	#trizen -S abntex2 --noconfirm #for latex
 	#trizen -S i3lock-fancy-git --noconfirm #i3lock-fancy -- scrot -z
 	#trizen -S gnome-pie --noconfirm
 	#trizen -S ipscan --noconfirm 
 	#trizen -S tilda --noconfirm
 	#trizen -S upterm --noconfirm
-	#trizen -S obs-studio --noconfirm
 	#trizen -S evince --noconfirm
 	#trizen -S caprine --noconfirm
 	#trizen -S atom --noconfirm
@@ -80,7 +82,6 @@
 	#trizen -S mypaint --noconfirm
 	#trizen -S viber --noconfirm
 	#trizen -S typora --noconfirm
-	#trizen -S snes9x-gtk #snes emulator
 	#trizen -S oranchelo-icon-theme-git #oranchelo icon theme
 	#trizen -S translate-shell --noconfirm #trans -T = language table / trans :en "[Enter] Meu coracao e forte!"
 
