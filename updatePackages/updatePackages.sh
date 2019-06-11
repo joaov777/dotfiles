@@ -44,7 +44,7 @@
 	trizen -S obs-studio --noconfirm
 	trizen -S snes9x-gtk #snes emulator
 	trizen -S vinagre #rdp clientvina
-	
+
 	#Setting up Teamviewer
 	trizen -S teamviewer --noconfirm
 	sudo teamviewer --daemon enable
