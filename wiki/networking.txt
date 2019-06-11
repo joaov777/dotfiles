@@ -13,6 +13,9 @@ ip link set x down
 #Discovering IP address based on MAC address
 nmap -sP <LAN+MASK> >/dev/null && arp -an | grep <MAC_ADDRESS_HERE> | awk '{print $2}' | sed 's/[()]//g'
 Ex.: nmap -sP 192.168.16.0/24 >/dev/null && arp -an | grep 08:00:27:64:48:74 | awk '{print $2}' | sed 's/[()]//g'
+
+#Discovering MAC address based on IP address
+sudo arping -I enp0s3 -c 1 192.168.16.88
            
 
 >>>> DHCLIENT
