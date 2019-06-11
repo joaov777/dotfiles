@@ -30,6 +30,9 @@ sudo dhclient -v <NIC_name>
 
 
 >>>> NMCLI 
+#displaying wifi ssid's
+nmcli dev wifi list
+
 #displaying all connections
 nmcli connection show
 

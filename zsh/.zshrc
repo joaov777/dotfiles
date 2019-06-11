@@ -119,6 +119,7 @@ source $ZSH/oh-my-zsh.sh
   alias rn="sudo systemctl restart NetworkManager.service"
   alias keyus="sudo kbctl -l us"
   alias keybr="sudo kbctl -l br"
+  alias sw="nmcli dev wifi list"
 
   alias .="cd .."
   alias ..="cd ../../"
@@ -144,7 +145,7 @@ source $ZSH/oh-my-zsh.sh
   alias msms="~/mainconf/mainconf.sh"
   alias findip="~/mainconf/scripts/findip.sh"
   alias findmac="~/mainconf/scripts/findmac.sh"
-  
+  alias hothot="~/mainconf/scripts/createhotspot.sh"
 
 # UPDATES
   alias um="sudo pacman-mirrors --fasttrack 5 && sudo pacman -Syyu --noconfirm"
