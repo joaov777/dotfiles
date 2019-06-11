@@ -142,6 +142,8 @@ source $ZSH/oh-my-zsh.sh
   alias ur="~/mainconf/scripts/updateRepository.sh"
   alias svms="sudo vim ~/mainconf/mainconf.sh"
   alias msms="~/mainconf/mainconf.sh"
+  alias findip="~/mainconf/scripts/findip.sh"
+  alias findmac="~/mainconf/scripts/findmac.sh"
   
 
 # UPDATES
