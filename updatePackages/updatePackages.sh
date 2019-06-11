@@ -34,16 +34,17 @@
 	trizen -S inxi --noconfirm
 	trizen -S otf-fira-mono --noconfirm
 	trizen -S visual-studio-code-bin --noconfirm
-	trizen -S pdfarranger-git #awesome tool for pdf arrangement
-	trizen -S ipcalc
-	trizen -S sipcalc #sipcalc -a 10.10.10.10/27
-	trizen -S whatmask #ex.: whatmask /27 # whatmask 10.10.10.10/28 
-	trizen -S shc #useful for encrypting scripts Ex.: shc -f <file_path>
+	trizen -S pdfarranger-git --noconfirm #awesome tool for pdf arrangement
+	trizen -S ipcalc --noconfirm
+	trizen -S sipcalc --noconfirm #sipcalc -a 10.10.10.10/27
+	trizen -S whatmask --noconfirm #ex.: whatmask /27 # whatmask 10.10.10.10/28 
+	trizen -S shc --noconfirm #useful for encrypting scripts Ex.: shc -f <file_path>
 	trizen -S veracrypt --noconfirm
 	trizen -S skypeforlinux-preview-bin --noconfirm
 	trizen -S obs-studio --noconfirm
-	trizen -S snes9x-gtk #snes emulator
-	trizen -S vinagre #rdp clientvina
+	trizen -S snes9x-gtk --noconfirm#snes emulator
+	trizen -S vinagre --noconfirm #rdp clientvina
+	trizen -S arp-scan --noconfirm
 
 	#Setting up Teamviewer
 	trizen -S teamviewer --noconfirm
