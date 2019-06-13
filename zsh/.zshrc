@@ -120,6 +120,7 @@ source $ZSH/oh-my-zsh.sh
   alias keyus="sudo kbctl -l us"
   alias keybr="sudo kbctl -l br"
   alias sw="nmcli dev wifi list"
+  alias systeminfo="inxi -Fxz"
 
   alias .="cd .."
   alias ..="cd ../../"
