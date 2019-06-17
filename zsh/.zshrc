@@ -121,6 +121,9 @@ source $ZSH/oh-my-zsh.sh
   alias keybr="sudo kbctl -l br"
   alias sw="nmcli dev wifi list"
   alias systeminfo="inxi -Fxz"
+  alias nicpon="sudo ip link set $1 promisc on" #enabling promiscuous mode (insert interface for parameter)
+  alias nicpoff="sudo ip link set $1 promisc off" #disabling promiscuous mode (insert interface for parameter) 
+  alias nicp="sudo ip link show $1" #checking promiscuous enabled or disabled (insert interface for parameter)
 
   alias .="cd .."
   alias ..="cd ../../"
