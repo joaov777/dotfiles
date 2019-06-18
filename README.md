@@ -9,7 +9,10 @@ This is intended as a basic shell script routine that allows for linux users to 
 
 ## The distribution used
 
-<div style="text-align: justify">It's been a while I have been learning and diving deeper into the numerous [manjaro](https://manjaro.org/) flavors. The **XFCE desktop environment** in turn has become my main DE both for professional as well as for personal use. The fact that it's an arch-based distribution, Manjaro relies on its easy and intuitive step-by-step installation process along with its stable and carefully projected system. This has definitely caught the attention of many linux users around the world and obviously I'm no exception. </div>
+<div class=text-justify>
+It's been a while I have been learning and diving deeper into the numerous [manjaro](https://manjaro.org/) flavors. The **XFCE desktop environment** in turn has become my main DE both for professional as well as for personal use. The fact that it's an arch-based distribution, Manjaro relies on its easy and intuitive step-by-step installation process along with its stable and carefully projected system. This has definitely caught the attention of many linux users around the world and obviously I'm no exception. 
+
+</div>
 
 
 
