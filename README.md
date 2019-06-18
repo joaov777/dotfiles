@@ -1,3 +1,5 @@
+<div style="text-align: justify"> your-text-here 
+
 # mainconf
 
 This is intended as a basic shell script routine that allows for linux users to set up and configure basic steps of a freshly installed linux distro. Originally, this project was planned and developed strictly for personal use. 
@@ -21,7 +23,7 @@ Basically, there are two main ways to execute and make use of this project on yo
 * **Custom**
 
 
-
+</div>
 
 
 
