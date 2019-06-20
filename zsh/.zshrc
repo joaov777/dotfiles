@@ -137,7 +137,6 @@ source $ZSH/oh-my-zsh.sh
   alias ....="cd ../../../../"
   alias .....="cd ../../../../../"
 
-# APP SETTINGS
 
 # SCRIPTS
   alias dp="~/mainconf/scripts/downloadPackage.sh"
