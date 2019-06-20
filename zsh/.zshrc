@@ -154,7 +154,7 @@ source $ZSH/oh-my-zsh.sh
   alias gitconfig="~/mainconf/scripts/gitGlobalConfig.sh"
   alias ur="~/mainconf/scripts/updateRepository.sh"
   alias svms="sudo vim ~/mainconf/mainconf.sh"
-  alias msms="~/mainconf/mainconf.sh"
+  alias mainconf="~/mainconf/mainconf.sh"
   alias findip="~/mainconf/scripts/findip.sh"
   alias findmac="~/mainconf/scripts/findmac.sh"
   alias hothot="~/mainconf/scripts/createhotspot.sh"
