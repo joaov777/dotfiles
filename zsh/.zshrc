@@ -112,6 +112,12 @@ source $ZSH/oh-my-zsh.sh
   alias sshdstop="sudo systemctl stop sshd"
   alias sshdstatus="sudo systemctl status sshd"
   alias sshdrestart="sudo systemctl restart sshd"
+  alias sstart="sudo systemctl start $1"
+  alias sstop="sudo systemctl stop $1"
+  alias sstatus="sudo systemctl status $1"
+  alias srestart="sudo systemctl restart $1"
+
+
   alias env="sudo redshift -O 3000" #enabling night view
   alias dnv="sudo redshift -x" #disabling night view
   alias fkw="sudo rm ~/.config/KeeWeb/runtime-data.json"
@@ -138,6 +144,9 @@ source $ZSH/oh-my-zsh.sh
   alias rp="sudo pacman -Rsu $1 --noconfirm" #Removing a package and its dependencies
   alias ru="sudo pacman -R $(pacman -Qdtq) --noconfirm" #Removing unnecessary dependencies
   alias sp="~/mainconf/scripts/searchPackage.sh"
+  alias hs="history | grep $1" #search commands in history
+  alias fd="find . -type d -name $1" #search for directory locally
+  alias ff="find . -type f -name"
   alias gk="~/mainconf/scripts/generateSshKeys.sh"
   alias sk="~/mainconf/scripts/sendSshKeysToServer.sh"
   alias sg="~/mainconf/scripts/sudoGedit.sh"
