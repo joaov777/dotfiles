@@ -107,7 +107,7 @@ source $ZSH/oh-my-zsh.sh
   alias lsc="exa --long --tree --all $1"
   alias lst="exa --long --tree $1"
   alias lsb="exa --long --all $1"
-  alias ds="youtube-dl --extract-audio --audio-format mp3 $1"
+  alias ds="youtube-dl --extract-audio --audio-format mp3 $1 -o '~/Music/%(title)s.%(ext)s'"
   alias sshdstart="sudo systemctl start sshd"
   alias sshdstop="sudo systemctl stop sshd"
   alias sshdstatus="sudo systemctl status sshd"
