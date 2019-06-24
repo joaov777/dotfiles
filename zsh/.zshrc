@@ -146,6 +146,7 @@ source $ZSH/oh-my-zsh.sh
   alias hs="history | grep $1" #search commands in history
   alias fd="find . -type d -name $1" #search for directory locally
   alias ff="find . -type f -name"
+  alias sl="du -sh ./*"
   alias gk="~/mainconf/scripts/generateSshKeys.sh"
   alias sk="~/mainconf/scripts/sendSshKeysToServer.sh"
   alias sg="~/mainconf/scripts/sudoGedit.sh"
