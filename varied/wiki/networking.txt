@@ -1,3 +1,4 @@
+
 #verificar tabela arp
 ip n
 
