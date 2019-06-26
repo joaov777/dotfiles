@@ -147,7 +147,7 @@ source $ZSH/oh-my-zsh.sh
   alias fd="find . -type d -name $1" #search for directory locally
   alias ff="find . -type f -name"
   alias sl="du -sh ./*"
-  alias ml="watch -n 1 'du -h --max-depth=0 ./*'"
+  alias ml="watch -n 1 'du -h --max-depth=0 ./*' --time"
   alias gk="~/mainconf/scripts/generateSshKeys.sh"
   alias sk="~/mainconf/scripts/sendSshKeysToServer.sh"
   alias sg="~/mainconf/scripts/sudoGedit.sh"
