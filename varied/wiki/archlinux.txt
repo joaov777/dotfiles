@@ -1,4 +1,4 @@
->>> This is a guide to arch linux installation commands <<<
+>>>>> This is a guide to arch linux installation commands <<<
 
 --> ENABLE SSH FROM THE VIRTUALBOX MACHINE <---
 passwd
