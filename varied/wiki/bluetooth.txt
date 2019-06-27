@@ -1,11 +1,7 @@
 
 >> Pacotes necessários
 
-sudo trizen -S pulseaudio-alsa
-sudo trizen -S pulseaudio-bluetooth
-sudo trizen -S bluez
-sudo trizen -S bluez-libs
-sudo trizen -S bluez-utils
+sudo trizen -S pulseaudio-alsa ; sudo trizen -S pulseaudio-bluetooth ; sudo trizen -S bluez ; sudo trizen -S bluez-libs ; sudo trizen -S bluez-utils;
 
 Verificar se o bluetooth está bloqueado
 sudo rfkill list
