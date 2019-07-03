@@ -145,6 +145,7 @@ source $ZSH/oh-my-zsh.sh
   alias sp="~/mainconf/scripts/searchPackage.sh"
   alias hs="history | grep $1" #search commands in history
   alias fd="find . -type d -name $1" #search for directory locally
+  alias clip='xclip -selection clipboard'
   alias ff="find . -type f -name"
   alias sl="du -sh ./*"
   alias ml="watch -n 1 'du -h --max-depth=0 ./*' --time"
