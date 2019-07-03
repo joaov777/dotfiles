@@ -1,4 +1,4 @@
->>> This is a guide to arch linux installation commands <<<
+>>>>> This is a guide to arch linux installation commands <<<
 
 --> ENABLE SSH FROM THE VIRTUALBOX MACHINE <---
 passwd
@@ -14,7 +14,35 @@ ip a
 
 --> Uncomment the directive "PermitRootLogin" to yes
 
---> <---
+========================================
+========================================
+QUICK WAY TO INSTALL ARCH
+
+loadkeys br-abnt2
+
+wget terminalroot.com.br/arch.in
+chmod +x arch.in
+
+./arch.in
+
+pacman -Sy xorg xorg-init
+pacman -Sy xfce4 xfce4-goodies
+pacman -Sy lightdm lightdm-gtk-greeter
+systemctl enable lightdm.service
+systemctl start lightdm.service
+
+
+pacman -Sy virtualbox-guest-utils (2)
+
+systemctl enable vboxservice.service
+
+======================================
+======================================
+
+
+
+
+
 
 
 1 - Check wether you have a UEFI or traditional BIOS system
