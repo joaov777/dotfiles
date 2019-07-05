@@ -47,6 +47,13 @@
 	trizen -S arp-scan --noconfirm
 	trizen -S net-tools --noconfirm
 
+
+	#Downloading papirus icon themes and setting up to grey
+	#papirus-folders -l --theme Papirus-Dark (Listando cores disponíveis)
+	trizen -S papirus-icon-theme --noconfirm
+	trizen -S papirus-folders-git --noconfirm
+	papirus-folders -C grey 
+
 	#Setting up Teamviewer
 	trizen -S teamviewer --noconfirm
 	sudo teamviewer --daemon enable
