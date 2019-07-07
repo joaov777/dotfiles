@@ -160,6 +160,9 @@ source $ZSH/oh-my-zsh.sh
   alias findip="~/mainconf/scripts/findip.sh"
   alias findmac="~/mainconf/scripts/findmac.sh"
   alias hothot="~/mainconf/scripts/createhotspot.sh"
+  alias brltousd="/home/joao/mainconf/scripts/brltousd.sh"
+  alias usdtobrl="/home/joao/mainconf/scripts/usdtobrl.sh"
+  alias dr="~/mainconf/scripts/dollarrate.sh"
 
 # UPDATES
   alias um="sudo pacman-mirrors --fasttrack 5 && sudo pacman -Syyu --noconfirm"
