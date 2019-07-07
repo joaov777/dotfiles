@@ -14,7 +14,7 @@
 
 	#BRL_amount=${1}
 
-	echo "> Conversion: \$$USD_amount = \$${conversion}"
+	echo "> Conversion: \$$USD_amount = R\$${conversion}"
 	
 	done
 
