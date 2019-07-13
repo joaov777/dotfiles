@@ -130,6 +130,7 @@ source $ZSH/oh-my-zsh.sh
   alias nicpon="sudo ip link set $1 promisc on" #enabling promiscuous mode (insert interface for parameter)
   alias nicpoff="sudo ip link set $1 promisc off" #disabling promiscuous mode (insert interface for parameter) 
   alias nicp="sudo ip link show $1" #checking promiscuous enabled or disabled (insert interface for parameter)
+  alias l="ls -liarclst"
 
   alias .="cd .."
   alias ..="cd ../../"
