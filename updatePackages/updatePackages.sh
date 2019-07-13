@@ -11,7 +11,7 @@
 	trizen -S telegram-desktop --noconfirm	
 	trizen -S google-chrome --noconfirm
 	trizen -S ranger --noconfirm
-	trizen -S parcellite --noconfirm
+	trizen -S clipit --noconfirm
 	trizen -S flameshot --noconfirm
 	trizen -S guake --noconfirm
 	trizen -S remmina --noconfirm
