@@ -42,7 +42,7 @@
 	trizen -S veracrypt --noconfirm
 	trizen -S skypeforlinux-preview-bin --noconfirm
 	trizen -S obs-studio --noconfirm
-	trizen -S snes9x-gtk --noconfirm#snes emulator
+	trizen -S snes9x-gtk --noconfirm #snes emulator
 	trizen -S vinagre --noconfirm #rdp clientvina
 	trizen -S arp-scan --noconfirm
 	trizen -S net-tools --noconfirm
