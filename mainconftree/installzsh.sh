@@ -22,6 +22,6 @@ clear
 		#installing pi theme https://github.com/tobyjamesthomas/pi
 		echo ">> Installing zsh pi theme"
 	    cd ~/.oh-my-zsh/custom/themes
-	    wget -O $ZSH_CUSTOM/themes/pi.zsh-theme https://raw.githubusercontent.com/tobyjamesthomas/pi/master/pi.zsh-theme
+	    wget -O /home/$username/.oh-my-zsh/custom/themes/pi.zsh-theme https://raw.githubusercontent.com/tobyjamesthomas/pi/master/pi.zsh-theme
 		
 	    exec zsh
