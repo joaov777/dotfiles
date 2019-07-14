@@ -24,8 +24,9 @@ clear
 	    cd ~/.oh-my-zsh/custom/themes
 	    git clone https://github.com/tobyjamesthomas/pi
 	    cp pi/pi.zsh-theme .
+	    sudo rm -rf pi
 	    exec zsh
 	    clear
+	    cd ~
 	    
-	    
-		
+
