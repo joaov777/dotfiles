@@ -15,6 +15,13 @@ clear
 	sleep 1
 
 	    #installing zsh-autosuggestions plugin
+		echo ">> Installing auto suggestions plugin"
 	    cd ~/.oh-my-zsh/custom/plugins
 	    git clone https://github.com/zsh-users/zsh-autosuggestions
+		
+		#installing pi theme
+		echo ">> Installing zsh pi theme"
+	    cd ~/.oh-my-zsh/custom/themes
+	    git clone https://github.com/tobyjamesthomas/pi.git
+		
 	    exec zsh
