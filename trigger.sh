@@ -7,3 +7,4 @@
 	sudo chmod -R 777 mainconf/
 	sudo chown -R joao:joao mainconf/
 	sudo rm master.zip
+	rm -- "$0" 
