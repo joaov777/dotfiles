@@ -103,7 +103,7 @@ source $ZSH/oh-my-zsh.sh
   alias sdn="sudo shutdown now"
   alias pgpg="ping 8.8.8.8"
   alias zshconfig="sudo vim ~/.zshrc"
-  alias rf="sudo rm -rf $1" #remove folder
+  alias rf="sudo rm -rf" #remove folder
   alias lsc="exa --long --tree --all $1"
   alias lst="exa --long --tree $1"
   alias lsb="exa --long --all $1"
