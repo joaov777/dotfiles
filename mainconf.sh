@@ -7,7 +7,7 @@
     do
 
     clear
-    echo "$(tput bold) $(tput setaf 7)=============|> MAINCONF <|============="
+    echo "$(tput bold)$(tput setaf 7)==============|> MAINCONF <|=============="
     echo "#(0) - Exit"
     echo "#(1) - Update System (Mirrors and packages)"
     echo "#(2) - Update Packages"
