@@ -7,7 +7,7 @@
     do
 
     clear
-    echo "$(tput setaf 3)=============|> MAINCONF <|============="
+    echo "$(tput setaf 7)=============|> MAINCONF <|============="
     echo "#(0) - Exit"
     echo "#(1) - Setup GIT User"
     echo "#(2) - Install ZSH"
