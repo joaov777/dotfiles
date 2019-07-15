@@ -1,7 +1,7 @@
 #!/bin/bash
 
 	cd ~
-	wget https://github.com/joaov777/mainconf/archive/master.zip
+	wget -q https://github.com/joaov777/mainconf/archive/master.zip
 	sudo unzip master.zip
 	sudo mv mainconf-master mainconf
 	sudo chmod -R 777 mainconf/
