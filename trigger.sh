@@ -15,16 +15,18 @@ triggercore() {
 	if [ ! -d ~/mainconf ]; 
 	then
 		triggercore
+		echo '>> mainconf success!' 
+		sleep 2
 	else
 		echo '>> Mainconf folder exists!!'
-		sleep 1
+		sleep 2
 		echo '>> Deleting it!!'
-		sleep 1
+		sleep 2
 		sudo rm -rf ~/mainconf/ >> /dev/null
 		
 		echo '>> Mainconf folder deleted!!'
-		sleep 1
+		sleep 2
 		echo '>> Restarting script!!'
-		sleep 1
+		sleep 2
 		triggercore
 	fi
