@@ -6,7 +6,7 @@ clear
 
 	          read -p "> Package name: " packageName
 	          echo "> Packages found: "
-	          pacman -Q | grep $packageName
+	          pacman -Qi $packageName
 
             sleep 5
 

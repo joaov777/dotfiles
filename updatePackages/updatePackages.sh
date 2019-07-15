@@ -1,12 +1,13 @@
 #!/bin/bash
 
 	#installing trizen helper
-	cd ~ ; git clone https://aur.archlinux.org/trizen.git >> /dev/null ; \
-	cd trizen ; \
-	makepkg -si >> /dev/null ; \
-	sudo rm -rf trizen
-
 	#sudo pacman -S trizen --noconfirm
+	cd ~ ; git clone --quiet https://aur.archlinux.org/trizen.git ; \
+	cd trizen ; \
+	makepkg -si --noconfirm >> /dev/null ; \
+	sudo rm -rf ~/trizen
+
+	# MAIN PACKAGES 
 	trizen -S git --noconfirm
 	trizen -S etcher --noconfirm
 	trizen -S notepadqq --noconfirm
