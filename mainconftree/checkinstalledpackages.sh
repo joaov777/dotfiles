@@ -1,8 +1,8 @@
 #!/bin/bash
 
 clear
-        echo '###### MAIN CONF ######'
-        echo "- OPTION 7 - CHECK INSTALLED PACKAGES -"
+        echo '########## MAIN CONF ##########'
+        echo "- ## CHECK INSTALLED PACKAGES ## -"
 
 	          read -p "> Package name: " packageName
 	          echo "> Packages found: "

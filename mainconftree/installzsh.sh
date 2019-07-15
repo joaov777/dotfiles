@@ -1,8 +1,8 @@
 #!/bin/bash
 
 clear
-        echo '###### MAIN CONF ######'
-        echo "- OPTION 2 - INSTALL ZSH -"
+        echo '########## MAIN CONF ##########'
+        echo "- ## INSTALL ZSH ## -"
         read -p "Insert your username: " username
 
          #trizen -S zsh --noconfirm

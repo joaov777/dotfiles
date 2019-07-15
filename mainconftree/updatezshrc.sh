@@ -1,8 +1,8 @@
 #!/bin/bash
 
 clear
-        echo '###### MAIN CONF ######'
-        echo "- OPTION 3 - UPDATE .ZSHRC -"
+        echo '########## MAIN CONF ##########'
+        echo "- ## UPDATE .ZSHRC ## -"
         sleep 1
 	
 	zshrcPATH="/home/joao/.zshrc"

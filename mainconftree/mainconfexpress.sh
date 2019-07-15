@@ -1,5 +1,9 @@
 #!/bin/bash
 
+clear
+        echo '########## MAIN CONF ##########'
+        echo "- ## EXPRESS INSTALLATION ## -" ; sleep 3
+
     ~/mainconf/mainconftree/updatesystem.sh 
     clear
     ~/mainconf/mainconftree/updatepackages.sh 

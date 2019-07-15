@@ -20,8 +20,8 @@ user_setup() {
 }
 
 clear
-        echo '###### MAIN CONF ######'
-        echo "- OPTION 1 - SETUP GIT USER -"
+        echo '########## MAIN CONF ##########'
+        echo "- ## SETUP GIT USER ## -"
         sleep 1
 
 	if [ -z "$(pacman -Qi git)" ];
