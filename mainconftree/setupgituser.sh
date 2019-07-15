@@ -28,6 +28,7 @@ clear
 	if [ -z "$res" ];
 	then
 		echo ">> Git is not installed!!"
+		sleep 1
 		echo ">> Installing git!!"
 		install_git
 
