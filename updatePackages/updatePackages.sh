@@ -4,44 +4,44 @@
 	sudo pacman -S trizen --noconfirm
 
 	# MAIN PACKAGES 
-	trizen -S git --noconfirm
-	trizen -S etcher --noconfirm
-	trizen -S notepadqq --noconfirm
-	trizen -S gparted --noconfirm
-	trizen -S keeweb-desktop --noconfirm
-	trizen -S filezilla --noconfirm
-	trizen -S telegram-desktop --noconfirm	
-	trizen -S clipit --noconfirm
-	trizen -S flameshot --noconfirm
-	trizen -S guake --noconfirm
-	trizen -S gedit --noconfirm
-	trizen -S pwgen --noconfirm
-	trizen -S openssh --noconfirm
-	trizen -S vim --noconfirm
-	trizen -S rdesktop --noconfirm
-	trizen -S i3lock --noconfirm #set shortcut to: i3lock --color=000000
-	trizen -S synapse --noconfirm 
-	trizen -S mtr --noconfirm
-	trizen -S nmap --noconfirm
-	trizen -S okular --noconfirm #pdfviewer	
-	trizen -S viewnior --noconfirm #image viewer
-	trizen -S ncdu --noconfirm 
-	trizen -S inxi --noconfirm
-	trizen -S otf-fira-mono --noconfirm
-	trizen -S pdfarranger-git --noconfirm #awesome tool for pdf arrangement
-	trizen -S ipcalc --noconfirm
-	trizen -S sipcalc --noconfirm #sipcalc -a 10.10.10.10/27
-	trizen -S whatmask --noconfirm #ex.: whatmask /27 # whatmask 10.10.10.10/28 
-	trizen -S shc --noconfirm #useful for encrypting scripts Ex.: shc -f <file_path>
-	trizen -S veracrypt --noconfirm
-	trizen -S obs-studio --noconfirm
-	trizen -S arp-scan --noconfirm
-	trizen -S net-tools --noconfirm
-	trizen -S visual-studio-code-bin --noconfirm
-	trizen -S google-chrome --noconfirm
+	trizen -S git --noconfirm --needed
+	trizen -S etcher --noconfirm --needed
+	trizen -S notepadqq --noconfirm --needed
+	trizen -S gparted --noconfirm --needed
+	trizen -S keeweb-desktop --noconfirm --needed
+	trizen -S filezilla --noconfirm --needed
+	trizen -S telegram-desktop --noconfirm --needed
+	trizen -S clipit --noconfirm --needed
+	trizen -S flameshot --noconfirm --needed
+	trizen -S guake --noconfirm --needed
+	trizen -S gedit --noconfirm --needed
+	trizen -S pwgen --noconfirm --needed
+	trizen -S openssh --noconfirm --needed
+	trizen -S vim --noconfirm --needed
+	trizen -S rdesktop --noconfirm --needed
+	trizen -S i3lock --noconfirm --needed #set shortcut to: i3lock --color=000000
+	trizen -S synapse --noconfirm --needed
+	trizen -S mtr --noconfirm --needed
+	trizen -S nmap --noconfirm --needed
+	trizen -S okular --noconfirm --needed #pdfviewer	
+	trizen -S viewnior --noconfirm --needed #image viewer
+	trizen -S ncdu --noconfirm --needed 
+	trizen -S inxi --noconfirm --needed
+	trizen -S otf-fira-mono --noconfirm --needed
+	trizen -S pdfarranger-git --noconfirm --needed #awesome tool for pdf arrangement
+	trizen -S ipcalc --noconfirm --needed
+	trizen -S sipcalc --noconfirm --needed #sipcalc -a 10.10.10.10/27
+	trizen -S whatmask --noconfirm --needed #ex.: whatmask /27 # whatmask 10.10.10.10/28 
+	trizen -S shc --noconfirm --needed #useful for encrypting scripts Ex.: shc -f <file_path>
+	trizen -S veracrypt --noconfirm --needed
+	trizen -S obs-studio --noconfirm --needed
+	trizen -S arp-scan --noconfirm --needed
+	trizen -S net-tools --noconfirm --needed
+	trizen -S visual-studio-code-bin --noconfirm --needed
+	trizen -S google-chrome --noconfirm --needed
 
 
-	#Downloading papirus icon themes and setting up to grey
+	#Downloading papirus icon themes and setting up to grey - -
 	#papirus-folders -l --theme Papirus-Dark (Listando cores disponíveis)
 	trizen -S papirus-icon-theme --noconfirm
 	trizen -S papirus-folders-git --noconfirm
