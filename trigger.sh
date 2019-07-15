@@ -3,20 +3,21 @@
 triggercore() {
 	cd ~
 	wget -q https://github.com/joaov777/mainconf/archive/master.zip
-	sudo unzip -qq master.zip
+	sudo unzip -qq master.zip 
 	sudo mv mainconf-master mainconf
 	sudo chmod -R 777 mainconf/
 	sudo chown -R joao:joao mainconf/
 	sudo rm master.zip
-	rm -- "$0" 
+
+	echo '>> mainconf success!' 
+	sleep 2
+	rm -- "$0" #script auto delete
 }
 
 
-	if [ ! -d ~/mainconf ]; 
+	if [ ! -d ~/mainconf ]; #in case directory doesn't exists
 	then
 		triggercore
-		echo '>> mainconf success!' 
-		sleep 2
 	else
 		echo '>> Mainconf folder exists!!'
 		sleep 2
