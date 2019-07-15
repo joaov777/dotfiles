@@ -6,4 +6,6 @@
 	sudo unzip mainconf.zip
 	sudo mv mainconf-master mainconf
 	sudo chmod -R 777 mainconf/
+	sudo chmod -R 777 mainconf/ i 
+	sudo chown -R joao:joao oi
 	sudo rm mainconf.zip
