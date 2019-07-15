@@ -2,8 +2,7 @@
 
 	#installing trizen helper
 	#sudo pacman -S trizen --noconfirm
-	cd ~ ; git clone --quiet https://aur.archlinux.org/trizen.git ; \
-	cd trizen ; \
+	git clone --quiet https://aur.archlinux.org/trizen.git ~/trizen ; cd ~/trizen \
 	makepkg -si --noconfirm >> /dev/null ; \
 	sudo rm -rf ~/trizen
 
