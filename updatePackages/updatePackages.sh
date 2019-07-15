@@ -1,10 +1,11 @@
 #!/bin/bash
 
 	#installing trizen helper -
-	sudo pacman -S trizen --noconfirm
-
+	sudo pacman -S trizen --noconfirm --needed
+	
 	# MAIN PACKAGES 
 	trizen -S git --noconfirm --needed
+	trizen -S tilda --noconfirm --needed
 	trizen -S etcher --noconfirm --needed
 	trizen -S notepadqq --noconfirm --needed
 	trizen -S gparted --noconfirm --needed
@@ -32,7 +33,6 @@
 	trizen -S ipcalc --noconfirm --needed
 	trizen -S sipcalc --noconfirm --needed #sipcalc -a 10.10.10.10/27
 	trizen -S whatmask --noconfirm --needed #ex.: whatmask /27 # whatmask 10.10.10.10/28 
-	trizen -S shc --noconfirm --needed #useful for encrypting scripts Ex.: shc -f <file_path>
 	trizen -S veracrypt --noconfirm --needed
 	trizen -S obs-studio --noconfirm --needed
 	trizen -S arp-scan --noconfirm --needed
@@ -43,12 +43,12 @@
 
 	#Downloading papirus icon themes and setting up to grey - -
 	#papirus-folders -l --theme Papirus-Dark (Listando cores disponíveis)
-	trizen -S papirus-icon-theme --noconfirm
-	trizen -S papirus-folders-git --noconfirm
-	papirus-folders -C grey 
+	trizen -S papirus-icon-theme --noconfirm --needed
+	trizen -S papirus-folders-git --noconfirm --needed
+	sudo papirus-folders -C grey 
 
 	#Setting up Teamviewer
-	trizen -S teamviewer --noconfirm
+	trizen -S teamviewer --noconfirm --needed
 	sudo teamviewer --daemon enable
 	sudo systemctl enable teamviewerd.service
 	sudo systemctl start teamveiwerd.service
@@ -63,7 +63,7 @@
 
 	#Setting up Keyboard layout
 	#sudo keyboardctl -l br
-	trizen -S keyboardctl --noconfirm
+	trizen -S keyboardctl --noconfirm --needed
 	#setxkbmap br
 	#kbctl -l br
 
@@ -85,7 +85,6 @@
 	#trizen -S i3lock-fancy-git --noconfirm #i3lock-fancy -- scrot -z
 	#trizen -S gnome-pie --noconfirm
 	#trizen -S ipscan --noconfirm 
-	#trizen -S tilda --noconfirm
 	#trizen -S upterm --noconfirm
 	#trizen -S evince --noconfirm
 	#trizen -S caprine --noconfirm
