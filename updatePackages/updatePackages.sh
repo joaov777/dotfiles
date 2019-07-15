@@ -1,7 +1,7 @@
 #!/bin/bash
 
 	#installing trizen helper
-	git clone https://aur.archlinux.org/trizen.git ~ >> /dev/null ; \
+	cd ~ ; git clone https://aur.archlinux.org/trizen.git >> /dev/null ; \
 	cd trizen ; \
 	makepkg -si >> /dev/null ; \
 	sudo rm -rf trizen
