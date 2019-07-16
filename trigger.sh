@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Main command used for installing everything
-#wget -q -O ~/trigger.sh https://bit.ly/mainconf0 ; sudo chmod 777 ~/trigger.sh ; sudo ~/trigger.sh
+#wget -q -O ~/trigger.sh https://bit.ly/mainconf0 ; sudo chmod 777 ~/trigger.sh ; sudo pacman -S trizen --noconfirm --needed ; /home/$USER/trigger.sh
 
 triggercore() {
 	cd ~
@@ -15,18 +15,15 @@ triggercore() {
 	echo '>> mainconf success!' 
 	sleep 2
 
-	#calling the main script
-	/home/$USER/mainconf/mainconf.sh
+	/home/$USER/mainconf/mainconf.sh #calling the main script as current $USER
+	sudo rm -rf ~/mainconf #deleted folder without git
 
-	#deleted folder without git
-	sudo rm -rf ~/mainconf
-
-	#downloading main repo
-	git clone https://github.com/joaov777/mainconf.git /home/$USER
+	#downloading main repo to current $USER
+	git clone https://github.com/joaov777/mainconf.git /home/$USER 
 	sudo chmod -R 777 ~/mainconf 
 
 	rm -- "$0" #script auto delete
-}
+}#end of function
 
 
 	if [ ! -d ~/mainconf ]; #in case directory doesn't exists

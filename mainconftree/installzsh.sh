@@ -10,7 +10,7 @@ clear
 	read -p "> Insert your username: " username
 
      trizen -S zsh --noconfirm --needed
-	 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+	 yes | sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 	 sudo usermod -s /bin/zsh $username
 	 sudo chsh -s /bin/zsh $username
 
@@ -22,6 +22,8 @@ clear
 		echo ">> Installing auto suggestions plugin"
 	    cd ~/.oh-my-zsh/custom/plugins
 	    git clone https://github.com/zsh-users/zsh-autosuggestions
+		echo ">> ZSH Autosuggestions installed!!" ; sleep 2
+		
 		
 		#installing pi theme https://github.com/tobyjamesthomas/pi
 		echo ">> Installing zsh pi theme"
@@ -31,5 +33,6 @@ clear
 	    sudo rm -rf pi
 	    clear
 	    cd ~
+		echo ">> ZSH pi theme installed!!" ; sleep 2
 	    
 
