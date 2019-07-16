@@ -1,7 +1,7 @@
 #!/bin/bash
 
 	#installing trizen helper -
-	sudo pacman -S trizen --noconfirm --needed
+	sudo pacman -S trizen --noconfirm --needed 
 	
 	# MAIN PACKAGES 
 	trizen -S git --noconfirm --needed

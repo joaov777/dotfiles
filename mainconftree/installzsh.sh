@@ -7,6 +7,8 @@ clear
         echo "|--------------> INSTALL ZSH <-------------|"
 		sleep 1
 
+	read -p "> Insert your username: " username
+
      trizen -S zsh --noconfirm --needed
 	 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 	 sudo usermod -s /bin/zsh $username
