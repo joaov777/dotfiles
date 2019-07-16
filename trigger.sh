@@ -21,6 +21,11 @@ triggercore() {
 	git clone https://github.com/joaov777/mainconf.git /home/$USER/mainconf/
 	sudo chmod -R 777 ~/mainconf 
 
+	
+
+}
+
+killthread() {
 	rm -- "$0" #script auto delete
 }
 
@@ -30,6 +35,7 @@ triggercore() {
 	if [ ! -d ~/mainconf ]; #in case directory doesn't exists
 	then
 		triggercore
+		killthread
 	else
 		echo '>> Mainconf folder exists!!'
 		sleep 2
@@ -42,4 +48,5 @@ triggercore() {
 		echo '>> Restarting script!!'
 		sleep 2
 		triggercore
+		killthread
 	fi
