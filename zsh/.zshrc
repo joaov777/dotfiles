@@ -141,7 +141,7 @@ source $ZSH/oh-my-zsh.sh
 
 # SCRIPTS
   alias dp="~/mainconf/scripts/downloadPackage.sh"
-  alias rp="sudo pacman -Rsu $1 --noconfirm" #Removing a package and its dependencies
+  alias rp="sudo pacman -Rcnsu $1 --noconfirm" #Removing a package and its dependencies
   alias ru="sudo pacman -R $(pacman -Qdtq) --noconfirm" #Removing unnecessary dependencies
   alias sp="~/mainconf/scripts/searchPackage.sh"
   alias hs="history | grep $1" #search commands in history
