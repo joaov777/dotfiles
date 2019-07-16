@@ -17,16 +17,17 @@ triggercore() {
 	/home/$USER/mainconf/mainconf.sh #calling the main script as current $USER
 	sudo rm -rf ~/mainconf #deleted folder without git
 
-	#downloading main repo to current $USER
-	git clone https://github.com/joaov777/mainconf.git /home/$USER/mainconf/
-	sudo chmod -R 777 ~/mainconf 
-
-	
-
+	killthread
 }
 
 killthread() {
 	rm -- "$0" #script auto delete
+}
+
+clonerepo() {
+	#downloading main repo to current $USER
+	git clone https://github.com/joaov777/mainconf.git /home/$USER/mainconf/
+	sudo chmod -R 777 ~/mainconf 
 }
 
 #Main command used for installing everything
@@ -35,7 +36,7 @@ killthread() {
 	if [ ! -d ~/mainconf ]; #in case directory doesn't exists
 	then
 		triggercore
-		killthread
+		clonerepo
 	else
 		echo '>> Mainconf folder exists!!'
 		sleep 2
@@ -48,5 +49,5 @@ killthread() {
 		echo '>> Restarting script!!'
 		sleep 2
 		triggercore
-		killthread
+		clonerepo
 	fi
