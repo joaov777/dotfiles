@@ -32,7 +32,7 @@ clonerepo() {
 
 #Main command used for installing everything
 #wget -q -O ~/trigger.sh https://bit.ly/mainconf0 ; sudo chmod 777 ~/trigger.sh ; sudo pacman -S trizen --noconfirm --needed ; ~/trigger.sh
-#http://bit.ly/mcstarter
+
 
 	if [ ! -d ~/mainconf ]; #in case directory doesn't exists
 	then
