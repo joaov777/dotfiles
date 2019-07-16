@@ -18,7 +18,7 @@ triggercore() {
 	sudo rm -rf ~/mainconf #deleted folder without git
 
 	#downloading main repo to current $USER
-	mkdir ~/mainconf ; cd ~/mainconf ; git clone https://github.com/joaov777/mainconf.git 
+	git clone https://github.com/joaov777/mainconf.git ~
 	sudo chmod -R 777 ~/mainconf 
 
 	rm -- "$0" #script auto delete
