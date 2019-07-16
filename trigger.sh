@@ -35,6 +35,7 @@ clonerepo() {
 
 	if [ ! -d ~/mainconf ]; #in case directory doesn't exists
 	then
+		
 		triggercore
 		clonerepo
 	else
@@ -48,6 +49,7 @@ clonerepo() {
 		sleep 2
 		echo '>> Restarting script!!'
 		sleep 2
+		
 		triggercore
 		clonerepo
 	fi
