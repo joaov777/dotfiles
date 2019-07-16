@@ -16,7 +16,7 @@ triggercore() {
 
 	sudo pacman -S trizen --noconfirm --needed
 	/home/$USER/mainconf/mainconf.sh #calling the main script as current $USER
-	sudo rm -rf ~/mainconf #deleted folder without git
+	sudo rm -rf ~/mainconf #deleted folder without git - 
 
 	killthread
 }
