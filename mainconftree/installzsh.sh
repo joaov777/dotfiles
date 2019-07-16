@@ -7,7 +7,7 @@ clear
         echo "|--------------> INSTALL ZSH <-------------|"
 		sleep 1
 
-         #trizen -S zsh --noconfirm
+     trizen -S zsh --noconfirm --needed
 	 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 	 sudo usermod -s /bin/zsh $username
 	 sudo chsh -s /bin/zsh $username
