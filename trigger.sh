@@ -1,7 +1,6 @@
 #!/bin/bash
 
-#Main command used for installing everything
-#wget -q -O ~/trigger.sh https://bit.ly/mainconf0 ; sudo chmod 777 ~/trigger.sh ; sudo pacman -S trizen --noconfirm --needed ; /home/$USER/trigger.sh
+
 
 triggercore() {
 	cd ~
@@ -26,7 +25,7 @@ triggercore() {
 }
 
 
-	if [ ! -d ~/mainconf ] #in case directory doesn't exists
+	if [ ! -d ~/mainconf ]; #in case directory doesn't exists
 	then
 		triggercore
 	else
