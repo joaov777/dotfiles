@@ -1,8 +1,10 @@
 #!/bin/bash
 
         clear
-        echo '########## MAIN CONF ##########'
-        echo "- ## UPDATE SYSTEM ## -"
+        
+        echo "$(tput bold)$(tput setaf 7)"
+        echo "|==============|> MAINCONF <|==============|"
+        echo "|------------> UPDATE SYSTEM <-------------|"
         sleep 1
 
             sudo pacman-mirrors --fasttrack 5 && sudo pacman -Syyu --noconfirm

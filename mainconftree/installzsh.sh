@@ -1,9 +1,11 @@
 #!/bin/bash
 
 clear
-        echo '########## MAIN CONF ##########'
-        echo "- ## INSTALL ZSH ## -"
-        read -p "Insert your username: " username
+        
+		echo "$(tput bold)$(tput setaf 7)"
+        echo "|==============|> MAINCONF <|==============|"
+        echo "|--------------> INSTALL ZSH <-------------|"
+		sleep 1
 
          #trizen -S zsh --noconfirm
 	 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -25,7 +27,6 @@ clear
 	    git clone https://github.com/tobyjamesthomas/pi
 	    cp pi/pi.zsh-theme .
 	    sudo rm -rf pi
-	    exec zsh
 	    clear
 	    cd ~
 	    

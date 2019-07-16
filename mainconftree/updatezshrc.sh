@@ -1,8 +1,10 @@
 #!/bin/bash
 
 clear
-        echo '########## MAIN CONF ##########'
-        echo "- ## UPDATE .ZSHRC ## -"
+        
+		echo "$(tput bold)$(tput setaf 7)"
+        echo "|==============|> MAINCONF <|==============|"
+        echo "|-------------> UPDATE .ZSHRC <------------|"
         sleep 1
 	
 	zshrcPATH="/home/joao/.zshrc"

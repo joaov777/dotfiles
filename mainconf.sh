@@ -7,7 +7,8 @@
     do
 
     clear
-    echo "$(tput bold)$(tput setaf 7)==============|> MAINCONF <|=============="
+    echo "$(tput bold)$(tput setaf 7)"
+    echo "|==============|> MAINCONF <|==============|"
     echo "#(0) - Exit"
     echo "#(1) - Update System (Mirrors and packages)"
     echo "#(2) - Update Packages"
@@ -16,9 +17,9 @@
     echo "#(5) - Update .ZSHRC"
     echo "#(6) - Check Installed Packages"
     echo "#(7) - Mainconf Express"
-    echo "-----------------------------------------"
+    echo "|-------------------------------------------|"
     read -p "Option: " menuChoice
-
+    
 
     case $menuChoice in
             0) ~/mainconf/mainconftree/exitmainconf.sh ; exit ;;
