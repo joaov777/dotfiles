@@ -23,10 +23,10 @@ triggercore() {
 	sudo chmod -R 777 ~/mainconf 
 
 	rm -- "$0" #script auto delete
-}#end of function
+}
 
 
-	if [ ! -d ~/mainconf ]; #in case directory doesn't exists
+	if [ ! -d ~/mainconf ] #in case directory doesn't exists
 	then
 		triggercore
 	else
