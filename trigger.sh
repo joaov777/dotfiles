@@ -13,8 +13,7 @@ triggercore() {
 
 	echo '>> mainconf success!' 
 	sleep 2
-
-	sudo pacman -S trizen --noconfirm --needed #pre-requisite for update packages routine
+	
 	/home/$USER/mainconf/mainconf.sh #calling the main script as current $USER
 	sudo rm -rf ~/mainconf #deleted folder without git - 
 
@@ -32,7 +31,7 @@ clonerepo() {
 }
 
 #Main command used for installing everything
-#sudo pacman -S trizen --noconfirm --needed ; wget -q -O ~/trigger.sh https://bit.ly/mainconf0 ; sudo chmod 777 ~/trigger.sh ; ~/trigger.sh
+#wget -q -O ~/trigger.sh https://bit.ly/mainconf0 ; sudo chmod 777 ~/trigger.sh ; ~/trigger.sh
 
 
 	if [ ! -d ~/mainconf ]; #in case directory doesn't exists
