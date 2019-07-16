@@ -24,15 +24,16 @@ clear
 	    git clone https://github.com/zsh-users/zsh-autosuggestions
 		echo ">> ZSH Autosuggestions installed!!" ; sleep 2
 		
-		
+		clear
+
 		#installing pi theme https://github.com/tobyjamesthomas/pi
 		echo ">> Installing zsh pi theme"
 	    cd ~/.oh-my-zsh/custom/themes
 	    git clone https://github.com/tobyjamesthomas/pi
 	    cp pi/pi.zsh-theme .
 	    sudo rm -rf pi
-	    clear
-	    cd ~
 		echo ">> ZSH pi theme installed!!" ; sleep 2
+	
+		
 	    
 
