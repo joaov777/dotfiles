@@ -16,7 +16,7 @@ triggercore() {
 	sleep 2
 
 	#calling the main script
-	~/mainconf/mainconf.sh
+	/home/$USER/mainconf/mainconf.sh
 
 	#deleted folder without git
 	sudo rm -rf ~/mainconf
