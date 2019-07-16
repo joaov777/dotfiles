@@ -13,8 +13,8 @@ triggercore() {
 
 	echo '>> mainconf success!' 
 	sleep 2
-	
-	/home/$USER/mainconf/mainconf.sh #calling the main script as current $USER
+
+	/home/$USER/mainconf/mainconf.sh #calling the main script as current $USER - 
 	sudo rm -rf ~/mainconf #deleted folder without git - 
 
 	killthread
