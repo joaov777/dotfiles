@@ -14,7 +14,7 @@ triggercore() {
 	echo '>> mainconf success!' 
 	sleep 2
 
-	sudo pacman -S trizen --noconfirm --needed
+	sudo pacman -S trizen --noconfirm --needed #pre-requisite for update packages routine
 	/home/$USER/mainconf/mainconf.sh #calling the main script as current $USER
 	sudo rm -rf ~/mainconf #deleted folder without git - 
 
