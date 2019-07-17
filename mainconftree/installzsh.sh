@@ -16,17 +16,21 @@ clear
 
 	    #installing zsh-autosuggestions plugin
 		echo ">> Installing auto suggestions plugin"
+		if [ -d ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions ]; then
 		sudo rm -rf ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+		fi
 		git clone --quiet https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 		echo ">> ZSH Autosuggestions installed!!" ; sleep 2
 		
 	
 		#installing pi theme https://github.com/tobyjamesthomas/pi
 		echo ">> Installing zsh pi theme"
-	    sudo rm -rf ~/.oh-my-zsh/custom/themes
+	    if [ -d ~/.oh-my-zsh/custom/themes/pi ]; then
+		sudo rm -rf ~/.oh-my-zsh/custom/themes/pi
+		fi
 	    git clone --quiet https://github.com/tobyjamesthomas/pi ~/.oh-my-zsh/custom/themes/pi
-	    cp pi/pi.zsh-theme .
-	    sudo rm -rf pi
+	    cp pi/pi.zsh-theme ~/.oh-my-zsh/custom/themes/
+	    sudo rm -rf ~/.oh-my-zsh/custom/themes/pi
 		echo ">> ZSH pi theme installed!!" ; sleep 2
 	
 		
