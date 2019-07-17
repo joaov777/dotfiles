@@ -8,10 +8,9 @@ install_trizen() {
 
         cd ..
         rm -rf trizen
-
 }
 
-
+    #check whether trizen is installed
     if [ -z "$(pacman -Qi trizen)" ];
 	then
 		echo ">> Trizen is not installed!!" ; sleep 2
@@ -20,10 +19,8 @@ install_trizen() {
 
 	else
 		echo ">> Trizen is already installed!!" ; sleep 2
-        
 	fi
 
-    source ~/.bashrc
 
     
     
