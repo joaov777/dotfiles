@@ -16,6 +16,7 @@ clear
 
 	    #installing zsh-autosuggestions plugin
 		echo ">> Installing auto suggestions plugin"
+		sudo rm -rf ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 		git clone --quiet https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 		echo ">> ZSH Autosuggestions installed!!" ; sleep 2
 		
