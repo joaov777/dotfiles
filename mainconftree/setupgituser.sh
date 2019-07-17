@@ -11,9 +11,9 @@ user_setup() {
 	read -p "Git username: " gitusername
 	read -p "Git email:" gitemail
 
-	sudo git config --global user.name "$gitusername"
-	sudo git config --global user.email "$gitemail"
-	sudo git config --global core.editor vim
+	git config --global user.name "$gitusername"
+	git config --global user.email "$gitemail"
+	git config --global core.editor vim
 
 	echo '>> User properly assigned!!' ; sleep 2
 	clear
