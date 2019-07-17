@@ -3,7 +3,7 @@
     cd ~ 
     git clone https://aur.archlinux.org/trizen-git.git
     cd trizen-git
-    makepkg -si
+    yes | makepkg -si
 
     cd ..
     rm -rf trizen-git
