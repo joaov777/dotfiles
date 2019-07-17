@@ -19,6 +19,7 @@ install_trizen() {
                 rm -rf trizen
 
 	    else
+                clear
                 echo "|==============|> MAINCONF <|==============|"
                 echo "|------------> UPDATE PACKAGES <-----------|"
 		        echo ">> Trizen is already installed!!" ; sleep 2
