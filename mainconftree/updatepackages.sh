@@ -23,7 +23,7 @@ install_trizen() {
                 echo "$(tput bold)$(tput setaf 7)"
                 echo "|==============|> MAINCONF <|==============|"
                 echo "|------------> UPDATE PACKAGES <-----------|"
-		        echo ">> Trizen is already installed!!" ; sleep 2
+		        echo ">> trizen is installed!!" ; sleep 2
 	    fi
 }
 
