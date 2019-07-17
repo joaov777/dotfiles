@@ -8,8 +8,7 @@ packages_required=(
 	nmap okular viewnior ncdu inxi otf-fira-mono \
 	pdfarranger-git ipcalc sipcalc whatmask veracrypt \
 	obs-studio arp-scan net-tools visual-studio-code-bin \
-	google-chrome teamviewer keyboardctl
-
+	google-chrome teamviewer keyboardctl \
 	papirus-icon-theme papirus-folders-git			
 					)
 
