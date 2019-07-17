@@ -1,6 +1,6 @@
 #!/bin/bash
 
-list of packages
+#list of packages
 packages_required=(
 	git tilda etcher notepadqq gparted keeweb-desktop \ 
 	filezilla telegram-desktop clipit flameshot guake \
