@@ -12,7 +12,7 @@ clear
     ~/mainconf/mainconftree/updatesystem.sh 
     clear
 
-    #requirement for all packages download
+    #requirement for all packages download -
     ~/mainconf/scripts/installtrizen.sh
 
     ~/mainconf/mainconftree/updatepackages.sh 
