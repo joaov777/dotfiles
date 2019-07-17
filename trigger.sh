@@ -46,15 +46,13 @@ clonerepo() {
 		triggercore
 	else
 		echo '>> Mainconf folder exists!!'
-		sleep 2
 		echo '>> Deleting it!!'
-		sleep 2
+		
 		sudo rm -rf ~/mainconf/ >> /dev/null
 		
 		echo '>> Mainconf folder deleted!!'
-		sleep 2
 		echo '>> Restarting script!!'
-		sleep 2
+		sleep 1
 		
 		triggercore
 	fi
