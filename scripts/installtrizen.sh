@@ -16,11 +16,14 @@ install_trizen() {
 	then
 		echo ">> Trizen is not installed!!" ; sleep 2
         echo ">> Installing Trizen AUR Helper" ; sleep 3
-		install_trizen    
+		install_trizen  
+
 	else
 		echo ">> Trizen is already installed!!" ; sleep 2
-        source ~/.bashrc
+        
 	fi
+
+    source ~/.bashrc
 
     
     
