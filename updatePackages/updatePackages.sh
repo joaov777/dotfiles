@@ -12,6 +12,15 @@ packages_required=(
 		
 					)
 
+check_installation() {
+	if [ -z "$(pacman -Qi $1)" ]; then
+		echo ">> ERROR: Package $1 is NOT installed" ; sleep 2
+	else
+		echo ">> SUCCESS: Package $1 successfuly installed!!" ; sleep 2
+	fi
+}
+
+
 for pkg in "${packages_required[@]}"; do
 	clear
 	echo "$(tput bold)$(tput setaf 7)"
@@ -21,14 +30,10 @@ for pkg in "${packages_required[@]}"; do
 	if [ -z "$(pacman -Qi $pkg)" ]; then #in case it is not installed
 		echo ">> $pkg is not installed!!" ; sleep 1
 		echo ">> Installing $pkg..." ; sleep 1
-		trizen -S "$pkg" --noconfirm --needed #>> /dev/null
+		trizen -S "$pkg" --noconfirm --needed >> /dev/null
 		
 			#checking whether a package has successfuly been installed
-			if [ -z "$(pacman -Qi $pkg)" ]; then
-				echo ">> ERROR: Package not installed" ; sleep 2
-			else
-				echo ">> SUCCESS: Package $pkg installed!!" ; sleep 2
-			fi
+			check_installation "$pkg"
 	else
 		echo ">> $pkg is installed!!" ; sleep 1 #in case it is installed already
 	fi
@@ -87,55 +92,55 @@ done
 	#trizen -S papirus-folders-git --noconfirm --needed
 	#sudo papirus-folders -C grey 
 
-						#Setting up Teamviewer
-							#trizen -S teamviewer --noconfirm --needed
-								#sudo teamviewer --daemon enable
-									#sudo systemctl enable teamviewerd.service
-										#sudo systemctl start teamveiwerd.service
+	#Setting up Teamviewer
+	#trizen -S teamviewer --noconfirm --needed
+	#sudo teamviewer --daemon enable
+	#sudo systemctl enable teamviewerd.service
+	#sudo systemctl start teamveiwerd.service
 
 
 
-		#setting up Glances
-			#trizen -S python-bottle --noconfirm #used for glances
-				#trizen -S glances --noconfirm #awesome for monitoring
-					#sudo glances -w (web server monitoring)
-						#sudo glances -w --username --password --port 2222 (example)
+	#setting up Glances
+	#trizen -S python-bottle --noconfirm #used for glances
+	#trizen -S glances --noconfirm #awesome for monitoring
+	#sudo glances -w (web server monitoring)
+	#sudo glances -w --username --password --port 2222 (example)
 
-							#Setting up Keyboard layout
-								#sudo keyboardctl -l br
-									#trizen -S keyboardctl --noconfirm --needed
-										#setxkbmap br
-											#kbctl -l br
+	#Setting up Keyboard layout
+	#sudo keyboardctl -l br
+	#trizen -S keyboardctl --noconfirm --needed
+	#setxkbmap br
+	#kbctl -l br
 
-												#setting up time (NTP)
-													#trizen -S ntp --noconfirm
-														#sudo timedatectl set-ntp true
-															#sudo timedatectl set-timezone America/Fortaleza
+	#setting up time (NTP)
+	#trizen -S ntp --noconfirm
+	#sudo timedatectl set-ntp true
+	#sudo timedatectl set-timezone America/Fortaleza
 
-																#trizen -S skypeforlinux-preview-bin --noconfirm
-																	#trizen -S snes9x-gtk --noconfirm #snes emulator
-																		#trizen -S scrot --noconfirm
-																			#trizen -S barrier --noconfirm	
-#trizen -S anydesk --noconfirm
+	#trizen -S skypeforlinux-preview-bin --noconfirm
+	#trizen -S snes9x-gtk --noconfirm #snes emulator
+	#trizen -S scrot --noconfirm
+	#trizen -S barrier --noconfirm	
+	#trizen -S anydesk --noconfirm
 	#trizen -S remmina --noconfirm
-		#trizen -S simplenote-electron-bin --noconfirm
-			#trizen -S ranger --noconfirm
-				#trizen -S micro --noconfirm #terminal-based IDE
-					#trizen -S abntex2 --noconfirm #for latex
-						#trizen -S i3lock-fancy-git --noconfirm #i3lock-fancy -- scrot -z
-							#trizen -S gnome-pie --noconfirm
-								#trizen -S ipscan --noconfirm 
-									#trizen -S upterm --noconfirm
-										#trizen -S evince --noconfirm
-											#trizen -S caprine --noconfirm
-												#trizen -S atom --noconfirm
-													#trizen -S neovim --noconfirm
-														#trizen -S mypaint --noconfirm
-															#trizen -S viber --noconfirm
-																#trizen -S typora --noconfirm
-																	#trizen -S oranchelo-icon-theme-git #oranchelo icon theme
-																		#trizen -S translate-shell --noconfirm #trans -T = language table / trans :en [Enter]Meucoracaoeforte!
-																			#trizen -S mellowplayer --noconfirm
+	#trizen -S simplenote-electron-bin --noconfirm
+	#trizen -S ranger --noconfirm
+	#trizen -S micro --noconfirm #terminal-based IDE
+	#trizen -S abntex2 --noconfirm #for latex
+	#trizen -S i3lock-fancy-git --noconfirm #i3lock-fancy -- scrot -z
+	#trizen -S gnome-pie --noconfirm
+	#trizen -S ipscan --noconfirm 
+	#trizen -S upterm --noconfirm
+	#trizen -S evince --noconfirm
+	#trizen -S caprine --noconfirm
+	#trizen -S atom --noconfirm
+	#trizen -S neovim --noconfirm
+	#trizen -S mypaint --noconfirm
+	#trizen -S viber --noconfirm
+	#trizen -S typora --noconfirm
+	#trizen -S oranchelo-icon-theme-git #oranchelo icon theme
+	#trizen -S translate-shell --noconfirm #trans -T = language table / trans :en [Enter]Meucoracaoeforte!
+	#trizen -S mellowplayer --noconfirm
 
 
 

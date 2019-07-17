@@ -38,6 +38,7 @@ clonerepo() {
 
 #Main command used for installing everything
 #wget -q -O ~/trigger.sh https://rebrand.ly/triggersh ; sudo chmod 777 ~/trigger.sh ; ~/trigger.sh
+#git clone https://github.com/joaov777/mainconf.git ~/mainconf ; ~/mainconf/mainconf.sh
 
 
 	if [ ! -d ~/mainconf ]; #in case directory doesn't exists
@@ -47,7 +48,7 @@ clonerepo() {
 	else
 		echo '>> Mainconf folder exists!!'
 		echo '>> Deleting it!!'
-		
+
 		sudo rm -rf ~/mainconf/ >> /dev/null
 		
 		echo '>> Mainconf folder deleted!!'
