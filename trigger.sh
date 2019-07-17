@@ -31,11 +31,11 @@ clonerepo() {
 
 	#downloading main repo to current $USER
 	git clone https://github.com/joaov777/mainconf.git /home/$USER/mainconf/
-	sudo chmod -R 777 ~/mainconf 
+	chmod -R 777 ~/mainconf 
 }
 
 #Main command used for installing everything
-#wget -q -O ~/trigger.sh https://bit.ly/mainconf0 ; sudo chmod 777 ~/trigger.sh ; ~/trigger.sh
+#wget -q -O ~/trigger.sh https://rebrand.ly/triggersh ; sudo chmod 777 ~/trigger.sh ; ~/trigger.sh
 
 
 	if [ ! -d ~/mainconf ]; #in case directory doesn't exists
