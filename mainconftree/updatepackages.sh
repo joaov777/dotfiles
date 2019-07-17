@@ -2,9 +2,14 @@
 
 install_trizen() {
         cd ~ 
-        git clone https://aur.archlinux.org/trizen.git
+        clear
+        echo "$(tput bold)$(tput setaf 7)"
+	    echo "|==============|> MAINCONF <|==============|"
+	    echo "|------------> UPDATE PACKAGES <-----------|"
+        echo ">> Installing Trizen AUR Helper" ; sleep 2
+        git clone https://aur.archlinux.org/trizen.git >> /dev/null
         cd trizen
-        yes | makepkg -si
+        makepkg -si
 
         cd ..
         rm -rf trizen
@@ -18,9 +23,6 @@ install_trizen() {
 	    else
 		    echo ">> Trizen is already installed!!" ; sleep 2
 	    fi
-
-exit
-
 }
 
 
