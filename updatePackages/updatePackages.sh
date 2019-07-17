@@ -4,7 +4,7 @@
 	#sudo pacman -S trizen --noconfirm --needed 
 	
 	# MAIN PACKAGES 
-	trizen -S git --noconfirm --needed
+	/usr/bin/trizen -S git --noconfirm --needed
 	trizen -S tilda --noconfirm --needed
 	trizen -S etcher --noconfirm --needed
 	trizen -S notepadqq --noconfirm --needed
