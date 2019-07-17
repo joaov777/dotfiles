@@ -8,6 +8,7 @@ install_trizen() {
 
         cd ..
         rm -rf trizen
+
 }
 
     #check whether trizen is installed
@@ -21,6 +22,7 @@ install_trizen() {
 		echo ">> Trizen is already installed!!" ; sleep 2
 	fi
 
+exit
 
     
     
