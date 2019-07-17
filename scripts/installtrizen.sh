@@ -18,7 +18,7 @@ install_trizen() {
         echo ">> Installing Trizen AUR Helper" ; sleep 3
 		install_trizen    
 	else
-		echo ">> Git is already installed!!" ; sleep 2
+		echo ">> Trizen is already installed!!" ; sleep 2
 	fi
 
     
