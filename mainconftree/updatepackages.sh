@@ -59,7 +59,7 @@ for pkg in "${packages_required[@]}"; do
 		echo ">> Installing $pkg..." ; sleep 1
 		trizen -S "$pkg" --noconfirm --needed >> /dev/null
 		
-			#checking whether a package has successfuly been installed
+			#checking whether a package has successfuly been installed -
 			check_installation "$pkg"
 	else
 		echo ">> $pkg is installed!!" ; sleep 1 #in case it is installed already
