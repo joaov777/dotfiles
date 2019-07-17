@@ -1,24 +1,22 @@
 #/bin/bash
 
 install_trizen() {
-        cd ~ 
-        clear
-        echo "$(tput bold)$(tput setaf 7)"
-	    echo "|==============|> MAINCONF <|==============|"
-	    echo "|------------> UPDATE PACKAGES <-----------|"
-        echo ">> Installing Trizen AUR Helper" ; sleep 2
-        git clone https://aur.archlinux.org/trizen.git >> /dev/null
-        cd trizen
-        makepkg -si
-
-        cd ..
-        rm -rf trizen
-
+        
         if [ -z "$(pacman -Qi trizen)" ];
 	    then
-		    echo ">> Trizen is not installed!!" ; sleep 2
-            echo ">> Installing Trizen AUR Helper" ; sleep 3
-		    install_trizen  
+		        cd ~ 
+                clear
+                echo "$(tput bold)$(tput setaf 7)"
+                echo "|==============|> MAINCONF <|==============|"
+                echo "|------------> UPDATE PACKAGES <-----------|"
+                echo ">> Trizen is not installed!!" ; sleep 2
+                echo ">> Installing Trizen AUR Helper" ; sleep 2
+                git clone https://aur.archlinux.org/trizen.git >> /dev/null
+                cd trizen
+                makepkg -si
+
+                cd ..
+                rm -rf trizen
 
 	    else
 		    echo ">> Trizen is already installed!!" ; sleep 2
