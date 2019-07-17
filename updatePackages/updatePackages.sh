@@ -3,8 +3,9 @@
 	#installing trizen helper -
 	#sudo pacman -S trizen --noconfirm --needed 
 	
+
 	# MAIN PACKAGES 
-	/usr/bin/trizen -S git --noconfirm --needed
+	trizen -S git --noconfirm --needed
 	trizen -S tilda --noconfirm --needed
 	trizen -S etcher --noconfirm --needed
 	trizen -S notepadqq --noconfirm --needed
