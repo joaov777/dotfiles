@@ -1,9 +1,9 @@
 #!/bin/bash
 
 install_git() {
-	echo ">> Installing git!!" ; sleep 2
+	echo ">> Installing git!!" ; sleep 1
 	sudo pacman -S git --noconfirm
-	echo ">> Git installed successfuly!!" ; sleep 2
+	echo ">> Git installed successfuly!!" ; sleep 1
 }
 
 user_setup() {
@@ -15,7 +15,7 @@ user_setup() {
 	git config --global user.email "$gitemail"
 	git config --global core.editor vim
 
-	echo '>> User properly assigned!!' ; sleep 2
+	echo '>> User properly assigned!!' ; sleep 1
 	clear
 }
 
