@@ -11,6 +11,10 @@ install_trizen() {
 
 }
 
+    echo "$(tput bold)$(tput setaf 7)"
+	echo "|==============|> MAINCONF <|==============|"
+	echo "|------------> UPDATE PACKAGES <-----------|"
+
     #check whether trizen is installed
     if [ -z "$(pacman -Qi trizen)" ];
 	then
