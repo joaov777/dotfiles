@@ -9,8 +9,8 @@ clear
         
 
     
-    #~/mainconf/mainconftree/updatesystem.sh 
-    #clear
+    ~/mainconf/mainconftree/updatesystem.sh 
+    clear
 
     #requirement for all packages download -
     ~/mainconf/scripts/installtrizen.sh
