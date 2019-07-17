@@ -23,8 +23,8 @@ clear
 	
 		#installing pi theme https://github.com/tobyjamesthomas/pi
 		echo ">> Installing zsh pi theme"
-	    cd ~/.oh-my-zsh/custom/themes
-	    git clone --quiet https://github.com/tobyjamesthomas/pi
+	    #cd ~/.oh-my-zsh/custom/themes
+	    git clone --quiet https://github.com/tobyjamesthomas/pi ~/.oh-my-zsh/custom/themes/pi
 	    cp pi/pi.zsh-theme .
 	    sudo rm -rf pi
 		echo ">> ZSH pi theme installed!!" ; sleep 2
