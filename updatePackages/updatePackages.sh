@@ -2,14 +2,13 @@
 
 #list of packages
 packages_required=(
-	git tilda etcher notepadqq gparted keeweb-desktop  
+	git tilda etcher notepadqq gparted papirus-folders-git
 	filezilla telegram-desktop clipit flameshot guake \
 	gedit pwgen openssh vim rdesktop i3lock synapse mtr \
 	nmap okular viewnior ncdu inxi otf-fira-mono \
-	pdfarranger-git ipcalc sipcalc whatmask veracrypt \
-	obs-studio arp-scan net-tools visual-studio-code-bin \
-	google-chrome teamviewer keyboardctl \
-	papirus-icon-theme papirus-folders-git			
+	ipcalc sipcalc whatmask veracrypt papirus-icon-theme \
+	obs-studio arp-scan net-tools teamviewer keyboardctl \
+	keeweb-desktop pdfarranger-git whatmask	visual-studio-code-bin google-chrome	
 					)
 
 for pkg in "${packages_required[@]}"; do
@@ -21,7 +20,7 @@ for pkg in "${packages_required[@]}"; do
 	if [ -z "$(pacman -Qi $pkg)" ]; then #in case it is not installed
 		echo ">> $pkg is not installed!!" ; sleep 1
 		echo ">> Installing $pkg..." ; sleep 1
-		yes | trizen -S "$pkg" --noconfirm --needed #>> /dev/null
+		trizen -S "$pkg" --noconfirm --needed #>> /dev/null
 		
 			#checking whether a package has successfuly been installed
 			if [ -z "$(pacman -Qi $pkg)" ]; then
