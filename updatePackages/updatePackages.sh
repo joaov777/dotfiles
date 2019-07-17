@@ -13,7 +13,7 @@ packages_required=(
 					)
 
 for pkg in "${packages_required[@]}"; do
-
+	clear
 	echo "$(tput bold)$(tput setaf 7)"
 	echo "|==============|> MAINCONF <|==============|"
 	echo "|------------> UPDATE PACKAGES <-----------|"
