@@ -16,8 +16,8 @@ clear
 
 	    #installing zsh-autosuggestions plugin
 		echo ">> Installing auto suggestions plugin"
-	    cd ~/.oh-my-zsh/custom/plugins
-	    git clone --quiet https://github.com/zsh-users/zsh-autosuggestions
+	    #cd ~/.oh-my-zsh/custom/plugins
+	    git clone --quiet https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 		echo ">> ZSH Autosuggestions installed!!" ; sleep 2
 	
 		#installing pi theme https://github.com/tobyjamesthomas/pi
