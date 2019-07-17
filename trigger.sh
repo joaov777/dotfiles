@@ -17,6 +17,8 @@ triggercore() {
 	/home/$USER/mainconf/mainconf.sh #calling the main script as current $USER - -
 	sudo rm -rf ~/mainconf #deleted folder without git - 
 
+	clonerepo
+
 	killthread
 }
 
@@ -42,7 +44,6 @@ clonerepo() {
 	then
 		
 		triggercore
-		clonerepo
 	else
 		echo '>> Mainconf folder exists!!'
 		sleep 2
@@ -56,5 +57,4 @@ clonerepo() {
 		sleep 2
 		
 		triggercore
-		clonerepo
 	fi
