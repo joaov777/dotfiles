@@ -21,9 +21,9 @@ install_trizen() {
 
 exit
 
-}#end of function
+}
 
-#list of packages
+
 packages_required=(
 	trizen keeweb-desktop pdfarranger-git whatmask	visual-studio-code-bin google-chrome
 	git tilda etcher notepadqq gparted papirus-folders-git \
@@ -170,3 +170,4 @@ done
 
         
         clear
+
