@@ -2,13 +2,14 @@
 
 install_trizen() {
         
+		clear
+		echo "$(tput bold)$(tput setaf 7)"
+        echo "|==============|> MAINCONF <|==============|"
+        echo "|------------> UPDATE PACKAGES <-----------|"
+
         if [ -z "$(pacman -Qi trizen)" ];
 	    then
 		        cd ~ 
-                clear
-                echo "$(tput bold)$(tput setaf 7)"
-                echo "|==============|> MAINCONF <|==============|"
-                echo "|------------> UPDATE PACKAGES <-----------|"
                 echo ">> Trizen is not installed!!" ; sleep 2
                 echo ">> Installing Trizen AUR Helper" ; sleep 2
                 git clone https://aur.archlinux.org/trizen.git >> /dev/null
@@ -19,17 +20,14 @@ install_trizen() {
                 rm -rf trizen
 
 	    else
-                clear
-                echo "$(tput bold)$(tput setaf 7)"
-                echo "|==============|> MAINCONF <|==============|"
-                echo "|------------> UPDATE PACKAGES <-----------|"
 		        echo ">> trizen is installed!!" ; sleep 2
 	    fi
 }
 
 
 packages_required=(
-	trizen keeweb-desktop pdfarranger-git whatmask	visual-studio-code-bin google-chrome
+	trizen keeweb-desktop pdfarranger-git
+	whatmask visual-studio-code-bin google-chrome \
 	git tilda etcher notepadqq gparted papirus-folders-git \
 	filezilla telegram-desktop clipit flameshot guake \
 	gedit pwgen openssh vim rdesktop i3lock synapse mtr \
@@ -57,18 +55,18 @@ for pkg in "${packages_required[@]}"; do
 	if [ -z "$(pacman -Qi $pkg)" ]; then #in case it is not installed
 		echo ">> $pkg is not installed!!" ; sleep 1
 		echo ">> Installing $pkg..." ; sleep 1
-		trizen -S "$pkg" --noconfirm --needed >> /dev/null
+		yes | trizen -S "$pkg" --noconfirm --needed &>/dev/null
 		
 			#checking whether a package has successfuly been installed -
 			check_installation "$pkg"
 	else
-		echo ">> $pkg is installed!!" ; sleep 1 #in case it is installed already
+		echo ">> $pkg is installed!!" ; sleep 0.5 #in case it is installed already
 	fi
 done
 
-	sudo teamviewer --daemon enable
-	sudo systemctl enable teamviewerd.service
-	sudo systemctl start teamviewerd.service
+	yes | sudo teamviewer --daemon enable
+	yes | sudo systemctl enable teamviewerd.service
+	yes | sudo systemctl start teamviewerd.service
 
 	sudo papirus-folders -C grey 
 
