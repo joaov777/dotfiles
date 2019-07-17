@@ -2,13 +2,14 @@
 
 #list of packages
 packages_required=(
-	git tilda etcher notepadqq gparted papirus-folders-git
+	keeweb-desktop pdfarranger-git whatmask	visual-studio-code-bin google-chrome
+	git tilda etcher notepadqq gparted papirus-folders-git \
 	filezilla telegram-desktop clipit flameshot guake \
 	gedit pwgen openssh vim rdesktop i3lock synapse mtr \
 	nmap okular viewnior ncdu inxi otf-fira-mono \
 	ipcalc sipcalc whatmask veracrypt papirus-icon-theme \
-	obs-studio arp-scan net-tools teamviewer keyboardctl \
-	keeweb-desktop pdfarranger-git whatmask	visual-studio-code-bin google-chrome	
+	obs-studio arp-scan net-tools teamviewer keyboardctl 
+		
 					)
 
 for pkg in "${packages_required[@]}"; do
