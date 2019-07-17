@@ -1,3 +1,10 @@
 #!/bin/bash
 
-    sudo pacman -S trizen --noconfirm --needed
+    cd ~ 
+    git clone https://aur.archlinux.org/trizen-git.git
+    cd trizen-git
+    makepkg -si
+
+    cd ..
+    rm -rf trizen-git
+    
