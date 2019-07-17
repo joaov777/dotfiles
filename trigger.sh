@@ -25,6 +25,10 @@ killthread() {
 }
 
 clonerepo() {
+
+	clear
+	echo ">> Cloning main repo " ; sleep 3
+
 	#downloading main repo to current $USER
 	git clone https://github.com/joaov777/mainconf.git /home/$USER/mainconf/
 	sudo chmod -R 777 ~/mainconf 
