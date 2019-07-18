@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 
 install_trizen() {
         
@@ -56,6 +56,7 @@ for pkg in "${packages_required[@]}"; do
 		echo ">> $pkg is not installed!!" ; sleep 1
 		echo ">> Installing $pkg..." ; sleep 1
 		yes | trizen -S "$pkg" --noconfirm --needed &>/dev/null
+		
 		
 			#checking whether a package has successfuly been installed -
 			check_installation "$pkg"
