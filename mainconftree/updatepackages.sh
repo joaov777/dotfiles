@@ -70,6 +70,8 @@ done
 
 	sudo papirus-folders -C grey 
 
+    clear
+
 #################################
 #################################
 	
@@ -166,10 +168,4 @@ done
 	#trizen -S oranchelo-icon-theme-git #oranchelo icon theme
 	#trizen -S translate-shell --noconfirm #trans -T = language table / trans :en [Enter]Meucoracaoeforte!
 	#trizen -S mellowplayer --noconfirm
-
-
-
-
-        
-        clear
 
