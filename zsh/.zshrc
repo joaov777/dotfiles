@@ -142,6 +142,8 @@ source $ZSH/oh-my-zsh.sh
   dp(){trizen -S $1 --noconfirm}
   rp(){sudo pacman -Rcnsu $1 --noconfirm} #Removing a package and its dependencies
   ru(){sudo pacman -R $(pacman -Qdtq) --noconfirm} #Removing unnecessary dependencies
+  mkcd(){mkdir -pv "$1"; cd "$1"} #Creating folder (including parents) and entering the fresly created folder
+  sf(){sudo rsync -avz --progress "$1" "$2"}
   alias sp="~/mainconf/scripts/searchPackage.sh"
   hs(){history | grep $1} #search commands in history
   fd(){find . -type d -name $1} #search for directory locally
