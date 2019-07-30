@@ -116,8 +116,7 @@ source $ZSH/oh-my-zsh.sh
   alias sstop="sudo systemctl stop $1"
   alias sstatus="sudo systemctl status $1"
   alias srestart="sudo systemctl restart $1"
-
-
+  
   alias env="sudo redshift -O 3000" #enabling night view
   alias dnv="sudo redshift -x" #disabling night view
   alias fkw="sudo rm ~/.config/KeeWeb/runtime-data.json"
@@ -138,14 +137,14 @@ source $ZSH/oh-my-zsh.sh
   alias ....="cd ../../../../"
   alias .....="cd ../../../../../"
 
-
 # SCRIPTS
-  alias dp="~/mainconf/scripts/downloadPackage.sh"
-  alias rp="sudo pacman -Rcnsu $1 --noconfirm" #Removing a package and its dependencies
-  alias ru="sudo pacman -R $(pacman -Qdtq) --noconfirm" #Removing unnecessary dependencies
+  #alias dp="~/mainconf/scripts/downloadPackage.sh"
+  dp(){trizen -S $1 --noconfirm}
+  rp(){sudo pacman -Rcnsu $1 --noconfirm} #Removing a package and its dependencies
+  ru(){sudo pacman -R $(pacman -Qdtq) --noconfirm} #Removing unnecessary dependencies
   alias sp="~/mainconf/scripts/searchPackage.sh"
-  alias hs="history | grep $1" #search commands in history
-  alias fd="find . -type d -name $1" #search for directory locally
+  hs(){history | grep $1} #search commands in history
+  fd(){find . -type d -name $1} #search for directory locally
   alias clip='xclip -selection clipboard'
   alias ff="find . -type f -name"
   alias sl="du -sh ./*"
@@ -159,9 +158,12 @@ source $ZSH/oh-my-zsh.sh
   alias ur="~/mainconf/scripts/updateRepository.sh"
   alias svms="sudo vim ~/mainconf/mainconf.sh"
   alias mainconf="~/mainconf/mainconf.sh"
-  alias findip="~/mainconf/scripts/findip.sh"
-  alias findmac="~/mainconf/scripts/findmac.sh"
-  alias hothot="~/mainconf/scripts/createhotspot.sh"
+  #alias findip="~/mainconf/scripts/findip.sh"
+  #alias findmac="~/mainconf/scripts/findmac.sh"
+  findip(){echo " -- IP FOUND: "$(sudo arp-scan $1 | grep $2 | cut -f 1)}
+  findmac(){echo "-- MAC FOUND: "$(sudo arp-scan $1 | sed -n '3p' | cut -f 2,3)}
+  #alias hothot="~/mainconf/scripts/createhotspot.sh"
+  hothot(){nmcli dev wifi hotspot ifname $1 ssid $2 password "$3"}
   alias brltousd="/home/joao/mainconf/scripts/brltousd.sh"
   alias usdtobrl="/home/joao/mainconf/scripts/usdtobrl.sh"
   alias dr="~/mainconf/scripts/dollarrate.sh"
