@@ -158,12 +158,14 @@ source $ZSH/oh-my-zsh.sh
   alias md="~/mainconf/scripts/monitorDirectory.sh"
   alias gitconfig="~/mainconf/scripts/gitGlobalConfig.sh"
   alias ur="~/mainconf/scripts/updateRepository.sh"
-  alias svms="sudo vim ~/mainconf/mainconf.sh"
+  alias cdmc="cd ~/mainconf"
   alias mainconf="~/mainconf/mainconf.sh"
   #alias findip="~/mainconf/scripts/findip.sh"
   #alias findmac="~/mainconf/scripts/findmac.sh"
   findip(){echo " -- IP FOUND: "$(sudo arp-scan $1 | grep $2 | cut -f 1)}
   findmac(){echo "-- MAC FOUND: "$(sudo arp-scan $1 | sed -n '3p' | cut -f 2,3)}
+  zshzsh(){exec zsh}
+  cl(){clear}
   #alias hothot="~/mainconf/scripts/createhotspot.sh"
   hothot(){nmcli dev wifi hotspot ifname $1 ssid $2 password "$3"}
   alias brltousd="/home/joao/mainconf/scripts/brltousd.sh"
