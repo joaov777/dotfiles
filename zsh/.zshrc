@@ -137,6 +137,12 @@ source $ZSH/oh-my-zsh.sh
   alias ....="cd ../../../../"
   alias .....="cd ../../../../../"
 
+# TMUX RELATED
+  tns(){tmux new -s $1}
+  tas(){tmux attach -t $1}
+  tls(){tmux ls}
+  tks(){tmux kill-session -t $1}
+
 # SCRIPTS
   #alias dp="~/mainconf/scripts/downloadPackage.sh"
   dp(){trizen -S $1 --noconfirm}
