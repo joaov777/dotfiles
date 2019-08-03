@@ -143,6 +143,10 @@ source $ZSH/oh-my-zsh.sh
   tls(){tmux ls}
   tks(){tmux kill-session -t $1}
 
+# RCLONE RELATED
+  rclr(){rclone listremotes}
+  rcmo(){mkdir ~/Desktop/$1 ; rclone mount $1:/ ~/Desktop/$1 ; rm -rf ~/Desktop/$1}
+
 # SCRIPTS
   #alias dp="~/mainconf/scripts/downloadPackage.sh"
   dp(){trizen -S $1 --noconfirm}
