@@ -64,11 +64,17 @@ for pkg in "${packages_required[@]}"; do
 	fi
 done
 
+	#teamviewer related
 	yes | sudo teamviewer --daemon enable
 	yes | sudo systemctl enable teamviewerd.service
 	yes | sudo systemctl start teamviewerd.service
 
-	sudo papirus-folders -C grey 
+
+	# nord related
+	yes | sudo systemctl enable nordvpnd
+	yes | sudo systemctl start nordvpnd
+
+	sudo papirus-folders -C black 
 
     clear
 
