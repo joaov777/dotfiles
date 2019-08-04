@@ -147,6 +147,12 @@ source $ZSH/oh-my-zsh.sh
   rclr(){rclone listremotes}
   rcmo(){mkdir ~/Desktop/$1 ; xdg-open ~/Desktop/$1 ; rclone mount $1:/ ~/Desktop/$1 ; rm -rf ~/Desktop/$1}
 
+# NORD RELATED
+  nc(){nordvpn connect}
+  ncus(){nordvpn connect United_States}
+  nd(){nordvpn disconnect}
+  ns(){nordvpn status}
+
 # SCRIPTS
   #alias dp="~/mainconf/scripts/downloadPackage.sh"
   dp(){trizen -S $1 --noconfirm}
