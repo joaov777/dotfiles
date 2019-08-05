@@ -44,7 +44,6 @@ check_installation() {
 	fi
 }
 
-    
 	install_trizen
 
 for pkg in "${packages_required[@]}"; do
