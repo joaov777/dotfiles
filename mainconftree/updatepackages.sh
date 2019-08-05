@@ -33,7 +33,7 @@ packages_required=(
 	gedit pwgen openssh vim rdesktop i3lock synapse mtr tmux \
 	nmap okular viewnior ncdu inxi otf-fira-mono nordvpn-bin \
 	ipcalc sipcalc whatmask veracrypt papirus-icon-theme \
-	obs-studio arp-scan net-tools teamviewer keyboardctl 
+	obs-studio arp-scan net-tools teamviewer keyboardctl rclone 
 	)
 
 check_installation() {
