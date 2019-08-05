@@ -43,7 +43,7 @@ check_installation() {
 		echo ">> SUCCESS: Package $1 successfuly installed!!" ; sleep 2
 	fi
 }
-	#installing trizen
+	#installing trizen - oi
 	install_trizen
 
 for pkg in "${packages_required[@]}"; do
