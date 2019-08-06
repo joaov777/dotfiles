@@ -2,9 +2,11 @@
 
 main_procedure(){
 
-        scp -P 5555 joao.galvino@200.129.18.2:/cf/conf/config.xml ~/bkp/config$n-$(date +%d-%m-%y).xml
+       
+
+        scp -P 5555 joao.galvino@200.129.18.2:/cf/conf/config.xml ~/bkp/"config 00$n - $(date +%d-%m-%y) - $(date +%T).xml"
         echo "config.xml downloaded!!!"
-        rclone copy ~/bkp/config$n-$(date +%d-%m-%y).xml coir:/Backups/Firewalls/Polo\ de\ Inovacao/Global
+        rclone copy ~/bkp/"config 00$n - $(date +%d-%m-%y) - $(date +%T).xml" coir:/Backups/Firewalls/Polo\ de\ Inovacao/Global
         echo "config.xml uploaded to Google Drive!!!"
 
 }
