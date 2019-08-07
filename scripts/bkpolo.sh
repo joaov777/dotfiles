@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# REQUIREMENTS FOR BETTER USAGE
+# - Local account SSH keys properly set up in the target firewall (ssh-copy-id)
+# - rclone target drive properly set up       
+
+
 main_procedure(){
 
     n=$(rclone ls coir:/Backups/Firewalls/Polo\ de\ Inovacao/Global | wc -l)
