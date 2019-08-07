@@ -145,7 +145,7 @@ source $ZSH/oh-my-zsh.sh
 
 # RCLONE RELATED
   rclr(){rclone listremotes}
-  rcmo(){mkdir ~/Desktop/$1 ; xdg-open ~/Desktop/$1 ; rclone mount $1:/ ~/Desktop/$1 ; rm -rf ~/Desktop/$1}
+  rcmo(){mkdir ~/Desktop/$1 ; xdg-open ~/Desktop/$1 ; rclone mount $1:/ ~/Desktop/$1 ; fusermount -uz $1 ; rm -rf ~/Desktop/$1}
 
 # NORD RELATED
   nc(){nordvpn connect}
