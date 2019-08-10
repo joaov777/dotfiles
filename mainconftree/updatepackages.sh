@@ -30,7 +30,7 @@ packages_required=(
 	whatmask visual-studio-code-bin google-chrome \
 	git tilda etcher notepadqq gparted papirus-folders-git \
 	filezilla telegram-desktop clipit flameshot guake \
-	gedit pwgen openssh vim rdesktop i3lock synapse mtr tmux \
+	gedit pwgen openssh vim rdesktop i3lock mtr tmux \
 	nmap okular viewnior ncdu inxi otf-fira-mono nordvpn-bin \
 	ipcalc sipcalc whatmask veracrypt papirus-icon-theme \
 	obs-studio arp-scan net-tools teamviewer keyboardctl rclone \ 
