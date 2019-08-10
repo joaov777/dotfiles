@@ -34,7 +34,7 @@ packages_required=(
 	nmap okular viewnior ncdu inxi otf-fira-mono nordvpn-bin \
 	ipcalc sipcalc whatmask veracrypt papirus-icon-theme \
 	obs-studio arp-scan net-tools teamviewer keyboardctl rclone \ 
-	imagewriter albert
+	imagewriter albert nordvpn-bin
 	)
 
 check_installation() {
