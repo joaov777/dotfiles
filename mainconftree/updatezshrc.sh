@@ -6,25 +6,15 @@ clear
         echo "|==============|> MAINCONF <|==============|"
         echo "|-------------> UPDATE .ZSHRC <------------|"
         sleep 1
-	
-	zshrcPATH="/home/joao/.zshrc"
 
-	if [ -f $zshrcPATH ]
+	if [ -f ~/.zshrc ];
 	then	
-		echo ">>> File exists! Deleting!"
-		sleep 1
-		sudo rm /home/joao/.zshrc
-		
-		echo ">>> File non-existent! Creating and updating!"
-		sleep 1
-		cat ~/mainconf/zsh/.zshrc > ~/.zshrc
-            	sudo ln -sf ~/mainconf/zsh/.zshrc ~/.zshrc
-
-	else
-		echo ">>> File non-existent! Creating!"
-		sleep 1
-		cat ~/mainconf/zsh/.zshrc > ~/.zshrc
-            	sudo ln -sf ~/mainconf/zsh/.zshrc ~/.zshrc
+		echo ">>> File exists! Deleting!" ; sleep 1
+		sudo rm ~/.zshrc
 	fi
-        
+		
+	echo ">>> File non-existent! Creating and updating!" ; sleep 1
+	curl https://raw.githubusercontent.com/joaov777/mainconf/master/zsh/.zshrc > ~/.zshrc 
+    ln -sf ~/mainconf/zsh/.zshrc ~/.zshrc
+
 	clear
