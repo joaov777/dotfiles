@@ -8,13 +8,11 @@
 # declaração da associação dos campus
 declare -A campus_keys
 campus_keys['200.129.18.2']='Polo de Inovacao'
-campus_keys['192.168.19.2']='Local de teste'
 campus_keys['200.129.16.1']='Reitoria'
 
 # lista de campus 
 campus_list=(
 
-    192.168.19.2 \
     200.129.18.2 \
     200.129.16.1 \
 
