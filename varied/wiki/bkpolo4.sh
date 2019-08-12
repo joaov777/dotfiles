@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# REQUIREMENTS FOR BETTER USAGE
-# - Usuário "backup" deverá ser criado no firewall remoto com autenticaão por chaves assimétricas.
+# CONFIGURAÇÕES NECESSÁRIAS PARA CORRETO FUNCIONAMENTO DESTE SCRIPT
+# - Usuário "backup" deverá ser criado no firewall remoto com autenticaão por chaves assimétricas.e pela porta 5555
 # - O local de execução deste script deverá possuir a chave pública mapeada nos firewalls remotos (conta "backup")
-# - Rclone deverá ser corretamente mapeado no mesmo local de instalação/execução deste script 
+# - Rclone deverá ser corretamente mapeado no mesmo local de instalação/execução deste script (neste exemplo: coir)
 
 # declaração da associação dos campus
 declare -A campus_keys
