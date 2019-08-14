@@ -162,9 +162,7 @@ source $ZSH/oh-my-zsh.sh
   sf(){sudo rsync -avz --progress "$1" "$2"} #syncfolder - syncs folder path 1 to folder path 2
   alias sp="~/mainconf/scripts/searchPackage.sh"
   hs(){history | grep $1} #search commands in history
-  fd(){find . -type d -name $1} #search for directory locally
   alias clip='xclip -selection clipboard'
-  alias ff="find . -type f -name"
   alias sl="du -sh ./*"
   alias ml="watch -n 1 'du -h --max-depth=0 ./*' --time"
   alias gk="~/mainconf/scripts/generateSshKeys.sh"
