@@ -130,6 +130,7 @@ source $ZSH/oh-my-zsh.sh
   alias nicpoff="sudo ip link set $1 promisc off" #disabling promiscuous mode (insert interface for parameter) 
   alias nicp="sudo ip link show $1" #checking promiscuous enabled or disabled (insert interface for parameter)
   alias l="ls -liarclst"
+  
 
   alias .="cd .."
   alias ..="cd ../../"
@@ -155,6 +156,7 @@ source $ZSH/oh-my-zsh.sh
 
 # SCRIPTS
   #alias dp="~/mainconf/scripts/downloadPackage.sh"
+  run(){$PWD/$1}
   dp(){trizen -S $1 --noconfirm}
   rp(){sudo pacman -Rcnsu $1 --noconfirm} #Removing a package and its dependencies
   ru(){sudo pacman -R $(pacman -Qdtq) --noconfirm} #Removing unnecessary dependencies
