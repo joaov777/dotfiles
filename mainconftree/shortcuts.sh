@@ -19,6 +19,7 @@
 
     echo "|----> Copying xfce panel..." ; sleep 1
     #curl https://raw.githubusercontent.com/joaov777/mainconf/master/varied/wiki/xfce4-panel.xml > ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml
+    rm ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml > /dev/null
     wget -q -O ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml https://raw.githubusercontent.com/joaov777/mainconf/master/varied/wiki/xfce4-panel.xml
 
     echo "|----> Updating panel..." ; sleep 2
