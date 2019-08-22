@@ -15,8 +15,8 @@
     panel=~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml
 
     #deleting previous configs
-    if [ -f $shortcuts ]; then echo "----> Deleting shortcuts.xml" ; rm $shortcuts > /dev/null ; fi
-    if [ -f $xsettings ]; then echo "----> Deleting xsettings.xml" ; rm $xsettings > /dev/null ; fi
+    if [ -f $shortcuts ]; then echo "|----> Deleting shortcuts.xml" ; rm $shortcuts > /dev/null ; fi
+    if [ -f $xsettings ]; then echo "|----> Deleting xsettings.xml" ; rm $xsettings > /dev/null ; fi
 
     #working on shortcuts
     wget -q -O $shortcuts https://raw.githubusercontent.com/joaov777/mainconf/master/varied/wiki/xfce4-keyboard-shortcuts.xml
@@ -35,7 +35,7 @@
 
 
     echo "|----> Copying xfce panel..." ; sleep 1
-    if [ -f $panel ]; then echo "----> Deleting xfce4-panel.xml" ; rm $panel > /dev/null ; fi
+    if [ -f $panel ]; then echo "|----> Deleting xfce4-panel.xml" ; rm $panel > /dev/null ; fi
 
     wget -q -O $panel https://raw.githubusercontent.com/joaov777/mainconf/master/varied/wiki/xfce4-panel.xml
 
