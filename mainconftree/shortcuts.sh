@@ -8,6 +8,7 @@
     echo "|----> Copying shortcuts..." ; sleep 1
     #curl https://raw.githubusercontent.com/joaov777/mainconf/master/varied/wiki/xfce4-keyboard-shortcuts.xml > ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
     wget -q -O ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml https://raw.githubusercontent.com/joaov777/mainconf/master/varied/wiki/xfce4-keyboard-shortcuts.xml
+    wget -q -O ~/.config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml https://raw.githubusercontent.com/joaov777/mainconf/master/varied/wiki/xsettings.xml
     
     echo "|----> Updating shortcuts..." ; sleep 1
     kill -9 $(pidof xfconfd)
