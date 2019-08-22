@@ -5,10 +5,10 @@
         echo "|==============|> MAINCONF <|==============|"
         echo "|------------> ENABLE SHORTCUTS <-----------|"
 
-    echo "|----> Copying shortcuts..."
+    echo "|----> Copying shortcuts..." ; sleep 1
     curl https://raw.githubusercontent.com/joaov777/mainconf/master/varied/wiki/xfce4-keyboard-shortcuts.xml > ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
     
-    echo "|----> Updating shortcuts..."
+    echo "|----> Updating shortcuts..." ; sleep 1
     kill -9 $(pidof xfconfd)
     kill -9 $(pidof xfsettingsd)
     xfsettingsd &
