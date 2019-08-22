@@ -14,7 +14,17 @@
     xfsettingsd &
     /usr/lib/xfce4/xfconf/xfconfd & 
     #> /dev/null 2>&1
-    
     echo "|----> Shortcuts updated!!" ; sleep 2
+
+
+    echo "|----> Copying xfce panel..." ; sleep 1
+    curl https://raw.githubusercontent.com/joaov777/mainconf/master/varied/wiki/xfce4-panel.xml > ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml
+
+    echo "|----> Updating panel..." ; sleep 2
+    xfce4-panel -r
+    
+    echo "|----> Panel updated..." ; sleep 2
+    
+    
 
     
