@@ -11,8 +11,9 @@
     echo "|----> Updating shortcuts..."
     kill -9 $(pidof xfconfd)
     kill -9 $(pidof xfsettingsd)
-    xfsettingsd
-    /usr/lib/xfce4/xfconf/xfconfd > /dev/null 2>&1
+    xfsettingsd &
+    /usr/lib/xfce4/xfconf/xfconfd & 
+    #> /dev/null 2>&1
     
     echo "|----> Shortcuts updated!!" ; sleep 2
 
