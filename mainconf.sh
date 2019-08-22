@@ -15,8 +15,9 @@
     echo "#(3) - Setup GIT User"
     echo "#(4) - Install ZSH"
     echo "#(5) - Update .ZSHRC"
-    echo "#(6) - Check Installed Packages"
-    echo "#(7) - Mainconf Express"
+    echo "#(6) - Enable shortcuts"
+    echo "#(7) - Check Installed Packages"
+    echo "#(8) - Mainconf Express"
     echo "|-------------------------------------------|"
     read -p "Option: " menuChoice
     
@@ -28,8 +29,9 @@
             3) ~/mainconf/mainconftree/setupgituser.sh ;;
             4) ~/mainconf/mainconftree/installzsh.sh ;;
             5) ~/mainconf/mainconftree/updatezshrc.sh ;; 
-            6) ~/mainconf/mainconftree/checkinstalledpackages.sh ;;
-            7) ~/mainconf/mainconftree/mainconfexpress.sh ;;
+            6) ~/mainconf/mainconftree/shortcuts.sh ;;
+            7) ~/mainconf/mainconftree/checkinstalledpackages.sh ;;
+            8) ~/mainconf/mainconftree/mainconfexpress.sh ;;
             *) ~/mainconf/mainconftree/invalidoption.sh ;;
     esac
 
