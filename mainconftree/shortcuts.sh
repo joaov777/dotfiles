@@ -12,8 +12,7 @@
     kill -9 $(pidof xfconfd)
     kill -9 $(pidof xfsettingsd)
     xfsettingsd &
-    /usr/lib/xfce4/xfconf/xfconfd & 
-    #> /dev/null 2>&1
+    /usr/lib/xfce4/xfconf/xfconfd & > /dev/null 2>&1
     echo "|----> Shortcuts updated!!" ; sleep 2
 
 
@@ -22,7 +21,7 @@
 
     echo "|----> Updating panel..." ; sleep 2
     xfce4-panel -r
-    
+
     echo "|----> Panel updated..." ; sleep 2
     
     
