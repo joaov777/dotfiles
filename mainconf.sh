@@ -15,7 +15,7 @@
     echo "#(3) - Setup GIT User"
     echo "#(4) - Install ZSH"
     echo "#(5) - Update .ZSHRC"
-    echo "#(6) - Enable shortcuts"
+    echo "#(6) - Enable shortcuts and panel"
     echo "#(7) - Check Installed Packages"
     echo "#(8) - Mainconf Express"
     echo "|-------------------------------------------|"

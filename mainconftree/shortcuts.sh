@@ -3,7 +3,7 @@
     clear
 		echo "$(tput bold)$(tput setaf 7)"
         echo "|==============|> MAINCONF <|==============|"
-        echo "|------------> ENABLE SHORTCUTS <-----------|"
+        echo "|------------> ENABLE SHORTCUTS AND PANEL <-----------|"
 
     echo "|----> Copying shortcuts..." ; sleep 1
     curl https://raw.githubusercontent.com/joaov777/mainconf/master/varied/wiki/xfce4-keyboard-shortcuts.xml > ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
