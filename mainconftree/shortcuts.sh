@@ -1,6 +1,6 @@
 #!/bin/bash
 
-
+    #In case the config files below change, it is necessary to copy the file from "~/.config/xfce4/xfconf/xfce-perchannel-xml/" into "~/mainconf/varied/wiki/"
 
     clear
 		echo "$(tput bold)$(tput setaf 7)"
@@ -14,17 +14,15 @@
     xsettings=~/.config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
     panel=~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml
 
-    #deleting previous configs
+    #deleting previous configs if they exist
     if [ -f $shortcuts ]; then echo "|----> Deleting shortcuts.xml" ; rm $shortcuts > /dev/null ; fi
     if [ -f $xsettings ]; then echo "|----> Deleting xsettings.xml" ; rm $xsettings > /dev/null ; fi
 
-    #working on shortcuts
+    #downloading xfce4-keyboard-shortcuts.xml from github
     wget -q -O $shortcuts https://raw.githubusercontent.com/joaov777/mainconf/master/varied/wiki/xfce4-keyboard-shortcuts.xml
-    #ln -sf ~/mainconf/varied/wiki/xfce4-keyboard-shortcuts.xml $shortcuts
-
-    #working on xsettings
+    
+    #downloading xsettings.xml from github
     wget -q -O $xsettings https://raw.githubusercontent.com/joaov777/mainconf/master/varied/wiki/xsettings.xml
-    #ln -sf ~/mainconf/varied/wiki/xsettings.xml $xsettings
     
     echo "|----> Updating shortcuts..." ; sleep 1
     kill -9 $(pidof xfconfd)
