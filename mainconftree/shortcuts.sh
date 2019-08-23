@@ -20,11 +20,11 @@
 
     #working on shortcuts
     wget -q -O $shortcuts https://raw.githubusercontent.com/joaov777/mainconf/master/varied/wiki/xfce4-keyboard-shortcuts.xml
-    ln -sf ~/mainconf/varied/wiki/xfce4-keyboard-shortcuts.xml $shortcuts
+    #ln -sf ~/mainconf/varied/wiki/xfce4-keyboard-shortcuts.xml $shortcuts
 
     #working on xsettings
     wget -q -O $xsettings https://raw.githubusercontent.com/joaov777/mainconf/master/varied/wiki/xsettings.xml
-    ln -sf ~/mainconf/varied/wiki/xsettings.xml $xsettings
+    #ln -sf ~/mainconf/varied/wiki/xsettings.xml $xsettings
     
     echo "|----> Updating shortcuts..." ; sleep 1
     kill -9 $(pidof xfconfd)
