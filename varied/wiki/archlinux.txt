@@ -39,16 +39,14 @@ systemctl enable vboxservice.service
 ======================================
 ======================================
 
-
-
-
-
-
+NORMAL PROCEDURE
 
 1 - Check wether you have a UEFI or traditional BIOS system
 ls /sys/firmware/efi/efivars
 - If nothing shows up, you have BIOS and don't have UEFI.
 - In case you have UEFI, the partitioning is a little different.
+
+Create partition /boot/efi formatted in fat32 (300M in size)
 
 2 - ping 8.8.8.8
 
