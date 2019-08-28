@@ -127,6 +127,8 @@ locale.gen
 vim /etc/locale.conf
 LANG=en-US.UTF8
 
+localectl set-locale LANG=en_US.UTF-8
+
 17 - Setting up timezone
 ls /usr/share/zoneinfo 
 ln -sf /usr/share/zoneinfo/America/Fortaleza /etc/localtime

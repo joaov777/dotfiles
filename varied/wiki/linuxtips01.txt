@@ -1,0 +1,29 @@
+>> Creating a user
+useradd joao6 -m -s /bin/bash
+useradd -m -d /var/www/joao6 -s /bin/bash -U joao6
+
+>> Creating a home directory for an already created user
+edit /etc/passwd file and add the home directory folder path for the user
+mkdir /home/joao6
+cp -r /etc/skel/. /home/joao6
+chown -r joao6:joao6 /home/joao6
+
+>> Deleting user
+userdel -r joao6
+
+>> Adding user to groups
+usermod -a -G joao,adm,dip,sudo joao6
+sudo gpasswd -a joao6 adm,dip,sudo
+sudo gpasswd -d joao6 adm,dip,sudo 
+
+>> Deleting a group
+groupdel servers
+
+>> Generating new SSH keys
+ssh-keygen -t rsa -b 4096
+
+>> Sending SSH keys to a remote machine
+ssh-copy-id -i ~/.ssh/id_rsa.pub remote@machine.org
+
+>> Testing the SSH key sent
+ssh -i ~/.ssh/id_rsa.pub remote@machine.org
