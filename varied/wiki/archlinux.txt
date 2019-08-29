@@ -144,6 +144,35 @@ reboot
 20 - 
 Login with your root account and the password previously set up
 
+#### INSTALAÇÃO DA DE ####
+-- XFCE
+pacman -Sy xorg xorg-server
+pacman -Sy xfce4 xfce4-goodies
+pacman -Sy lightdm lightdm-gtk-greeter
+systemctl enable lightdm.service
+systemctl start lightdm.service
+
+-- GNOME
+pacman -S xorg xorg-server
+pacman -S gnome
+pacman -Sy lightdm lightdm-gtk-greeter
+systemctl enable lightdm.service
+systemctl start lightdm.service
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 >>>> APÓS INSTALACAO <<<<
 sudo pacman -S xorg-server xorg-xinit xorg-apps
