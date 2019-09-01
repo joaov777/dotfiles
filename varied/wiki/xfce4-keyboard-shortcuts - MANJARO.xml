@@ -41,12 +41,12 @@
       <property name="&lt;Primary&gt;&lt;Alt&gt;t" type="string" value="xfce4-terminal --drop-down"/>
       <property name="&lt;Shift&gt;Print" type="string" value="xfce4-screenshooter -wd 1"/>
       <property name="&lt;Primary&gt;&lt;Shift&gt;Print" type="string" value="xfce4-screenshooter -r"/>
+      <property name="&lt;Super&gt;e" type="string" value="exo-open --launch FileManager"/>
       <property name="Print" type="string" value="flameshot gui"/>
       <property name="&lt;Alt&gt;Super_L" type="string" value="xfce4-popup-whiskermenu"/>
       <property name="F10" type="string" value="i3lock --color=#000000"/>
       <property name="&lt;Primary&gt;&lt;Alt&gt;n" type="string" value="notepadqq"/>
       <property name="&lt;Primary&gt;m" type="string" value="MellowPlayer"/>
-      <property name="&lt;Super&gt;e" type="string" value="nautilus"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">
