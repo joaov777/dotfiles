@@ -22,6 +22,6 @@ clear
 
         echo "|---> Copying fonts"
         cp -r mainconffonts/ /usr/share/fonts/
-        rm -rf /usr/share/fonts/mainconffonts
+        rm -rf ~/mainconffonts
 
 		echo "|---> Fonts installed!!" ; sleep 2
