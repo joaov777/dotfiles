@@ -14,9 +14,11 @@ clear
         echo "|---> /usr/share/folder created"
     fi
         
+        cd ~
         echo "|---> Cloning mainconffonts repo"
-        cd /usr/share/fonts
         git clone --quiet https://github.com/joaov777/mainconffonts.git
+        
+       
 
         echo "|---> Copying fonts"
         cp -r mainconffonts/ /usr/share/fonts/
