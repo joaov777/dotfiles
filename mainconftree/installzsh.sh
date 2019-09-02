@@ -32,6 +32,8 @@ clear
 	    cp ~/.oh-my-zsh/custom/themes/pi/pi.zsh-theme ~/.oh-my-zsh/custom/themes/
 	    sudo rm -rf ~/.oh-my-zsh/custom/themes/pi/
 		echo ">> ZSH pi theme installed!!" ; sleep 2
+
+		
 	
 		
 	    

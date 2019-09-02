@@ -166,6 +166,7 @@ source $ZSH/oh-my-zsh.sh
   sf(){sudo rsync -avz --progress "$1" "$2"} #syncfolder - syncs folder path 1 to folder path 2
   alias sp="~/mainconf/scripts/searchPackage.sh"
   hs(){history | grep $1} #search commands in history
+  ii(){pacman -Qi $1} #checking whether a package is installed
   alias clip='xclip -selection clipboard'
   alias sl="du -sh ./*"
   alias ml="watch -n 1 'du -h --max-depth=0 ./*' --time"
