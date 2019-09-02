@@ -8,6 +8,8 @@ clear
 
     echo "|---> Checking fonts folder..."
     if [ ! -d /usr/share/fonts ]; then
+        echo "|---> /usr/share/folder NON-EXISTENT!"
+        
         sudo mkdir /usr/share/fonts
         echo "|---> /usr/share/folder created"
     fi
@@ -17,7 +19,7 @@ clear
         git clone --quiet https://github.com/joaov777/mainconffonts.git
 
         echo "|---> Copying fonts"
-        cp -r mainconffonts/* /usr/share/fonts/
+        cp -r mainconffonts/ /usr/share/fonts/
         rm -rf /usr/share/fonts/mainconffonts
 
 		echo "|---> Fonts installed!!" ; sleep 2
