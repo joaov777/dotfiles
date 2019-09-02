@@ -16,7 +16,7 @@ clear
         
         cd ~
         echo "|---> Cloning mainconffonts repo"
-        git clone --quiet https://github.com/joaov777/mainconffonts.git
+        git clone https://github.com/joaov777/mainconffonts.git
         
        
 
