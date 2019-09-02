@@ -8,7 +8,7 @@ clear
 
     echo "|---> Checking fonts folder..."
     if [ ! -d /usr/share/fonts ]; then
-        mkdir /usr/share/fonts
+        sudo mkdir /usr/share/fonts
         echo "|---> /usr/share/folder created"
     fi
         
