@@ -56,14 +56,14 @@ for pkg in "${packages_required[@]}"; do
 	echo "|------------> UPDATE PACKAGES <-----------|"
 
 	if [ -z "$(pacman -Qi $pkg)" ]; then #in case it is not installed
-		echo ">> $pkg is not installed!!" ; sleep 1
-		echo ">> Installing $pkg..." ; sleep 1
-			$userpass | trizen -S "$pkg" --noconfirm --needed &>/dev/null
+		echo "|---> $pkg is not installed!!" ; sleep 1
+		echo "|---> Installing $pkg..." ; sleep 1
+			echo "$userpass" | trizen -S "$pkg" --noconfirm --needed &>/dev/null
 	
 			#checking whether a package has successfuly been installed -
 			check_installation "$pkg"
 	else
-		echo ">> $pkg is installed!!" ; sleep 0.5 #in case it is installed already
+		echo "|---> $pkg is installed!!" ; sleep 0.5 #in case it is installed already
 	fi
 done
 
