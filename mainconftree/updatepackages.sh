@@ -47,6 +47,8 @@ check_installation() {
 	#installing trizen
 	install_trizen
 
+	read -s -p "$USER password: " $userpass
+
 for pkg in "${packages_required[@]}"; do
 	clear
 	echo "$(tput bold)$(tput setaf 7)"
@@ -56,7 +58,7 @@ for pkg in "${packages_required[@]}"; do
 	if [ -z "$(pacman -Qi $pkg)" ]; then #in case it is not installed
 		echo ">> $pkg is not installed!!" ; sleep 1
 		echo ">> Installing $pkg..." ; sleep 1
-		yes | trizen -S "$pkg" --noconfirm --needed &>/dev/null
+			$userpass | trizen -S "$pkg" --noconfirm --needed &>/dev/null
 	
 			#checking whether a package has successfuly been installed -
 			check_installation "$pkg"
