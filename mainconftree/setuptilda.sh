@@ -6,10 +6,12 @@ clear
     echo "|==============|> MAINCONF <|==============|"
     echo "|------------> SETUP TILDA <------------|"
 
-    #echo "|---> Copying tilda files to ~/.config/tilda ..."
-    #cp -r ~/mainconf/varied/tildafiles/* ~/.config/tilda/
+    if [ ! -d ~/.config/tilda ]; then mkdir ~/.config/tilda ; fi
 
-    #echo "|---> Tilda files copied!!" ; sleep 1
+    echo "|---> Copying tilda files to ~/.config/tilda ..."
+    cp -r ~/mainconf/varied/tildafiles/* ~/.config/tilda/
+
+    echo "|---> Tilda files copied!!" ; sleep 1
 
     n=$(ls ~/mainconf/varied/tildafiles/ | wc -l)
 
@@ -17,7 +19,7 @@ clear
     for i in {0..$n-1}
     do
         file="config_$i"
-        ln -sf ~/mainconf/varied/tildafiles/file ~/.config/tilda/file
+        ln -sf ~/mainconf/varied/tildafiles/file ~/.config/tilda/
         
     done
 
