@@ -29,7 +29,7 @@ packages_required=(
 	trizen keeweb-desktop pdfarranger-git
 	whatmask visual-studio-code-bin google-chrome \
 	git tilda etcher notepadqq gparted papirus-folders-git \
-	filezilla telegram-desktop clipit flameshot guake gvfs-mtp xdg-users-dirs \
+	filezilla telegram-desktop clipit flameshot guake \
 	gedit pwgen openssh vim rdesktop i3lock mtr tmux \
 	nmap okular viewnior ncdu inxi otf-fira-mono nordvpn-bin \
 	ipcalc sipcalc whatmask veracrypt papirus-icon-theme \
@@ -65,18 +65,17 @@ for pkg in "${packages_required[@]}"; do
 	fi
 done
 
-	#for thunar
+	#For Thunar
+	sudo pacman -S gvfs-mtp xdg-users-dirs --noconfirm --needed
 	xdg-user-dirs-update
 
 	#teamviewer related
-	yes | sudo teamviewer --daemon enable
-	yes | sudo systemctl enable teamviewerd.service
-	yes | sudo systemctl start teamviewerd.service
+	sudo teamviewer --daemon enable
+	sudo systemctl enable teamviewerd.service --now
 
 
 	# nord related
-	yes | sudo systemctl enable nordvpnd
-	yes | sudo systemctl start nordvpnd
+	sudo systemctl enable nordvpnd --now
 
 	sudo papirus-folders -C black 
 
