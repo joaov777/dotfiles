@@ -29,7 +29,7 @@ packages_required=(
 	trizen keeweb-desktop pdfarranger-git
 	whatmask visual-studio-code-bin google-chrome \
 	git tilda etcher notepadqq gparted papirus-folders-git \
-	filezilla telegram-desktop clipit flameshot guake \
+	filezilla telegram-desktop clipit flameshot guake gvfs-mtp xdg-users-dirs \
 	gedit pwgen openssh vim rdesktop i3lock mtr tmux \
 	nmap okular viewnior ncdu inxi otf-fira-mono nordvpn-bin \
 	ipcalc sipcalc whatmask veracrypt papirus-icon-theme \
@@ -64,6 +64,9 @@ for pkg in "${packages_required[@]}"; do
 		echo ">> $pkg is installed!!" ; sleep 0.5 #in case it is installed already
 	fi
 done
+
+	#for thunar
+	xdg-user-dirs-update
 
 	#teamviewer related
 	yes | sudo teamviewer --daemon enable
