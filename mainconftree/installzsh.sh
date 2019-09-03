@@ -12,7 +12,7 @@ clear
 		if pacman -Qi trizen > /dev/null 2>&1 ; then
 			trizen -S zsh --noconfirm --needed
 		else
-  			pacman -S zsh --noconfirm --needed
+  			sudo pacman -S zsh --noconfirm --needed
 		fi
 
 
