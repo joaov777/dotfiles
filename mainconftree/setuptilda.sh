@@ -14,10 +14,11 @@ clear
     n=$(ls ~/mainconf/varied/tildafiles/ | wc -l)
 
     echo "|---> Generating symlinks..."
-    for i in {0..$n}
+    for i in {0..$n-1}
     do
-        ln -sf ~/mainconf/varied/tildafiles/config_$i ~/.config/tilda/config_$i
-        $i
+        file="config_$i"
+        ln -sf ~/mainconf/varied/tildafiles/file ~/.config/tilda/file
+        
     done
 
     echo "|---> Symlinks generated..." ; sleep 2
