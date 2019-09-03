@@ -16,7 +16,7 @@
     echo "#(4) - Install ZSH"
     echo "#(5) - Update .ZSHRC"
     echo "#(6) - Enable shortcuts and panel"
-    echo "#(7) - Install fonts"
+    echo "#(7) - Set up Tilda terminal"
     echo "#(8) - Mainconf Express"
     echo "|-------------------------------------------|"
     read -p "Option: " menuChoice
@@ -30,7 +30,7 @@
             4) ~/mainconf/mainconftree/installzsh.sh ;;
             5) ~/mainconf/mainconftree/updatezshrc.sh ;; 
             6) ~/mainconf/mainconftree/shortcuts.sh ;;
-            7) ~/mainconf/mainconftree/installfonts.sh ;;
+            7) ~/mainconf/mainconftree/setuptilda.sh ;;
             8) ~/mainconf/mainconftree/mainconfexpress.sh ;;
             *) ~/mainconf/mainconftree/invalidoption.sh ;;
     esac
