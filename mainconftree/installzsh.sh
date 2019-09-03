@@ -8,8 +8,14 @@ clear
 		sleep 1
 
 		read -p "> Insert your username: " username
+			
+		if pacman -Qi trizen > /dev/null 2>&1 ; then
+			trizen -S zsh --noconfirm --needed
+		else
+  			pacman -S zsh --noconfirm --needed
+		fi
 
-		trizen -S zsh --noconfirm --needed
+
 		yes | sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 		sudo usermod -s /bin/zsh $username
 		sudo chsh -s /bin/zsh $username
