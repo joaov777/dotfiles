@@ -37,7 +37,9 @@ clear
 		sudo rm -rf ~/.oh-my-zsh/custom/themes/pi
 		fi
 	    
-		cp ~/mainconf/zsh/pi.zsh-theme ~/.oh-my-zsh/custom/themes/pi.zsh-theme
+		wget -O /home/joao/.oh-my-zsh/custom/themes/pi.zsh-theme https://raw.githubusercontent.com/joaov777/mainconf/master/zsh/pi.zsh-theme
+
+		#cp ~/mainconf/zsh/pi.zsh-theme ~/.oh-my-zsh/custom/themes/pi.zsh-theme
 		
 		
 		
