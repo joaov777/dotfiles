@@ -10,7 +10,15 @@ clear
 	then
 		echo "|---> Tilda is not installed!!" ; sleep 2
         echo "|---> Installing Tilda..." ; sleep 1
-		trizen -S tilda --noconfirm --needed &>/dev/null
+        
+        
+        if pacman -Qi trizen > /dev/null 2>&1 ; then
+			trizen -S zsh --noconfirm --needed &>/dev/null
+		else
+  			sudo pacman -S zsh --noconfirm --needed &>/dev/null
+		fi
+
+
 	else
 		echo "|---> Tilda is already installed!!" ; sleep 2
 	fi
