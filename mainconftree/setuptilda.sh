@@ -6,6 +6,15 @@ clear
     echo "|==============|> MAINCONF <|==============|"
     echo "|------------> SETUP TILDA <------------|"
 
+    if [ -z "$(pacman -Qi tilda)" ];
+	then
+		echo "|---> Tilda is not installed!!" ; sleep 2
+        echo "|---> Installing Tilda..." ; sleep 1
+		trizen -S tilda --noconfirm --needed &>/dev/null
+	else
+		echo "|---> Tilda is already installed!!" ; sleep 2
+	fi
+
     if [ ! -d ~/.config/tilda ]; then mkdir ~/.config/tilda ; fi
 
     echo "|---> Copying tilda files to ~/.config/tilda ..."
