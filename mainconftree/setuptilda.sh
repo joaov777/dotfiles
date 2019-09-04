@@ -13,9 +13,9 @@ clear
         
         
         if pacman -Qi trizen > /dev/null 2>&1 ; then
-			trizen -S zsh --noconfirm --needed &>/dev/null
+			trizen -S tilda --noconfirm --needed &>/dev/null
 		else
-  			sudo pacman -S zsh --noconfirm --needed &>/dev/null
+  			sudo pacman -S tilda --noconfirm --needed &>/dev/null
 		fi
 
 
