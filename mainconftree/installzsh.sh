@@ -36,9 +36,15 @@ clear
 	    if [ -d ~/.oh-my-zsh/custom/themes/pi ]; then
 		sudo rm -rf ~/.oh-my-zsh/custom/themes/pi
 		fi
-	    git clone --quiet https://github.com/tobyjamesthomas/pi ~/.oh-my-zsh/custom/themes/pi
-	    cp ~/.oh-my-zsh/custom/themes/pi/pi.zsh-theme ~/.oh-my-zsh/custom/themes/
-	    sudo rm -rf ~/.oh-my-zsh/custom/themes/pi/
+	    
+		cp ~mainconf/zsh/pi.zsh-theme ~/.oh-my-zsh/custom/themes/pi
+		
+		
+		
+		
+		#git clone --quiet https://github.com/tobyjamesthomas/pi ~/.oh-my-zsh/custom/themes/pi
+	    #cp ~/.oh-my-zsh/custom/themes/pi/pi.zsh-theme ~/.oh-my-zsh/custom/themes/
+	    #sudo rm -rf ~/.oh-my-zsh/custom/themes/pi/
 		echo "|---> ZSH pi theme installed!!" ; sleep 2
 
 		
