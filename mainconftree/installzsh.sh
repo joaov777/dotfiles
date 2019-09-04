@@ -37,7 +37,7 @@ clear
 		sudo rm -rf ~/.oh-my-zsh/custom/themes/pi
 		fi
 	    
-		cp ~mainconf/zsh/pi.zsh-theme ~/.oh-my-zsh/custom/themes/pi
+		cp ~/mainconf/zsh/pi.zsh-theme ~/.oh-my-zsh/custom/themes/pi
 		
 		
 		
