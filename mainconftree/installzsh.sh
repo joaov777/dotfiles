@@ -39,14 +39,6 @@ clear
 	    
 		wget -O /home/joao/.oh-my-zsh/custom/themes/pi.zsh-theme https://raw.githubusercontent.com/joaov777/mainconf/master/zsh/pi.zsh-theme
 
-		#cp ~/mainconf/zsh/pi.zsh-theme ~/.oh-my-zsh/custom/themes/pi.zsh-theme
-		
-		
-		
-		
-		#git clone --quiet https://github.com/tobyjamesthomas/pi ~/.oh-my-zsh/custom/themes/pi
-	    #cp ~/.oh-my-zsh/custom/themes/pi/pi.zsh-theme ~/.oh-my-zsh/custom/themes/
-	    #sudo rm -rf ~/.oh-my-zsh/custom/themes/pi/
 		echo "|---> ZSH pi theme installed!!" ; sleep 2
 
 		
