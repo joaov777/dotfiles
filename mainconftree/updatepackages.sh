@@ -32,7 +32,7 @@ packages_required=(
 	filezilla telegram-desktop clipit flameshot guake \
 	gedit pwgen openssh vim rdesktop i3lock mtr tmux \
 	nmap okular viewnior ncdu inxi otf-fira-mono nordvpn-bin \
-	ipcalc sipcalc whatmask veracrypt papirus-icon-theme \
+	ipcalc sipcalc whatmask veracrypt papirus-icon-theme neofetch \
 	obs-studio arp-scan net-tools teamviewer rclone \ 
 	imagewriter albert nordvpn-bin wget nautilus
 	)
