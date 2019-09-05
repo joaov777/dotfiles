@@ -31,9 +31,8 @@ clear
 		echo "|---> ZSH Autosuggestions installed!!" ; sleep 2
 		
 		echo "|---> Downloading Powerline fonts"
-		git clone --quiet https://github.com/powerline/fonts.git /home/$USER 
-		~/fonts/install.sh
-		rm -rf ~/fonts
+		git clone --quiet https://github.com/powerline/fonts.git $HOME/.local/share/fonts/
+		$HOME/.local/share/fonts/install.sh
 		echo "|---> Powerline fonts installed!!" ; sleep 2
 	
 		#installing pi theme https://github.com/tobyjamesthomas/pi
