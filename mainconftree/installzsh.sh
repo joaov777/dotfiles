@@ -30,6 +30,11 @@ clear
 		git clone --quiet https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 		echo "|---> ZSH Autosuggestions installed!!" ; sleep 2
 		
+		echo "|---> Downloading Powerline fonts"
+		git clone --quiet https://github.com/powerline/fonts.git ~ 
+		~/fonts/install.sh
+		rm -rf ~/fonts
+		echo "|---> Powerline fonts installed!!" ; sleep 2
 	
 		#installing pi theme https://github.com/tobyjamesthomas/pi
 		echo "|---> Installing zsh pi theme"
