@@ -13,7 +13,7 @@ It's been a while I have been learning and diving deeper into the numerous [manj
 
 ## The structure
 
-Folders and file structure is organized as below:
+Folders and file structure is organized as follows:
 
 ![](https://github.com/joaov777/mainconf/blob/master/varied/images/mainconf_tree_structure.png?raw=true)
 

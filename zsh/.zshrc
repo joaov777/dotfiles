@@ -76,6 +76,8 @@ source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
+# export LC_ALL=en_US.UTF-8
+# export LANGUAGE=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -116,14 +118,15 @@ source $ZSH/oh-my-zsh.sh
   alias sstop="sudo systemctl stop $1"
   alias sstatus="sudo systemctl status $1"
   alias srestart="sudo systemctl restart $1"
-  
+	  
+
   alias env="sudo redshift -O 3000" #enabling night view
   alias dnv="sudo redshift -x" #disabling night view
   alias fkw="sudo rm ~/.config/KeeWeb/runtime-data.json"
   alias wanwan="curl https://ipinfo.io/ip"
   alias rn="sudo systemctl restart NetworkManager.service"
-  alias keyus="sudo kbctl -l us"
-  alias keybr="sudo kbctl -l br"
+  alias keyus="setxkbmap -layout us"
+  alias keybr="setxkbmap -layout br -model abnt2"
   alias sw="nmcli dev wifi list"
   alias systeminfo="inxi -Fxz"
   alias nicpon="sudo ip link set $1 promisc on" #enabling promiscuous mode (insert interface for parameter)
@@ -164,6 +167,8 @@ source $ZSH/oh-my-zsh.sh
   sf(){sudo rsync -avz --progress "$1" "$2"} #syncfolder - syncs folder path 1 to folder path 2
   alias sp="~/mainconf/scripts/searchPackage.sh"
   hs(){history | grep $1} #search commands in history
+  ii(){pacman -Qi $1} #checking whether a package is installed
+  ft(){timedatectl set-ntp true}
   alias clip='xclip -selection clipboard'
   alias sl="du -sh ./*"
   alias ml="watch -n 1 'du -h --max-depth=0 ./*' --time"

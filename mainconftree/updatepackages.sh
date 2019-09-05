@@ -32,8 +32,8 @@ packages_required=(
 	filezilla telegram-desktop clipit flameshot guake \
 	gedit pwgen openssh vim rdesktop i3lock mtr tmux \
 	nmap okular viewnior ncdu inxi otf-fira-mono nordvpn-bin \
-	ipcalc sipcalc whatmask veracrypt papirus-icon-theme \
-	obs-studio arp-scan net-tools teamviewer keyboardctl rclone \ 
+	ipcalc sipcalc whatmask veracrypt papirus-icon-theme neofetch \
+	obs-studio arp-scan net-tools teamviewer rclone \ 
 	imagewriter albert nordvpn-bin wget nautilus
 	)
 
@@ -54,26 +54,28 @@ for pkg in "${packages_required[@]}"; do
 	echo "|------------> UPDATE PACKAGES <-----------|"
 
 	if [ -z "$(pacman -Qi $pkg)" ]; then #in case it is not installed
-		echo ">> $pkg is not installed!!" ; sleep 1
-		echo ">> Installing $pkg..." ; sleep 1
-		yes | trizen -S "$pkg" --noconfirm --needed &>/dev/null
+		echo "|---> $pkg is not installed!!" ; sleep 1
+		echo "|---> Installing $pkg..." ; sleep 1
+			trizen -S "$pkg" --noconfirm --needed &>/dev/null
 	
 			#checking whether a package has successfuly been installed -
 			check_installation "$pkg"
 	else
-		echo ">> $pkg is installed!!" ; sleep 0.5 #in case it is installed already
+		echo "|---> $pkg is installed!!" ; sleep 0.5 #in case it is installed already
 	fi
 done
 
+	#For Thunar
+	sudo pacman -S gvfs-mtp xdg-users-dirs --noconfirm --needed
+	xdg-user-dirs-update
+
 	#teamviewer related
-	yes | sudo teamviewer --daemon enable
-	yes | sudo systemctl enable teamviewerd.service
-	yes | sudo systemctl start teamviewerd.service
+	sudo teamviewer --daemon enable
+	sudo systemctl enable teamviewerd.service --now
 
 
 	# nord related
-	yes | sudo systemctl enable nordvpnd
-	yes | sudo systemctl start nordvpnd
+	sudo systemctl enable nordvpnd --now
 
 	sudo papirus-folders -C black 
 
