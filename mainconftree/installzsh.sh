@@ -31,7 +31,7 @@ clear
 		echo "|---> ZSH Autosuggestions installed!!" ; sleep 2
 		
 		echo "|---> Downloading Powerline fonts"
-		git clone --quiet https://github.com/powerline/fonts.git ~ 
+		git clone --quiet https://github.com/powerline/fonts.git /home/$USER 
 		~/fonts/install.sh
 		rm -rf ~/fonts
 		echo "|---> Powerline fonts installed!!" ; sleep 2
