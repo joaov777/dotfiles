@@ -124,8 +124,8 @@ source $ZSH/oh-my-zsh.sh
   alias fkw="sudo rm ~/.config/KeeWeb/runtime-data.json"
   alias wanwan="curl https://ipinfo.io/ip"
   alias rn="sudo systemctl restart NetworkManager.service"
-  alias keyus="sudo kbctl -l us"
-  alias keybr="sudo kbctl -l br"
+  alias keyus="setxkbmap -layout us"
+  alias keybr="setxkbmap -layout br -model abnt2"
   alias sw="nmcli dev wifi list"
   alias systeminfo="inxi -Fxz"
   alias nicpon="sudo ip link set $1 promisc on" #enabling promiscuous mode (insert interface for parameter)
