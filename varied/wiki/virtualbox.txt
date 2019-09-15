@@ -23,7 +23,7 @@ sudo sh VboxLinuxAdditions.run
 
 sudo reboot now
 
-===============================================================
+===============================================================_
 <<<<<<< CONFIG FOR VIRTUALBOX TRANSPARENCY ISSUE >>>>>>>>
 trizen -S compiz-manjaro ccsm --noconfirm
 compizConfig settings manager
