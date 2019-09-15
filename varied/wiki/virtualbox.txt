@@ -22,3 +22,11 @@ cd /run/media/$user/VBox Guest Additions
 sudo sh VboxLinuxAdditions.run
 
 sudo reboot now
+
+===============================================================
+<<<<<<< CONFIG FOR VIRTUALBOX TRANSPARENCY ISSUE >>>>>>>>
+trizen -S compiz-manjaro ccsm --noconfirm
+compizConfig settings manager
+window management > window rules > "class=VirtualBox" into "No ARGB visuals" field.
+
+
