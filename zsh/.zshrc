@@ -170,6 +170,7 @@ source $ZSH/oh-my-zsh.sh
   hs(){history | grep $1} #search commands in history
   ii(){pacman -Qi $1} #checking whether a package is installed
   ft(){timedatectl set-ntp true}
+  gitssh(){git remote set-url origin git@github.com:joaov777/$} #set git remote for ssh
   alias clip='xclip -selection clipboard'
   alias sl="du -sh ./*"
   alias ml="watch -n 1 'du -h --max-depth=0 ./*' --time"
