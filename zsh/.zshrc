@@ -102,13 +102,10 @@ source $ZSH/oh-my-zsh.sh
   
 # SYSTEM GENERAL COMMANDS
   alias rbn="sudo reboot now"
-  alias sdn="sudo shutdown now"
+  rbn(){sudo /sbin/shutdown -r now} #alias sdn="sudo shutdown now"
   alias pgpg="ping 8.8.8.8"
   alias zshconfig="sudo vim ~/.zshrc"
   alias rf="sudo rm -rf" #remove folder
-  alias lsc="exa --long --tree --all $1"
-  alias lst="exa --long --tree $1"
-  alias lsb="exa --long --all $1"
   alias ds="youtube-dl --extract-audio --audio-format mp3 $1 -o '~/Music/%(title)s.%(ext)s'"
   alias sshdstart="sudo systemctl start sshd"
   alias sshdstop="sudo systemctl stop sshd"
