@@ -101,8 +101,8 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
   
 # SYSTEM GENERAL COMMANDS
-  alias rbn="sudo reboot now"
-  rbn(){sudo /sbin/shutdown -r now} #alias sdn="sudo shutdown now"
+  rbn(){sudo /sbin/reboot}
+  sdn(){sudo /sbin/shutdown -r now} 
   alias pgpg="ping 8.8.8.8"
   alias zshconfig="sudo vim ~/.zshrc"
   alias rf="sudo rm -rf" #remove folder
