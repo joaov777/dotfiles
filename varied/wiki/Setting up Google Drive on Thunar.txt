@@ -1,0 +1,17 @@
+### Configuring Google Drive in Thunar ###
+
+1 - Download necessary packages
+sudo pacman -S gnome-control-center gnome-online-accounts gvfs-google --noconfirm
+
+
+2 - Edit both files
+sudo nano /usr/share/applications/gnome-color-panel.desktop
+OnlyShowIn=GNOME;Unity;XFCE;
+
+sudo nano /usr/share/applications/gnome-online-accounts-panel.desktop
+OnlyShowIn=GNOME;Unity;XFCE;
+
+3 - Execute this on the terminal and map the google drive account
+XDG_CURRENT_DESKTOP=GNOME gnome-control-center
+
+4 - Reboot the computer
