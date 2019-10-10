@@ -131,7 +131,7 @@ source $ZSH/oh-my-zsh.sh
   alias nicp="sudo ip link show $1" #checking promiscuous enabled or disabled (insert interface for parameter)
   #alias l="ls -liarclst"
   alias l="ls -liar"
-  
+  ppp(){python3 $PWD/$1}
 
   alias .="cd .."
   alias ..="cd ../../"
