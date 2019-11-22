@@ -26,7 +26,7 @@ install_trizen() {
 
 
 packages_required=(
-	trizen keeweb-desktop pdfarranger-git
+	trizen keeweb pdfarranger-git
 	whatmask visual-studio-code-bin google-chrome \
 	git tilda etcher notepadqq gparted papirus-folders-git \
 	filezilla telegram-desktop clipit flameshot guake \
