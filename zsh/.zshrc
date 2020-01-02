@@ -140,7 +140,7 @@ source $ZSH/oh-my-zsh.sh
   alias .....="cd ../../../../../"
 
 # TMUX RELATED
-  tns(){tmux new -s $1}
+  tns(){tmux new -s $1 -d}
   tas(){tmux attach -t $1}
   tls(){tmux ls}
   tks(){tmux kill-session -t $1}
