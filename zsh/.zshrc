@@ -158,6 +158,7 @@ source $ZSH/oh-my-zsh.sh
 # SCRIPTS
   #alias dp="~/mainconf/scripts/downloadPackage.sh"
   run(){$PWD/$1}
+  lesser(){less -N -I $1} #better alternative for cat 
   dp(){trizen -S $1 --noconfirm}
   rp(){sudo pacman -Rcnsu $1 --noconfirm} #Removing a package and its dependencies
   ru(){sudo pacman -R $(pacman -Qdtq) --noconfirm} #Removing unnecessary dependencies
