@@ -27,14 +27,14 @@ install_trizen() {
 
 packages_required=(
 	trizen keeweb pdfarranger-git
-	whatmask visual-studio-code-bin google-chrome brave\
+	whatmask visual-studio-code-bin google-chrome brave \
 	git tilda etcher notepadqq gparted papirus-folders-git \
 	filezilla telegram-desktop clipit flameshot guake redshift \
-	gedit pwgen openssh vim rdesktop i3lock mtr tmux annie \
+	gedit pwgen openssh vim rdesktop i3lock mtr tmux \
 	nmap okular viewnior ncdu inxi otf-fira-mono nordvpn-bin \
 	ipcalc sipcalc whatmask veracrypt papirus-icon-theme neofetch \
 	obs-studio arp-scan net-tools teamviewer rclone \ 
-	imagewriter albert nordvpn-bin wget nautilus
+	imagewriter albert nordvpn-bin wget 
 	)
 
 check_installation() {
@@ -65,6 +65,10 @@ for pkg in "${packages_required[@]}"; do
 	fi
 done
 
+	#Enabling sharing
+	sudo pacman -S gvfs-smb thunar-shares-plugin-gtk3 --noconfirm --needed 
+	sudo smb passwd -a joao
+
 	#For Thunar
 	sudo pacman -S gvfs-mtp xdg-users-dirs --noconfirm --needed
 	xdg-user-dirs-update
@@ -73,6 +77,8 @@ done
 	sudo teamviewer --daemon enable
 	sudo systemctl enable teamviewerd.service --now
 
+	#tmux related
+	cp ~/mainconf/varied/tmux/.tmux.conf ~
 
 	# nord related
 	sudo systemctl enable nordvpnd --now
