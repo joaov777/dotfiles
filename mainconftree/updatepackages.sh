@@ -34,7 +34,7 @@ packages_required=(
 	nmap okular viewnior ncdu inxi otf-fira-mono nordvpn-bin \
 	ipcalc sipcalc whatmask veracrypt papirus-icon-theme neofetch \
 	obs-studio arp-scan net-tools teamviewer rclone \ 
-	imagewriter albert nordvpn-bin wget dnsutils 
+	imagewriter albert nordvpn-bin wget dnsutils youtube-dl 
 	)
 
 check_installation() {
