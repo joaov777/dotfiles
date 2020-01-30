@@ -173,9 +173,9 @@ source $ZSH/oh-my-zsh.sh
   sf(){sudo rsync -avz --progress "$1" "$2"} #syncfolder - syncs folder path 1 to folder path 2
   alias sp="~/mainconf/scripts/searchPackage.sh"
   hs(){history | grep $1} #search commands in history
-  ii(){pacman -Qi $1} #checking whether a package is installed
+  ii(){pacman -Q $1} #checking whether a package is installed
   ft(){timedatectl set-ntp true}
-  gitssh(){git remote set-url origin git@github.com:joaov777/$} #set git remote for ssh
+  gitssh(){git remote set-url origin git@github.com:joaov777/$1} #set git remote for ssh
   alias clip='xclip -selection clipboard'
   alias sl="du -sh ./*"
   alias ml="watch -n 1 'du -h --max-depth=0 ./*' --time"
@@ -188,8 +188,6 @@ source $ZSH/oh-my-zsh.sh
   alias ur="~/mainconf/scripts/updateRepository.sh"
   alias cdmc="cd ~/mainconf"
   alias mainconf="~/mainconf/mainconf.sh"
-  #alias findip="~/mainconf/scripts/findip.sh"
-  #alias findmac="~/mainconf/scripts/findmac.sh"
   findip(){echo " -- IP FOUND: "$(sudo arp-scan $1 | grep $2 | cut -f 1)}
   findmac(){echo "-- MAC FOUND: "$(sudo arp-scan $1 | sed -n '3p' | cut -f 2,3)}
   zshzsh(){exec zsh}
@@ -211,7 +209,5 @@ source $ZSH/oh-my-zsh.sh
   alias gcds="rdesktop -u 'adproducao.ifce.edu.br\Administrator' -g 1024x768 200.17.33.66"
   alias rdprdp="~/mainconf/scripts/rdprdp.sh"
   alias sshcentral="ssh root@10.4.5.10"
-  bkpolo(){~/mainconf/scripts/bkpolo.sh}
   
 
-source /home/joao/.config/broot/launcher/bash/br
