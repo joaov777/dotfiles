@@ -28,7 +28,7 @@ install_trizen() {
 packages_required=(
 	trizen keeweb pdfarranger-git glances ngrep fzf broot
 	whatmask visual-studio-code-bin google-chrome bat brave \
-	git tilda etcher notepadqq gparted papirus-folders-git \
+	git tilda etcher notepadqq gparted papirus-folders-git micro \
 	filezilla telegram-desktop clipit flameshot guake redshift \
 	gedit pwgen openssh vim rdesktop i3lock mtr tmux \
 	nmap okular viewnior ncdu inxi otf-fira-mono nordvpn-bin \
