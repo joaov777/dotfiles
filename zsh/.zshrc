@@ -103,6 +103,9 @@ source $ZSH/oh-my-zsh.sh
 # SYSTEM GENERAL COMMANDS
   rbn(){sudo /sbin/reboot}
   sdn(){sudo /sbin/shutdown -r now}
+  crd(){ssh -C $1@$2 -p $3 ncdu -o- / | ncdu -f-} #check remote disk
+
+
   alias neofetch="neofetch --ascii_colors 15 5 5 8 9 0 --colors 15 8 15 15 15 8" 
   alias pgpg="ping 8.8.8.8"
   alias zshconfig="sudo vim ~/.zshrc"
