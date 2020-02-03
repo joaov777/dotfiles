@@ -1,6 +1,6 @@
 tilda_config_version="1.4.1"
 # command=""
-font="Source Code Pro Bold 10"
+font="Source Code Pro Bold 9"
 key="F2"
 addtab_key="<Shift><Control>t"
 fullscreen_key="F11"
