@@ -202,6 +202,7 @@ source $ZSH/oh-my-zsh.sh
 
 # IFCE RELATED
   alias sshlistas="ssh operador@listas.ifce.edu.br"
+  alias sshns1="ssh operador@ns1.ifce.edu.br"
   alias sshnas="ssh nassuporte@nassuporte.ifce.edu.br"
   alias sshnas2="ssh nassuporte2@nassuporte2.ifce.edu.br"
   alias gcds="rdesktop -u 'adproducao.ifce.edu.br\Administrator' -g 1024x768 200.17.33.66"
