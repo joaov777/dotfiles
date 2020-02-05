@@ -83,6 +83,13 @@ done
 	# nord related
 	sudo systemctl enable nordvpnd --now
 
+	# printing related - install manually on the 'print settings' GUI
+	sudo pacman -S manjaro-printer
+	sudo gpasswd $USER sys
+	sudo systemctl enable --now org.cups.cupsd.service
+
+
+
 	sudo papirus-folders -C black 
 
     clear
