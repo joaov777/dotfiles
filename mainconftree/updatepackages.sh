@@ -33,7 +33,7 @@ packages_required=(
 	gedit pwgen openssh vim rdesktop i3lock mtr tmux vagrant virtualbox-bin \
 	nmap okular viewnior ncdu inxi otf-fira-mono nordvpn-bin \
 	ipcalc sipcalc whatmask veracrypt papirus-icon-theme neofetch \
-	obs-studio arp-scan net-tools teamviewer rclone \ 
+	obs-studio arp-scan net-tools teamviewer rclone peek \ 
 	imagewriter albert nordvpn-bin wget dnsutils youtube-dl 
 	)
 
