@@ -115,6 +115,7 @@ source $ZSH/oh-my-zsh.sh
   alias rf="sudo rm -rf" #remove folder
   alias ds="youtube-dl --extract-audio --audio-format mp3 $1 -o '~/Music/%(title)s.%(ext)s'"
   alias sshdstart="sudo systemctl start sshd"
+  alias sshdenable="sudo systemctl enable sshd --now"
   alias sshdstop="sudo systemctl stop sshd"
   alias sshdstatus="sudo systemctl status sshd"
   alias sshdrestart="sudo systemctl restart sshd"
