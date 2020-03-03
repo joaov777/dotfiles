@@ -17,7 +17,7 @@
     echo "#(5) - Update .ZSHRC"
     echo "#(6) - Enable shortcuts and panel"
     echo "#(7) - Set up Tilda terminal"
-    echo "#(8) - Mainconf Express"
+    echo "#(8) - Download Wiki"
     echo "|-------------------------------------------|"
     read -p "Option: " menuChoice
     
@@ -31,7 +31,7 @@
             5) ~/mainconf/mainconftree/updatezshrc.sh ;; 
             6) ~/mainconf/mainconftree/shortcuts.sh ;;
             7) ~/mainconf/mainconftree/setuptilda.sh ;;
-            8) ~/mainconf/mainconftree/mainconfexpress.sh ;;
+            8) ~/mainconf/mainconftree/downloadwiki.sh ;;
             *) ~/mainconf/mainconftree/invalidoption.sh ;;
     esac
 
