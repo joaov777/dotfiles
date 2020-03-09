@@ -210,5 +210,6 @@ source $ZSH/oh-my-zsh.sh
   alias gcds="rdesktop -u 'adproducao.ifce.edu.br\Administrator' -g 1024x768 200.17.33.66"
   alias rdprdp="~/mainconf/scripts/rdprdp.sh"
   alias sshcentral="ssh root@10.4.5.10"
+  alias sshbaculadir="ssh operador@bacula-dir.ifce.edu.br"
   
 
