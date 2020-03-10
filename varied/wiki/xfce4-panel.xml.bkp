@@ -23,7 +23,7 @@
       <property name="background-style" type="uint" value="0"/>
       <property name="size" type="uint" value="19"/>
       <property name="mode" type="uint" value="0"/>
-      <property name="autohide-behavior" type="uint" value="0"/>
+      <property name="autohide-behavior" type="uint" value="2"/>
     </property>
   </property>
   <property name="plugins" type="empty">
@@ -42,7 +42,6 @@
       <property name="show-frame" type="bool" value="false"/>
       <property name="size-max" type="uint" value="24"/>
       <property name="names-ordered" type="array">
-        <value type="string" value="copyq"/>
         <value type="string" value="system-config-printer"/>
         <value type="string" value="vmware-tray"/>
         <value type="string" value="albert"/>
@@ -112,7 +111,7 @@
     </property>
     <property name="plugin-9" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
-      <property name="mpris-players" type="string" value="audacious;chrome.instance10578;chrome.instance12129;chrome.instance12352;chrome.instance1236;chrome.instance1241;chrome.instance1248;chrome.instance1256;chrome.instance1260;chrome.instance1290;chrome.instance1332;chrome.instance1333;chrome.instance1415;chrome.instance1417;chrome.instance1439;chrome.instance14610;chrome.instance1491;chrome.instance15133;chrome.instance1550;chrome.instance1582;chrome.instance16058;chrome.instance1648;chrome.instance1662;chrome.instance17014;chrome.instance1702;chrome.instance1750;chrome.instance1814;chrome.instance18403;chrome.instance20339;chrome.instance2394;chrome.instance24509;chrome.instance26443;chrome.instance2680;chrome.instance31127;chrome.instance32094;chrome.instance32763;chrome.instance5613;chrome.instance7782;chrome.instance8493;cmus;MellowPlayer;vlc"/>
+      <property name="mpris-players" type="string" value="audacious;chrome.instance10578;chrome.instance12129;chrome.instance12352;chrome.instance1236;chrome.instance1241;chrome.instance1248;chrome.instance1256;chrome.instance1260;chrome.instance1290;chrome.instance1332;chrome.instance1333;chrome.instance1415;chrome.instance1417;chrome.instance1439;chrome.instance14610;chrome.instance1491;chrome.instance15133;chrome.instance1582;chrome.instance16058;chrome.instance1648;chrome.instance1662;chrome.instance17014;chrome.instance1702;chrome.instance1750;chrome.instance1814;chrome.instance18403;chrome.instance20339;chrome.instance2394;chrome.instance24509;chrome.instance26443;chrome.instance2680;chrome.instance31127;chrome.instance32094;chrome.instance32763;chrome.instance5613;chrome.instance7782;chrome.instance8493;cmus;MellowPlayer;vlc"/>
       <property name="show-notifications" type="bool" value="true"/>
     </property>
     <property name="plugin-8" type="string" value="whiskermenu"/>
