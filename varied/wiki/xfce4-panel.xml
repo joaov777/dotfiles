@@ -42,6 +42,7 @@
       <property name="show-frame" type="bool" value="false"/>
       <property name="size-max" type="uint" value="24"/>
       <property name="names-ordered" type="array">
+        <value type="string" value="bluetooth enabled"/>
         <value type="string" value="copyq"/>
         <value type="string" value="system-config-printer"/>
         <value type="string" value="vmware-tray"/>
@@ -129,3 +130,4 @@
   </property>
   <property name="configver" type="int" value="2"/>
 </channel>
+
