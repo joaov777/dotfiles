@@ -211,5 +211,5 @@ source $ZSH/oh-my-zsh.sh
   alias rdprdp="~/mainconf/scripts/rdprdp.sh"
   alias sshcentral="ssh root@10.4.5.10"
   alias sshbaculadir="ssh operador@bacula-dir.ifce.edu.br"
-  
+  alias sshvpn="ssh operador@200.17.33.43"
 
