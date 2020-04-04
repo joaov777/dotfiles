@@ -131,7 +131,7 @@ source $ZSH/oh-my-zsh.sh
   alias fkw="sudo rm ~/.config/KeeWeb/runtime-data.json"
   alias wanwan="curl https://ipinfo.io/ip"
   alias rn="sudo systemctl restart NetworkManager.service"
-  alias keyus="setxkbmap -layout us"
+  alias keyus="setxkbmap us intl"
   alias keybr="setxkbmap -layout br -model abnt2"
   alias sw="nmcli dev wifi list"
   alias systeminfo="inxi -Fxz"
