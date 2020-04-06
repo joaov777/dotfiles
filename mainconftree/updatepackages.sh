@@ -26,16 +26,19 @@ install_trizen() {
 
 
 packages_required=(
-	trizen keeweb pdfarranger-git glances ngrep fzf broot
-	whatmask visual-studio-code-bin google-chrome bat bind-tools brave \
-	git tilda etcher notepadqq gparted papirus-folders-git micro \
-	filezilla telegram-desktop copyq flameshot guake redshift barrier \
-	gedit pwgen openssh vim rdesktop i3lock mtr tmux vagrant virtualbox-bin \
+	trizen keeweb pdfarranger-git openssh \
+	whatmask visual-studio-code-bin google-chrome bind-tools \
+	git tilda notepadqq gparted papirus-folders-git \
+	filezilla telegram-desktop copyq flameshot redshift barrier \
+	gedit pwgen openssh vim rdesktop i3lock mtr tmux \
 	nmap okular viewnior ncdu inxi otf-fira-mono nordvpn-bin vinagre \
 	ipcalc sipcalc whatmask veracrypt papirus-icon-theme neofetch \
-	obs-studio arp-scan net-tools teamviewer rclone peek glow \ 
-	imagewriter albert nordvpn-bin wget dnsutils youtube-dl 
+	arp-scan net-tools teamviewer rclone peek \ 
+	imagewriter albert wget dnsutils  
 	)
+	
+	#legacy_packages
+	#mypaint typora glances ngrep broot brave bat etcher micro guake vagrant virtualbox-bin vinagre obs-studio glow youtube-dl
 
 check_installation() {
 	if [ -z "$(pacman -Qi $1)" ]; then
@@ -56,7 +59,8 @@ for pkg in "${packages_required[@]}"; do
 	if [ -z "$(pacman -Qi $pkg)" ]; then #in case it is not installed
 		echo "|---> $pkg is not installed!!" ; sleep 1
 		echo "|---> Installing $pkg..." ; sleep 1
-			trizen -S "$pkg" --noconfirm --needed &>/dev/null
+			#trizen -S "$pkg" --noconfirm --needed &>/dev/null
+			trizen -S "$pkg" --noconfirm --needed
 	
 			#checking whether a package has successfuly been installed -
 			check_installation "$pkg"
@@ -87,8 +91,6 @@ done
 	sudo pacman -S manjaro-printer
 	sudo gpasswd $USER sys
 	sudo systemctl enable --now org.cups.cupsd.service
-
-
 
 	sudo papirus-folders -C black 
 
