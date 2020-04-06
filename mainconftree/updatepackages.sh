@@ -26,7 +26,7 @@ install_trizen() {
 
 
 packages_required=(
-	trizen keeweb pdfarranger-git openssh \
+	trizen keeweb pdfarranger-git openssh tcpdump tldr fzf \
 	whatmask visual-studio-code-bin google-chrome bind-tools \
 	git tilda notepadqq gparted papirus-folders-git \
 	filezilla telegram-desktop copyq flameshot redshift barrier \
