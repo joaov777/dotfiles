@@ -42,7 +42,7 @@ clear
 		sudo rm -rf ~/.oh-my-zsh/custom/themes/pi
 		fi
 	    
-		wget -O /home/joao/.oh-my-zsh/custom/themes/pi.zsh-theme https://raw.githubusercontent.com/joaov777/mainconf/master/zsh/pi.zsh-theme
+		wget -O ~/.oh-my-zsh/custom/themes/pi.zsh-theme https://raw.githubusercontent.com/joaov777/mainconf/master/zsh/pi.zsh-theme
 		echo "|---> ZSH pi theme installed!!" ; sleep 2
 
 		
