@@ -26,10 +26,10 @@ install_trizen() {
 
 
 packages_required=(
-	trizen keeweb pdfarranger-git openssh tcpdump tldr fzf \
+	trizen keeweb pdfarranger openssh tcpdump tldr fzf \
 	whatmask visual-studio-code-bin google-chrome bind-tools \
 	git tilda notepadqq gparted papirus-folders-git \
-	filezilla telegram-desktop copyq flameshot redshift barrier \
+	filezilla telegram-desktop copyq flameshot \
 	gedit pwgen openssh vim rdesktop i3lock mtr tmux \
 	nmap okular viewnior ncdu inxi otf-fira-mono nordvpn-bin vinagre \
 	ipcalc sipcalc whatmask veracrypt papirus-icon-theme neofetch \
@@ -38,7 +38,7 @@ packages_required=(
 	)
 	
 	#legacy_packages
-	#mypaint typora glances ngrep broot brave bat etcher micro guake vagrant virtualbox-bin vinagre obs-studio glow youtube-dl
+	#mypaint typora glances ngrep broot brave barrier redshift bat etcher micro guake vagrant virtualbox-bin vinagre obs-studio glow youtube-dl
 
 check_installation() {
 	if [ -z "$(pacman -Qi $1)" ]; then
@@ -74,7 +74,7 @@ done
 	sudo smb passwd -a joao
 
 	#For Thunar
-	sudo pacman -S gvfs-mtp xdg-users-dirs --noconfirm --needed
+	sudo pacman -S gvfs gvfs-samba gvfs-mtp xdg-users-dirs --noconfirm --needed
 	xdg-user-dirs-update
 
 	#teamviewer related
