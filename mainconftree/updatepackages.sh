@@ -29,7 +29,7 @@ packages_required=(
 	trizen keeweb pdfarranger openssh tcpdump tldr fzf \
 	whatmask visual-studio-code-bin google-chrome bind-tools \
 	git tilda notepadqq gparted papirus-folders-git \
-	filezilla telegram-desktop copyq flameshot \
+	filezilla telegram-desktop copyq flameshot ranger \
 	gedit pwgen openssh vim rdesktop i3lock mtr tmux \
 	nmap okular viewnior ncdu inxi otf-fira-mono nordvpn-bin vinagre \
 	ipcalc sipcalc whatmask veracrypt papirus-icon-theme neofetch \
@@ -69,13 +69,16 @@ for pkg in "${packages_required[@]}"; do
 	fi
 done
 
-	#Enabling sharing
+	#enabling sharing
 	sudo pacman -S gvfs-smb thunar-shares-plugin-gtk3 --noconfirm --needed 
 	sudo smb passwd -a joao
 
-	#For Thunar
+	#for Thunar
 	sudo pacman -S gvfs gvfs-samba gvfs-mtp xdg-users-dirs --noconfirm --needed
 	xdg-user-dirs-update
+
+	#installing cursor themes
+	sudo cp -r ~/mainconf/varied/cursors/* /usr/share/icons/
 
 	#teamviewer related
 	sudo teamviewer --daemon enable
@@ -84,13 +87,13 @@ done
 	#tmux related
 	cp ~/mainconf/varied/tmux/.tmux.conf ~
 
-	# nord related
+	#nord related
 	sudo systemctl enable nordvpnd --now
 
-	# printing related - install manually on the 'print settings' GUI
-	sudo pacman -S manjaro-printer
-	sudo gpasswd $USER sys
-	sudo systemctl enable --now org.cups.cupsd.service
+	#printing related - install manually on the 'print settings' GUI
+	#sudo pacman -S manjaro-printer
+	#sudo gpasswd $USER sys
+	#sudo systemctl enable --now org.cups.cupsd.service
 
 	sudo papirus-folders -C black 
 
