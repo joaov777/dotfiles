@@ -80,6 +80,9 @@ done
 	#installing cursor themes
 	sudo cp -r ~/mainconf/varied/cursors/* /usr/share/icons/
 
+	#installing themes
+	sudo cp -r ~/mainconf/varied/themes/* /usr/share/themes/
+
 	#teamviewer related
 	sudo teamviewer --daemon enable
 	sudo systemctl enable teamviewerd.service --now
