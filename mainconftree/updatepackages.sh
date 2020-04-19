@@ -27,18 +27,19 @@ install_trizen() {
 
 packages_required=(
 	trizen keeweb pdfarranger openssh tcpdump tldr fzf \
-	whatmask visual-studio-code-bin google-chrome bind-tools \
+	visual-studio-code-bin google-chrome bind-tools \
 	git tilda notepadqq gparted papirus-folders-git \
 	filezilla telegram-desktop copyq flameshot ranger \
 	gedit pwgen openssh vim rdesktop i3lock mtr tmux \
-	nmap okular viewnior ncdu inxi otf-fira-mono nordvpn-bin vinagre \
-	ipcalc sipcalc whatmask veracrypt papirus-icon-theme neofetch \
+	nmap okular viewnior ncdu inxi otf-fira-mono nordvpn-bin \
+	veracrypt papirus-icon-theme neofetch \
 	arp-scan net-tools teamviewer rclone peek \ 
 	imagewriter albert wget dnsutils  
 	)
 	
 	#legacy_packages
-	#mypaint typora glances ngrep broot brave barrier redshift bat etcher micro guake vagrant virtualbox-bin vinagre obs-studio glow youtube-dl
+	#mypaint typora whatmask vinagre glances ngrep broot brave barrier 
+	#sipcalc ipcalc redshift bat etcher micro guake vagrant virtualbox-bin vinagre obs-studio glow youtube-dl
 
 check_installation() {
 	if [ -z "$(pacman -Qi $1)" ]; then
