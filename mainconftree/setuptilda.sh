@@ -28,7 +28,7 @@ clear
     if [ ! -d ~/.config/tilda ]; then mkdir ~/.config/tilda ; fi
 
     echo "|---> Copying tilda files to ~/.config/tilda ..."
-    cp -r ~/mainconf/varied/tildafiles/* ~/.config/tilda/
+    cp -r ~/mainconf/varied/tildafiles/* ~/.config/tilda/config*
 
     echo "|---> Tilda files copied!!" ; sleep 1
 
