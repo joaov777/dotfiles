@@ -6,12 +6,10 @@ clear
         echo "|==============|> MAINCONF <|==============|"
         echo "|----------> EXPRESS INSTALLATION <--------|"
         sleep 1
-        
+       
 
-    
     ~/mainconf/mainconftree/updatesystem.sh 
     clear
-
     ~/mainconf/mainconftree/updatepackages.sh 
     clear
     ~/mainconf/mainconftree/setupgituser.sh 
@@ -20,3 +18,5 @@ clear
     clear
     ~/mainconf/mainconftree/updatezshrc.sh 
     clear
+	
+	

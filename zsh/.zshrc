@@ -90,6 +90,8 @@ source $ZSH/oh-my-zsh.sh
   sk(){ssh-copy-id -i $1 $2} #send ssh keys to remote
   ck(){ssh-keygen -t rsa -b 4096} #create ssh keys locally
   mf(){[ $1 != "" ] && watch --interval 1 du -sh $1 || watch --interval 1 du -sh $PWD/} #monitor remote or local folder
+  sr(){ [[ $(sudo grep $USER /etc/sudoers) = "" ]] && sudo sed -i "/^root ALL=(ALL) ALL/a $USER ALL=(ALL) ALL" /etc/sudoers || echo "Already root"} #setting and enabling all root permissions
+  ur(){sudo sed -i "s/^$USER ALL=(ALL) ALL//g" /etc/sudoers} #unsetting and disabling all root permissions
 
 
   alias cdmc="cd ~/mainconf"	
