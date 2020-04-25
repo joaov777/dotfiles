@@ -10,8 +10,8 @@ install_trizen() {
         if [ -z "$(pacman -Qi trizen)" ];
 	    then
 		        cd ~ 
-                echo ">> Trizen is not installed!!" ; sleep 2
-                echo ">> Installing Trizen AUR Helper" ; sleep 2
+                echo ">> Trizen is not installed!!" ; sleep 1
+                echo ">> Installing Trizen AUR Helper" ; sleep 1
                 git clone https://aur.archlinux.org/trizen.git >> /dev/null
                 cd trizen
                 makepkg -si
@@ -20,7 +20,7 @@ install_trizen() {
                 rm -rf trizen
 
 	    else
-		        echo ">> trizen is installed!!" ; sleep 2
+		        echo ">> trizen is installed!!" ; sleep 1
 	    fi
 }
 
@@ -43,9 +43,9 @@ packages_required=(
 
 check_installation() {
 	if [ -z "$(pacman -Qi $1)" ]; then
-		echo ">> ERROR: Package $1 is NOT installed" ; sleep 2
+		echo ">> ERROR: Package $1 is NOT installed" ; sleep 1
 	else
-		echo ">> SUCCESS: Package $1 successfuly installed!!" ; sleep 2
+		echo ">> SUCCESS: Package $1 successfuly installed!!" ; sleep 1
 	fi
 }
 	#installing trizen
@@ -66,7 +66,7 @@ for pkg in "${packages_required[@]}"; do
 			#checking whether a package has successfuly been installed -
 			check_installation "$pkg"
 	else
-		echo "|---> $pkg is installed!!" ; sleep 0.5 #in case it is installed already
+		echo "|---> $pkg is installed!!" ; sleep 1 #in case it is installed already
 	fi
 done
 

@@ -9,7 +9,7 @@ clear
     #checking whether tilda is installed
     if [ -z "$(pacman -Qi tilda)" ];
 	then
-		echo "|---> Tilda is not installed!!" ; sleep 2
+		echo "|---> Tilda is not installed!!" ; sleep 1
         echo "|---> Installing Tilda..." ; sleep 1
         
         #choosing best helper
@@ -43,4 +43,4 @@ clear
         
     done
 
-    echo "|---> Symlinks generated..." ; sleep 2
+    echo "|---> Symlinks generated..." ; sleep 1
