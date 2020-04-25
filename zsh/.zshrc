@@ -92,6 +92,7 @@ source $ZSH/oh-my-zsh.sh
   mf(){[ $1 != "" ] && watch --interval 1 du -sh $1 || watch --interval 1 du -sh $PWD/} #monitor remote or local folder
   sr(){ [[ $(sudo grep $USER /etc/sudoers) = "" ]] && sudo sed -i "/^root ALL=(ALL) ALL/a $USER ALL=(ALL) ALL" /etc/sudoers || echo "Already root"} #setting and enabling all root permissions
   ur(){sudo sed -i "s/^$USER ALL=(ALL) ALL//g" /etc/sudoers} #unsetting and disabling all root permissions
+  cr(){ [[ $(sudo grep $USER /etc/sudoers) == "" ]] && echo "No root privileges set for user $USER" || echo "Root privileges set for $USER"} #check root privileges for current user
 
 
   alias cdmc="cd ~/mainconf"	
