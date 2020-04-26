@@ -93,7 +93,7 @@ source $ZSH/oh-my-zsh.sh
   sr(){ [[ $(sudo grep $USER /etc/sudoers) = "" ]] && sudo sed -i "/^root ALL=(ALL) ALL/a $USER ALL=(ALL) ALL" /etc/sudoers || echo "Already root"} #setting and enabling all root permissions
   ur(){sudo sed -i "s/^$USER ALL=(ALL) ALL//g" /etc/sudoers} #unsetting and disabling all root permissions
   cr(){ [[ $(sudo grep $USER /etc/sudoers) == "" ]] && echo "No root privileges set for user $USER" || echo "Root privileges set for $USER"} #check root privileges for current user
-  mainconfpush(){cd ~/mainconf && git add . && git commit -m "$1" && git push origin master && cd -} #pushing mainconf to git
+  mainconfpush(){cd ~/mainconf && git add . && git commit -m "$1" && git push origin master && cd -} ##pushing mainconf to git
   mainconfpull(){cd ~/mainconf && git pull && cd -}
   gitssh(){git remote set-url origin git@github.com:joaov777/$1} #set git remote for ssh	
   githttp(){git remote set-url origin https://github.com/joaov777/$1.git} #set git remote for http
