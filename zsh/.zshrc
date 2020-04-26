@@ -84,17 +84,19 @@ source $ZSH/oh-my-zsh.sh
   hs(){history | grep $1} #search commands in history	
   ii(){pacman -Q $1} #checking whether a package is installed	
   ft(){timedatectl set-ntp true} #fix time
-  gitssh(){git remote set-url origin git@github.com:joaov777/$1} #set git remote for ssh	
   sl(){du -sh ./*} #local folder and files sizes
   ml(){watch -n 1 'du -h --max-depth=0 ./*' --time} #local monitoring
   sk(){ssh-copy-id -i $1 $2} #send ssh keys to remote
   ck(){ssh-keygen -t rsa -b 4096} #create ssh keys locally
+  pk(){cat ~/.ssh/id_rsa.pub}
   mf(){[ $1 != "" ] && watch --interval 1 du -sh $1 || watch --interval 1 du -sh $PWD/} #monitor remote or local folder
   sr(){ [[ $(sudo grep $USER /etc/sudoers) = "" ]] && sudo sed -i "/^root ALL=(ALL) ALL/a $USER ALL=(ALL) ALL" /etc/sudoers || echo "Already root"} #setting and enabling all root permissions
   ur(){sudo sed -i "s/^$USER ALL=(ALL) ALL//g" /etc/sudoers} #unsetting and disabling all root permissions
   cr(){ [[ $(sudo grep $USER /etc/sudoers) == "" ]] && echo "No root privileges set for user $USER" || echo "Root privileges set for $USER"} #check root privileges for current user
   mainconfpush(){cd ~/mainconf && git add . && git commit -m "$1" && git push origin master && cd -} #pushing mainconf to git
   mainconfpull(){cd ~/mainconf && git pull && cd -}
+  gitssh(){git remote set-url origin git@github.com:joaov777/$1} #set git remote for ssh	
+  
   
 
   alias cdmc="cd ~/mainconf"	
