@@ -93,10 +93,9 @@ source $ZSH/oh-my-zsh.sh
   sr(){ [[ $(sudo grep $USER /etc/sudoers) = "" ]] && sudo sed -i "/^root ALL=(ALL) ALL/a $USER ALL=(ALL) ALL" /etc/sudoers || echo "Already root"} #setting and enabling all root permissions
   ur(){sudo sed -i "s/^$USER ALL=(ALL) ALL//g" /etc/sudoers} #unsetting and disabling all root permissions
   cr(){ [[ $(sudo grep $USER /etc/sudoers) == "" ]] && echo "No root privileges set for user $USER" || echo "Root privileges set for $USER"} #check root privileges for current user
-  gitpush(){cd $1 && git add . && git commit -m "$2" && git push origin master && cd -} #pushing to git
-  gitpull(){git pull}
+  mainconfpush(){cd ~/mainconf && git add . && git commit -m "$1" && git push origin master && cd -} #pushing mainconf to git
+  mainconfpull(){cd ~/mainconf && git pull && cd -}
   
-
 
   alias cdmc="cd ~/mainconf"	
   alias mainconf="~/mainconf/mainconf.sh"	
