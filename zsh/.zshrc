@@ -20,7 +20,7 @@ source $ZSH/oh-my-zsh.sh
 # ALIASES AND FUNCTIONS
 # SYSTEM GENERAL COMMANDS	
   rbn(){sudo /sbin/reboot}	
-  sdn(){sudo /sbin/shutdown -r now}	
+  sdn(){sudo /sbin/shutdown -h now}	
   crd(){ssh -C $1@$2 -p $3 ncdu -o- / | ncdu -f-} #check remote disk	
 
   alias pgpg="ping 8.8.8.8"	
