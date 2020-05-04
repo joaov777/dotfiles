@@ -45,9 +45,11 @@ source $ZSH/oh-my-zsh.sh
   alias rn="sudo systemctl restart NetworkManager.service"	
   alias keyus="setxkbmap us intl"	
   alias keybr="setxkbmap -layout br -model abnt2"	
-  alias sw="nmcli dev wifi list"	
+  alias sw="nmcli dev wifi list"
+  alias cw="sudo wifi-menu"  
   alias systeminfo="inxi -Fxz"	
-  alias l="ls -liar"	
+  alias l="ls -liar"
+  alias bl="acpi -V" #check battery info  
 
   alias .="cd .."	
   alias ..="cd ../../"	
