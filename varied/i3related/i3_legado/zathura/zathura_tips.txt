@@ -1,0 +1,5 @@
+Zathura is a pdfviewer
+
+Config file located at: /home/joao/.config/zathura/
+
+trizen -S zathura zathura-pdf-mupdf

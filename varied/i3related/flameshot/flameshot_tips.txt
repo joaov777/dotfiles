@@ -1,0 +1,6 @@
+download flameshot
+
+config file located at:
+/home/joao/.config/Dharkael
+
+Activated by Print key

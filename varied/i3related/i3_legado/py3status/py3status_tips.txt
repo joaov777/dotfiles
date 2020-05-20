@@ -1,0 +1,14 @@
+This is an extension that expands the functionalities for the i3status or i3bar
+
+config file located at /etc
+
+trizen -S py3status
+
+na pasta duasbarras, tem o arquivo de configuracao das duas barras (superior e inferior)
+
+i3status.conf é a barra inferior
+i3status2.conf é a barra superior
+
+No caso das duas barras, os arquivos ficam em:
+/etc/i3status.conf
+/etc/i3status2.conf

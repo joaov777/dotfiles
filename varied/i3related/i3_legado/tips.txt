@@ -1,0 +1,84 @@
+Install:
+dmenu
+rofi
+wifi-menu (trizen -S wifi-menu)
+pcmanfm
+polybar
+i3lock ou i3lock-fancy-git
+acpi (for full info on battery leves: acpi -V ou bl)
+pulseaudio-ctl
+pulseaudio-alsa
+gvfs gvfs-smb
+bluetooth packages (follow wiki)
+brightnessctl (for screen brightness) sudo pacman -S brightnessctl (ex.: brightnessctl set +10% ou brightnessctl set 50%)
+copyq (clipboard manager)
+htop
+speedtest-cli
+iw
+py3status
+nitrogen (wallpapers)
+netctl (wifi-menu, etc)
+lxappearance
+vlc
+
+
+
+trizen pulseaudio-alsa pulseaudio-bluetooth bluez bluez-libs bluez-utils --noconfirm --needed
+>>>> for monitors <<<<
+xorg-xrandr
+arandr (graphical interface for setting up monitors)
+important to set on the i3config file => exec --no-startup-id xrandr --output eDP1 --mode 1920x1080
+
+#listando os monitores atualmente reconhecidos
+xrandr --listmonitors ou xrandr --current 
+
+#habilitando o monitor HDMI-1 em Full HD e na esquerda do monitor eDP-1
+xrandr --output HDMI-1 --mode '1920x1080' --left-of eDP-1
+
+#habilitando o monitor DP-2 em Full HD e na direita do monitor eDP-1
+xrandr --output DP-2 --mode '1920x1080' --right-of eDP-1
+
+#desabilitando algum monitor
+xrandr --output HDMI-1 --off
+
+#habilitando o monitor eDP-1 na resolucao HD
+xrandr --output eDP-1 --mode '1366x768'
+
+
+
+xrandr
+xrandr --output HDMI-0 --auto --left-of DVI-1
+xrandr --output HDMI-1 --mode '1920x1080' --left-of DP-2
+>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+sudo pacman -S xorg-server xorg-apps xorg-init --noconfirm --needed
+
+sudo pacman -S i3 --noconfirm
+
+sudo pacman -S lightdm lightdm-gtk-greeter --noconfirm --needed
+
+sudo pacman -S noto-fonts ttf-ubuntu-font-family ttf-dejavu ttf-freefont ttf-liberation ttf-droid ttf-inconsolata ttf-roboto terminus-font ttf-font-awesome --noconfirm --needed
+
+sudo pacman -S alsa-utils alsa-plugins alsa-lib pavucontrol --noconfirm --needed
+
+sudo pacman -S rxvt-unicode ranger rofi conky dmenu urxvt-perls perl-anyevent-i3 perl-json-xs --noconfirm --needed
+
+sudo pacman -S atool highlight browsh elinks mediainfo w3m ffmpegthumbnailer mupdf --noconfirm --needed
+
+## picom
+replaces compton
+sudo pacman -S picom
+config file at: /etc/xdg
+
+## i3 config file on arch is at ~/.config/i3/config
+
+## rofi theme is select by running the application and pressing Mod+r (/usr/bin/rofi -show run)
+## rofi config file is at ~/.config/rofi and the themes are located at /usr/share/rofi/themes
+
+## i3status config file is located at /etc/i3status.conf
+
+## polybar config file is located at ~/.config/polybar/config
+
+##pulseaudio-ctl serve para mudanca do volume pelo terminal ($mod+Up ou $mod+Down)
+
+##copyq config file is located at ~/.config/copyq

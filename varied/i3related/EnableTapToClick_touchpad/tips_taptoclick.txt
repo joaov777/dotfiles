@@ -1,0 +1,2 @@
+Simply copy this file to the path below:
+/etc/X11/xorg.conf.d/

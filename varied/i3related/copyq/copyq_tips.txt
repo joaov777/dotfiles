@@ -1,0 +1,2 @@
+Copyq config file located at:
+/home/joao/.config/copyq

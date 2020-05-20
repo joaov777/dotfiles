@@ -1,0 +1,9 @@
+sudo pacman -S rofi
+
+Acessado atraves de $mod+o
+
+Rofi config file located at:
+~/.config/rofi/config
+
+Rasi themes located at:
+/usr/share/rofi/themes/

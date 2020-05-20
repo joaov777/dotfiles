@@ -1,0 +1,5 @@
+copy folder fonts by doing
+sudo cp -r folder/fonts/* /usr/share/fonts/
+
+copy main theme polybar file
+sudo cp -r folder/* ~/.config/polybar/
