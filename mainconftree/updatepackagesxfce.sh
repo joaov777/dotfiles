@@ -70,6 +70,8 @@ for pkg in "${packages_required[@]}"; do
 	fi
 done
 
+	#<< script continues from this point on >>
+
 	#enabling sharing
 	sudo pacman -S gvfs-smb thunar-shares-plugin-gtk3 --noconfirm --needed 
 	sudo smb passwd -a joao
