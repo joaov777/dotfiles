@@ -92,6 +92,11 @@ done
 
 	#tmux related
 	cp ~/mainconf/varied/tmux/.tmux.conf ~
+	
+	#notepadqq
+    [ ! -d "~/.config/Notepadqq" ] && mkdir ~/.config/Notepadqq 
+    sudo cp ~/mainconf/varied/notepadqq/Notepadqq.ini ~/.config/Notepadqq
+    sudo ln -sf ~/mainconf/varied/notepadqq/Notepadqq.ini ~/.config/Notepadqq
 
 	#nord related
 	sudo systemctl enable nordvpnd --now

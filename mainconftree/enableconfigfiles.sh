@@ -56,6 +56,12 @@ clear
         [ ! -d "/etc/bluetooth" ] && mkdir /etc/bluetooth || echo "Folder exists!"
         sudo cp ~/mainconf/varied/i3related/bluetooth/main.conf /etc/bluetooth/main.conf
         sudo ln -sf ~/mainconf/varied/i3related/bluetooth/main.conf /etc/bluetooth/main.conf
+		
+		echo "Enabling Notepadqq..." ; sleep 1
+        [ ! -d "~/.config/Notepadqq" ] && mkdir ~/.config/Notepadqq || echo "Folder exists!"
+        sudo cp ~/mainconf/varied/notepadqq/Notepadqq.ini ~/.config/Notepadqq
+        sudo ln -sf ~/mainconf/varied/notepadqq/Notepadqq.ini ~/.config/Notepadqq
+
 
         echo "Enabling i3 config file..." ; sleep 1
         [ ! -d "~/.config/i3" ] && mkdir ~/.config/i3 || echo "Folder exists!"
