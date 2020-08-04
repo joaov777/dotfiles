@@ -96,7 +96,9 @@ source $ZSH/oh-my-zsh.sh
   mainconfpull(){cd ~/mainconf && git pull && cd -}
   gitssh(){git remote set-url origin git@github.com:$1/$2} #set git remote for ssh	
   githttp(){git remote set-url origin https://github.com/$1/$2.git} #set git remote for http.
-  
+  mp(){watch -n 1 inxi -t cm10} #monitoring 10 most active processes
+  mn(){watch -n 1 inxi -Nni} #monitoring NICs
+  mm(){watch -n 1 inxi -t m} #monitoring RAM
   
 
   alias cdmc="cd ~/mainconf"	
