@@ -109,7 +109,7 @@ source $ZSH/oh-my-zsh.sh
   cl(){clear}	
   alias brltousd="~/mainconf/scripts/brltousd.sh"
   alias usdtobrl="~/mainconf/scripts/usdtobrl.sh"	
-  dr(){echo "DR: $(curl -s https://www.x-rates.com/table/\?from\=USD\&amount\=1 | grep ";to=BRL" | awk '{print $3}' | cut -c58-61)"} #check current dollar rate
+  dr(){echo "DR: $(curl -s https://www.x-rates.com/table/\?from\=USD\&amount\=1 | grep ";to=BRL" | awk '{print $3}' | cut -c59-62)"} #check current dollar rate
 
 # UPDATES	
   alias um="sudo pacman-mirrors --fasttrack 5 && sudo pacman -Syyu --noconfirm"	
