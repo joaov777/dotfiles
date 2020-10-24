@@ -1,0 +1,10 @@
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Type=Application
+Name=GitHub
+Exec=/usr/bin/google-chrome-stable www.github.com
+Icon=github
+StartupWMClass=crx_phefmcdikimhjfhhmbjchodjneidgonl

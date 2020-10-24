@@ -1,0 +1,10 @@
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Type=Application
+Name=Gitlab
+Exec=/usr/bin/google-chrome-stable gitlab.com
+Icon=gitlab
+StartupWMClass=crx_bpeeiejolpnemolihkccdmlmpdafoaha

@@ -1,0 +1,3 @@
+- Launchers folder must be placed at ~/.config/plank/dock1/
+- Shortcuts folder must be placed at ~
+- Themes folder must be placed at ~/.local/share/plank/themes/

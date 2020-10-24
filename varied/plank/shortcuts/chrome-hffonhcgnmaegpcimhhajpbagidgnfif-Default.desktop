@@ -1,0 +1,11 @@
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Type=Application
+Name=1Password for Joao Galvino
+Exec=/usr/bin/google-chrome-stable my.1password.com
+Icon=chrome-hffonhcgnmaegpcimhhajpbagidgnfif-Default
+StartupWMClass=crx_hffonhcgnmaegpcimhhajpbagidgnfif
+Name[en_US.utf8]=1Password 
