@@ -1,5 +1,7 @@
 #!/bin/bash
 
+    #!/bin/bash
+
     if [ $XDG_CURRENT_DESKTOP == "XFCE" ] 
     then
 
@@ -37,9 +39,7 @@
                 *) ~/mainconf/mainconftree/invalidoption.sh ;;
         esac
 
-        done 
-
-        ##XFCE MENU END
+        done ##Xfce Menu Boundary
 
     elif [ $XDG_CURRENT_DESKTOP == "i3" ]
         then
@@ -73,7 +73,7 @@
                 *) ~/mainconf/mainconftree/invalidoption.sh ;;
         esac
 
-        done
+        done ##i3 Menu Boundary
 
     else
         echo "DE not configured!"
