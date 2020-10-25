@@ -31,7 +31,6 @@
     /usr/lib/xfce4/xfconf/xfconfd &
     echo "|----> Shortcuts updated!!" ; sleep 1
 
-
     echo "|----> Copying xfce panel..." ; sleep 1
     if [ -f $panel ]; then echo "|----> Deleting xfce4-panel.xml" ; rm $panel > /dev/null ; fi
 
@@ -42,7 +41,19 @@
 
     echo "|----> Panel updated..." ; sleep 1
 
-    
-    
+    echo "|----> Configuring the dock..." ; sleep 1
+    #plank dock related
+    if [ -d ~/.config/plank/dock1/ ]; then echo "|----> Deleting dock folder content" ; rm -rf ~/.config/plank/dock1 ; fi
+    if [ ! -d ~/.config/plank/dock1/ ]; then echo "|----> Creating dock folder content" ; mkdir -p ~/.config/plank/dock1/launchers/ ; fi
+    cp ~/mainconf/varied/plank/launchers/*.dockitem ~/.config/plank/dock1/launchers/
 
-    
+    if [ ! -d ~/shortcuts ]; then echo "|----> Creating plank shortcuts folder" ; mkdir ~/shortcuts ; fi
+    cp -r ~/mainconf/varied/plank/shortcuts/* ~/shortcuts/
+
+    echo "|----> Copying plank themes..." ; sleep 1
+    cp -r ~/mainconf/varied/plank/themes/* ~/.local/share/plank/themes/
+
+    echo "|----> Applying standard settings..." ; sleep 1
+    dconf load /net/launchpad/plank/docks/ < ~/mainconf/varied/plank/plank_settings.ini
+
+    echo "|----> Dock updated..." ; sleep 1
