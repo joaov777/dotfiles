@@ -61,4 +61,4 @@
 
     #running the dock in bg and deatching it
     nohup plank -n dock1 & 
-    rm $PWD/nohup.out
+    rm $PWD/nohup.out && rm ~/mainconf/nohup.out
