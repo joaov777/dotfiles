@@ -3,9 +3,9 @@ export ZSH="/home/$USER/.oh-my-zsh"
  
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes	
 #ZSH_THEME="robbyrussell"	
-#ZSH_THEME="pi"	
+ZSH_THEME="pi"	
 #ZSH_THEME="lambda"
-ZSH_THEME="sorin"
+#ZSH_THEME="sorin"
 export VISUAL="/usr/bin/vim"	
 export EDITOR="$VISUAL"	
 
