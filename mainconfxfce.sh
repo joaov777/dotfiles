@@ -30,7 +30,7 @@
             4) ~/mainconf/mainconftree/setupgituser.sh ;;
             5) ~/mainconf/mainconftree/installzsh.sh ;;
             6) ~/mainconf/mainconftree/updatezshrc.sh ;; 
-            7) ~/mainconf/mainconftree/shortcuts.sh ;;
+            7) ~/mainconf/mainconftree/shortcutsandpanels.sh ;;
             8) ~/mainconf/mainconftree/setuptilda.sh ;;
             9) ~/mainconf/mainconftree/downloadwiki.sh ;;
             *) ~/mainconf/mainconftree/invalidoption.sh ;;

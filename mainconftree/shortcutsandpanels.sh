@@ -25,16 +25,16 @@
     wget -q -O $xsettings https://raw.githubusercontent.com/joaov777/mainconf/master/varied/wiki/xsettings.xml
     
     echo "|----> Updating shortcuts..." ; sleep 1
-    kill -9 $(pidof xfconfd)
-    kill -9 $(pidof xfsettingsd)
+    #kill -9 $(pidof xfconfd)
+    #kill -9 $(pidof xfsettingsd)
     xfsettingsd & >/dev/null
-    /usr/lib/xfce4/xfconf/xfconfd &
+    pkill /usr/lib/xfce4/xconf/xconfd && nohup /usr/lib/xfce4/xfconf/xfconfd &
     echo "|----> Shortcuts updated!!" ; sleep 1
 
     echo "|----> Copying xfce panel..." ; sleep 1
-    if [ -f $panel ]; then echo "|----> Deleting xfce4-panel.xml" ; rm $panel > /dev/null ; fi
+    if [ -f $panel ]; then echo "|----> Deleting xfce4-panel.xml" ; rm $panel 2>/dev/null ; fi
 
-    wget -q -O $panel https://raw.githubusercontent.com/joaov777/mainconf/master/varied/wiki/xfce4-panel.xml
+    wget -q -O $panel https://raw.githubusercontent.com/joaov777/mainconf/master/varied/wiki/xfce4-panel.xml 
 
     echo "|----> Updating panel..." ; sleep 1
     xfce4-panel -r > /dev/null
