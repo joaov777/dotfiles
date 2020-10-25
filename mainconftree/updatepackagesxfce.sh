@@ -29,7 +29,7 @@ packages_required=(
 	trizen keeweb pdfarranger openssh tcpdump tldr fzf \
 	visual-studio-code-bin google-chrome bind-tools plank \
 	git tilda notepadqq gparted papirus-folders-git woeusb \
-	filezilla telegram-desktop copyq flameshot ranger \
+	filezilla tilix telegram-desktop copyq flameshot ranger \
 	gedit pwgen openssh vim rdesktop i3lock mtr tmux \
 	nmap okular viewnior ncdu inxi otf-fira-mono nordvpn-bin \
 	veracrypt papirus-icon-theme neofetch snes9x-gtk \
@@ -97,6 +97,9 @@ done
     [ ! -d "~/.config/Notepadqq" ] && mkdir ~/.config/Notepadqq 
     sudo cp ~/mainconf/varied/notepadqq/Notepadqq.ini ~/.config/Notepadqq
     sudo ln -sf ~/mainconf/varied/notepadqq/Notepadqq.ini ~/.config/Notepadqq
+
+	#tilix
+	dconf load /com/gexperts/Tilix/ < ~/mainconf/varied/tilix/tilix.dconf
 
 	#nord related
 	sudo systemctl enable nordvpnd --now
