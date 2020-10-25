@@ -41,11 +41,12 @@
 
     echo "|----> Panel updated..." ; sleep 1
 
+    #plank dock related
+
     echo "|----> Configuring the dock..." ; sleep 1
     echo "|----> Applying standard settings..." ; sleep 1
-    dconf load /net/launchpad/plank/docks/ < ~/mainconf/varied/plank/plank_settings.ini
+    pkill plank && dconf load /net/launchpad/plank/docks/ < ~/mainconf/varied/plank/plank_settings.ini
     
-    #plank dock related
     if [ -d ~/.config/plank/dock1/ ]; then echo "|----> Deleting dock folder content" ; rm -rf ~/.config/plank/dock1 ; fi
     if [ ! -d ~/.config/plank/dock1/ ]; then echo "|----> Creating dock folder content" ; mkdir -p ~/.config/plank/dock1/launchers/ ; fi
     cp ~/mainconf/varied/plank/launchers/* ~/.config/plank/dock1/launchers/
@@ -56,6 +57,8 @@
     echo "|----> Copying plank themes..." ; sleep 1
     cp -r ~/mainconf/varied/plank/themes/* ~/.local/share/plank/themes/
 
-   
-
     echo "|----> Dock updated..." ; sleep 1
+
+    #running the dock in bg and deatching it
+    nohup plank -n dock1 & 
+    rm $PWD/nohup.out
