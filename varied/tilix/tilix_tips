@@ -1,0 +1,12 @@
+- Comandos para copiar as configurações do Tilix 
+
+## Para salvar a configuração
+dconf dump /com/gexperts/Tilix/ > tilix.dconf
+
+## Para carregar a configuração
+dconf load /com/gexperts/Tilix/ < tilix.dconf
+
+
+
+--- 
+dconf load /com/gexperts/Tilix/ < ~/mainconf/varied/tilix/tilix.dconf

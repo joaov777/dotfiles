@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<channel name="xfce4-panel" version="1.0">
+  <property name="panels" type="uint" value="1">
+    <property name="panel-0" type="empty">
+      <property name="position" type="string" value="p=8;x=720;y=884"/>
+      <property name="length" type="uint" value="100"/>
+      <property name="position-locked" type="bool" value="true"/>
+      <property name="plugin-ids" type="array">
+        <value type="int" value="8"/>
+        <value type="int" value="3"/>
+        <value type="int" value="7"/>
+        <value type="int" value="1"/>
+        <value type="int" value="6"/>
+        <value type="int" value="9"/>
+        <value type="int" value="2"/>
+        <value type="int" value="5"/>
+        <value type="int" value="10"/>
+        <value type="int" value="4"/>
+      </property>
+      <property name="role" type="string" value="xfce4-panel-12965750720"/>
+      <property name="length-adjust" type="bool" value="true"/>
+      <property name="background-style" type="uint" value="0"/>
+      <property name="size" type="uint" value="19"/>
+      <property name="mode" type="uint" value="0"/>
+      <property name="autohide-behavior" type="uint" value="0"/>
+    </property>
+  </property>
+  <property name="plugins" type="empty">
+    <property name="plugin-6" type="string" value="systray">
+      <property name="names-visible" type="array">
+        <value type="string" value="pnmixer"/>
+        <value type="string" value="manjaro-settings-manager-daemon"/>
+        <value type="string" value="networkmanager applet"/>
+        <value type="string" value="orage"/>
+        <value type="string" value="pamac-tray"/>
+        <value type="string" value="blueman-applet"/>
+        <value type="string" value="clipman"/>
+        <value type="string" value="xfce4-power-manager"/>
+        <value type="string" value="xnoise"/>
+      </property>
+      <property name="show-frame" type="bool" value="false"/>
+      <property name="size-max" type="uint" value="24"/>
+      <property name="names-ordered" type="array">
+        <value type="string" value="bluetooth enabled"/>
+        <value type="string" value="copyq"/>
+        <value type="string" value="system-config-printer"/>
+        <value type="string" value="vmware-tray"/>
+        <value type="string" value="albert"/>
+        <value type="string" value="clipit"/>
+        <value type="string" value="audacious"/>
+        <value type="string" value="blueman-tray"/>
+        <value type="string" value="stremio-runtime"/>
+        <value type="string" value="iptux"/>
+        <value type="string" value="electron"/>
+        <value type="string" value="ekiga softphone"/>
+        <value type="string" value="pidgin"/>
+        <value type="string" value="task manager"/>
+        <value type="string" value="anydesk"/>
+        <value type="string" value="veracrypt"/>
+        <value type="string" value="org.remmina.remmina"/>
+        <value type="string" value="obs"/>
+        <value type="string" value="redshift-gtk"/>
+        <value type="string" value="odrive"/>
+        <value type="string" value="scp-dbus-service.py"/>
+        <value type="string" value="mellowplayer"/>
+        <value type="string" value="vlc"/>
+        <value type="string" value="blueman-applet"/>
+        <value type="string" value="thunar"/>
+        <value type="string" value="barrier"/>
+        <value type="string" value="synapse"/>
+        <value type="string" value="teamviewer"/>
+        <value type="string" value="telegramdesktop"/>
+        <value type="string" value="flameshot"/>
+        <value type="string" value="google-chrome"/>
+        <value type="string" value="parcellite"/>
+        <value type="string" value="guake"/>
+        <value type="string" value="msm notifier"/>
+        <value type="string" value="networkmanager applet"/>
+        <value type="string" value="clipman"/>
+        <value type="string" value="xfce4-power-manager"/>
+        <value type="string" value="pamac-tray"/>
+      </property>
+      <property name="names-hidden" type="array">
+        <value type="string" value="iptux"/>
+        <value type="string" value="guake"/>
+        <value type="string" value="synapse"/>
+        <value type="string" value="albert"/>
+        <value type="string" value="pamac-tray"/>
+        <value type="string" value="teamviewer"/>
+        <value type="string" value="vlc"/>
+        <value type="string" value="xfce4-power-manager"/>
+        <value type="string" value="msm notifier"/>
+        <value type="string" value="scp-dbus-service.py"/>
+        <value type="string" value="telegramdesktop"/>
+        <value type="string" value="mellowplayer"/>
+        <value type="string" value="flameshot"/>
+        <value type="string" value="blueman-applet"/>
+        <value type="string" value="clipman"/>
+        <value type="string" value="parcellite"/>
+        <value type="string" value="thunar"/>
+        <value type="string" value="google-chrome"/>
+        <value type="string" value="barrier"/>
+        <value type="string" value="clipit"/>
+      </property>
+    </property>
+    <property name="plugin-3" type="string" value="tasklist">
+      <property name="grouping" type="uint" value="1"/>
+    </property>
+    <property name="plugin-7" type="string" value="separator">
+      <property name="expand" type="bool" value="true"/>
+      <property name="style" type="uint" value="0"/>
+    </property>
+    <property name="plugin-9" type="string" value="pulseaudio">
+      <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
+      <property name="mpris-players" type="string" value="audacious;chrome.instance10578;chrome.instance12129;chrome.instance12352;chrome.instance1236;chrome.instance1241;chrome.instance1248;chrome.instance1256;chrome.instance1260;chrome.instance1290;chrome.instance1332;chrome.instance1333;chrome.instance1415;chrome.instance1417;chrome.instance1439;chrome.instance14610;chrome.instance1491;chrome.instance15133;chrome.instance1550;chrome.instance1582;chrome.instance16058;chrome.instance1648;chrome.instance1662;chrome.instance17014;chrome.instance1702;chrome.instance1750;chrome.instance1814;chrome.instance18403;chrome.instance20339;chrome.instance2394;chrome.instance24509;chrome.instance26443;chrome.instance2680;chrome.instance31127;chrome.instance32094;chrome.instance32763;chrome.instance5613;chrome.instance7782;chrome.instance8493;cmus;MellowPlayer;vlc"/>
+      <property name="show-notifications" type="bool" value="true"/>
+    </property>
+    <property name="plugin-8" type="string" value="whiskermenu"/>
+    <property name="plugin-5" type="string" value="clock">
+      <property name="timezone" type="string" value="America/Fortaleza"/>
+      <property name="mode" type="uint" value="2"/>
+      <property name="tooltip-format" type="string" value="%x"/>
+    </property>
+    <property name="plugin-1" type="string" value="showdesktop"/>
+    <property name="plugin-2" type="string" value="fsguard"/>
+    <property name="plugin-4" type="string" value="xkb"/>
+    <property name="plugin-10" type="string" value="battery"/>
+  </property>
+  <property name="configver" type="int" value="2"/>
+</channel>
