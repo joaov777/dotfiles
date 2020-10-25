@@ -103,8 +103,7 @@ source $ZSH/oh-my-zsh.sh
   
 
   alias cdmc="cd ~/mainconf"	
-  alias mainconfxfce="~/mainconf/mainconfxfce.sh"	
-  alias mainconfi3="~/mainconf/mainconfi3.sh"
+  alias mainconf="~/mainconf/mainconf.sh"
   findip(){echo " -- IP FOUND: "$(sudo arp-scan $1 | grep $2 | cut -f 1)}	
   findmac(){echo "-- MAC FOUND: "$(sudo arp-scan $1 | sed -n '3p' | cut -f 2,3)}		
   cl(){clear}	
