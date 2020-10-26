@@ -14,15 +14,20 @@
     xsettings=~/.config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
     panel=~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml
 
+    rm ~/.config/xfce4/xfconf/xfce-perchannel-xml/*
+    cp ~/mainconf/varied/wiki/xfcepanels/panels04/* ~/.config/xfce4/xfconf/xfce-perchannel-xml/
+
     #deleting previous configs if they exist
-    if [ -f $shortcuts ]; then echo "|----> Deleting shortcuts.xml" ; rm $shortcuts > /dev/null ; fi
-    if [ -f $xsettings ]; then echo "|----> Deleting xsettings.xml" ; rm $xsettings > /dev/null ; fi
+    #if [ -f $shortcuts ]; then echo "|----> Deleting shortcuts.xml" ; rm $shortcuts > /dev/null ; fi
+    #if [ -f $xsettings ]; then echo "|----> Deleting xsettings.xml" ; rm $xsettings > /dev/null ; fi
 
     #downloading xfce4-keyboard-shortcuts.xml from github
-    wget -q -O $shortcuts https://raw.githubusercontent.com/joaov777/mainconf/master/varied/wiki/xfce4-keyboard-shortcuts.xml
+    #wget -q -O $shortcuts https://raw.githubusercontent.com/joaov777/mainconf/master/varied/wiki/xfce4-keyboard-shortcuts.xml
+    #cp ~/mainconf/varied/wiki/xfcepanels/panels04/xfce4-keyboard-shortcuts.xml ~/.config/xfce4/xfconf/xfce-perchannel-xml/
     
     #downloading xsettings.xml from github
-    wget -q -O $xsettings https://raw.githubusercontent.com/joaov777/mainconf/master/varied/wiki/xsettings.xml
+    #wget -q -O $xsettings https://raw.githubusercontent.com/joaov777/mainconf/master/varied/wiki/xsettings.xml
+    #cp ~/mainconf/varied/wiki/xfcepanels/panels04/xsettings.xml ~/.config/xfce4/xfconf/xfce-perchannel-xml/
     
     echo "|----> Updating shortcuts..." ; sleep 1
     #kill -9 $(pidof xfconfd)
@@ -32,14 +37,15 @@
     echo "|----> Shortcuts updated!!" ; sleep 1
 
     echo "|----> Copying xfce panel..." ; sleep 1
-    if [ -f $panel ]; then echo "|----> Deleting xfce4-panel.xml" ; rm $panel 2>/dev/null ; fi
+    #if [ -f $panel ]; then echo "|----> Deleting xfce4-panel.xml" ; rm $panel 2>/dev/null ; fi
 
-    wget -q -O $panel https://raw.githubusercontent.com/joaov777/mainconf/master/varied/wiki/xfce4-panel.xml 
+    #wget -q -O $panel https://raw.githubusercontent.com/joaov777/mainconf/master/varied/wiki/xfce4-panel.xml 
+    #cp ~/mainconf/varied/wiki/xfcepanels/panels02/xfce4-panel.xml ~/.config/xfce4/xfconf/xfce-perchannel-xml/
 
-    echo "|----> Updating panel..." ; sleep 1
+    #echo "|----> Updating panel..." ; sleep 1
     xfce4-panel -r > /dev/null
 
-    echo "|----> Panel updated..." ; sleep 1
+    #echo "|----> Panel updated..." ; sleep 1
 
     #plank dock related
 
