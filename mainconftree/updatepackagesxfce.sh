@@ -30,10 +30,10 @@ packages_required=(
 	visual-studio-code-bin google-chrome bind-tools plank \
 	git tilda notepadqq gparted papirus-folders-git woeusb \
 	filezilla tilix telegram-desktop copyq flameshot ranger \
-	gedit pwgen openssh vim rdesktop i3lock mtr tmux \
+	gedit pwgen vim rdesktop i3lock mtr tmux \
 	nmap okular viewnior ncdu inxi otf-fira-mono nordvpn-bin \
 	veracrypt papirus-icon-theme neofetch snes9x-gtk \
-	arp-scan net-tools teamviewer rclone peek krdc \ 
+	arp-scan net-tools teamviewer rclone peek krdc gvfs-smb thunar-shares-plugin-gtk3 gvfs 
 	imagewriter albert wget dnsutils  
 	)
 	
@@ -66,50 +66,56 @@ for pkg in "${packages_required[@]}"; do
 			#checking whether a package has successfuly been installed -
 			check_installation "$pkg"
 	else
-		echo "|---> $pkg is installed!!" ; sleep 1 #in case it is installed already
+		echo "|---> $pkg is already installed!!" > /dev/null #in case it is installed already
 	fi
 done
 
 	#<< script continues from this point on >>
 
 	#enabling sharing
-	sudo pacman -S gvfs-smb thunar-shares-plugin-gtk3 --noconfirm --needed 
-	sudo smb passwd -a joao
-
-	#for Thunar
-	sudo pacman -S gvfs gvfs-samba gvfs-mtp xdg-users-dirs --noconfirm --needed
+	echo "-- Enabling Samba permissions --" ; sleep 1
+	#sudo pacman -S gvfs-smb thunar-shares-plugin-gtk3 gvfs --noconfirm --needed --quiet 
+	sudo smbpasswd -a $USER 
+	papirus-folders -C white > /dev/null
 	xdg-user-dirs-update
 
 	#installing cursor themes
+	echo "-- Installing Cursor Themes --" ; sleep 1
 	sudo cp -r ~/mainconf/varied/cursors/* /usr/share/icons/
 
 	#installing themes
+	echo "-- Installing Themes --" ; sleep 1
 	sudo cp -r ~/mainconf/varied/themes/* /usr/share/themes/
 
 	#teamviewer related
-	sudo teamviewer --daemon enable
-	sudo systemctl enable teamviewerd.service --now
+	echo "-- Enabling TeamViewer --" ; sleep 1
+	sudo teamviewer --daemon enable > /dev/null
+	sudo systemctl enable teamviewerd.service --now > /dev/null
 
 	#tmux related
+	echo "-- Setting up TMUX --" ; sleep 1
 	cp ~/mainconf/varied/tmux/.tmux.conf ~
 	
 	#notepadqq
-    [ ! -d "~/.config/Notepadqq" ] && mkdir ~/.config/Notepadqq 
-    sudo cp ~/mainconf/varied/notepadqq/Notepadqq.ini ~/.config/Notepadqq
-    sudo ln -sf ~/mainconf/varied/notepadqq/Notepadqq.ini ~/.config/Notepadqq
+	echo "-- Setting up Notepadqq --" ; sleep 1
+	notepadqq=~/.config/Notepadqq
+    [ -f $notepadqq/Notepadqq.ini ] && rm $notepadqq/Notepadqq.ini || mkdir -p $notepadqq
+    cp ~/mainconf/varied/notepadqq/Notepadqq.ini $notepadqq && ln -sf ~/mainconf/varied/notepadqq/Notepadqq.ini $notepadqq
 
 	#tilix
+	echo "-- Setting up Tilix --" ; sleep 1
 	dconf load /com/gexperts/Tilix/ < ~/mainconf/varied/tilix/tilix.dconf
 
+	#albert
+	echo "-- Setting up Albert --" ; sleep 1
+	[ -f ~/.config/albert/albert.conf ] && rm ~/.config/albert/albert.conf 
+	cp ~/mainconf/varied/albert/albert.conf ~/.config/albert
+	pkill /usr/bin/albert > /dev/null
+
+
 	#nord related
+	echo "-- Enabling and Starting VPN service --" ; sleep 1
 	sudo systemctl enable nordvpnd --now
-
-	#printing related - install manually on the 'print settings' GUI
-	#sudo pacman -S manjaro-printer
-	#sudo gpasswd $USER sys
-	#sudo systemctl enable --now org.cups.cupsd.service
-
-	sudo papirus-folders -C black 
 
     clear
 
