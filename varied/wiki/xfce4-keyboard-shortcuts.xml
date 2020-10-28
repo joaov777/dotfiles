@@ -48,8 +48,7 @@
       <property name="F10" type="string" value="i3lock --color=#000000"/>
       <property name="&lt;Primary&gt;Right" type="string" value="telegram-desktop"/>
       <property name="&lt;Primary&gt;Down" type="string" value="/usr/bin/tilda"/>
-      <property name="&lt;Primary&gt;&lt;Shift&gt;e" type="string" value="xfce4-panel "/>
-      <property name="&lt;Primary&gt;&lt;Shift&gt;d" type="string" value="pkill xfce4-panel"/>
+      <property name="&lt;Primary&gt;&lt;Shift&gt;z" type="string" value="sh /home/suporte/mainconf/scripts/panel.sh"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">
