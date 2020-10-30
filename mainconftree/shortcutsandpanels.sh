@@ -45,22 +45,26 @@
 
     #plank dock related
 
-    echo "|----> Configuring the dock..." ; sleep 1
-    echo "|----> Applying standard settings..." ; sleep 1
-    pkill plank && dconf load /net/launchpad/plank/docks/ < ~/mainconf/varied/plank/plank_settings.ini
+    #echo "|----> Configuring the dock..." ; sleep 1
+    #echo "|----> Applying standard settings..." ; sleep 1
+    #pkill plank && dconf load /net/launchpad/plank/docks/ < ~/mainconf/varied/plank/plank_settings.ini
     
-    if [ -d ~/.config/plank/dock1/ ]; then echo "|----> Deleting dock folder content" ; rm -rf ~/.config/plank/dock1 ; fi
-    if [ ! -d ~/.config/plank/dock1/ ]; then echo "|----> Creating dock folder content" ; mkdir -p ~/.config/plank/dock1/launchers/ ; fi
-    cp ~/mainconf/varied/plank/launchers/* ~/.config/plank/dock1/launchers/
+    #if [ -d ~/.config/plank/dock1/ ]; then echo "|----> Deleting dock folder content" ; rm -rf ~/.config/plank/dock1 ; fi
+    #if [ ! -d ~/.config/plank/dock1/ ]; then echo "|----> Creating dock folder content" ; mkdir -p ~/.config/plank/dock1/launchers/ ; fi
+    #cp ~/mainconf/varied/plank/launchers/* ~/.config/plank/dock1/launchers/
 
-    if [ ! -d ~/shortcuts ]; then echo "|----> Creating plank shortcuts folder" ; mkdir ~/shortcuts ; fi
-    cp -r ~/mainconf/varied/plank/shortcuts/* ~/shortcuts/
+    #if [ ! -d ~/shortcuts ]; then echo "|----> Creating plank shortcuts folder" ; mkdir ~/shortcuts ; fi
+    #cp -r ~/mainconf/varied/plank/shortcuts/* ~/shortcuts/
 
-    echo "|----> Copying plank themes..." ; sleep 1
-    cp -r ~/mainconf/varied/plank/themes/* ~/.local/share/plank/themes/
+    #echo "|----> Copying plank themes..." ; sleep 1
+    #cp -r ~/mainconf/varied/plank/themes/* ~/.local/share/plank/themes/
 
-    echo "|----> Dock updated..." ; sleep 1
+    #echo "|----> Dock updated..." ; sleep 1
 
     #running the dock in bg and detaching it
-    exec nohup plank -n dock1 2>/dev/null &
-    rm ~/nohup.out ; rm ~/mainconf/nohup.out
+    #exec nohup plank -n dock1 2>/dev/null &
+    #rm ~/nohup.out ; rm ~/mainconf/nohup.out
+
+    #end of plank dock setup commands
+
+
