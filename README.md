@@ -4,11 +4,11 @@ Mainconf is my personal set of scripts that unfold into routines that set up con
 ##### A few notes beforehand
 Make sure you understand that some files are permanently deleted. The code is available for proper analysis in order to avoid potential config files in you system.
 
-##### A few notes beforehand
+##### Getting the process started
 This repository is supposed to be cloned onto your user's current home folder (~). Having cloned the repo, set up the permissions for the various scripts and routines included (Described below). After that, the only necessary step is to execute the trigger script to get the process started.
 
 ```shell
-chmod -R 700 ~/mainconf 
+chmod -R 700 ~/mainconf OR chmod u=rwx,go= script.sh OR chmod u+x script.sh
 ```
 
 
