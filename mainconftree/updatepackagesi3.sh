@@ -27,7 +27,7 @@ install_trizen() {
 
 packages_required=(
 	trizen keeweb i3-gaps pdfarranger openssh tcpdump tldr fzf thunar speedtest-cli \
-	visual-studio-code-bin google-chrome bind-tools rofi dmenu brightnessctl termite \
+	visual-studio-code-bin google-chrome bind-tools rofi dmenu brave keepassxc brightnessctl termite \
 	git tilda notepadqq gparted papirus-folders-git netctl acpi pulseaudio-alsa xfce4-notifyd \
 	filezilla telegram-desktop copyq flameshot ranger pulseaudio-ctl speedtest-cli xfce4-power-manager\
 	gedit pwgen openssh vim rdesktop i3lock i3lock-fancy-git mtr tmux iw py3status \

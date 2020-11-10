@@ -26,8 +26,8 @@ install_trizen() {
 
 
 packages_required=(
-	trizen keeweb pdfarranger openssh tcpdump tldr fzf \
-	visual-studio-code-bin google-chrome bind-tools plank \
+	trizen keeweb keepassxc pdfarranger openssh tcpdump tldr fzf \
+	visual-studio-code-bin google-chrome bind-tools brave \
 	git tilda notepadqq gparted papirus-folders-git woeusb \
 	filezilla tilix telegram-desktop copyq flameshot ranger \
 	gedit pwgen vim rdesktop i3lock mtr tmux \
