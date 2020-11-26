@@ -75,7 +75,8 @@ bindsym $mod+e exec /usr/bin/thunar
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec /usr/bin/termite
+#bindsym $mod+Return exec /usr/bin/termite
+bindsym $mod+Return exec /usr/bin/tilix
 #==========================| PERSONAL APPS END
 
 #==========================> GENERAL COMMANDS
