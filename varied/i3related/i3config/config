@@ -14,7 +14,7 @@ default_border pixel 1
 default_floating_border normal
 hide_edge_borders none
 
-# Font for window titles. Will also be used by the bar unless a different font
+# Font for window titles. Will also be used by #the bar unless a different font
 # is used in the bar {} block below.
 #font pango:monospace 8
 font pango:Source Code Variable 9
@@ -219,7 +219,11 @@ bar {
         status_command py3status -c /etc/i3status.conf
         position bottom
         #font pango:Source Code Variable 8
+<<<<<<< HEAD
 		font pango:FreeMono Bold 8
+=======
+        font pango:Freemono Bold 7
+>>>>>>> d42e0b967c561e5c6472b4e16a2609584cf16650
         tray_output none
         
         
@@ -246,7 +250,11 @@ bar {
         tray_output none
         position top
         #font pango:Source Code Variable 8
+<<<<<<< HEAD
 		font pango:FreeMono Bold 8
+=======
+        font pango:Freemono Bold 7
+>>>>>>> d42e0b967c561e5c6472b4e16a2609584cf16650
         workspace_buttons no
         
         
