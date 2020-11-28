@@ -218,7 +218,8 @@ bar {
         #status_command i3status
         status_command py3status -c /etc/i3status.conf
         position bottom
-        font pango:Source Code Variable 8
+        #font pango:Source Code Variable 8
+		font pango:FreeMono Bold 8
         tray_output none
         
         
@@ -244,7 +245,8 @@ bar {
         status_command py3status -c /etc/i3status2.conf
         tray_output none
         position top
-        font pango:Source Code Variable 8
+        #font pango:Source Code Variable 8
+		font pango:FreeMono Bold 8
         workspace_buttons no
         
         

@@ -31,8 +31,8 @@ warn-vte-config-issue=false
 window-style='disable-csd-hide-toolbar'
 
 [profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d]
-background-color='#272822'
-background-transparency-percent=27
+background-color='#09141B'
+background-transparency-percent=29
 badge-color='#AC7EA8'
 badge-color-set=false
 bold-color-set=false
@@ -42,10 +42,10 @@ cursor-shape='ibeam'
 default-size-columns=115
 default-size-rows=33
 dim-transparency-percent=0
-font='FreeMono Bold 9'
-foreground-color='#F8F8F2'
+font='Fira Mono Medium 9'
+foreground-color='#DEB88D'
 highlight-colors-set=false
-palette=['#272822', '#F92672', '#A6E22E', '#F4BF75', '#66D9EF', '#AE81FF', '#A1EFE4', '#F8F8F2', '#75715E', '#F92672', '#A6E22E', '#F4BF75', '#66D9EF', '#AE81FF', '#A1EFE4', '#F9F8F5']
+palette=['#17384C', '#D15123', '#027C9B', '#FCA02F', '#1E4950', '#68D4F1', '#50A3B5', '#DEB88D', '#434B53', '#D48678', '#628D98', '#FDD39F', '#1BBCDD', '#BBE3EE', '#87ACB4', '#FEE4CE']
 scroll-on-keystroke=false
 show-scrollbar=false
 use-system-font=false
