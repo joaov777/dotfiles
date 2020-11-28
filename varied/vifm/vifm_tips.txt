@@ -1,0 +1,3 @@
+"vifmrc" must be copied to ~/.config/vifm
+
+All themes from themes folder must be copied to ~/.config/vifm/colors
