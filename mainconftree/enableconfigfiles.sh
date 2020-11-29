@@ -63,7 +63,7 @@ clear
 		echo "Enabling Notepadqq..." ; sleep 1
         [ ! -d "~/.config/Notepadqq" ] && mkdir ~/.config/Notepadqq || echo "Folder exists!"
         sudo cp ~/mainconf/varied/notepadqq/Notepadqq.ini ~/.config/Notepadqq
-        sudo ln -sf ~/mainconf/varied/notepadqq/Notepadqq.ini ~/.config/Notepadqq
+        #sudo ln -sf ~/mainconf/varied/notepadqq/Notepadqq.ini ~/.config/Notepadqq
 
 
         echo "Enabling i3 config file..." ; sleep 1
