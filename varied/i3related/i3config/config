@@ -478,7 +478,7 @@ set $PM_MODE TRAY MODE: (e) Enable KDBX , (d) Disable KDBX
 mode "$PM_MODE" {
 
     #Enabling - mounting drive through Rclone
-    bindsym e exec mkdir /tmp/DRIVEJOAO && /usr/bin/rclone --vfs-cache-mode writes mount DRIVEJOAO:/ /tmp/DRIVEJOAO
+    bindsym e exec mkdir /tmp/DRIVEJOAO && /usr/bin/rclone --vfs-cache-mode writes mount DRIVEJOAO:/Mixed/v1/ /tmp/DRIVEJOAO
 
     #run bluetooth connections manager
     bindsym d exec fusermount -u /tmp/DRIVEJOAO && rm -rf /tmp/DRIVEJOAO
