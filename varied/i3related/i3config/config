@@ -474,7 +474,7 @@ mode "$TRAY_MODE" {
 
 #==========================> PASSWORD MANAGER MODE
 bindsym Shift+X mode "$PM_MODE"
-set $PM_MODE TRAY MODE: (e) Enable KDBX , (d) Disable KDBX
+set $PM_MODE PASSWORD MANAGER MODE: (e) Enable KDBX , (d) Disable KDBX
 mode "$PM_MODE" {
 
     #Enabling - mounting drive through Rclone
