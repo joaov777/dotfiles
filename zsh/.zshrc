@@ -51,6 +51,7 @@ source $ZSH/oh-my-zsh.sh
   alias systeminfo="inxi -Fxz"	
   alias l="ls -liar"
   alias bl="acpi -V" #check battery info  
+  alias tt="~/mainconf/scripts/tilixthemechooser.sh"
 
   alias .="cd .."	
   alias ..="cd ../../"	
