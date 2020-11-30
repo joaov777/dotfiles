@@ -360,7 +360,7 @@ mode "$brightness_mode" {
 
         bindsym Return mode "default"
         bindsym Escape mode "default"
-        bindsym Shift+m mode "default"
+        bindsym Shift+b mode "default"
 }
 #==========================| BRIGHTNESS MODE END
 
@@ -399,7 +399,7 @@ mode "$audio_mode" {
 
         bindsym Return mode "default"
         bindsym Escape mode "default"
-        bindsym Shift+m mode "default"
+        bindsym Shift+a mode "default"
 }
 
 #==========================| AUDIO MODE END
@@ -490,7 +490,7 @@ mode "$TRAY_MODE" {
 #==========================| TRAY MODE END
 
 #==========================> PASSWORD MANAGER MODE
-bindsym Shift+X mode "$PM_MODE"
+bindsym Shift+x mode "$PM_MODE"
 set $PM_MODE PASSWORD MANAGER MODE: (e) Enable KDBX , (d) Disable KDBX
 mode "$PM_MODE" {
 
