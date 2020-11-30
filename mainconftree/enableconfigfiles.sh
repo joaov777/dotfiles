@@ -19,6 +19,11 @@ clear
         sudo cp ~/mainconf/varied/i3related/flameshot/flameshot.ini ~/.config/Dharkael/flameshot.ini
         sudo ln -sf ~/mainconf/varied/i3related/flameshot/flameshot.ini ~/.config/Dharkael/flameshot.ini
 
+        echo "Enabling vifm..." ; sleep 1
+        [ ! -d ~/.config/vifm/colors ] && mkdir -p ~/.config/vifm/colors 
+        sudo cp ~/mainconf/varied/vifm/themes ~/.config/vifm/colors
+        sudo cp ~/mainconf/varied/vifm/vifmrc ~/.config/vifm
+
         echo "Enabling Picom compositor..." ; sleep 1
         [ ! -d "/etc/xdg" ] && mkdir /etc/xdg || echo "Folder exists!"
         sudo cp ~/mainconf/varied/i3related/picom/picom.conf /etc/xdg/picom.conf
