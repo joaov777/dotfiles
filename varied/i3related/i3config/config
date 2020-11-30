@@ -71,6 +71,9 @@ exec --no-startup-id picom -b
 # file manager 
 bindsym $mod+e exec /usr/bin/thunar
 
+# audio player mocp
+bindsym $mod+m exec /usr/bin/tilix -e /usr/bin/mocp
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -333,26 +336,53 @@ mode "$VPN_MODE" {
 }
 #==========================| VPN MODE END
 
-#==========================> MEDIA MODE
+#==========================> BRIGHTNESS MODE
+bindsym Shift+b mode "$BRIGHTNESS_MODE"
+
+set $BRIGHTNESS_MODE BRIGHTNESS MODE: (j/+/Up) increase, (k/-/Down) decrease
+mode "$BRIGHTNESS_MODE" {
+     bindsym b	mode "$brightness_mode"
+     bindsym Escape mode "default"
+     bindsym Return mode "default"
+     bindsym Shift+m mode "default"
+}
+
+mode "$brightness_mode" {
+        #turn up brightness by 20%
+        bindsym plus exec /usr/bin/brightnessctl set +20
+        bindsym Up exec /usr/bin/brightnessctl set +20
+        bindsym k exec /usr/bin/brightnessctl set +20
+        
+        #turn down brightness by 20%
+        bindsym minus exec /usr/bin/brightnessctl set 20-
+        bindsym Down exec /usr/bin/brightnessctl set 20-
+        bindsym j exec /usr/bin/brightnessctl set 20-
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym Shift+b mode "default"
+}
+#==========================| BRIGHTNESS MODE END
+
+#==========================> AUDIO MODE
 #audio general commands
 exec --no-startup-id volumeicon
-#exec bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
+#exec bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'f
 exec --no-startup-id pulseaudio -k && pulseaudio --start
 exec --no-startup-id pa-applet
 bindsym $mod+Ctrl+m exec pavucontrol
 
-bindsym Shift+m mode "$MEDIA_MODE"
+bindsym Shift+a mode "$AUDIO_MODE"
 
-set $MEDIA_MODE MEDIA MODE: (a) audio, (b) brightness
-mode "$MEDIA_MODE" {
-    bindsym a	mode "$media_mode_audio"
-    bindsym b	mode "$media_mode_brightness"
+set $AUDIO_MODE AUDIO MODE: (h/+/Up) increase, (j/-/Down) decrease, (m) Mute
+mode "$AUDIO_MODE" {
+    bindsym a	mode "$audio_mode"
     bindsym Escape mode "default"
     bindsym Return mode "default"
     bindsym Shift+m mode "default"
 }
 
-mode "$media_mode_audio" {
+mode "$audio_mode" {
         #turn up volume by 10%
         bindsym plus exec /usr/bin/pulseaudio-ctl up 10%
         bindsym Up exec /usr/bin/pulseaudio-ctl up 10%
@@ -369,25 +399,12 @@ mode "$media_mode_audio" {
 
         bindsym Return mode "default"
         bindsym Escape mode "default"
-        bindsym Shift+m mode "default"
+        bindsym Shift+a mode "default"
 }
 
-mode "$media_mode_brightness" {
-        #turn up brightness by 20%
-        bindsym plus exec /usr/bin/brightnessctl set +20
-        bindsym Up exec /usr/bin/brightnessctl set +20
-        bindsym k exec /usr/bin/brightnessctl set +20
-        
-        #turn down brightness by 20%
-        bindsym minus exec /usr/bin/brightnessctl set 20-
-        bindsym Down exec /usr/bin/brightnessctl set 20-
-        bindsym j exec /usr/bin/brightnessctl set 20-
+#==========================| AUDIO MODE END
 
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym Shift+m mode "default"
-}
-#==========================| MEDIA MODE END
+
 
 #==========================| SYSTEM MODE
 bindsym Shift+s mode "$SYSTEM_MODE"
@@ -473,7 +490,7 @@ mode "$TRAY_MODE" {
 #==========================| TRAY MODE END
 
 #==========================> PASSWORD MANAGER MODE
-bindsym Shift+X mode "$PM_MODE"
+bindsym Shift+x mode "$PM_MODE"
 set $PM_MODE PASSWORD MANAGER MODE: (e) Enable KDBX , (d) Disable KDBX
 mode "$PM_MODE" {
 
