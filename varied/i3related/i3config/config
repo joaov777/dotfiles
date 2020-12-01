@@ -1,4 +1,4 @@
-#       ___      __ 
+#       ___      __ /
 #      | \ \    / / 
 #      | |\ \  / /  
 #  _   | | \ \/ /   
@@ -374,7 +374,7 @@ bindsym $mod+Ctrl+m exec pavucontrol
 
 bindsym Shift+a mode "$AUDIO_MODE"
 
-set $AUDIO_MODE AUDIO MODE: (h/+/Up) increase, (j/-/Down) decrease, (m) Mute
+set $AUDIO_MODE AUDIO MODE: (k/+/Up) increase, (j/-/Down) decrease, (m) Mute
 mode "$AUDIO_MODE" {
     bindsym a	mode "$audio_mode"
     bindsym Escape mode "default"
