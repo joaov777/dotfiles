@@ -26,13 +26,13 @@ install_trizen() {
 
 
 packages_required=(
-	trizen keeweb keepassxc pdfarranger openssh tcpdump tldr fzf \
-	visual-studio-code-bin google-chrome bind-tools brave \
+	trizen keepassxc pdfarranger openssh tcpdump tldr fzf \
+	visual-studio-code-bin bind-tools brave exa \
 	git tilda notepadqq gparted papirus-folders-git woeusb \
 	filezilla tilix telegram-desktop copyq flameshot ranger \
 	gedit pwgen vim rdesktop i3lock mtr tmux font-manager unison \
 	nmap okular viewnior ncdu inxi otf-fira-mono nordvpn-bin \
-	veracrypt papirus-icon-theme neofetch snes9x-gtk \
+	veracrypt papirus-icon-theme neofetch \
 	arp-scan net-tools teamviewer rclone peek krdc gvfs-smb thunar-shares-plugin-gtk3 gvfs 
 	imagewriter albert wget dnsutils  
 	)

@@ -26,13 +26,13 @@ install_trizen() {
 
 
 packages_required=(
-	trizen keeweb i3-gaps pdfarranger openssh tcpdump tldr fzf thunar speedtest-cli \
-	visual-studio-code-bin google-chrome bind-tools rofi dmenu brave keepassxc brightnessctl termite \
+	trizen i3-gaps pdfarranger openssh tcpdump tldr fzf thunar \
+	visual-studio-code-bin bind-tools rofi dmenu brave keepassxc brightnessctl termite \
 	git tilda notepadqq gparted papirus-folders-git netctl acpi pulseaudio-alsa xfce4-notifyd \
-	filezilla telegram-desktop copyq flameshot ranger pulseaudio-ctl speedtest-cli xfce4-power-manager\
+	filezilla telegram-desktop copyq flameshot ranger pulseaudio-ctl xfce4-power-manager\
 	gedit pwgen openssh vim rdesktop i3lock i3lock-fancy-git mtr tmux iw py3status \
 	nmap okular viewnior ncdu inxi htop otf-fira-mono nordvpn-bin nitrogen netctl \
-	veracrypt papirus-icon-theme neofetch lxappearance vlc picom i3status trayer vifm \
+	veracrypt papirus-icon-theme neofetch lxappearance vlc picom i3status trayer vifm exa \
 	arp-scan net-tools teamviewer rclone peek xorg-server xorg-apps xorg-init networkmanager-dmenu-git \ 
 	imagewriter albert wget dnsutils xorg-xrandr arandr sshfs nm-connection-editor \ 
 	pulseaudio-alsa pulseaudio-bluetooth bluez bluez-libs bluez-utils blueman tilix \
