@@ -1,3 +1,14 @@
+#       ___      __ 
+#      | \ \    / /   Joao Victor (joaov777)
+#      | |\ \  / /    https://github.com/joaov777
+#  _   | | \ \/ /   
+# | |__| |  \  /    
+#  \____/    \/     
+#
+#  ZSHRC Config file                  
+
+#==========================> BEGINNING OF FILE
+
 # Path to your oh-my-zsh installation.	
 export ZSH="/home/$USER/.oh-my-zsh"	
  
@@ -68,6 +79,14 @@ source $ZSH/oh-my-zsh.sh
 # RCLONE RELATED	
   rclr(){rclone listremotes}	
   rcmo(){mkdir ~/Desktop/$1 ; xdg-open ~/Desktop/$1 ; rclone mount $1:/ ~/Desktop/$1 ; fusermount -uz $1 >/dev/null 2>&1 ; rm -rf ~/Desktop/$1}	
+
+#EXA RELATED
+alias ls='exa -al --color=always --group-directories-first'
+alias la='exa -a --color=always --group-directories-first'  
+alias ll='exa -l --color=always --group-directories-first'  
+alias lt='exa -aT --color=always --group-directories-first'
+alias l.='exa -a | egrep "^\."'
+
 
 # NORD RELATED	
   nc(){nordvpn connect}	
