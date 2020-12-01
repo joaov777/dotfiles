@@ -31,7 +31,7 @@ warn-vte-config-issue=false
 window-style='disable-csd-hide-toolbar'
 
 [profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d]
-background-color='#141414'
+background-color='#222222'
 background-transparency-percent=0
 badge-color='#AC7EA8'
 badge-color-set=false
@@ -43,9 +43,9 @@ default-size-columns=115
 default-size-rows=33
 dim-transparency-percent=0
 font='Fira Mono Medium 9'
-foreground-color='#FFFFD4'
+foreground-color='#A0A0A0'
 highlight-colors-set=false
-palette=['#141414', '#C06D44', '#AFB97A', '#C2A86C', '#44474A', '#B4BE7C', '#778385', '#FFFFD4', '#262626', '#DE7C4C', '#CCD88C', '#E2C47E', '#5A5E62', '#D0DC8E', '#8A989B', '#FFFFD4']
+palette=['#383838', '#A95551', '#666666', '#A98051', '#657D3E', '#767676', '#C9C9C9', '#D0B8A3', '#474747', '#A97775', '#8C8C8C', '#A99175', '#98BD5E', '#A3A3A3', '#DCDCDC', '#D8C8BB']
 scroll-on-keystroke=false
 show-scrollbar=false
 use-system-font=false
