@@ -37,7 +37,7 @@ packages_required=(
 	imagewriter albert wget dnsutils xorg-xrandr arandr sshfs nm-connection-editor \ 
 	pulseaudio-alsa pulseaudio-bluetooth bluez bluez-libs bluez-utils blueman tilix \
 	noto-fonts ttf-ubuntu-font-family ttf-dejavu ttf-freefont ttf-liberation \
-    	ttf-droid ttf-inconsolata ttf-roboto terminus-font ttf-font-awesome \
+  ttf-droid ttf-inconsolata ttf-roboto terminus-font ttf-font-awesome xournalpp \
 	alsa-utils alsa-plugins alsa-lib pavucontrol lightdm lightdm-gtk-greeter 
 	)
 	
