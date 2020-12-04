@@ -81,12 +81,11 @@ source $ZSH/oh-my-zsh.sh
   rcmo(){mkdir ~/Desktop/$1 ; xdg-open ~/Desktop/$1 ; rclone mount $1:/ ~/Desktop/$1 ; fusermount -uz $1 >/dev/null 2>&1 ; rm -rf ~/Desktop/$1}	
 
 #EXA RELATED
-alias ls='exa -al --color=always --group-directories-first'
-alias la='exa -a --color=always --group-directories-first'  
-alias ll='exa -l --color=always --group-directories-first'  
-alias lt='exa -aT --color=always --group-directories-first'
-alias l.='exa -a | egrep "^\."'
-
+  alias ls='exa -al --color=always --group-directories-first'
+  alias la='exa -a --color=always --group-directories-first'  
+  alias ll='exa -l --color=always --group-directories-first'  
+  alias lt='exa -aT --color=always --group-directories-first'
+  alias l.='exa -a | egrep "^\."'
 
 # NORD RELATED	
   nc(){nordvpn connect}	
@@ -122,7 +121,10 @@ alias l.='exa -a | egrep "^\."'
   mm(){watch -n 1 inxi -t m} #monitoring RAM
   
 
-  alias cdmc="cd ~/mainconf"	
+  alias cdmc="cd ~/mainconf"
+  #alias se='vim -o "$(fzf -e)"'
+  alias se='vim -o "$(rg --files | fzf -e)"' #fuzzy search for files
+  alias seh='vim -o "$(rg --files --hidden | fzf -e)"' #fuzzy search for hidden files
   alias mainconf="~/mainconf/mainconf.sh"
   findip(){echo " -- IP FOUND: "$(sudo arp-scan $1 | grep $2 | cut -f 1)}	
   findmac(){echo "-- MAC FOUND: "$(sudo arp-scan $1 | sed -n '3p' | cut -f 2,3)}		
