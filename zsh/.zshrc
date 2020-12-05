@@ -100,6 +100,7 @@ source $ZSH/oh-my-zsh.sh
   alias gpl="git pull"
   alias gps="git push origin master"
   gpsm(){cd ~/mainconf && git add . && git commit -m "$1" && git push origin master && cd -} #git push mainconf
+  gplm(){cd ~/mainconf && git pull && cd -} #git pull mainconf
 
 # NORD RELATED	
   nc(){nordvpn connect}	
