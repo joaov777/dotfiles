@@ -52,7 +52,8 @@ source $ZSH/oh-my-zsh.sh
   alias wiki="~/wiki/wiki.sh"	
   alias env="sudo redshift -O 3000" #enabling night view	
   alias dnv="sudo redshift -x" #disabling night view	
-  alias fkw="sudo rm ~/.config/KeeWeb/runtime-data.json"	
+  alias fkw="sudo rm ~/.config/KeeWeb/runtime-data.json"
+  alias gw="/sbin/ip route | awk '/default/ { print $3 }'"
   alias wanwan="curl https://ipinfo.io/ip"	
   alias rn="sudo systemctl restart NetworkManager.service"	
   alias keyus="setxkbmap us intl"	
@@ -77,8 +78,8 @@ source $ZSH/oh-my-zsh.sh
   tks(){tmux kill-session -t $1}	
 
 # RCLONE RELATED	
-  rclr(){rclone listremotes}	
-  rcmo(){mkdir ~/Desktop/$1 ; xdg-open ~/Desktop/$1 ; rclone mount $1:/ ~/Desktop/$1 ; fusermount -uz $1 >/dev/null 2>&1 ; rm -rf ~/Desktop/$1}	
+  rcl(){rclone listremotes}	
+  rcm(){mkdir ~/Desktop/$1 ; xdg-open ~/Desktop/$1 ; rclone mount $1:/ ~/Desktop/$1 ; fusermount -uz $1 >/dev/null 2>&1 ; rm -rf ~/Desktop/$1}	
 
 #EXA RELATED
   alias ls='exa -al --color=always --group-directories-first'
@@ -86,6 +87,15 @@ source $ZSH/oh-my-zsh.sh
   alias ll='exa -l --color=always --group-directories-first'  
   alias lt='exa -aT --color=always --group-directories-first'
   alias l.='exa -a | egrep "^\."'
+
+# GIT RELATED
+  alias grs="git remote set-url origin git@github.com:$1/$2}" #set git remote for ssh	
+  alias grh="git remote set-url origin https://github.com/$1/$2.git" #set git remote for http.
+  alias gaa="git add ."
+  alias ga="git add"
+  alias gc="git commit -m $1"
+  alias gpl="git pull"
+  alias gps="git push origin master"
 
 # NORD RELATED	
   nc(){nordvpn connect}	
@@ -112,10 +122,8 @@ source $ZSH/oh-my-zsh.sh
   ck(){ssh-keygen -t rsa -b 4096} #create ssh keys locally
   pk(){cat ~/.ssh/id_rsa.pub}
   mf(){[ $1 != "" ] && watch --interval 1 du -sh $1 || watch --interval 1 du -sh $PWD/} #monitor remote or local folder
-  mainconfpush(){cd ~/mainconf && git add . && git commit -m "$1" && git push origin master && cd -} ##pushing mainconf to git
-  mainconfpull(){cd ~/mainconf && git pull && cd -}
-  gitssh(){git remote set-url origin git@github.com:$1/$2} #set git remote for ssh	
-  githttp(){git remote set-url origin https://github.com/$1/$2.git} #set git remote for http.
+  mcpush(){cd ~/mainconf && git add . && git commit -m "$1" && git push origin master && cd -} ##pushing mainconf to git
+  mcpull(){cd ~/mainconf && git pull && cd -}
   mp(){watch -n 1 inxi -t cm10} #monitoring 10 most active processes
   mn(){watch -n 1 inxi -Nni} #monitoring NICs
   mm(){watch -n 1 inxi -t m} #monitoring RAM
