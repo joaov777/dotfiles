@@ -54,8 +54,8 @@ source $ZSH/oh-my-zsh.sh
   alias env="sudo redshift -O 3000" #enabling night view	
   alias dnv="sudo redshift -x" #disabling night view	
   alias fkw="sudo rm ~/.config/KeeWeb/runtime-data.json"
-  alias gw="/sbin/ip route | awk '/default/ { print $3 }'"
-  alias wanwan="curl https://ipinfo.io/ip"	
+  alias gwl="/sbin/ip route | awk '/default/ { print $3 }'" #gateway lan
+  alias gww="curl https://ipinfo.io/ip"	#gateway wan
   alias rn="sudo systemctl restart NetworkManager.service"	
   alias keyus="setxkbmap us intl"	
   alias keybr="setxkbmap -layout br -model abnt2"	
@@ -65,6 +65,7 @@ source $ZSH/oh-my-zsh.sh
   alias l="ls -liar"
   alias bl="acpi -V" #check battery info  
   alias tt="~/mainconf/scripts/tilixthemechooser.sh"
+  alias xp="~/mainconf/scripts/panel.sh" #xfce4 panel enable/disable
 
   alias .="cd .."	
   alias ..="cd ../../"	
