@@ -36,7 +36,8 @@ source $ZSH/oh-my-zsh.sh
   crd(){ssh -C $1@$2 -p $3 ncdu -o- / | ncdu -f-} #check remote disk	
 
   alias pgpg="ping 8.8.8.8"	
-  alias zc="sudo vim ~/.zshrc"	
+  alias zc="vim ~/.zshrc"
+  alias sz="source ~/.zshrc"
   alias rf="sudo rm -rf" #remove folder	
   alias ds="youtube-dl --extract-audio --audio-format mp3 $1 -o '~/Music/%(title)s.%(ext)s'"	
   alias sshdstart="sudo systemctl start sshd"	
@@ -89,8 +90,9 @@ source $ZSH/oh-my-zsh.sh
   alias l.='exa -a | egrep "^\."'
 
 # GIT RELATED
-  alias grs="git remote set-url origin git@github.com:$1/$2}" #set git remote for ssh	
-  alias grh="git remote set-url origin https://github.com/$1/$2.git" #set git remote for http.
+  alias grs="git remote set-url --add origin git@github.com:$1/$2.git" #set git remote for ssh	
+  alias grh="git remote set-url --add origin https://github.com/$1/$2.git" #set git remote for http.
+  alias gsr="git remote -v"
   alias gaa="git add ."
   alias ga="git add"
   alias gc="git commit -m $1"
@@ -107,13 +109,16 @@ source $ZSH/oh-my-zsh.sh
   ppp(){python3 $PWD/$1}	
   run(){$PWD/$1} #run local script without ./	
   lesser(){less -N -I $1} #better alternative for cat 	
-  dp(){trizen -S $1 --noconfirm} #download package	
-  rp(){sudo pacman -Rcnsu $1 --noconfirm} #Removing a package and its dependencies	
-  ru(){sudo pacman -R $(pacman -Qdtq) --noconfirm} #Removing unnecessary dependencies	
-  mkcd(){mkdir -pv "$1"; cd "$1"} #Creating folder (including parents) and entering the fresly created folder	
+  dpt(){trizen -S $1 --noconfirm} #download package via trizen
+  spt(){[[ $2 = "" ]] && trizen -Ss $1 || trizen -Ss $1 | grep $2} #search package	
+  rpt(){trizen -R $1 --noconfirm} #remove package via trizen
+  dpp(){sudo pacman -S $1} #download package via pacman
+  spp(){sudo pacman -Ss $1}
+  rpp(){sudo pacman -Rcnsu $1 --noconfirm} #Removing a package and its dependencies	 via pacman
+  rup(){sudo pacman -R $(pacman -Qdtq) --noconfirm} #Removing unnecessary dependencies	
+  mkcd(){mkdir -pv "$1"; cd "$1"} #Creating folder (including parents) and entering the freshly created folder	
   sf(){sudo rsync -avz --progress "$1" "$2"} #syncfolder - syncs folder path 1 to folder path 2	
-  sp(){[[ $2 = "" ]] && trizen -Ss $1 || trizen -Ss $1 | grep $2} #search package	
-  hs(){history | grep $1} #search commands in history	
+  hs(){print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac --height "50%" | sed -E 's/ *[0-9]*\*? *//' | sed -E 's/\\/\\\\/g')} #search commands in history	
   ii(){pacman -Q $1} #checking whether a package is installed	
   ft(){timedatectl set-ntp true} #fix time
   sl(){du -sh ./*} #local folder and files sizes
@@ -130,7 +135,7 @@ source $ZSH/oh-my-zsh.sh
   
 
   alias cdmc="cd ~/mainconf"
-  #alias se='vim -o "$(fzf -e)"'
+  alias -g cc="| xclip -selection c" #copying whatever command output to the clipboard
   alias se='vim -o "$(rg --files | fzf -e)"' #fuzzy search for files
   alias seh='vim -o "$(rg --files --hidden | fzf -e)"' #fuzzy search for hidden files
   alias mainconf="~/mainconf/mainconf.sh"
