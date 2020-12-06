@@ -32,7 +32,7 @@ packages_required=(
 	filezilla tilix telegram-desktop copyq flameshot ranger \
 	gedit pwgen vim rdesktop i3lock mtr tmux font-manager unison \
 	nmap okular viewnior ncdu inxi otf-fira-mono nordvpn-bin \
-	veracrypt papirus-icon-theme neofetch xournalpp \
+	veracrypt papirus-icon-theme neofetch xournalpp dialog \
 	arp-scan net-tools teamviewer rclone peek krdc gvfs-smb thunar-shares-plugin-gtk3 gvfs 
 	imagewriter albert wget dnsutils  
 	)
