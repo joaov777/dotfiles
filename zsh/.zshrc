@@ -96,6 +96,8 @@ source $ZSH/oh-my-zsh.sh
   alias gsr="git remote -v"
   alias gaa="git add ."
   alias ga="git add"
+  alias gdf="git diff"
+  alias gst="git status"
   alias gc="git commit -m $1"
   alias gpl="git pull"
   alias gps="git push origin master"
