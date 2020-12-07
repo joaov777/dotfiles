@@ -115,10 +115,7 @@ done
 	#nord related
 	echo "-- Enabling and Starting VPN service --" ; sleep 1
 	sudo systemctl enable nordvpnd --now
-
-	#starship cross shell
-	curl -fsSL https://starship.rs/install.sh | bash
-
+	
     clear
 
 #################################

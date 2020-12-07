@@ -157,5 +157,6 @@ source $ZSH/oh-my-zsh.sh
   alias um="sudo pacman-mirrors --fasttrack 5 && sudo pacman -Syyu --noconfirm"	
   alias upup="sudo pacman -Syyuu"	
 
-  eval "$(starship init zsh)"
+  #uncomment below to enable starship
+  #eval "$(starship init zsh)"
 

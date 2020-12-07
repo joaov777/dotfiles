@@ -98,9 +98,6 @@ done
 	#nord related
 	sudo systemctl enable nordvpnd --now
 
-	#starship cross shell
-	curl -fsSL https://starship.rs/install.sh | bash
-
 	#printing related - install manually on the 'print settings' GUI
 	#sudo pacman -S manjaro-printer
 	#sudo gpasswd $USER sys
