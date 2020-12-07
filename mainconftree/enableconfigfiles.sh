@@ -38,7 +38,7 @@ clear
         sudo ln -sf ~/mainconf/varied/i3related/py3status/py3statusbars/i3status2.conf /etc/i3status2.conf
 
         echo "Enabling Tilix" ; sleep 1
-        dconf load /com/gexperts/Tilix/ < ~/mainconf/varied/tilix/tilix3.dconf
+        dconf load /com/gexperts/Tilix/ < ~/mainconf/varied/tilix/palenight.dconf
 
         echo "Enabling rofi launcher..." ; sleep 1
         [ ! -d "~/.config/rofi" ] && mkdir ~/.config/rofi || echo "Folder exists!"
