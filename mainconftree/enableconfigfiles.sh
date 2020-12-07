@@ -40,6 +40,10 @@ clear
         echo "Enabling Tilix" ; sleep 1
         dconf load /com/gexperts/Tilix/ < ~/mainconf/varied/tilix/tilix3.dconf
 
+        echo "Setting up Starship cross shell" ; sleep 1
+        cp ~/mainconf/varied/starship/starship.toml ~/.config
+        ln -sf ~/mainconf/varied/starship/starship.toml ~/.config/starship.toml
+
         echo "Enabling rofi launcher..." ; sleep 1
         [ ! -d "~/.config/rofi" ] && mkdir ~/.config/rofi || echo "Folder exists!"
         sudo cp ~/mainconf/varied/i3related/rofi/config ~/.config/rofi/config
