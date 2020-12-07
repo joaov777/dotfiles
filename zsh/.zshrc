@@ -101,6 +101,7 @@ source $ZSH/oh-my-zsh.sh
   alias gc="git commit -m $1"
   alias gpl="git pull"
   alias gps="git push origin master"
+  alias sgu="~/mainconf/scripts/setupgituser.sh"
   gpsm(){cd ~/mainconf && git add . && git commit -m "$1" && git push origin master && cd -} #git push mainconf
   gplm(){cd ~/mainconf && git pull && cd -} #git pull mainconf
 
@@ -140,6 +141,7 @@ source $ZSH/oh-my-zsh.sh
   
 
   alias cdmc="cd ~/mainconf"
+  alias rdprdp="~/mainconf/scripts/rdprdp.sh"
   alias -g cc="| xclip -selection c" #copying whatever command output to the clipboard
   alias se='vim -o "$(rg --files | fzf -e)"' #fuzzy search for files
   alias seh='vim -o "$(rg --files --hidden | fzf -e)"' #fuzzy search for hidden files

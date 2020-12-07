@@ -27,7 +27,7 @@ install_trizen() {
 
 packages_required=(
 	trizen keepassxc pdfarranger openssh tcpdump tldr fzf \
-	visual-studio-code-bin bind-tools brave exa \
+	visual-studio-code-bin bind-tools brave exa nerd-fonts-fira-code \
 	git tilda notepadqq gparted papirus-folders-git woeusb \
 	filezilla tilix telegram-desktop copyq flameshot ranger \
 	gedit pwgen vim rdesktop i3lock mtr tmux font-manager unison \
@@ -112,10 +112,12 @@ done
 	cp ~/mainconf/varied/albert/albert.conf ~/.config/albert
 	pkill /usr/bin/albert > /dev/null
 
-
 	#nord related
 	echo "-- Enabling and Starting VPN service --" ; sleep 1
 	sudo systemctl enable nordvpnd --now
+
+	#starship cross shell
+	curl -fsSL https://starship.rs/install.sh | bash
 
     clear
 

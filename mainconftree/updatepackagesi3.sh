@@ -34,9 +34,9 @@ packages_required=(
 	nmap okular viewnior ncdu inxi htop otf-fira-mono nordvpn-bin nitrogen netctl \
 	veracrypt papirus-icon-theme neofetch lxappearance vlc picom i3status trayer vifm exa \
 	arp-scan net-tools teamviewer rclone peek xorg-server xorg-apps xorg-init networkmanager-dmenu-git \ 
-	imagewriter albert wget dnsutils xorg-xrandr arandr sshfs nm-connection-editor \ 
+	imagewriter albert wget dnsutils xorg-xrandr arandr sshfs nm-connection-editor nerd-fonts-fira-code \ 
 	pulseaudio-alsa pulseaudio-bluetooth bluez bluez-libs bluez-utils blueman tilix \
-	noto-fonts ttf-ubuntu-font-family ttf-dejavu ttf-freefont ttf-liberation dialog \
+	noto-fonts ttf-ubuntu-font-family ttf-dejavu ttf-freefont ttf-liberation dialog  \
   ttf-droid ttf-inconsolata ttf-roboto terminus-font ttf-font-awesome xournalpp \
 	alsa-utils alsa-plugins alsa-lib pavucontrol lightdm lightdm-gtk-greeter 
 	)
@@ -97,6 +97,9 @@ done
 
 	#nord related
 	sudo systemctl enable nordvpnd --now
+
+	#starship cross shell
+	curl -fsSL https://starship.rs/install.sh | bash
 
 	#printing related - install manually on the 'print settings' GUI
 	#sudo pacman -S manjaro-printer
