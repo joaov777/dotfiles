@@ -79,7 +79,8 @@ floating_modifier $mod
 
 # start a terminal
 #bindsym $mod+Return exec /usr/bin/termite
-bindsym $mod+Return exec /usr/bin/tilix
+#bindsym $mod+Return exec /usr/bin/tilix
+bindsym $mod+Return exec /usr/bin/alacritty
 #==========================| PERSONAL APPS END
 
 #==========================> GENERAL COMMANDS

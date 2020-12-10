@@ -5,7 +5,8 @@
 # These configuration files will be loaded in order, replacing values in files
 # loaded earlier with those loaded later in the chain. The file itself will
 # always be loaded last.
-#import:
+import:
+  - /home/suporte/mainconf/varied/alacritty/themes/dracula.yml
 #  - /path/to/alacritty.yml
 
 # Any items in the `env` entry below will be added as
@@ -99,16 +100,17 @@
   #multiplier: 3
 
 # Font configuration
-#font:
+font:
+
   # Normal (roman) font face
-  #normal:
+  normal:
     # Font family
     #
-    # Default:
+    Default:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    #family: monospace
+    family: FiraMono Medium 
 
     # The `style` can be specified to pick a specific face.
     #style: Regular
@@ -147,7 +149,7 @@
     #style: Bold Italic
 
   # Point size
-  #size: 11.0
+  size: 9.0
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
@@ -336,14 +338,14 @@
   # When set to `true`, selected text will be copied to the primary clipboard.
   #save_to_clipboard: false
 
-#cursor:
+cursor:
   # Cursor style
   #
   # Values for `style`:
   #   - ▇ Block
   #   - _ Underline
   #   - | Beam
-  #style: Block
+  style: Beam
 
   # Vi mode cursor style
   #
