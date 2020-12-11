@@ -101,7 +101,7 @@ source $ZSH/oh-my-zsh.sh
   alias gc="git commit -m $1"
   alias gpl="git pull"
   alias gps="git push origin master"
-  alias sgu="git config --global user.name $1 && git config --global user.email $2" #username and e-mail
+  gus(){git config --global user.name "$1" && git config --global user.email "$2" && git config --global core.editor vim}
   gpsm(){cd ~/mainconf && git add . && git commit -m "$1" && git push origin master && cd -} #git push mainconf
   gplm(){cd ~/mainconf && git pull && cd -} #git pull mainconf
 
