@@ -146,8 +146,8 @@ source $ZSH/oh-my-zsh.sh
   alias se='vim -o "$(rg --files | fzf -e)"' #fuzzy search for files
   alias seh='vim -o "$(rg --files --hidden | fzf -e)"' #fuzzy search for hidden files
   alias mainconf="~/mainconf/mainconf.sh"
-  findip(){echo " -- IP FOUND: "$(sudo arp-scan $1 | grep $2 | cut -f 1)}	
-  findmac(){echo "-- MAC FOUND: "$(sudo arp-scan $1 | sed -n '3p' | cut -f 2,3)}		
+  findip(){echo " -- IP FOUND: $(sudo arp-scan $1 | grep $2 | cut -f 1)"}	
+  findmac(){echo "-- MAC FOUND: $(sudo arp-scan $1 | sed -n '3p' | cut -f 2,3)"}		
   cl(){clear}	
   alias brltousd="~/mainconf/scripts/brltousd.sh"
   alias usdtobrl="~/mainconf/scripts/usdtobrl.sh"	
