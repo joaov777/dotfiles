@@ -16,19 +16,19 @@ clear
 	#echo "The option chosen was $option"
 	
 	case $option in
-	Y|y)
+	Y|y|Yes|YES|yes)
 		echo "Installing XFCE DE..." && sleep 1
 		sudo pacman -S xfce4 xfce4-goodies xfce4-terminal --noconfirm --needed
-		echo "|--> XFCE Desktop environment installed!! && sleep 2
+		echo "|--> Done" && sleep 1
 		
 		
 		echo "Installing Ligthdm Login manager..." && sleep 1
 		sudo pacman -S lightdm lightdm-gtk-greeter --noconfirm --needed
 		sudo systemctl enable lightdm.service --now
-		echo "|--> Lightdm Login manager installed!! && sleep 2
+		echo "|--> Done" && sleep 1
 	
 	;;
-	N|n)
+	N|n|NO|No|no)
 		exit
 	;;
 	*)

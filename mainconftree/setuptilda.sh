@@ -4,13 +4,13 @@ clear
         
     echo "$(tput bold)$(tput setaf 7)"
     echo "|==============|> MAINCONF <|==============|"
-    echo "|------------> SETUP TILDA <------------|"
+    echo "|-------------> SETUP TILDA <--------------|"
 
     #checking whether tilda is installed
     if [ -z "$(pacman -Qi tilda)" ];
 	then
-		echo "|---> Tilda is not installed!!" ; sleep 1
-        echo "|---> Installing Tilda..." ; sleep 1
+		echo "|--> Tilda is not installed!!" && sleep 1
+        echo "|--> Installing Tilda" && sleep 1
         
         #choosing best helper
         if pacman -Qi trizen > /dev/null 2>&1 ; then
@@ -21,21 +21,21 @@ clear
 
 
 	else
-		echo "|---> Tilda is already installed!!" ; sleep 2
+		echo "|--> Tilda is already installed!!" && sleep 1
 	fi
 
     #making sure tilda config folder exists
     if [ ! -d ~/.config/tilda ]; then mkdir ~/.config/tilda ; fi
 
-    echo "|---> Copying tilda files to ~/.config/tilda ..."
+    echo "|--> Copying tilda files to ~/.config/tilda ..."
     cp -r ~/mainconf/varied/tildafiles/CURRENT/* ~/.config/tilda/
 
-    echo "|---> Tilda files copied!!" ; sleep 1
+    echo "|--> Tilda files copied!!" && sleep 1
 
     #number of files for loop
     n=$(ls ~/mainconf/varied/tildafiles/ | wc -l)
 
-    echo "|---> Generating symlinks..."
+    echo "|--> Generating symlinks..."
     for i in {0..$n-1}
     do
         file="config_$i"
@@ -43,4 +43,4 @@ clear
         
     done
 
-    echo "|---> Symlinks generated..." ; sleep 1
+    echo "|--> Symlinks generated..." && sleep 1
