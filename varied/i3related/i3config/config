@@ -44,6 +44,9 @@ exec --no-startup-id exec setxkbmap us intl
 # rofi
 #bindsym Ctrl+space exec /usr/bin/rofi -show run
 
+# brave browser
+bindsym $mod+b exec /usr/bin/brave
+
 #dmenu
 bindsym Ctrl+space exec /usr/bin/dmenu_run
 
