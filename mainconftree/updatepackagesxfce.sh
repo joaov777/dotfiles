@@ -30,7 +30,7 @@ packages_required=(
 	visual-studio-code-bin bind-tools brave exa nerd-fonts-fira-code \
 	git tilda notepadqq gparted papirus-folders-git woeusb \
 	filezilla tilix telegram-desktop copyq flameshot ranger \
-	gedit pwgen vim rdesktop i3lock mtr tmux font-manager unison \
+	gedit pwgen vim rdesktop i3lock mtr tmux font-manager unison ttf-windows \
 	nmap okular viewnior ncdu inxi otf-fira-mono nordvpn-bin \
 	veracrypt papirus-icon-theme neofetch xournalpp dialog \
 	arp-scan net-tools teamviewer rclone peek krdc gvfs-smb thunar-shares-plugin-gtk3 gvfs 
