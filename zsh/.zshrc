@@ -138,8 +138,7 @@ source $ZSH/oh-my-zsh.sh
   mp(){watch -n 1 inxi -t cm10} #monitoring 10 most active processes
   mn(){watch -n 1 inxi -Nni} #monitoring NICs
   mm(){watch -n 1 inxi -t m} #monitoring RAM
-  
-
+   
   alias cdmc="cd ~/mainconf"
   alias rdprdp="rdesktop -u $1 -p $2 -g 800x600 $3" #user, password and machine
   alias -g cc="| xclip -selection c" #copying whatever command output to the clipboard
@@ -154,8 +153,9 @@ source $ZSH/oh-my-zsh.sh
   dr(){echo "DR: $(curl -s https://www.x-rates.com/table/\?from\=USD\&amount\=1 | grep ";to=BRL" | awk '{print $3}' | cut -c59-62)"} #check current dollar rate
 
 # UPDATES	
-  alias um="sudo pacman-mirrors --fasttrack 5 && sudo pacman -Syyu --noconfirm"	
+  alias um="sudo pacman-mirrors -g"	
   alias upup="sudo pacman -Syyuu"	
+  alias uk="sudo pacman -S manjaro-keyring"
 
   #uncomment below to enable starship
   #eval "$(starship init zsh)"
