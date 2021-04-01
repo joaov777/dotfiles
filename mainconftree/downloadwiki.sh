@@ -14,9 +14,7 @@ triggercore() {
                 triggercore
         else
                 echo '|--> Wiki folder exists!!' && sleep 1 && echo '|--> Deleting it!!'
-
                 sudo rm -rf ~/wiki >> /dev/null
-
                 echo '|--> Wiki folder deleted!!' && sleep 1 && echo '|--> Restarting script!!'
                 triggercore
         fi

@@ -12,8 +12,7 @@ while [ true ];
         echo "#(4) - Install ZSH"
         echo "#(5) - Update .ZSHRC"
         echo "#(6) - Enable shortcuts and panel"
-        echo "#(7) - Set up Tilda terminal"
-        echo "#(8) - Download Wiki"
+        echo "#(7) - Download Wiki"
         echo "|-------------------------------------------|"
         read -p "Option: " menuChoice
         
@@ -26,8 +25,7 @@ while [ true ];
                 4) ~/mainconf/mainconftree/installzsh.sh ;;
                 5) ~/mainconf/mainconftree/updatezshrc.sh ;; 
                 6) ~/mainconf/mainconftree/shortcutsandpanels.sh ;;
-                7) ~/mainconf/mainconftree/setuptilda.sh ;;
-                8) ~/mainconf/mainconftree/downloadwiki.sh ;;
+                7) ~/mainconf/mainconftree/downloadwiki.sh ;;
                 *) echo "Not defined!" && sleep 1 ;;
         esac
 

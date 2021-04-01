@@ -20,7 +20,7 @@ install_trizen() {
                 rm -rf trizen
 
 	    else
-		        echo "|--> Trizen is installted" && sleep 1
+		        echo "|--> Trizen is installed" && sleep 1
 	    fi
 }
 
@@ -60,7 +60,6 @@ for pkg in "${packages_required[@]}"; do
 	if [ -z "$(pacman -Qi $pkg)" ]; then #in case it is not installed
 		echo "|--> $pkg is not installed!!" 
 		echo "|--> Installing $pkg..." ; sleep 1
-			#trizen -S "$pkg" --noconfirm --needed &>/dev/null
 			trizen -S "$pkg" --noconfirm --needed
 	
 			#checking whether a package has successfuly been installed -
@@ -70,11 +69,8 @@ for pkg in "${packages_required[@]}"; do
 	fi
 done
 
-	#<< script continues from this point on >>
-
 	#enabling sharing
 	echo "|--> Enabling Samba permissions" ; sleep 1
-	#sudo pacman -S gvfs-smb thunar-shares-plugin-gtk3 gvfs --noconfirm --needed --quiet 
 	sudo smbpasswd -a $USER 
 	papirus-folders -C white > /dev/null
 	xdg-user-dirs-update

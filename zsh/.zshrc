@@ -149,6 +149,7 @@ source $ZSH/oh-my-zsh.sh
   findmac(){echo "-- MAC FOUND: $(sudo arp-scan $1 | sed -n '3p' | cut -f 2,3)"}		
   cl(){clear}	
   alias brltousd="~/mainconf/scripts/brltousd.sh"
+  alias setuptilda="~/mainconf/scripts/setuptilda.sh"
   alias usdtobrl="~/mainconf/scripts/usdtobrl.sh"	
   dr(){echo "DR: $(curl -s https://www.x-rates.com/table/\?from\=USD\&amount\=1 | grep ";to=BRL" | awk '{print $3}' | cut -c59-62)"} #check current dollar rate
 
