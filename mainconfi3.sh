@@ -11,7 +11,6 @@ while [ true ];
         echo "#(3) - Enable config files"
         echo "#(4) - Install ZSH"
         echo "#(5) - Update .ZSHRC"
-        echo "#(6) - Download Wiki"
         echo "|-------------------------------------------|"
         read -p "Option: " menuChoice
         
@@ -23,7 +22,6 @@ while [ true ];
                 3) ~/mainconf/mainconftree/enableconfigfiles.sh ;;
                 4) ~/mainconf/mainconftree/installzsh.sh ;;
                 5) ~/mainconf/mainconftree/updatezshrc.sh ;;  
-                6) ~/mainconf/mainconftree/downloadwiki.sh ;;
                 *) echo "Not defined!" && sleep 1 ;;
         esac
 

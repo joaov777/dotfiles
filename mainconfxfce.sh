@@ -7,12 +7,10 @@ while [ true ];
         echo "$(tput bold)$(tput setaf 7)"
         echo "|==============|> MAINCONF - XFCE <|==============|"
         echo "#(1) - Update System (Mirrors and packages)"
-        echo "#(2) - Install XFCE DE"
-        echo "#(3) - Update Packages"
-        echo "#(4) - Install ZSH"
-        echo "#(5) - Update .ZSHRC"
-        echo "#(6) - Enable shortcuts and panel"
-        echo "#(7) - Download Wiki"
+        echo "#(2) - Update Packages"
+        echo "#(3) - Install ZSH"
+        echo "#(4) - Update .ZSHRC"
+        echo "#(5) - Enable shortcuts and panel"
         echo "|-------------------------------------------|"
         read -p "Option: " menuChoice
         
@@ -20,12 +18,10 @@ while [ true ];
         case $menuChoice in
                 q|Q|quit|QUIT|Quit|qUIT|exit|EXIT|Exit) exit ;;
                 1) ~/mainconf/mainconftree/updatesystem.sh ;;
-                2) ~/mainconf/mainconftree/installXFCEde.sh ;;
-                3) ~/mainconf/mainconftree/updatepackagesxfce.sh ;;
-                4) ~/mainconf/mainconftree/installzsh.sh ;;
-                5) ~/mainconf/mainconftree/updatezshrc.sh ;; 
-                6) ~/mainconf/mainconftree/shortcutsandpanels.sh ;;
-                7) ~/mainconf/mainconftree/downloadwiki.sh ;;
+                2) ~/mainconf/mainconftree/updatepackagesxfce.sh ;;
+                3) ~/mainconf/mainconftree/installzsh.sh ;;
+                4) ~/mainconf/mainconftree/updatezshrc.sh ;; 
+                5) ~/mainconf/mainconftree/shortcutsandpanels.sh ;;
                 *) echo "Not defined!" && sleep 1 ;;
         esac
 

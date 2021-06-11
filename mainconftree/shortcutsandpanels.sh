@@ -29,16 +29,12 @@
     kill -9 $(pidof xfconfd)
     xfsettingsd & >/dev/null
     pkill /usr/lib/xfce4/xconf/xconfd && nohup /usr/lib/xfce4/xfconf/xfconfd &
-    echo "|--> Shortcuts updated!!" ; sleep 1
 
     echo "|--> Copying xfce panel..." && sleep 1
     if [ -f $panel ]; then echo "|----> Deleting xfce4-panel.xml" ; rm $panel 2>/dev/null ; fi
-
     wget -q -O $panel https://raw.githubusercontent.com/joaov777/mainconf/master/varied/xfcepanels/bottompanel/xfce4-panel.xml 
     
     echo "|--> Updating panel..." && sleep 1
     xfce4-panel -r > /dev/null
-
-    echo "|--> Panel updated..." && sleep 1
 
 
