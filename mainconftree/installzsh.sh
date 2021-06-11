@@ -9,12 +9,8 @@ clear
 
 		read -p "|--> Insert your username: " username	
 
-		if pacman -Qi trizen > /dev/null 2>&1 ; then
-			trizen -S zsh --noconfirm --needed
-		else
-  			sudo pacman -S zsh --noconfirm --needed
-		fi
-
+		if [ -z "$(pacman -Qi zsh)" ]; then sudo pacman -S zsh --needed --noconfirm; else echo "|--> zsh is installed" && sleep 1; fi
+	
 		echo "|--> Checking $HOME/.oh-my-zsh folder" ; sleep 1
 		if [ -d ~/.oh-my-zsh ]; then sudo rm -rf ~/.oh-my-zsh ; fi
 
