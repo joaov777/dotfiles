@@ -1,30 +1,5 @@
 #!/bin/bash
 
-install_trizen() {
-        
-		clear
-		echo "$(tput bold)$(tput setaf 7)"
-        echo "|==============|> i3 <|==============|"
-        echo "|------------> UPDATE PACKAGES <-----------|"
-
-        if [ -z "$(pacman -Qi trizen)" ];
-	    then
-		        cd ~ 
-                echo ">> Trizen is not installed!!" ; sleep 1
-                echo ">> Installing Trizen AUR Helper" ; sleep 1
-                git clone https://aur.archlinux.org/trizen.git >> /dev/null
-                cd trizen
-                makepkg -si
-
-                cd ..
-                rm -rf trizen
-
-	    else
-		        echo ">> trizen is installed!!" ; sleep 1
-	    fi
-}
-
-
 packages_required=(
 	trizen i3-gaps pdfarranger openssh tcpdump tldr fzf thunar \
 	visual-studio-code-bin bind-tools rofi dmenu brave keepassxc brightnessctl termite \
@@ -41,36 +16,25 @@ packages_required=(
 	alsa-utils alsa-plugins alsa-lib pavucontrol lightdm lightdm-gtk-greeter 
 	)
 	
-	#legacy_packages
-	#mypaint typora whatmask vinagre glances ngrep broot brave barrier 
-	#sipcalc ipcalc redshift bat etcher micro guake vagrant virtualbox-bin vinagre obs-studio glow youtube-dl
-
 check_installation() {
-	if [ -z "$(pacman -Qi $1)" ]; then
-		echo ">> ERROR: Package $1 is NOT installed" ; sleep 1
-	else
-		echo ">> SUCCESS: Package $1 successfuly installed!!" ; sleep 1
-	fi
+	if [ -z "$(pacman -Qi $1)" ]; then echo "|--> ERROR: Package $1" && sleep 1; else echo "|--> SUCCESS: Package $1" && sleep 1; fi
 }
-	#installing trizen
-	install_trizen
-
+	#checking Yay AUR Helper
+	if [ -z "$(pacman -Qi yay)" ]; then sudo pacman -S yay --needed --noconfirm; else echo "|--> Yay is installed" && sleep 1; fi
+	   
 for pkg in "${packages_required[@]}"; do
 	clear
 	echo "$(tput bold)$(tput setaf 7)"
 	echo "|==============|> MAINCONF <|==============|"
 	echo "|------------> UPDATE PACKAGES <-----------|"
 
-	if [ -z "$(pacman -Qi $pkg)" ]; then #in case it is not installed
-		echo "|---> $pkg is not installed!!" 
-		echo "|---> Installing $pkg..." ; sleep 1
-			#trizen -S "$pkg" --noconfirm --needed &>/dev/null
-			trizen -S "$pkg" --noconfirm --needed
-	
-			#checking whether a package has successfuly been installed -
-			check_installation "$pkg"
+	#manage installation
+	if [ -z "$(pacman -Qi $pkg)" ]; then 
+		echo "|--> Installing $pkg..." 
+		yay -S "$pkg" --noconfirm --needed 
+		check_installation "$pkg"
 	else
-		echo "|---> $pkg is installed!!" ; sleep 1 #in case it is installed already
+		echo "|--> $pkg is already installed!!" > /dev/null 
 	fi
 done
 
@@ -106,4 +70,3 @@ done
 	sudo papirus-folders -C black 
 
     clear
-
