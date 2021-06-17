@@ -104,11 +104,12 @@ source $ZSH/oh-my-zsh.sh
   gpsm(){cd ~/mainconf && git add . && git commit -m "$1" && git push origin master && cd -} #git push mainconf
   gplm(){cd ~/mainconf && git pull && cd -} #git pull mainconf
 
-# NORD RELATED	
+# VPN RELATED	
   nc(){nordvpn connect}	
   ncus(){nordvpn connect United_States}	
   nd(){nordvpn disconnect}	
-  ns(){nordvpn status}	
+  ns(){nordvpn status}
+  ifc(){/home/$USER/mainconf/scripts/ifc.sh $1}  
 
 # FUNCTIONS 
   ppp(){python3 $PWD/$1}	
