@@ -9,7 +9,7 @@
 	
 			if [ -z "$(ps aux | grep $campus.ifce.ovpn | sed '$d' | awk '{print $2}')" ]
 			then
-				sudo openvpn --config ~/Desktop/joao.galvino$campus.ifce.ovpn --daemon && echo "VPN $campus pipe created"
+				sudo openvpn --config /home/$USER/mainconf/varied/ifcevpnkeys/joao.galvino$campus.ifce.ovpn --daemon && echo "VPN $campus pipe created"
 			else
 				sudo kill -9 "$(ps aux | grep $campus.ifce.ovpn | sed '$d' | awk '{print $2}')" && echo "VPN $campus pipe destroyed"
 			fi ;;
