@@ -13,14 +13,14 @@
 	case $campus in
 		PICI|REITORIA)
 	
-			if [ -z "$(ps aux | grep $campus.ifce.ovpn | sed '$d' | awk '{print $2}')" ]
+			if [ -z "$openvpnpid" ]
 			then
-				sudo openvpn --config "$directory"joao.galvino"$campus".ifce.ovpn --daemon && echo "VPN $campus connected"
+				sudo openvpn --config "$directory"joao.galvino"$campus".ifce.ovpn --daemon && echo "> VPN $campus connected"
 			else
-				sudo kill -9 "$(ps aux | grep "$campus".ifce.ovpn | sed '$d' | awk '{print $2}')" && echo "VPN $campus disconnected"
+				sudo kill -9 "$(ps aux | grep "$campus".ifce.ovpn | sed '$d' | awk '{print $2}')" && echo "> VPN $campus disconnected"
 			fi ;;
 		
-		d|D|destroy|d|D|DESTROY)
+		d|D)
 			if [ -z "$openvpnpid" ]
 			then
 				sudo killall openvpn && echo "> No connections"
