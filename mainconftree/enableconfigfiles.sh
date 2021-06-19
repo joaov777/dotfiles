@@ -9,63 +9,46 @@ clear
 		
 		#~/mainconf/varied/i3related/
 
-        echo "Enabling clipboard manager..." ; sleep 1
-	[ ! -d "~/.config/copyq" ] && mkdir ~/.config/copyq || echo "Folder exists!"
-        sudo cp ~/mainconf/varied/i3related/copyq/copyq.conf ~/.config/copyq/copyq.conf
-        sudo ln -sf ~/mainconf/varied/i3related/copyq/copyq.conf ~/.config/copyq/copyq.conf
+	    sudo mkdir -p ~/.config/copyq && 
+        sudo ln -sf ~/mainconf/varied/i3related/copyq/copyq.conf ~/.config/copyq/copyq.conf &&
+        echo "> CopyQ enabled..." ; sleep 1
 
-        echo "Enabling screenshot tool..." ; sleep 1
-        [ ! -d "~/.config/Dharkael" ] && mkdir ~/.config/Dharkael || echo "Folder exists!"
-        sudo cp ~/mainconf/varied/i3related/flameshot/flameshot.ini ~/.config/Dharkael/flameshot.ini
-        sudo ln -sf ~/mainconf/varied/i3related/flameshot/flameshot.ini ~/.config/Dharkael/flameshot.ini
+        sudo mkdir -p ~/.config/Dharkael && 
+        sudo ln -sf ~/mainconf/varied/i3related/flameshot/flameshot.ini ~/.config/Dharkael/flameshot.ini && 
+        echo "> Flameshot enabled..." ; sleep 1
 
-        echo "Enabling vifm..." ; sleep 1
-        [ ! -d ~/.config/vifm/colors ] && mkdir -p ~/.config/vifm/colors 
-        sudo cp ~/mainconf/varied/vifm/themes ~/.config/vifm/colors
-        sudo cp ~/mainconf/varied/vifm/vifmrc ~/.config/vifm
+        sudo mkdir -p ~/.config/vifm/colors && 
+        sudo ln -sf ~/mainconf/varied/vifm/themes ~/.config/vifm/colors &&
+        sudo ln -sf ~/mainconf/varied/vifm/vifmrc ~/.config/vifm &&
+        echo "Vifm enabled..." ; sleep 1
 
-        echo "Enabling Picom compositor..." ; sleep 1
-        [ ! -d "/etc/xdg" ] && mkdir /etc/xdg || echo "Folder exists!"
-        sudo cp ~/mainconf/varied/i3related/picom/picom.conf /etc/xdg/picom.conf
-        sudo ln -sf ~/mainconf/varied/i3related/picom/picom.conf /etc/xdg/picom.conf
+        sudo mkdir -p /etc/xdg && 
+        sudo ln -sf ~/mainconf/varied/i3related/picom/picom.conf /etc/xdg/picom.conf &&
+        echo "Picom compositor enabled..." ; sleep 1
 
-        echo "Enabling py3status bars..." ; sleep 1
-        [ ! -d "/etc" ] && mkdir /etc || echo "Folder exists!"
-        sudo cp ~/mainconf/varied/i3related/py3status/py3statusbars/i3status.conf /etc/i3status.conf
-        sudo cp ~/mainconf/varied/i3related/py3status/py3statusbars/i3status2.conf /etc/i3status2.conf
+        sudo ln -sf ~/mainconf/varied/i3related/py3status/py3statusbars/i3status.conf /etc/i3status.conf &&
+        sudo ln -sf ~/mainconf/varied/i3related/py3status/py3statusbars/i3status2.conf /etc/i3status2.conf &&
+        echo "Py3status bars enabled..." ; sleep 1
 
-        sudo ln -sf ~/mainconf/varied/i3related/py3status/py3statusbars/i3status.conf /etc/i3status.conf
-        sudo ln -sf ~/mainconf/varied/i3related/py3status/py3statusbars/i3status2.conf /etc/i3status2.conf
+        dconf load /com/gexperts/Tilix/ < ~/mainconf/varied/tilix/palenight.dconf &&
+        echo "Tilix enabled..." ; sleep 1
 
-        echo "Enabling Tilix" ; sleep 1
-        dconf load /com/gexperts/Tilix/ < ~/mainconf/varied/tilix/palenight.dconf
+        sudo mkdir -p ~/.config/rofi &&
+        sudo ln -sf ~/mainconf/varied/i3related/rofi/config ~/.config/rofi/config &&
+        echo "Rofi launcher enabled..." ; sleep 1
 
-        echo "Enabling rofi launcher..." ; sleep 1
-        [ ! -d "~/.config/rofi" ] && mkdir ~/.config/rofi || echo "Folder exists!"
-        sudo cp ~/mainconf/varied/i3related/rofi/config ~/.config/rofi/config
-        sudo ln -sf ~/mainconf/varied/i3related/rofi/config ~/.config/rofi/config
+        sudo mkdir -p ~/.config/zathura &&
+        sudo ln -sf ~/mainconf/varied/i3related/zathura/zathurarc ~/.config/zathura/zathurarc &&
+        echo "Zathura enabled..." ; sleep 1
 
-        echo "Enabling termite..." ; sleep 1
-        [ ! -d "/etc/xdg/termite" ] && mkdir /etc/xdg/termite || echo "Folder exists!"
-        sudo cp ~/mainconf/varied/i3related/termite/current_theme /etc/xdg/termite/config
-        sudo ln -sf ~/mainconf/varied/i3related/termite/current_theme /etc/xdg/termite/config
-
-        echo "Enabling zathura..." ; sleep 1
-        [ ! -d "~/.config/zathura" ] && mkdir ~/.config/zathura || echo "Folder exists!"
-        sudo cp ~/mainconf/varied/i3related/zathura/zathurarc ~/.config/zathura/zathurarc
-        sudo ln -sf ~/mainconf/varied/i3related/zathura/zathurarc ~/.config/zathura/zathurarc
-
-        echo "Enabling tap to click..." ; sleep 1
-        [ ! -d "/etc/X11/xorg.conf.d" ] && mkdir /etc/X11/xorg.conf.d || echo "Folder exists!"
-        sudo cp ~/mainconf/varied/i3related/EnableTapToClick_touchpad/90-touchpad.conf /etc/X11/xorg.conf.d/90-touchpad.conf
-        sudo ln -sf ~/mainconf/varied/i3related/EnableTapToClick_touchpad/90-touchpad.conf /etc/X11/xorg.conf.d/90-touchpad.conf
+        sudo mkdir -p /etc/X11/xorg.conf.d &&
+        sudo ln -sf ~/mainconf/varied/i3related/EnableTapToClick_touchpad/90-touchpad.conf /etc/X11/xorg.conf.d/90-touchpad.conf &&
+        echo "Tap to click enabled..." ; sleep 1
         
-        echo "Enabling bluetooth settings..." ; sleep 1
-        [ ! -d "/etc/bluetooth" ] && mkdir /etc/bluetooth || echo "Folder exists!"
-        sudo cp ~/mainconf/varied/i3related/bluetooth/main.conf /etc/bluetooth/main.conf
-        sudo ln -sf ~/mainconf/varied/i3related/bluetooth/main.conf /etc/bluetooth/main.conf
+        sudo mkdir -p /etc/bluetooth && 
+        sudo ln -sf ~/mainconf/varied/i3related/bluetooth/main.conf /etc/bluetooth/main.conf &&
+        echo "Bluetooth enabled..." ; sleep 1
 		
-        echo "Enabling i3 config file..." ; sleep 1
-        [ ! -d "~/.config/i3" ] && mkdir ~/.config/i3 || echo "Folder exists!"
-        sudo cp ~/mainconf/varied/i3related/i3config/config ~/.config/i3/config
-        sudo ln -sf ~/mainconf/varied/i3related/i3config/config ~/.config/i3/config
+        sudo mkdir -p ~/.config/i3 && 
+        sudo ln -sf ~/mainconf/varied/i3related/i3config/config ~/.config/i3/config &&
+        echo "i3 config enabled..." ; sleep 1
