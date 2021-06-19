@@ -40,6 +40,9 @@ done
 	papirus-folders -C white > /dev/null
 	xdg-user-dirs-update
 
+	#enabling some settings for vim
+	cp ~/mainconf/varied/vifm/.vimrc ~
+
 	#installing cursor themes
 	echo "|--> Installing Cursor Themes" ; 
 	sudo cp -r ~/mainconf/varied/cursors/* /usr/share/icons/

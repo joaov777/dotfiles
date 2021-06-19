@@ -43,6 +43,9 @@ done
 	xdg-user-dirs-update
 	sudo smb passwd -a joao
 
+	#enabling some settings for vim
+	cp ~/mainconf/varied/vifm/.vimrc ~
+
 	#installing cursor themes
 	sudo cp -r ~/i3/varied/cursors/* /usr/share/icons/
 
