@@ -15,21 +15,21 @@
 	
 			if [ -z "$(ps aux | grep $campus.ifce.ovpn | sed '$d' | awk '{print $2}')" ]
 			then
-				sudo openvpn --config "$directory"joao.galvino"$campus".ifce.ovpn --daemon && echo "VPN $campus pipe created"
+				sudo openvpn --config "$directory"joao.galvino"$campus".ifce.ovpn --daemon && echo "VPN $campus connected"
 			else
-				sudo kill -9 "$(ps aux | grep "$campus".ifce.ovpn | sed '$d' | awk '{print $2}')" && echo "VPN $campus pipe destroyed"
+				sudo kill -9 "$(ps aux | grep "$campus".ifce.ovpn | sed '$d' | awk '{print $2}')" && echo "VPN $campus disconnected"
 			fi ;;
 		
 		d|D|destroy|d|D|DESTROY)
 			if [ -z "$openvpnpid" ]
 			then
-				sudo killall openvpn && echo "No pipe established"
+				sudo killall openvpn && echo "> No connections"
 			fi ;;
 	
 		*) 
 			if [ -z "$openvpnpid" ]
 			then
-				echo "No pipe established"
+				echo "> No connections"
 			else
 				ps aux | grep $campus.ifce.ovpn | sed '$d'
 			fi
