@@ -12,10 +12,19 @@ packages_required=(
 	imagewriter albert wget dnsutils  
 	)
 
-check_installation() {
+function check_installation() {
 	if [ -z "$(pacman -Qi $1)" ]; then echo "|--> ERROR: Package $1" && sleep 1; else echo "|--> SUCCESS: Package $1" && sleep 1; fi
 }
-	#checking Yay AUR Helper
+	
+#checking Yay AUR Helper
+function check_yay(){
+	if [ -z "$(pacman -Qi yay)" ]
+	then
+		git clone --quiet https://aur.archlinux.org/yay.git /tmp
+		cd /tmp/yay
+		makepkg -si
+
+}
 	if [ -z "$(pacman -Qi yay)" ]; then sudo pacman -S yay --needed --noconfirm; else echo "|--> Yay is installed" && sleep 1; fi
 	   
 for pkg in "${packages_required[@]}"; do
