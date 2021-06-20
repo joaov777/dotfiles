@@ -18,13 +18,10 @@ function check_installation() {
 	
 #checking Yay AUR Helper
 function check_yay(){
-	if [ -z "$(pacman -Qi yay)" ]
-	then
-		git clone --quiet https://aur.archlinux.org/yay.git /tmp
-		cd /tmp/yay
+		git clone --quiet https://aur.archlinux.org/yay.git 
+		cd yay
 		makepkg -si
-	fi
-
+		sudo rm -rf yay
 }
 	#if [ -z "$(pacman -Qi yay)" ]; then sudo pacman -S yay --needed --noconfirm; else echo "|--> Yay is installed" && sleep 1; fi
 	check_yay
