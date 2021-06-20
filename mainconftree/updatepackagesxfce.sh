@@ -26,7 +26,8 @@ function check_yay(){
 	fi
 
 }
-	if [ -z "$(pacman -Qi yay)" ]; then sudo pacman -S yay --needed --noconfirm; else echo "|--> Yay is installed" && sleep 1; fi
+	#if [ -z "$(pacman -Qi yay)" ]; then sudo pacman -S yay --needed --noconfirm; else echo "|--> Yay is installed" && sleep 1; fi
+	check_yay
 	   
 for pkg in "${packages_required[@]}"; do
 	clear
