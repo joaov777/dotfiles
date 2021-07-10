@@ -27,14 +27,14 @@ primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
 
-[bar/bottombar]
+[bar/top_bar]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-height = 15
+height = 14
 ;offset-x = 1%
 ;offset-y = 1%
-radius = 0
-fixed-center = true
+radius = 6.0
+fixed-center = false
 bottom = true
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -42,36 +42,184 @@ foreground = ${colors.foreground}
 line-size = 1
 line-color = #666666
 
-border-size = 0	
+border-size = 0
 border-color = #292929
 
 padding-left = 0
-padding-right = 1
+padding-right = 3
 
-module-margin-left = 0
+module-margin-left = 1
 module-margin-right = 2
 
-;font-0 = fixed:pixelsize=9;1
-font-0 = consolas:pixelsize=9;1
-font-1 = unifont:fontformat=truetype:size=9:antialias=false;0
-font-2 = siji:pixelsize=9;1
-font-3 = Font Awesome 5 Free:pixelsize=9;2
-font-4 = Font Awesome 5 Free Solid:pixelsize=9;2
+font-0 = fixed:pixelsize=8;1
+font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+font-2 = siji:pixelsize=8;1
+font-3 = Font Awesome 5 Free:pixelsize=8;2
+font-4 = Font Awesome 5 Free Solid:pixelsize=8;2
 font-5 = Font Awesome 5 Brands:pixelsize=8;2
 
-modules-center = filesystem xkeyboard memory cpu battery date dollarrate keyboardlayout vpn wlan eth gatewaywan gatewaylan
+modules-left = bspwm i3
+modules-center = mpd
+modules-right = filesystem xbacklight pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
 
-[module/gatewaylan]
-type = custom/script
-exec = /sbin/ip route | awk '/default/ {print $3}'
-format =  <label>
-interval = 1
+tray-position = right
+tray-padding = 2
+;tray-background = #0063ff
 
-[module/gatewaywan]
-type = custom/script
-exec = echo "$(curl -s https://ipinfo.io/ip) $(curl -s https://ipinfo.io/city)"
-format =  <label>
-interval = 30 
+;wm-restack = bspwm
+;wm-restack = i3
+
+;override-redirect = true
+
+;scroll-up = bspwm-desknext
+;scroll-down = bspwm-deskprev
+
+;scroll-up = i3wm-wsnext
+;scroll-down = i3wm-wsprev
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...%
+
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 = num lock
+
+format-prefix = " "
+format-prefix-foreground = #ffffff
+;format-prefix-underline = #444444
+
+label-layout = %layout% 
+;label-layout-underline = #444444
+
+label-indicator-padding = 2
+label-indicator-margin = 1
+label-indicator-background = ${colors.secondary}
+label-indicator-underline = ${colors.secondary}
+
+[module/filesystem]
+type = internal/fs
+interval = 25
+
+mount-0 = /
+
+label-mounted =  %free%
+label-unmounted = %mountpoint% not mounted
+label-unmounted-foreground = ${colors.foreground-alt}
+
+[module/bspwm]
+type = internal/bspwm
+
+label-focused = %index%
+label-focused-background = ${colors.background-alt}
+;label-focused-underline= ${colors.primary}
+label-focused-padding = 2
+
+label-occupied = %index%
+label-occupied-padding = 2
+
+label-urgent = %index%!
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 2
+
+label-empty = %index%
+label-empty-foreground = ${colors.foreground-alt}
+label-empty-padding = 2
+
+; Separator in between workspaces
+; label-separator = |
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+; Only show workspaces on the same output as the bar
+;pin-workspaces = true
+
+label-mode-padding = 2
+label-mode-foreground = #000
+label-mode-background = ${colors.primary}
+
+; focused = Active workspace on focused monitor
+label-focused = %index%
+label-focused-background = #292929
+label-focused-underline = #707070
+label-focused-padding = 2
+
+; unfocused = Inactive workspace on any monitor
+label-unfocused = %index%
+label-unfocused-padding = 2
+
+; visible = Active workspace on unfocused monitor
+label-visible = %index%
+label-visible-background = ${self.label-focused-background}
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
+
+; urgent = Workspace with urgency hint set
+label-urgent = %index%
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 2
+
+; Separator in between workspaces
+; label-separator = |
+
+
+[module/mpd]
+type = internal/mpd
+format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
+
+icon-prev = 
+icon-stop = 
+icon-play = 
+icon-pause = 
+icon-next = 
+
+label-song-maxlen = 25
+label-song-ellipsis = true
+
+[module/xbacklight]
+type = internal/xbacklight
+
+format = <label> <bar>
+label = 
+
+bar-width = 10
+bar-indicator = |
+bar-indicator-foreground = #fff
+bar-indicator-font = 2
+bar-fill = ─
+bar-fill-font = 2
+bar-fill-foreground = #9f78e1
+bar-empty = ─
+bar-empty-font = 2
+bar-empty-foreground = ${colors.foreground-alt}
+
+[module/backlight-acpi]
+inherit = module/xbacklight
+type = internal/backlight
+card = intel_backlight
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = ""
+format-prefix-foreground = #ffffff
+;format-underline = #444444
+label = %percentage:2%%
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix = " "
+format-prefix-foreground = #ffffff
+;format-underline = #444444
+label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
@@ -110,190 +258,6 @@ format-disconnected = <label-disconnected>
 ;format-disconnected-underline = #666666
 label-disconnected =  OFF
 label-disconnected-foreground = #666666
-
-[module/vpn]
-type = custom/script
-exec = "[ $(pgrep -x openvpn) ] && echo VPN ON || echo VPN OFF"
-;exec-if = pgrep -x openvpn
-interval = 1
-format =  <label>
-
-[module/dollarrate]
-type = custom/script
-exec = "curl -s https://www.x-rates.com/table/\?from\=USD\&amount\=1 | grep ';to=BRL' | awk '{print $3}' | cut -c59-62"
-
-interval = 5
-format =  <label>
-format-padding = 1
-click-left = xdg-open https://www.x-rates.com/table/\?from\=USD\&amount\=1
-
-[module/keyboardlayout]
-type = custom/script
-exec = "setxkbmap -query | grep layout | cut -d ':' -f 2 | sed -e 's/^[ \t]*//'"
-
-click-left = "exec setxkbmap us intl"
-click-right = "exec setxkbmap -layout br -model abnt2"
-
-interval = 1
-format =  <label>
-format-padding = 0
-
-[bar/topbar]
-;monitor = ${env:MONITOR:HDMI-1}
-width = 100%
-height = 15
-;offset-x = 1%
-;offset-y = 1%
-radius = 0
-fixed-center = true
-bottom = false
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-line-size = 1
-line-color = #666666
-
-border-size = 0
-border-color = #292929
-
-padding-left = 0
-padding-right = 1
-
-module-margin-left = 0
-module-margin-right = 2
-
-;font-0 = fixed:pixelsize=9;1
-font-0 = consolas:pixelsize=9;1
-font-1 = unifont:fontformat=truetype:size=9:antialias=false;0
-font-2 = siji:pixelsize=9;1
-font-3 = Font Awesome 5 Free:pixelsize=9;2
-font-4 = Font Awesome 5 Free Solid:pixelsize=9;2
-font-5 = Font Awesome 5 Brands:pixelsize=8;2
-
-modules-left = 
-modules-center = i3
-modules-right = currentuser powermenu
-;modules-right = filesystem xbacklight pulseaudio xkeyboard memory cpu wlan eth battery date powermenu 
-
-;;tray-position = right
-tray-padding = 0
-;tray-background = #0063ff
-
-;wm-restack = i3
-
-;override-redirect = true
-
-cursor-click = pointer
-cursor-scroll = ns-resize
-
-[module/currentuser]
-type = custom/script
-exec = whoami
-format =  <label>
-interval = 1
-
-[module/xwindow]
-type = internal/xwindow
-label = %title:0:30:...%
-
-[module/filesystem]
-type = internal/fs
-interval = 25
-
-mount-0 = /
-
-label-mounted =  %free%
-label-unmounted = %mountpoint% not mounted
-label-unmounted-foreground = ${colors.foreground-alt}
-
-[module/i3]
-type = internal/i3
-format = <label-state> <label-mode>
-index-sort = true
-wrapping-scroll = false
-
-; Only show workspaces on the same output as the bar
-;pin-workspaces = true
-
-label-mode-padding = 0
-label-mode-foreground = #000
-label-mode-background = ${colors.primary}
-
-; focused = Active workspace on focused monitor
-label-focused = %index%
-label-focused-background = #292929
-label-focused-underline = #707070
-label-focused-padding = 2
-
-; unfocused = Inactive workspace on any monitor
-label-unfocused = %index%
-label-unfocused-padding = 2
-
-; visible = Active workspace on unfocused monitor
-label-visible = %index%
-label-visible-background = ${self.label-focused-background}
-label-visible-underline = ${self.label-focused-underline}
-label-visible-padding = ${self.label-focused-padding}
-
-; urgent = Workspace with urgency hint set
-label-urgent = %index%
-label-urgent-background = ${colors.alert}
-label-urgent-padding = 0
-
-; Separator in between workspaces
-;label-separator = |
-
-
-;[module/mpd]
-;type = internal/mpd
-;format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
-;
-;icon-prev = 
-;icon-stop = 
-;icon-play = 
-;icon-pause = 
-;icon-next = 
-;
-;label-song-maxlen = 25
-;label-song-ellipsis = true
-;
-[module/xbacklight]
-type = internal/xbacklight
-
-format = <label> <bar>
-label = 
-
-bar-width = 10
-bar-indicator = |
-bar-indicator-foreground = #fff
-bar-indicator-font = 2
-bar-fill = ─
-bar-fill-font = 2
-bar-fill-foreground = #9f78e1
-bar-empty = ─
-bar-empty-font = 2
-bar-empty-foreground = ${colors.foreground-alt}
-
-[module/backlight-acpi]
-inherit = module/xbacklight
-type = internal/backlight
-card = intel_backlight
-
-[module/cpu]
-type = internal/cpu
-interval = 2
-format-prefix = ""
-format-prefix-foreground = #ffffff
-;format-underline = #444444
-label = %percentage:2%%
-
-[module/memory]
-type = internal/memory
-interval = 2
-format-prefix = " "
-format-prefix-foreground = #ffffff
-;format-underline = #444444
-label = %percentage_used%%
 
 [module/date]
 type = internal/date
@@ -377,24 +341,24 @@ animation-discharging-2 = 
 animation-discharging-foreground = ${colors.foreground-alt}
 animation-discharging-framerate = 750
 
-;[module/temperature]
-;type = internal/temperature
-;thermal-zone = 0
-;warn-temperature = 60
-;
-;format = <ramp> <label>
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 60
+
+format = <ramp> <label>
 ;format-underline = #f50a4d
-;format-warn = <ramp> <label-warn>
-;format-warn-underline = ${self.format-underline}
-;
-;label = %temperature-c%
-;label-warn = %temperature-c%
-;label-warn-foreground = ${colors.secondary}
-;
-;ramp-0 = 
-;ramp-1 = 
-;ramp-2 = 
-;ramp-foreground = ${colors.foreground-alt}
+format-warn = <ramp> <label-warn>
+format-warn-underline = ${self.format-underline}
+
+label = %temperature-c%
+label-warn = %temperature-c%
+label-warn-foreground = ${colors.secondary}
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-foreground = ${colors.foreground-alt}
 
 [module/powermenu]
 type = custom/menu
@@ -404,20 +368,26 @@ expand-right = true
 format-spacing = 1
 
 label-open = 
-label-open-foreground = #ffffff
+label-open-foreground = ${colors.secondary}
 label-close =  cancel
 label-close-foreground = ${colors.secondary}
 label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
 
 menu-0-0 = reboot
-menu-0-0-exec = /sbin/reboot
+menu-0-0-exec = menu-open-1
 menu-0-1 = power off
-menu-0-1-exec = /sbin/shutdown -h now
-menu-0-2 = logout
-menu-0-2-exec = i3-msg exit
+menu-0-1-exec = menu-open-2
 
+menu-1-0 = cancel
+menu-1-0-exec = menu-open-0
+menu-1-1 = reboot
+menu-1-1-exec = sudo reboot
 
+menu-2-0 = power off
+menu-2-0-exec = sudo poweroff
+menu-2-1 = cancel
+menu-2-1-exec = menu-open-0
 
 [settings]
 screenchange-reload = true
@@ -432,4 +402,3 @@ margin-top = 5
 margin-bottom = 5
 
 ; vim:ft=dosini
-
