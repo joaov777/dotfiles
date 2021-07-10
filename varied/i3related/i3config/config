@@ -26,6 +26,7 @@ font pango:Source Code Variable 9
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
+
 #==========================> PERSONAL APPS
 # NetworkManager is the most popular way to manage wireless networks on Linux
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -39,7 +40,7 @@ exec --no-startup-id exec setxkbmap us intl
 
 # polybar
 #exec_always --no-startup-id polybar -r mybar
-#exec_always --no-startup-id ~/.config/polybar/launch.sh 
+exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh 
 
 # rofi
 #bindsym Ctrl+space exec /usr/bin/rofi -show run
@@ -220,59 +221,59 @@ mode "resize" {
 
 #==========================> BARS
 #bar01
-bar {
-	id bar01
-        #status_command i3status
-        status_command py3status -c /etc/i3status.conf
-        position bottom
-        #font pango:Source Code Variable 8
-	    font pango: Noto Sans 9
-
-        tray_output none
-        
-        
-        colors {
-        #background #222D31
-        background #0d0d0d
-        statusline #F9FAF9
-        separator  #454947
-
+#bar {
+#	id bar01
+#        #status_command i3status
+#        status_command py3status -c /etc/i3status.conf
+#        position bottom
+#        #font pango:Source Code Variable 8
+#	    font pango: Noto Sans 9
+#
+#        tray_output none
+#        
+#        
+#        colors {
+#       #background #222D31
+#        background #0d0d0d
+#        statusline #F9FAF9
+#        separator  #454947
+#
 #                     	    border  backgr. text
-        focused_workspace  #ffffff #222D31 #EEE8D5
-        active_workspace   #595B5B #353836 #FDF6E3
-        inactive_workspace #595B5B #222D31 #EEE8D5
-        binding_mode       #16a085 #2C2C2C #F9FAF9
-        urgent_workspace   #16a085 #FDF6E3 #E5201D
-    }
-}
+#        focused_workspace  #ffffff #222D31 #EEE8D5
+#        active_workspace   #595B5B #353836 #FDF6E3
+#        inactive_workspace #595B5B #222D31 #EEE8D5
+#        binding_mode       #16a085 #2C2C2C #F9FAF9
+#        urgent_workspace   #16a085 #FDF6E3 #E5201D
+#    }
+#}
 
 #bar02
-bar {
-	id bar02
-        #status_command i3status
-        status_command py3status -c /etc/i3status2.conf
-        tray_output none
-        position top
-        #font pango:Source Code Variable 8
-		#font pango:Freemono Bold 8
-		font pango: Noto Sans 9
-        workspace_buttons no
-        
-        
-        colors {
-        #background #222D31
-        background #0d0d0d
-        statusline #F9FAF9
-        separator  #454947
-
+#bar {
+#	id bar02
+#        #status_command i3status
+#        status_command py3status -c /etc/i3status2.conf
+#        tray_output none
+#        position top
+#        #font pango:Source Code Variable 8
+#		#font pango:Freemono Bold 8
+#		font pango: Noto Sans 9
+#        workspace_buttons no
+#        
+#        
+#        colors {
+#        #background #222D31
+#        background #0d0d0d
+#        statusline #F9FAF9
+#        separator  #454947
+#
 #                           border  backgr. text
-        focused_workspace  #ffffff #222D31 #EEE8D5
-        active_workspace   #595B5B #353836 #FDF6E3
-        inactive_workspace #595B5B #222D31 #EEE8D5
-        binding_mode       #16a085 #2C2C2C #F9FAF9
-        urgent_workspace   #16a085 #FDF6E3 #E5201D
-    }
-}
+#        focused_workspace  #ffffff #222D31 #EEE8D5
+#        active_workspace   #595B5B #353836 #FDF6E3
+#        inactive_workspace #595B5B #222D31 #EEE8D5
+#        binding_mode       #16a085 #2C2C2C #F9FAF9
+#        urgent_workspace   #16a085 #FDF6E3 #E5201D
+#    }
+#}
 
 #==========================| BARS END
 

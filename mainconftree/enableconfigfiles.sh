@@ -26,9 +26,13 @@ clear
         sudo ln -sf ~/mainconf/varied/i3related/picom/picom.conf /etc/xdg/picom.conf &&
         echo "|--> Picom compositor enabled..." ; sleep 1
 
-        sudo ln -sf ~/mainconf/varied/i3related/py3status/py3statusbars/i3status.conf /etc/i3status.conf &&
-        sudo ln -sf ~/mainconf/varied/i3related/py3status/py3statusbars/i3status2.conf /etc/i3status2.conf &&
-        echo "|--> Py3status bars enabled..." ; sleep 1
+        #sudo ln -sf ~/mainconf/varied/i3related/py3status/py3statusbars/i3status.conf /etc/i3status.conf &&
+        #sudo ln -sf ~/mainconf/varied/i3related/py3status/py3statusbars/i3status2.conf /etc/i3status2.conf &&
+        #echo "|--> Py3status bars enabled..." ; sleep 1
+
+	sudo mkdir -p ~/.config/polybar &&
+	sudo ln -sf ~/mainconf/varied/i3related/polybar/config ~/.config/polybar
+	echo '|--> Polybar enabled...' ; sleep 1
 
         dconf load /com/gexperts/Tilix/ < ~/mainconf/varied/tilix/palenight.dconf &&
         echo "|--> Tilix enabled..." ; sleep 1
