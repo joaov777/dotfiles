@@ -49,7 +49,7 @@ exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
 bindsym $mod+b exec /usr/bin/brave
 
 #dmenu
-bindsym Ctrl+space exec /usr/bin/dmenu_run
+bindsym Ctrl+space exec /usr/bin/dmenu_run -fn " Consolas-8 "
 
 # screenshot tool
 bindsym Print exec --no-startup-id /usr/bin/flameshot gui 
