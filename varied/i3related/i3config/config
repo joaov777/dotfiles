@@ -415,12 +415,13 @@ mode "$audio_mode" {
 #==========================| SYSTEM MODE
 bindsym Shift+s mode "$SYSTEM_MODE"
 
-set $SYSTEM_MODE SYSTEM MODE: (r) reboot, (s) shutdown
+set $SYSTEM_MODE SYSTEM MODE: (r) reboot, (s) shutdown, (l) logout
 mode "$SYSTEM_MODE" {
      
     bindsym r	exec /sbin/reboot
     bindsym s	exec /sbin/shutdown -h now
-    
+    bindsym l	exec i3-msg exit
+
     bindsym Escape mode "default"
     bindsym Return mode "default"
     bindsym Shift+s mode "default"
@@ -429,14 +430,11 @@ mode "$SYSTEM_MODE" {
 
 #==========================> BARS MODE
 bindsym Shift+h mode "$BARS_MODE"
-set $BARS_MODE BAR MODE: (t) top bar, (b) bottom bar
+set $BARS_MODE BAR MODE: (h) hide bars
 mode "$BARS_MODE" {
 
-    #hide top bar (bar02)
-    bindsym t bar mode invisible bar02 
-    bindsym Shift+t bar mode dock bar02 
-    bindsym b bar mode invisible bar01 
-    bindsym Shift+b bar mode dock bar01 
+    bindsym h exec pkill polybar 
+    bindsym Shift+h exec ~/.config/polybar/launch_polybar.sh 
 
     bindsym Escape mode "default"
     bindsym Return mode "default"
