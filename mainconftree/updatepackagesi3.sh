@@ -11,8 +11,8 @@ packages_required=(
 	arp-scan net-tools teamviewer rclone peek xorg-server xorg-apps xorg-init networkmanager-dmenu-git \ 
 	imagewriter albert wget dnsutils xorg-xrandr arandr sshfs nm-connection-editor nerd-fonts-fira-code \ 
 	pulseaudio-alsa pulseaudio-bluetooth bluez bluez-libs bluez-utils blueman tilix \
-	noto-fonts ttf-ubuntu-font-family ttf-dejavu ttf-freefont ttf-liberation dialog  \
-  ttf-droid ttf-inconsolata ttf-roboto terminus-font ttf-font-awesome xournalpp \
+	noto-fonts ttf-ubuntu-font-family ttf-dejavu ttf-freefont ttf-liberation dialog polybar  \
+  ttf-droid ttf-inconsolata ttf-roboto terminus-font ttf-font-awesome xournalpp font-awesome ttf-unifont siji-git \
 	alsa-utils alsa-plugins alsa-lib pavucontrol lightdm lightdm-gtk-greeter 
 	)
 	
