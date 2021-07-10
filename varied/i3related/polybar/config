@@ -111,6 +111,8 @@ format-disconnected = <label-disconnected>
 label-disconnected =  OFF
 label-disconnected-foreground = #666666
 
+
+
 [module/vpn]
 type = custom/script
 exec = "[ $(pgrep -x openvpn) ] && echo VPN ON || echo VPN OFF"
@@ -162,17 +164,17 @@ padding-right = 1
 module-margin-left = 0
 module-margin-right = 2
 
-;font-0 = fixed:pixelsize=9;1
-font-0 = consolas:pixelsize=9;1
-font-1 = unifont:fontformat=truetype:size=9:antialias=false;0
+;font-0 = fixed:pixelsize=8;1
+font-0 = consolas:pixelsize=8;1
+font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=9;1
-font-3 = Font Awesome 5 Free:pixelsize=9;2
-font-4 = Font Awesome 5 Free Solid:pixelsize=9;2
+font-3 = Font Awesome 5 Free:pixelsize=8;2
+font-4 = Font Awesome 5 Free Solid:pixelsize=8;2
 font-5 = Font Awesome 5 Brands:pixelsize=8;2
 
 modules-left = 
 modules-center = i3
-modules-right = currentuser powermenu
+modules-right = powermenu
 ;modules-right = filesystem xbacklight pulseaudio xkeyboard memory cpu wlan eth battery date powermenu 
 
 ;;tray-position = right
@@ -185,12 +187,6 @@ tray-padding = 0
 
 cursor-click = pointer
 cursor-scroll = ns-resize
-
-[module/currentuser]
-type = custom/script
-exec = whoami
-format =  <label>
-interval = 1
 
 [module/xwindow]
 type = internal/xwindow
@@ -221,7 +217,7 @@ label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%
-label-focused-background = #292929
+label-focused-background = #70292929
 label-focused-underline = #707070
 label-focused-padding = 2
 
@@ -412,7 +408,7 @@ label-separator-foreground = ${colors.foreground-alt}
 
 menu-0-0 = reboot
 menu-0-0-exec = /sbin/reboot
-menu-0-1 = power off
+menu-0-1 = shutdown
 menu-0-1-exec = /sbin/shutdown -h now
 menu-0-2 = logout
 menu-0-2-exec = i3-msg exit
