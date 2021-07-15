@@ -32,7 +32,7 @@ window-style='disable-csd-hide-toolbar'
 
 [profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d]
 background-color='#120B0D'
-background-transparency-percent=0
+background-transparency-percent=16
 badge-color='#AC7EA8'
 badge-color-set=false
 bold-color-set=false
@@ -42,7 +42,7 @@ cursor-shape='ibeam'
 default-size-columns=115
 default-size-rows=33
 dim-transparency-percent=0
-font='Fira Mono Medium 9'
+font='Consolas 9'
 foreground-color='#F7D66A'
 highlight-colors-set=false
 palette=['#351B0E', '#9B291C', '#636232', '#C36E28', '#515C5D', '#9B1D29', '#588056', '#F7D75C', '#874228', '#FF4331', '#B4B264', '#FF9566', '#9EB2B4', '#FF5B6A', '#8ACD8F', '#FFE598']
