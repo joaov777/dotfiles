@@ -134,17 +134,19 @@ bindsym $mod+f fullscreen toggle
 
 #==========================> MULTI-MONITOR
 ##In case you have two monitors, execute xrandr --listmonitors and replace them on the variables
-#set $left_monitor "HDMI-1"
-#set $right_monitor "DP-2"
+set $left_monitor "HDMI1"
+set $right_monitor "DP2"
 #
-#workspace $ws1 output $left_monitor
-#workspace $ws2 output $left_monitor
-#workspace $ws3 output $left_monitor
-#workspace $ws4 output $left_monitor
-#workspace $ws5 output $right_monitor
-#workspace $ws6 output $right_monitor
-#workspace $ws7 output $right_monitor
-#workspace $ws8 output $right_monitor
+workspace $ws1 output $left_monitor
+workspace $ws2 output $left_monitor
+workspace $ws3 output $left_monitor
+workspace $ws4 output $left_monitor
+workspace $ws5 output $left_monitor
+workspace $ws6 output $right_monitor
+workspace $ws7 output $right_monitor
+workspace $ws8 output $right_monitor
+workspace $ws9 output $right_monitor
+workspace $ws10 output $right_monitor
 #
 #exec --no-startup-id xrandr --output $left_monitor --mode '1920x1080' --left-of $right_monitor
 ##Example: exec --no-startup-id xrandr --output HDMI-1 --mode '1920x1080' --left-of DP-2

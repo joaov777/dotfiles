@@ -27,14 +27,8 @@ primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
 
-;BOTTOM LEFT CAR IN CASE THERE IS A SECOND MONITOR
-[bar/bottom_left]
-inherit = bar/bottom_right
-monitor = HDMI1
-
-;BOTTOM RIGHT BAR - MAIN SCREEN
-[bar/bottom_right]
-;monitor = ${env:MONITOR:HDMI1}
+[bar/bottombar]
+;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
 height = 15
 ;offset-x = 1%
@@ -61,13 +55,11 @@ module-margin-right = 2
 font-0 = consolas:pixelsize=9;1
 font-1 = unifont:fontformat=truetype:size=9:antialias=false;0
 font-2 = siji:pixelsize=9;1
-font-3 = Font Awesome 5 Free:pixelsize=8;2
-font-4 = Font Awesome 5 Free Solid:pixelsize=8;2
+font-3 = Font Awesome 5 Free:pixelsize=9;2
+font-4 = Font Awesome 5 Free Solid:pixelsize=9;2
 font-5 = Font Awesome 5 Brands:pixelsize=8;2
 
-modules-left = i3
 modules-center = filesystem xkeyboard memory cpu battery date dollarrate keyboardlayout vpn wlan eth gatewaywan gatewaylan
-modules-right = powermenu
 
 [module/gatewaylan]
 type = custom/script
@@ -148,8 +140,8 @@ interval = 1
 format =  <label>
 format-padding = 0
 
-[bar/top_right]
-;monitor = HDMI1
+[bar/topbar]
+;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
 height = 15
 ;offset-x = 1%
@@ -217,7 +209,7 @@ index-sort = true
 wrapping-scroll = false
 
 ; Only show workspaces on the same output as the bar
-pin-workspaces = true
+;pin-workspaces = true
 
 label-mode-padding = 0
 label-mode-foreground = #000
