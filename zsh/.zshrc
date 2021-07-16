@@ -153,7 +153,7 @@ source $ZSH/oh-my-zsh.sh
   alias setuptilda="~/mainconf/scripts/setuptilda.sh"
   alias utb="~/mainconf/scripts/usdtobrl.sh"	
   dr(){echo "DR: $(curl -s https://www.x-rates.com/table/\?from\=USD\&amount\=1 | grep ";to=BRL" | awk '{print $3}' | cut -c59-62)"} #check current dollar rate
-  sb(){feh --randomize --bg-fill ~/Pictures/FULL\ HD/"$1".*}
+  sb(){feh --randomize --bg-fill ~/Pictures/wallpapers/FULL\ HD/"$1".*}
 
 # UPDATES	
   alias um="sudo pacman-mirrors -g"	

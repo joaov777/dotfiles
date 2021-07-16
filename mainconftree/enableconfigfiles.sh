@@ -33,6 +33,9 @@ clear
 	sudo mkdir -p ~/.config/autorandr &&
 	cp ~/mainconf/varied/monitors/autorandr/* ~/.config/autorandr/ &&
 	echo "|--> Autorandr profiles loaded..." ; sleep 1
+	
+	git clone --quiet https://github.com/joaov777/wallpapers.git ~/Pictures/wallpapers/
+	echo "|--> Wallpapers downloaded..." ; sleep 1
 
 	sudo mkdir -p ~/.config/polybar &&
 	sudo ln -sf ~/mainconf/varied/i3related/polybar/config ~/.config/polybar
