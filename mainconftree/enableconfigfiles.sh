@@ -30,6 +30,10 @@ clear
         #sudo ln -sf ~/mainconf/varied/i3related/py3status/py3statusbars/i3status2.conf /etc/i3status2.conf &&
         #echo "|--> Py3status bars enabled..." ; sleep 1
 
+	sudo mkdir -p ~/.config/autorandr &&
+	cp ~/mainconf/varied/monitors/autorandr/* ~/.config/autorandr/ &&
+	echo "|--> Autorandr profiles loaded..." ; sleep 1
+
 	sudo mkdir -p ~/.config/polybar &&
 	sudo ln -sf ~/mainconf/varied/i3related/polybar/config ~/.config/polybar
 	echo '|--> Polybar enabled...' ; sleep 1

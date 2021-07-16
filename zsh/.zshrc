@@ -138,6 +138,7 @@ source $ZSH/oh-my-zsh.sh
   mp(){watch -n 1 inxi -t cm10} #monitoring 10 most active processes
   mn(){watch -n 1 inxi -Nni} #monitoring NICs
   mm(){watch -n 1 inxi -t m} #monitoring RAM
+  sdp(){xrandr -q | grep " connected" | cut -d ' ' -f1} #show available displays
    
   alias cdmc="cd ~/mainconf"
   alias rdprdp="rdesktop -u $1 -p $2 -g 800x600 $3" #user, password and machine
