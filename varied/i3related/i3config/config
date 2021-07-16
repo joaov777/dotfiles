@@ -139,35 +139,21 @@ bindsym $mod+f fullscreen toggle
 
 #==========================> MULTI-MONITOR
 ##In case you have two monitors, execute xrandr --listmonitors and replace them on the variables
-set $ifce_left_monitor "DP2"
-set $ifce_right_monitor "DP1"
-set $home_left_monitor "HDMI1"
-set $home_right_monitor "DP2"
+set $SCREEN_LEFT "HDMI1"
+set $SCREEN_RIGHT "DP2"
 set $home_laptop_monitor "eDP1"
 
-## Setting workspaces for IFCE context
-workspace $ws1 output $ifce_left_monitor
-workspace $ws2 output $ifce_left_monitor
-workspace $ws3 output $ifce_left_monitor
-workspace $ws4 output $ifce_left_monitor
-workspace $ws5 output $ifce_left_monitor
-workspace $ws6 output $ifce_right_monitor
-workspace $ws7 output $ifce_right_monitor
-workspace $ws8 output $ifce_right_monitor
-workspace $ws9 output $ifce_right_monitor
-workspace $ws10 output $ifce_right_monitor
-
 ## Setting workspaces for HOME context
-workspace $ws1 output $home_left_monitor
-workspace $ws2 output $home_left_monitor
-workspace $ws3 output $home_left_monitor
-workspace $ws4 output $home_left_monitor
-workspace $ws5 output $home_left_monitor
-workspace $ws6 output $home_right_monitor
-workspace $ws7 output $home_right_monitor
-workspace $ws8 output $home_right_monitor
-workspace $ws9 output $home_right_monitor
-workspace $ws10 output $home_right_monitor
+workspace $ws1 output $SCREEN_LEFT
+workspace $ws2 output $SCREEN_LEFT
+workspace $ws3 output $SCREEN_LEFT
+workspace $ws4 output $SCREEN_LEFT
+workspace $ws5 output $SCREEN_LEFT
+workspace $ws6 output $SCREEN_RIGHT
+workspace $ws7 output $SCREEN_RIGHT
+workspace $ws8 output $SCREEN_RIGHT
+workspace $ws9 output $SCREEN_RIGHT
+workspace $ws10 output $SCREEN_RIGHT
 
 ## Setting workspaces for HOME LAPTOP context
 workspace $ws11 output $laptop_monitor
@@ -176,10 +162,6 @@ workspace $ws13 output $laptop_monitor
 workspace $ws14 output $laptop_monitor
 workspace $ws15 output $laptop_monitor
 
-## Automatically adjusting to the best layout
-exec --no-startup-id /usr/bin/autorandr --change
-
-#exec --no-startup-id xrandr --output $ifce_left_monitor --mode '1920x1080' --left-of $ifce_right_monitor
 ##Example: exec --no-startup-id xrandr --output HDMI-1 --mode '1920x1080' --left-of DP-2
 #==========================| MULTI-MONITOR END
 
@@ -324,6 +306,13 @@ mode "resize" {
 #}
 
 #==========================| BARS END
+
+#Colors
+
+client.focused          #ededed	#ededed	#ededed	#ededed	
+client.focused_inactive #000000	#000000	#000000	#000000
+client.unfocused        #000000	#000000	#000000	#000000
+client.urgent           #ff00d9	#ff00d9	#ff00d9	#ff00d9
 
 #==========================> GAPS
 # Set inner/outer gaps
