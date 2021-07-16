@@ -27,14 +27,24 @@ primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
 
-;BOTTOM LEFT CAR IN CASE THERE IS A SECOND MONITOR
-[bar/bottom_left]
-inherit = bar/bottom_right
+;WORK BOTTOM LEFT BAR - 
+[bar/ifce_bottom_left]
+inherit = bar/home_bottom_right
+monitor = DP1
+
+;WORK BOTTOM RIGHT BAR - 
+[bar/ifce_bottom_right]
+inherit = bar/home_bottom_right
+monitor = DP2
+
+;HOME BOTTOM LEFT BAR - 
+[bar/home_bottom_left]
+inherit = bar/home_bottom_right
 monitor = HDMI1
 
-;BOTTOM RIGHT BAR - MAIN SCREEN
-[bar/bottom_right]
-;monitor = ${env:MONITOR:HDMI1}
+;HOME BOTTOM RIGHT BAR - 
+[bar/home_bottom_right]
+monitor = eDP2
 width = 100%
 height = 15
 ;offset-x = 1%

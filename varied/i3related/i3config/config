@@ -139,28 +139,47 @@ bindsym $mod+f fullscreen toggle
 
 #==========================> MULTI-MONITOR
 ##In case you have two monitors, execute xrandr --listmonitors and replace them on the variables
-set $left_monitor "HDMI1"
-set $right_monitor "DP2"
-set $laptop_monitor "eDP1"
-#
-workspace $ws1 output $left_monitor
-workspace $ws2 output $left_monitor
-workspace $ws3 output $left_monitor
-workspace $ws4 output $left_monitor
-workspace $ws5 output $left_monitor
-workspace $ws6 output $right_monitor
-workspace $ws7 output $right_monitor
-workspace $ws8 output $right_monitor
-workspace $ws9 output $right_monitor
-workspace $ws10 output $right_monitor
+set $ifce_left_monitor "DP2"
+set $ifce_right_monitor "DP1"
+set $home_left_monitor "HDMI1"
+set $home_right_monitor "DP2"
+set $home_laptop_monitor "eDP1"
+
+## Setting workspaces for IFCE context
+workspace $ws1 output $ifce_left_monitor
+workspace $ws2 output $ifce_left_monitor
+workspace $ws3 output $ifce_left_monitor
+workspace $ws4 output $ifce_left_monitor
+workspace $ws5 output $ifce_left_monitor
+workspace $ws6 output $ifce_right_monitor
+workspace $ws7 output $ifce_right_monitor
+workspace $ws8 output $ifce_right_monitor
+workspace $ws9 output $ifce_right_monitor
+workspace $ws10 output $ifce_right_monitor
+
+## Setting workspaces for HOME context
+workspace $ws1 output $home_left_monitor
+workspace $ws2 output $home_left_monitor
+workspace $ws3 output $home_left_monitor
+workspace $ws4 output $home_left_monitor
+workspace $ws5 output $home_left_monitor
+workspace $ws6 output $home_right_monitor
+workspace $ws7 output $home_right_monitor
+workspace $ws8 output $home_right_monitor
+workspace $ws9 output $home_right_monitor
+workspace $ws10 output $home_right_monitor
+
+## Setting workspaces for HOME LAPTOP context
 workspace $ws11 output $laptop_monitor
 workspace $ws12 output $laptop_monitor
 workspace $ws13 output $laptop_monitor
 workspace $ws14 output $laptop_monitor
 workspace $ws15 output $laptop_monitor
 
-#
-#exec --no-startup-id xrandr --output $left_monitor --mode '1920x1080' --left-of $right_monitor
+## Automatically adjusting to the best layout
+exec --no-startup-id /usr/bin/autorandr --change
+
+#exec --no-startup-id xrandr --output $ifce_left_monitor --mode '1920x1080' --left-of $ifce_right_monitor
 ##Example: exec --no-startup-id xrandr --output HDMI-1 --mode '1920x1080' --left-of DP-2
 #==========================| MULTI-MONITOR END
 
