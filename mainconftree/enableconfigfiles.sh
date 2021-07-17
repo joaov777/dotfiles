@@ -10,20 +10,20 @@ clear
 		#~/mainconf/varied/i3related/
 
 	    sudo mkdir -p ~/.config/copyq && 
-        sudo ln -sf ~/mainconf/varied/i3related/copyq/copyq.conf ~/.config/copyq/copyq.conf &&
+        sudo cp ~/mainconf/varied/i3related/copyq/copyq.conf ~/.config/copyq/ &&
         echo "|--> CopyQ enabled..." ; sleep 1
 
         sudo mkdir -p ~/.config/Dharkael && 
-        sudo ln -sf ~/mainconf/varied/i3related/flameshot/flameshot.ini ~/.config/Dharkael/flameshot.ini && 
+        sudo cp ~/mainconf/varied/i3related/flameshot/flameshot.ini ~/.config/Dharkael/ && 
         echo "|--> Flameshot enabled..." ; sleep 1
 
         sudo mkdir -p ~/.config/vifm/colors && 
-        sudo ln -sf ~/mainconf/varied/vifm/themes ~/.config/vifm/colors &&
-        sudo ln -sf ~/mainconf/varied/vifm/vifmrc ~/.config/vifm &&
+        sudo cp ~/mainconf/varied/vifm/themes ~/.config/vifm/colors/ &&
+        sudo cp ~/mainconf/varied/vifm/vifmrc ~/.config/vifm/ &&
         echo "|--> Vifm enabled..." ; sleep 1
 
         sudo mkdir -p /etc/xdg && 
-        sudo ln -sf ~/mainconf/varied/i3related/picom/picom.conf /etc/xdg/picom.conf &&
+        sudo cp ~/mainconf/varied/i3related/picom/picom.conf /etc/xdg/ &&
         echo "|--> Picom compositor enabled..." ; sleep 1
 
         #sudo ln -sf ~/mainconf/varied/i3related/py3status/py3statusbars/i3status.conf /etc/i3status.conf &&
@@ -31,35 +31,36 @@ clear
         #echo "|--> Py3status bars enabled..." ; sleep 1
 
         sudo mkdir -p ~/.config/autorandr &&
-        cp ~/mainconf/varied/monitors/autorandr/* ~/.config/autorandr/ &&
+	cp -r ~/mainconf/varied/monitors/autorandr/* ~/.config/autorandr
         echo "|--> Autorandr profiles loaded..." ; sleep 1
         
         git clone --quiet https://github.com/joaov777/wallpapers.git ~/Pictures/wallpapers/
         echo "|--> Wallpapers downloaded..." ; sleep 1
 
         sudo mkdir -p ~/.config/polybar &&
-        sudo ln -sf ~/mainconf/varied/i3related/polybar/config ~/.config/polybar
+        sudo cp ~/mainconf/varied/i3related/polybar/config ~/.config/polybar/
+	sudo cp ~/mainconf/varied/i3related/polybar/launch_polybar ~/.config/polybar/
         echo '|--> Polybar enabled...' ; sleep 1
 
         dconf load /com/gexperts/Tilix/ < ~/mainconf/varied/tilix/palenight.dconf &&
         echo "|--> Tilix enabled..." ; sleep 1
 
         sudo mkdir -p ~/.config/rofi &&
-        sudo ln -sf ~/mainconf/varied/i3related/rofi/config ~/.config/rofi/config &&
+        sudo cp ~/mainconf/varied/i3related/rofi/config ~/.config/rofi/ &&
         echo "|--> Rofi launcher enabled..." ; sleep 1
 
         sudo mkdir -p ~/.config/zathura &&
-        sudo ln -sf ~/mainconf/varied/i3related/zathura/zathurarc ~/.config/zathura/zathurarc &&
+        sudo ln -sf ~/mainconf/varied/i3related/zathura/zathurarc ~/.config/zathura/ &&
         echo "|--> Zathura enabled..." ; sleep 1
 
         sudo mkdir -p /etc/X11/xorg.conf.d &&
-        sudo ln -sf ~/mainconf/varied/i3related/EnableTapToClick_touchpad/90-touchpad.conf /etc/X11/xorg.conf.d/90-touchpad.conf &&
+        sudo cp ~/mainconf/varied/i3related/EnableTapToClick_touchpad/90-touchpad.conf /etc/X11/xorg.conf.d/ &&
         echo "|--> Tap to click enabled..." ; sleep 1
         
         sudo mkdir -p /etc/bluetooth && 
-        sudo ln -sf ~/mainconf/varied/i3related/bluetooth/main.conf /etc/bluetooth/main.conf &&
+        sudo cp ~/mainconf/varied/i3related/bluetooth/main.conf /etc/bluetooth/ &&
         echo "|--> Bluetooth enabled..." ; sleep 1
 		
         sudo mkdir -p ~/.config/i3 && 
-        sudo ln -sf ~/mainconf/varied/i3related/i3config/config ~/.config/i3/config &&
+        sudo cp ~/mainconf/varied/i3related/i3config/config ~/.config/i3/ &&
         echo "|--> i3 config enabled..." ; sleep 1

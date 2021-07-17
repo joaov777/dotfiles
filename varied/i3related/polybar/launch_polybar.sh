@@ -13,5 +13,6 @@ polybar bottom_right 2>&1 | tee -a /tmp/polybar1.log & disown
 polybar bottom_left 2>&1 | tee -a /tmp/polybar1.log & disown
 
 
+
 echo "Bars launched..."
 
