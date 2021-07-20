@@ -1,7 +1,7 @@
 #!/bin/bash
 
 packages_required=(
-	trizen i3-gaps pdfarranger openssh tcpdump tldr fzf thunar \
+	trizen ly i3-gaps pdfarranger openssh tcpdump tldr fzf thunar \
 	visual-studio-code-bin bind-tools rofi dmenu brave keepassxc brightnessctl termite \
 	git tilda notepadqq gparted papirus-folders-git netctl acpi pulseaudio-alsa xfce4-notifyd \
 	filezilla telegram-desktop copyq flameshot ranger pulseaudio-ctl xfce4-power-manager\
@@ -13,7 +13,7 @@ packages_required=(
 	pulseaudio-alsa pulseaudio-bluetooth bluez bluez-libs bluez-utils blueman tilix autorandr feh \
 	noto-fonts ttf-ubuntu-font-family ttf-dejavu openvpn ttf-freefont ttf-liberation dialog polybar  \
   ttf-droid ttf-inconsolata ttf-roboto terminus-font ttf-font-awesome xournalpp font-awesome ttf-unifont siji-git \
-	alsa-utils alsa-plugins alsa-lib pavucontrol lightdm lightdm-gtk-greeter 
+	alsa-utils alsa-plugins alsa-lib pavucontrol 
 	)
 	
 check_installation() {
