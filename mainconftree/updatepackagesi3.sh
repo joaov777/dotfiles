@@ -82,7 +82,7 @@ function installPackages() {
 
     for pkg in "${!chosen_packages[@]}"; do
         package="${available_packages[${chosen_packages[$pkg]}]}" 
-		yay -S "$package" --noconfirm --needed --quiet
+		yay -S "$package" --noconfirm --needed &> /dev/null
         isInstalled
     done
 }
@@ -90,7 +90,7 @@ function installPackages() {
 	installPackages 
 
 	#for Thunar
-	sudo pacman -S gvfs gvfs-smb gvfs-mtp --noconfirm --needed 
+	sudo pacman -S gvfs gvfs-smb gvfs-mtp --noconfirm --needed &> /dev/null
 	#sudo smb passwd -a joao
 
 	#enabling some settings for vim
@@ -106,7 +106,7 @@ function installPackages() {
 	sudo cp -r ~/mainconf/varied/themes/* /usr/share/themes/
 
 	#teamviewer related
-	sudo teamviewer --daemon enable > /dev/null
+	sudo teamviewer --daemon enable &> /dev/null
 	sudo systemctl enable teamviewerd.service 
 	sudo systemctl start teamviewerd.service 
 
@@ -121,6 +121,6 @@ function installPackages() {
 	#sudo gpasswd $USER sys
 	#sudo systemctl enable --now org.cups.cupsd.service
 
-	sudo papirus-folders -C black 
+	sudo papirus-folders -C black &> /dev/null
 
     clear
