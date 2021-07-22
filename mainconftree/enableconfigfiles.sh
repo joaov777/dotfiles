@@ -32,7 +32,7 @@
                 echo '|--> Polybar enabled' ; sleep 1
         }
 
-        dconf load /com/gexperts/Tilix/ < ~/mainconf/varied/tilix/palenight.dconf &&
+        dconf load /com/gexperts/Tilix/ < ~/mainconf/varied/tilix/monowhite.dconf &&
         echo "|--> Tilix enabled" ; sleep 1
 
         createFolderAndAssignOwnership ~/.config/rofi $USER $USER && {
