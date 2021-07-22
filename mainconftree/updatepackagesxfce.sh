@@ -1,4 +1,5 @@
 #!/bin/bash
+. ~/mainconf/scripts/menus.sh
 
 packages_required=(
 	yay keepassxc pdfarranger openssh tcpdump tldr fzf \
@@ -31,6 +32,8 @@ for pkg in "${packages_required[@]}"; do
 	echo "$(tput bold)$(tput setaf 7)"
 	echo "|==============|> MAINCONF <|==============|"
 	echo "|------------> UPDATE PACKAGES <-----------|"
+
+	#subMenu "MAINCONF - i3" "Update Packages XFCE"
 
 	#manage installation
 	if [ -z "$(pacman -Qi $pkg)" ]; then 

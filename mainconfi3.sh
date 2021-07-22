@@ -1,11 +1,11 @@
 #!/bin/bash
 
+. ~/mainconf/scripts/menus.sh
+
 while [ true ];
         do
 
-        clear
-        echo "$(tput bold)$(tput setaf 7)"
-        echo "|==============|> MAINCONF - i3 <|==============|"
+        menu "MAINCONF - i3"
         echo "#(1) - Update System (Mirrors and packages)"
         echo "#(2) - Update Packages"
         echo "#(3) - Enable config files"

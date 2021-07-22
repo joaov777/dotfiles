@@ -74,7 +74,7 @@ function checkYay() {
 #FUNCTION installPackages - Install or uninstall chosen packages
 function installPackages() {
 
-	subMenu i3 "Update Packages"
+	subMenu "MAINCONF - i3" "Update Packages"
     showAvailablePackages
 
 	#save the chosen packages as arguments into an array

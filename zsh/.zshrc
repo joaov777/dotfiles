@@ -5,7 +5,7 @@
 # | |__| |  \  /    
 #  \____/    \/     
 #
-#  ZSHRC Config file                  
+#  ZSHRC Config file 2                  
 
 #==========================> BEGINNING OF FILE
 

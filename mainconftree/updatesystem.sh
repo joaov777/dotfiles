@@ -1,12 +1,6 @@
 #!/bin/bash
+. ~/mainconf/scripts/menus.sh
 
-        clear
-        
-        echo "$(tput bold)$(tput setaf 7)"
-        echo "|==============|> MAINCONF <|==============|"
-        echo "|------------> UPDATE SYSTEM <-------------|"
-        sleep 1
-
-            sudo pacman -Syyuu --noconfirm
-
-        clear
+    #menu
+	subMenu "MAINCONF - i3" "Update System" 
+    sudo pacman -Syyuu --noconfirm --needed
