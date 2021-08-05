@@ -83,11 +83,21 @@ source $ZSH/oh-my-zsh.sh
   rcm(){mkdir ~/Desktop/$1 ; xdg-open ~/Desktop/$1 ; rclone mount $1:/ ~/Desktop/$1 ; fusermount -uz $1 >/dev/null 2>&1 ; rm -rf ~/Desktop/$1}	
 
 #EXA RELATED
-  alias ls='exa -al --color=always --group-directories-first'
-  alias la='exa -a --color=always --group-directories-first'  
-  alias ll='exa -l --color=always --group-directories-first'  
+
+  # complete
+  alias lsc='exa --long --header --inode --git --group --created --modified --accessed'
+
+  # normal listing
+  alias ls='exa -lg'
+
+  # hidden files and folders
+  alias l.='exa -a --color=always --group-directories-first'
+
+  # directories  
+  alias ld='exa -lg --no-filesize --color=always --group-directories-first' 
+
+  # listing trees 
   alias lt='exa -aT --color=always --group-directories-first'
-  alias l.='exa -a | egrep "^\."'
 
 # GIT RELATED
   alias grs="git remote set-url --add origin git@github.com:$1/$2.git" #set git remote for ssh	
