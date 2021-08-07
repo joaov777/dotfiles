@@ -1,4 +1,4 @@
-#       ___      __ 
+#      ____      __ 
 #      | \ \    / /   Joao Victor (joaov777)
 #      | |\ \  / /    https://github.com/joaov777
 #  _   | | \ \/ /   
@@ -139,9 +139,9 @@ bindsym $mod+f fullscreen toggle
 
 #==========================> MULTI-MONITOR
 ##In case you have two monitors, execute xrandr --listmonitors and replace them on the variables
-set $SCREEN_LEFT "HDMI1"
-set $SCREEN_RIGHT "DP2"
-set $home_laptop_monitor "eDP1"
+set $SCREEN_LEFT "HDMI-1"
+set $SCREEN_RIGHT "DP-2"
+set $home_laptop_monitor "eDP-1"
 
 ## Setting workspaces for HOME context
 workspace $ws1 output $SCREEN_LEFT
@@ -161,6 +161,11 @@ workspace $ws12 output $laptop_monitor
 workspace $ws13 output $laptop_monitor
 workspace $ws14 output $laptop_monitor
 workspace $ws15 output $laptop_monitor
+
+## Home multi-monitor setup
+exec --no-startup-id xrandr --output HDMI-1 --auto --primary --left-of DP-2 --output DP-2 --auto --output eDP-1 --off
+
+## IFCE multi-monitor setup
 
 ##Example: exec --no-startup-id xrandr --output HDMI-1 --mode '1920x1080' --left-of DP-2
 #==========================| MULTI-MONITOR END
@@ -536,10 +541,12 @@ set $PM_MODE PASSWORD MANAGER MODE: (e) Enable KDBX , (d) Disable KDBX
 mode "$PM_MODE" {
 
     #Enabling - mounting drive through Rclone
-    bindsym e exec mkdir /tmp/DRIVEJOAO && /usr/bin/rclone --vfs-cache-mode writes mount DRIVEJOAO:/Mixed/v1/ /tmp/DRIVEJOAO
+    #bindsym e exec mkdir /tmp/JOAO && /usr/bin/rclone --vfs-cache-mode writes mount JOAO:/Mixed/v1/ /tmp/JOAO
+    
+    bindsym e exec mkdir /tmp/JOAO && /usr/bin/rclone mount JOAO:/ /tmp/JOAO
 
     #run bluetooth connections manager
-    bindsym d exec fusermount -u /tmp/DRIVEJOAO && rm -rf /tmp/DRIVEJOAO
+    bindsym d exec fusermount -u /tmp/JOAO && rm -rf /tmp/JOAO
 
     bindsym Escape mode "default"
     bindsym Return mode "default"
