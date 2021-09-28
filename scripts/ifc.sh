@@ -10,7 +10,7 @@
 	openvpnpid="$(ps aux | grep $campus.ifce.ovpn | sed '$d' | awk '{print $2}')"
 
 	#If the pipe is already created, it breaks it. If not created yet, it will be so and vice-versa.
-	case $campus in
+	case "$campus" in
 		PICI|REITORIA)
 	
 			if [ -z "$openvpnpid" ]
@@ -32,9 +32,7 @@
 				echo "> No connections"
 			else
 				ps aux | grep $campus.ifce.ovpn | sed '$d'
-			fi
+			fi ;;
 				
 	esac
 
-
-	
