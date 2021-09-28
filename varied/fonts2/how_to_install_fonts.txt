@@ -1,0 +1,15 @@
+Installing fonts on Linux
+
+1 => Download the fonts
+2 => Create the folder: ~/.local/share/fonts
+
+Other possible directories are:
+---> /usr/share/fonts
+---> /usr/share/local/fonts
+
+3 => Copy all fonts to the folder chosen
+
+4 => fc-cache -f -v
+
+5 => fc-list | grep $font_name
+
