@@ -13,8 +13,8 @@ while [ true ];
 
         case $menuChoice in
                 q|Q|quit|QUIT|Quit|qUIT|exit|EXIT|Exit) exit ;;
-                1) ~/mainconf/mainconfi3.sh ;;
-                2) ~/mainconf/mainconfxfce.sh ;;
+                1) ~/mainconf/scripts/mainconfi3.sh ;;
+                2) ~/mainconf/scripts/mainconfxfce.sh ;;
                 *) echo "Not defined!" && sleep 1 ;;
         esac
 
