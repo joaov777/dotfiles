@@ -1,4 +1,3 @@
-
 #!/bin/bash
 . ~/mainconf/scripts/menus.sh
 
@@ -16,7 +15,7 @@ packages_required=(
 	noto-fonts ttf-ubuntu-font-family ttf-dejavu openvpn ttf-freefont ttf-liberation dialog polybar  \
   	ttf-droid ttf-inconsolata ttf-roboto terminus-font ttf-font-awesome ttf-font-awesome-5 otf-font-awesome \
 	xournalpp font-awesome ttf-unifont siji-git \
-	alsa-utils alsa-plugins alsa-lib pavucontrol zathura zathura-pdf-mupdf  
+	alsa-utils alsa-plugins alsa-lib pavucontrol zathura zathura-pdf-mupdf   
 	)
 
 function check_installation() {
@@ -87,11 +86,14 @@ done
 	echo "|--> Setting up Tilix" ; 
 	dconf load /com/gexperts/Tilix/ < ~/mainconf/varied/tilix/tilix.dconf
 
+	#albert
+	echo "|--> Setting up Albert" ; 
+	[ -f ~/.config/albert/albert.conf ] && rm ~/.config/albert/albert.conf 
+	cp ~/mainconf/varied/albert/albert.conf ~/.config/albert
+	pkill /usr/bin/albert > /dev/null
+
 	#nord related
 	echo "|--> Enabling and Starting VPN service" ; 
 	sudo systemctl enable nordvpnd --now
 	
     clear
-
-
-
