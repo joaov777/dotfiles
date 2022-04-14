@@ -6,7 +6,7 @@ while [ true ];
 
         
         if [ $# -eq 0 ]; then
-                echo "Insert i3 or xfce as a parameter" && exit
+                echo -e "Usage:\n$0 i3\n$0 xfce" && exit
         elif [ "$1" == "i3" ]; then 
                 exec ~/dotfiles/scripts/menutree/dotfilesi3.sh
         elif [ "$1" == "xfce" ]; then 
