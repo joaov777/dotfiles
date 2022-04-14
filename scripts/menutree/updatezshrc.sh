@@ -5,7 +5,7 @@
 	#menu
 	subMenu "Dotfiles" "Update .zshrc" 
 	checkFileExists ~/.zshrc && sudo rm ~/.zshrc 
-	sudo cp ~/mainconf/zsh/.zshrc /home/$USER && echo "|--> .zshrc restored" 
+	sudo cp ~/dotfiles/config/zsh/.zshrc /home/$USER && echo "|--> .zshrc restored" 
 	changeOwnership $USER $USER ~/.zshrc
 	sleep 1
 
