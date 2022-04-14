@@ -16,7 +16,7 @@ while [ true ];
         
 
         case $menuChoice in
-                q|Q|quit|QUIT|Quit|qUIT|exit|EXIT|Exit) exit ;;
+                q|Q|quit|QUIT|Quit|qUIT|exit|EXIT|Exit) exit 1 ;;
                 1) ~/dotfiles/scripts/menutree/updatesystem.sh ;;
                 2) ~/dotfiles/scripts/menutree/updatepackagesi3.sh ;;
                 3) ~/dotfiles/scripts/menutree/enableconfigfiles.sh ;;
