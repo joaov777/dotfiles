@@ -1,11 +1,11 @@
 #!/bin/bash
 
-. ~/mainconf/scripts/menus.sh
+. ~/dotfiles/scripts/misc/menus.sh
 
 while [ true ];
         do
 
-        menu "MAINCONF - i3"
+        menu "Dotfiles - i3"
         echo "#(1) - Update System (Mirrors and packages)"
         echo "#(2) - Update Packages"
         echo "#(3) - Enable config files"
@@ -17,11 +17,11 @@ while [ true ];
 
         case $menuChoice in
                 q|Q|quit|QUIT|Quit|qUIT|exit|EXIT|Exit) exit ;;
-                1) ~/mainconf/mainconftree/updatesystem.sh ;;
-                2) ~/mainconf/mainconftree/updatepackagesi3.sh ;;
-                3) ~/mainconf/mainconftree/enableconfigfiles.sh ;;
-                4) ~/mainconf/mainconftree/installzsh.sh ;;
-                5) ~/mainconf/mainconftree/updatezshrc.sh ;;  
+                1) ~/dotfiles/scripts/menutree/updatesystem.sh ;;
+                2) ~/dotfiles/scripts/menutree/updatepackagesi3.sh ;;
+                3) ~/dotfiles/scripts/menutree/enableconfigfiles.sh ;;
+                4) ~/dotfiles/scripts/menutree/installzsh.sh ;;
+                5) ~/dotfiles/scripts/menutree/updatezshrc.sh ;;  
                 *) echo "Not defined!" && sleep 1 ;;
         esac
 

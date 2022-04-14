@@ -1,9 +1,9 @@
 #!/bin/bash
 
-. ~/mainconf/scripts/menus.sh
-. ~/mainconf/scripts/functions.sh
+. ~/dotfiles/scripts/misc/menus.sh
+. ~/dotfiles/scripts/misc/functions.sh
         
-        subMenu "MAINCONF -i3" "Enable Config files"
+        subMenu "Dotfiles" "Enable Config files"
 
         createFolderAndAssignOwnership ~/.config/copyq $USER $USER && {
                 cp ~/mainconf/varied/i3related/copyq/copyq.conf ~/.config/copyq/ && echo "|--> CopyQ enabled" && sleep 1

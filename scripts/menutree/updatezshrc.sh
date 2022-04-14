@@ -1,9 +1,9 @@
 #!/bin/bash
-. ~/mainconf/scripts/menus.sh
-. ~/mainconf/scripts/functions.sh
+. ~/dotfiles/scripts/misc/menus.sh
+. ~/dotfiles/scripts/misc/functions.sh
 
 	#menu
-	subMenu "MAINCONF - i3" "Update .zshrc" 
+	subMenu "Dotfiles" "Update .zshrc" 
 	checkFileExists ~/.zshrc && sudo rm ~/.zshrc 
 	sudo cp ~/mainconf/zsh/.zshrc /home/$USER && echo "|--> .zshrc restored" 
 	changeOwnership $USER $USER ~/.zshrc

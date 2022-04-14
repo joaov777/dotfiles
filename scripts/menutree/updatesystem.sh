@@ -1,6 +1,6 @@
 #!/bin/bash
-. ~/mainconf/scripts/menus.sh
+. ~/dotfiles/scripts/misc/menus.sh
 
     #menu
-	subMenu "MAINCONF - i3" "Update System" 
+	subMenu "Dotfiles" "Update System" 
     sudo pacman -Syyuu --noconfirm --needed

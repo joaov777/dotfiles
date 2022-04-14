@@ -1,5 +1,5 @@
 #!/bin/bash
-. ~/mainconf/scripts/menus.sh
+. ~/dotfiles/scripts/misc/menus.sh
 
 packages_required=(
 	yay keepassxc pdfarranger openssh tcpdump tldr fzf \
@@ -28,10 +28,7 @@ function check_yay(){
 	check_yay
 	   
 for pkg in "${packages_required[@]}"; do
-	clear
-	echo "$(tput bold)$(tput setaf 7)"
-	echo "|==============|> MAINCONF <|==============|"
-	echo "|------------> UPDATE PACKAGES <-----------|"
+	subMenu "Dotfiles" "Update Packages"
 
 	#subMenu "MAINCONF - i3" "Update Packages XFCE"
 

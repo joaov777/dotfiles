@@ -1,5 +1,5 @@
 #!/bin/bash
-. ~/mainconf/scripts/menus.sh
+. ~/dotfiles/scripts/misc/menus.sh
 
 packages_required=(
 	ly i3 pdfarranger openssh tcpdump tldr fzf thunar termite rclone \

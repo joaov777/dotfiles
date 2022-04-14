@@ -2,9 +2,7 @@
 
 clear
         
-		echo "$(tput bold)$(tput setaf 7)"
-        echo "|==============|> MAINCONF <|==============|"
-        echo "|--------------> INSTALL ZSH <-------------|"
+		subMenu "Dotfiles" "Install ZSH"
 		
 		read -p "|--> Insert your username: " username	
 
@@ -30,4 +28,4 @@ clear
 		#installing pi theme https://github.com/tobyjamesthomas/pi
 		echo "|--> Installing zsh pi theme" ; sleep 1
 	    if [ -d ~/.oh-my-zsh/custom/themes/pi ]; then sudo rm -rf ~/.oh-my-zsh/custom/themes/pi; fi
-		wget -O ~/.oh-my-zsh/custom/themes/pi.zsh-theme https://raw.githubusercontent.com/joaov777/mainconf/master/zsh/pi.zsh-theme
+		wget -O ~/.oh-my-zsh/custom/themes/pi.zsh-theme https://gitlab.com/joaov777/dotfiles/-/raw/master/config/zsh/pi.zsh-theme

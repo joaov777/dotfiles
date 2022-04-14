@@ -1,11 +1,12 @@
 #!/bin/bash
 
-    #In case the config files below change, it is necessary to copy the file from "~/.config/xfce4/xfconf/xfce-perchannel-xml/" into "~/mainconf/varied/wiki/"
+. ~/dotfiles/scripts/misc/menus.sh
+    
+    # In case the config files below change, it is necessary to copy the file from 
+    # "~/.config/xfce4/xfconf/xfce-perchannel-xml/" into "~/mainconf/varied/wiki/"
 
-    clear
-		echo "$(tput bold)$(tput setaf 7)"
-        echo "|==============|> MAINCONF <|==============|"
-        echo "|------> ENABLE SHORTCUTS AND PANEL <------|"
+   
+	subMenu "Dotfiles" "Update System" 
 
     echo "|--> Copying shortcuts and xsettings..." && sleep 1
 
