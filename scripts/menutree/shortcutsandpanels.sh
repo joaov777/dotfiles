@@ -20,11 +20,11 @@
     if [ -f $xsettings ]; then echo "|--> Deleting xsettings.xml" ; rm $xsettings > /dev/null ; fi
 
     #downloading xfce4-keyboard-shortcuts.xml from github
-    wget -q -O $shortcuts https://raw.githubusercontent.com/joaov777/mainconf/master/varied/xfcepanels/bottompanel/xfce4-keyboard-shortcuts.xml
+    wget -q -O $shortcuts https://raw.githubusercontent.com/joaov777/mainconf/master/varied/xfcepanels/xfce4-keyboard-shortcuts.xml
     #cp ~/mainconf/varied/wiki/xfcepanels/panels04/xfce4-keyboard-shortcuts.xml ~/.config/xfce4/xfconf/xfce-perchannel-xml/
     
     #downloading xsettings.xml from github
-    wget -q -O $xsettings https://raw.githubusercontent.com/joaov777/mainconf/master/varied/xfcepanels/bottompanel/xsettings.xml
+    wget -q -O $xsettings https://raw.githubusercontent.com/joaov777/mainconf/master/varied/xfcepanels/xsettings.xml
     
     echo "|--> Updating shortcuts..." && sleep 1
     kill -9 $(pidof xfconfd)
@@ -33,7 +33,7 @@
 
     echo "|--> Copying xfce panel..." && sleep 1
     if [ -f $panel ]; then echo "|----> Deleting xfce4-panel.xml" ; rm $panel 2>/dev/null ; fi
-    wget -q -O $panel https://raw.githubusercontent.com/joaov777/mainconf/master/varied/xfcepanels/bottompanel/xfce4-panel.xml 
+    wget -q -O $panel https://raw.githubusercontent.com/joaov777/mainconf/master/varied/xfcepanels/xfce4-panel.xml 
     
     echo "|--> Updating panel..." && sleep 1
     xfce4-panel -r > /dev/null
