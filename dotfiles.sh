@@ -13,8 +13,8 @@ while [ true ];
 
         case $menuChoice in
                 q|Q|quit|QUIT|Quit|qUIT|exit|EXIT|Exit) exit ;;
-                1) ~/dotfiles/scripts/dotfilesi3.sh ;;
-                2) ~/dotfiles/scripts/dotfilesxfce.sh ;;
+                1) ~/dotfiles/scripts/menutree/dotfilesi3.sh ;;
+                2) ~/dotfiles/scripts/menutree/dotfilesxfce.sh ;;
                 *) echo "Not defined!" && sleep 1 ;;
         esac
 
