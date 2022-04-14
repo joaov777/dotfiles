@@ -6,12 +6,12 @@ while [ true ];
         do
 
         menu "Dotfiles - Xfce4"
-        echo "#(1) - Update System (Mirrors and packages)"
-        echo "#(2) - Update Packages"
-        echo "#(3) - Install ZSH"
-        echo "#(4) - Update .ZSHRC"
-        echo "#(5) - Enable shortcuts and panel"
-        echo "|-------------------------------------------|"
+        echo "1 - Update System (Mirrors and packages)"
+        echo "2 - Update Packages"
+        echo "3 - Install ZSH"
+        echo "4 - Update .ZSHRC"
+        echo "5 - Enable shortcuts and panel"
+        line
         read -p "Option: " menuChoice
         
 

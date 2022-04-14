@@ -6,12 +6,12 @@ while [ true ];
         do
 
         menu "Dotfiles - i3"
-        echo "#(1) - Update System (Mirrors and packages)"
-        echo "#(2) - Update Packages"
-        echo "#(3) - Enable config files"
-        echo "#(4) - Install ZSH"
-        echo "#(5) - Update .ZSHRC"
-        echo "|-------------------------------------------|"
+        echo "1 - Update System (Mirrors and packages)"
+        echo "2 - Update Packages"
+        echo "3 - Enable config files"
+        echo "4 - Install ZSH"
+        echo "5 - Update .ZSHRC"
+        line
         read -p "Option: " menuChoice
         
 
