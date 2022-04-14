@@ -1,10 +1,10 @@
 #!/bin/bash
-. ~/mainconf/scripts/menus.sh
+. ~/dotfiles/scripts/menus.sh
 
 while [ true ];
         do
 
-        menu "MAINCONF - "
+        menu "Dotfiles - "
         echo "#(1) - i3"
         echo "#(2) - xfce"
         echo "|-------------------------------------------|"
@@ -13,8 +13,8 @@ while [ true ];
 
         case $menuChoice in
                 q|Q|quit|QUIT|Quit|qUIT|exit|EXIT|Exit) exit ;;
-                1) ~/mainconf/scripts/mainconfi3.sh ;;
-                2) ~/mainconf/scripts/mainconfxfce.sh ;;
+                1) ~/dotfiles/scripts/dotfilesi3.sh ;;
+                2) ~/dotfiles/scripts/dotfilesxfce.sh ;;
                 *) echo "Not defined!" && sleep 1 ;;
         esac
 
