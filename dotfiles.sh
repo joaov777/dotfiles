@@ -1,5 +1,4 @@
 #!/bin/bash
-. ~/dotfiles/scripts/misc/menus.sh
 
 while [ true ];
         do
