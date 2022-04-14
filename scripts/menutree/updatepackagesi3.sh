@@ -33,10 +33,7 @@ function check_yay(){
 	check_yay
 	   
 for pkg in "${packages_required[@]}"; do
-	clear
-	echo "$(tput bold)$(tput setaf 7)"
-	echo "|==============|> MAINCONF <|==============|"
-	echo "|------------> UPDATE PACKAGES <-----------|"
+	subMenu "Dotfiles" "Update packages"
 
 	#subMenu "MAINCONF - i3" "Update Packages XFCE"
 
