@@ -15,7 +15,7 @@ packages_required=(
 	noto-fonts ttf-ubuntu-font-family ttf-dejavu openvpn ttf-freefont ttf-liberation dialog polybar  \
   	ttf-droid ttf-inconsolata ttf-roboto terminus-font ttf-font-awesome ttf-font-awesome-5 otf-font-awesome \
 	xournalpp font-awesome ttf-unifont siji-git \
-	alsa-utils alsa-plugins alsa-lib pavucontrol zathura zathura-pdf-mupdf   
+	alsa-utils alsa-plugins alsa-lib pavucontrol zathura zathura-pdf-mupdf xdg-utils libsecret gnome-keyring    
 	)
 
 function check_installation() {
