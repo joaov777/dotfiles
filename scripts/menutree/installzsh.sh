@@ -30,4 +30,4 @@ clear
 	
 		# installing pi theme https://github.com/tobyjamesthomas/pi
 		echo "|--> Installing custom zsh theme - moody" ; sleep 1
-		cp ~/dotfiles/config/zsh/moody.zsh-theme ~/.oh-my-zsh/custom/themes/
+		cp ~/dotfiles/config/zsh/moody.zsh-theme ~/.oh-my-zsh/themes/
