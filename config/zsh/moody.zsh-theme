@@ -1,8 +1,8 @@
-PROMPT=' ${return_status} %{$fg[blue]%}$(get_pwd)%{$reset_color%} $(git_prompt_info)${prompt_suffix}'
+PROMPT=' ${return_status}%{$fg[blue]%}$(get_pwd)%{$reset_color%} $(git_prompt_info)${prompt_suffix}'
 
-local return_status="%(?:%{$fg_bold[green]%}$USER:%{$fg_bold[red]%}$USER)"
+local return_status="%(?:%{$fg_bold[green]%}⚡:%{$fg_bold[red]%}⚡)"
 
-local prompt_suffix="%{$fg[blue]%}|%{$reset_color%} "
+local prompt_suffix="%{$fg[blue]%}❯%{$reset_color%} "
 
 function get_pwd(){
   git_root=$PWD
