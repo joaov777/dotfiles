@@ -18,10 +18,10 @@ clear
 		# change user default shell to zsh
 		sudo chsh -s /bin/zsh $USER #sudo usermod -s /bin/zsh $USER
 		
-	    #installing zsh-autosuggestions plugin
-		#echo "|--> Installing auto suggestions plugin" ; sleep 1
-		#if [ -d ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions ]; then sudo rm -rf ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions; fi
-		#git clone --quiet https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+	    	# installing zsh-autosuggestions plugin
+		echo "|--> Installing auto suggestions plugin" ; sleep 1
+		if [ -d ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions ]; then sudo rm -rf ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions; fi
+		git clone --quiet https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 		
 		# installing powerline fonts
 		echo "|--> Downloading Powerline fonts" ; sleep 1
@@ -29,7 +29,5 @@ clear
 		$HOME/.local/share/fonts/install.sh &>/dev/null
 	
 		# installing pi theme https://github.com/tobyjamesthomas/pi
-		echo "|--> Installing zsh pi theme" ; sleep 1
-	    if [ -d ~/.oh-my-zsh/custom/themes/pi ]; then sudo rm -rf ~/.oh-my-zsh/custom/themes/pi; fi
-		#wget -O ~/.oh-my-zsh/custom/themes/pi.zsh-theme https://gitlab.com/joaov777/dotfiles/-/raw/master/config/zsh/pi.zsh-theme
-		cp ~/dotfiles/config/zsh/pi.zsh-theme ~/.oh-my-zsh/custom/themes/
+		echo "|--> Installing custom zsh theme - moody" ; sleep 1
+		cp ~/dotfiles/config/zsh/moody.zsh-theme ~/.oh-my-zsh/custom/themes/
