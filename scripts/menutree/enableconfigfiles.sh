@@ -45,7 +45,7 @@
 
         createFolderAndAssignOwnership /etc/X11/xorg.conf.d $USER $USER && {
                 cp ~/dotfiles/config/i3related/EnableTapToClick_touchpad/90-touchpad.conf /etc/X11/xorg.conf.d/ &&
-=======
+
         sudo cp ~/dotfiles/config/i3related/picom/picom.conf /etc/xdg/ && changeOwnership $USER $USER /etc/xdg/picom.conf &&
         echo "|--> Picom compositor enabled" ; sleep 1
 
