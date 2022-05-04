@@ -58,11 +58,11 @@ done
 
 	#installing cursor themes
 	echo "|--> Installing Cursor Themes" ; 
-	sudo cp -r ~/mainconf/varied/cursors/* /usr/share/icons/
+	sudo cp -r ~/dotfiles/config/cursors/* /usr/share/icons/
 
 	#installing themes
 	echo "|--> Installing Themes" ; 
-	sudo cp -r ~/mainconf/varied/themes/* /usr/share/themes/
+	sudo cp -r ~/dotfiles/config/themes/* /usr/share/themes/
 
 	#teamviewer related
 	echo "|--> Enabling TeamViewer" ; 
@@ -71,22 +71,22 @@ done
 
 	#tmux related
 	echo "|--> Setting up TMUX" ; 
-	cp ~/mainconf/varied/tmux/.tmux.conf ~
+	cp ~/dotfiles/config/tmux/.tmux.conf ~
 	
 	#notepadqq
 	echo "|--> Setting up Notepadqq" ; 
 	notepadqq=~/.config/Notepadqq
     [ -f $notepadqq/Notepadqq.ini ] && rm $notepadqq/Notepadqq.ini || mkdir -p $notepadqq
-    cp ~/mainconf/varied/notepadqq/Notepadqq.ini $notepadqq && ln -sf ~/mainconf/varied/notepadqq/Notepadqq.ini $notepadqq
+    cp ~/dotfiles/config/notepadqq/Notepadqq.ini $notepadqq && ln -sf ~/dotfiles/config/notepadqq/Notepadqq.ini $notepadqq
 
 	#tilix
 	echo "|--> Setting up Tilix" ; 
-	dconf load /com/gexperts/Tilix/ < ~/mainconf/varied/tilix/tilix.dconf
+	dconf load /com/gexperts/Tilix/ < ~/dotfiles/config/tilix/tilix.dconf
 
 	#albert
 	echo "|--> Setting up Albert" ; 
 	[ -f ~/.config/albert/albert.conf ] && rm ~/.config/albert/albert.conf 
-	cp ~/mainconf/varied/albert/albert.conf ~/.config/albert
+	cp ~/dotfiles/config/albert/albert.conf ~/.config/albert
 	pkill /usr/bin/albert > /dev/null
 
 	#nord related
