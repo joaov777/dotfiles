@@ -8,10 +8,12 @@ killall -q polybar
 if type "xrandr"; then
   for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
     MONITOR=$m polybar --reload bottom_right &
+    MONITOR=$m polybar --reload topbar &
     #MONITOR=$m polybar bottom_right 2>&1 | tee -a /tmp/polybar1.log & disown
   done
 else
   polybar --reload bottom_right &
+  polybar --reload topbar &
 fi
 
 

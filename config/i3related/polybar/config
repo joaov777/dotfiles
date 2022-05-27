@@ -28,9 +28,12 @@ secondary = #e60053
 alert = #bd2c40
 
 ;BOTTOM LEFT BAR - 
-;[bar/bottom_left]
-;inherit = bar/bottom_right
-;monitor = ${env:MONITOR:}
+[bar/topbar]
+inherit = bar/bottom_right
+monitor = ${env:MONITOR:}
+modules-center = i3
+modules-right = 
+bottom = false
 
 ;BOTTOM RIGHT BAR - 
 [bar/bottom_right]
@@ -58,14 +61,14 @@ module-margin-left = 0
 module-margin-right = 2
 
 ;font-0 = fixed:pixelsize=9;1
-font-0 = consolas:pixelsize=9;1
-font-1 = unifont:fontformat=truetype:size=9:antialias=false;0
+font-0 = consolas:weight=bold:pixelsize=8.5;1
+font-1 = unifont:fontformat=truetype:size=12:antialias=false;0
 font-2 = siji:pixelsize=9;1
 font-3 = Font Awesome 5 Free:pixelsize=8;2
 font-4 = Font Awesome 5 Free Solid:pixelsize=8;2
 font-5 = Font Awesome 5 Brands:pixelsize=8;2
 
-modules-left = i3
+;modules-left = i3
 modules-center = filesystem xkeyboard memory cpu battery date dollarrate keyboardlayout vpn wlan eth gatewaywan gatewaylan
 modules-right = powermenu
 
