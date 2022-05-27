@@ -1,0 +1,4 @@
+1 - Install the Jetbrains Mono Nerd Font first
+2 - Install ZSH and set it up first
+3 - Replace the file in %LocalAppData%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState for the JSON on this folder
+
