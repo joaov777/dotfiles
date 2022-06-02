@@ -91,8 +91,8 @@ ml(){watch -n 1 'du -h --max-depth=0 ./*' --time} #local monitoring
 #> Navigation 
 alias l="ls -liar"
 alias bl="acpi -V" #check battery info  
-alias tt="~/mainconf/scripts/tilixthemechooser.sh"
-alias xp="~/mainconf/scripts/panel.sh" #xfce4 panel enable/disable
+alias tt="~/dotfiles/scripts/misc/tilixthemechooser.sh"
+alias xp="~/dotfiles/scripts/misc/panel.sh" #xfce4 panel enable/disable
 alias .="cd .."	
 alias ..="cd ../../"	
 alias ...="cd ../../../"	
@@ -138,17 +138,17 @@ alias gc="git commit -m $1"
 alias gpl="git pull"
 alias gps="git push origin master"
 gus(){git config --global user.name "$1" && git config --global user.email "$2" && git config --global core.editor vim}
-gpsm(){cd ~/mainconf && git add . && git commit -m "$1" && git push origin master && cd -} #git push mainconf
-gplm(){cd ~/mainconf && git pull && cd -} #git pull mainconf
-mcpush(){cd ~/mainconf && git add . && git commit -m "$1" && git push origin master && cd -} ##pushing mainconf to git
-mcpull(){cd ~/mainconf && git pull && cd -}
+gpsm(){cd ~/dotfiles && git add . && git commit -m "$1" && git push origin master && cd -} #git push dotfiles 
+gplm(){cd ~/dotfiles && git pull && cd -} #git pull dotfiles
+mcpush(){cd ~/dotfiles && git add . && git commit -m "$1" && git push origin master && cd -} #pushing dotfiles to git
+mcpull(){cd ~/dotfiles && git pull && cd -}
 
 # Vpn
 nc(){nordvpn connect}	
 ncus(){nordvpn connect United_States}	
 nd(){nordvpn disconnect}	
 ns(){nordvpn status}
-ifc(){/home/$USER/mainconf/scripts/ifc.sh $1}  
+ifc(){/home/$USER/dotfiles/scripts/misc/ifc.sh $1}  
 
 # FUNCTIONS 
 ppp(){python3 $PWD/$1}	
