@@ -1,9 +1,6 @@
 #!/bin/bash
 . ~/dotfiles/scripts/misc/menus.sh
 
-# setting keys
-[ "$(cat /etc/os-release | grep 'arch')" ] && PACKAGE_MANAGER="sudo pacman -S --needed --noconfirm" || PACKAGE_MANAGER="sudo apt install -y"
-
 packages_required=(
 	ly i3 pdfarranger openssh tcpdump tldr fzf thunar termite rclone \
 	visual-studio-code-bin bind-tools rofi dmenu brave keepassxc brightnessctl netctl \
@@ -35,7 +32,7 @@ function install_yay(){
 }
 
 	# making sure yay is installed
-	[ check_installation yay ] || install_yay
+	install_yay
 	   
 	# installing all packages
 	for pkg in "${packages_required[@]}"; do
@@ -43,10 +40,10 @@ function install_yay(){
 
 		if [ -z "$(pacman -Qi $pkg)" ]; then 
 			echo "|--> Installing $pkg..." 
-			$PACKAGE_MANAGER "$pkg"
+			yay -S "$pkg" --noconfirm --needed 
 			check_installation "$pkg"
 		else
-			echo "|--> $pkg is already installed!!" > /dev/null 
+		echo "|--> $pkg is already installed!!" > /dev/null 
 		fi
 	done
 
