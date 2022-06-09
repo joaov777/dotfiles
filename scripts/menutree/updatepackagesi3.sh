@@ -1,6 +1,9 @@
 #!/bin/bash
 . ~/dotfiles/scripts/misc/menus.sh
 
+# setting keys
+[ "$(cat /etc/os-release | grep 'arch')" ] && PACKAGE_MANAGER="sudo pacman -S --needed --noconfirm" || PACKAGE_MANAGER="sudo apt install -y"
+
 packages_required=(
 	ly i3 pdfarranger openssh tcpdump tldr fzf thunar termite rclone \
 	visual-studio-code-bin bind-tools rofi dmenu brave keepassxc brightnessctl netctl \
@@ -18,34 +21,34 @@ packages_required=(
 	alsa-utils alsa-plugins alsa-lib pavucontrol zathura zathura-pdf-mupdf xdg-utils libsecret gnome-keyring    
 	)
 
+# check if package installed (success or fail)
 function check_installation() {
 	if [ -z "$(pacman -Qi $1)" ]; then echo "|--> ERROR: Package $1" && sleep 1; else echo "|--> SUCCESS: Package $1" && sleep 1; fi
 }
 	
-#checking Yay AUR Helper
-function check_yay(){
+# checking Yay AUR Helper
+function install_yay(){
 		git clone --quiet https://aur.archlinux.org/yay.git 
 		cd yay
 		makepkg -si
 		sudo rm -rf yay
 }
-	#if [ -z "$(pacman -Qi yay)" ]; then sudo pacman -S yay --needed --noconfirm; else echo "|--> Yay is installed" && sleep 1; fi
-	check_yay
+
+	# making sure yay is installed
+	[ check_installation yay ] || install_yay
 	   
-for pkg in "${packages_required[@]}"; do
-	subMenu "Dotfiles" "Update packages"
+	# installing all packages
+	for pkg in "${packages_required[@]}"; do
+		subMenu "Dotfiles" "Update packages"
 
-	#subMenu "MAINCONF - i3" "Update Packages XFCE"
-
-	#manage installation
-	if [ -z "$(pacman -Qi $pkg)" ]; then 
-		echo "|--> Installing $pkg..." 
-		yay -S "$pkg" --noconfirm --needed 
-		check_installation "$pkg"
-	else
-		echo "|--> $pkg is already installed!!" > /dev/null 
-	fi
-done
+		if [ -z "$(pacman -Qi $pkg)" ]; then 
+			echo "|--> Installing $pkg..." 
+			$PACKAGE_MANAGER "$pkg"
+			check_installation "$pkg"
+		else
+			echo "|--> $pkg is already installed!!" > /dev/null 
+		fi
+	done
 
 	#enabling sharing
 	echo "|--> Enabling Samba permissions" ; 
