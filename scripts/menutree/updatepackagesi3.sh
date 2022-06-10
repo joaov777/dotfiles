@@ -25,8 +25,8 @@ function check_installation() {
 	
 # checking Yay AUR Helper
 function install_yay(){
-		git clone --quiet https://aur.archlinux.org/yay.git 
-		cd yay
+		git clone --quiet https://aur.archlinux.org/yay.git ~
+		cd ~/yay
 		makepkg -si
 		sudo rm -rf yay
 }
