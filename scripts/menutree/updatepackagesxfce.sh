@@ -19,10 +19,10 @@ function check_installation() {
 	
 #checking Yay AUR Helper
 function check_yay(){
-		git clone --quiet https://aur.archlinux.org/yay.git 
-		cd yay
+		git clone --quiet https://aur.archlinux.org/yay.git /opt
+		cd /opt/yay
 		makepkg -si
-		sudo rm -rf yay
+		#sudo rm -rf yay
 }
 	#if [ -z "$(pacman -Qi yay)" ]; then sudo pacman -S yay --needed --noconfirm; else echo "|--> Yay is installed" && sleep 1; fi
 	check_yay
@@ -49,15 +49,15 @@ done
 	xdg-user-dirs-update
 
 	#enabling some settings for vim
-	cp ~/mainconf/varied/vifm/.vimrc ~
+	cp ~/dotfiles/vifm/.vimrc ~
 
 	#installing cursor themes
 	echo "|--> Installing Cursor Themes" ; 
-	sudo cp -r ~/mainconf/varied/cursors/* /usr/share/icons/
+	sudo cp -r ~/dotfiles/config/cursors/* /usr/share/icons/
 
 	#installing themes
 	echo "|--> Installing Themes" ; 
-	sudo cp -r ~/mainconf/varied/themes/* /usr/share/themes/
+	sudo cp -r ~/dotfiles/config/themes/* /usr/share/themes/
 
 	#teamviewer related
 	echo "|--> Enabling TeamViewer" ; 
@@ -66,13 +66,13 @@ done
 
 	#tmux related
 	echo "|--> Setting up TMUX" ; 
-	cp ~/mainconf/varied/tmux/.tmux.conf ~
+	cp ~/dotfiles/config/tmux/.tmux.conf ~
 	
 	#notepadqq
 	echo "|--> Setting up Notepadqq" ; 
 	notepadqq=~/.config/Notepadqq
     [ -f $notepadqq/Notepadqq.ini ] && rm $notepadqq/Notepadqq.ini || mkdir -p $notepadqq
-    cp ~/mainconf/varied/notepadqq/Notepadqq.ini $notepadqq && ln -sf ~/mainconf/varied/notepadqq/Notepadqq.ini $notepadqq
+    cp ~/dotfiles/config/notepadqq/Notepadqq.ini $notepadqq && ln -sf ~/dotfiles/config/notepadqq/Notepadqq.ini $notepadqq
 
 	#tilix
 	echo "|--> Setting up Tilix" ; 
@@ -81,7 +81,7 @@ done
 	#albert
 	echo "|--> Setting up Albert" ; 
 	[ -f ~/.config/albert/albert.conf ] && rm ~/.config/albert/albert.conf 
-	cp ~/mainconf/varied/albert/albert.conf ~/.config/albert
+	cp ~/dotfiles/config/albert/albert.conf ~/.config/albert
 	pkill /usr/bin/albert > /dev/null
 
 	#nord related

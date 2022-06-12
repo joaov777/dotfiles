@@ -2,10 +2,10 @@
 . ~/dotfiles/scripts/misc/menus.sh
 
 packages_required=(
-	ly i3 pdfarranger openssh tcpdump tldr fzf thunar termite rclone \
-	visual-studio-code-bin bind-tools rofi dmenu brave keepassxc brightnessctl netctl \
+	ly i3 pdfarranger openssh tcpdump tldr fzf thunar rclone \
+	visual-studio-code-bin bind-tools rofi dmenu keepassxc brightnessctl netctl \
 	git tilda notepadqq gparted papirus-folders-git acpi pulseaudio-alsa xfce4-notifyd \
-	filezilla telegram-desktop copyq flameshot ranger pulseaudio-ctl xfce4-power-manager\
+	filezilla telegram-desktop copyq flameshot ranger pulseaudio-ctl xfce4-power-manager \
 	gedit pwgen openssh vim rdesktop i3lock i3lock-fancy-git mtr tmux iw py3status \
 	nmap okular viewnior ncdu inxi htop otf-fira-mono nordvpn-bin nitrogen netctl \
 	veracrypt papirus-icon-theme neofetch lxappearance vlc picom i3status trayer vifm exa \
@@ -14,7 +14,7 @@ packages_required=(
 	pulseaudio-alsa pulseaudio-bluetooth bluez bluez-libs bluez-utils blueman tilix autorandr feh \
 	noto-fonts ttf-ubuntu-font-family ttf-dejavu openvpn ttf-freefont ttf-liberation dialog polybar  \
   	ttf-droid ttf-inconsolata ttf-roboto terminus-font ttf-font-awesome ttf-font-awesome-5 otf-font-awesome \
-	xournalpp font-awesome ttf-unifont siji-git \
+	xournalpp font-awesome ttf-unifont siji-git brave \
 	alsa-utils alsa-plugins alsa-lib pavucontrol zathura zathura-pdf-mupdf xdg-utils libsecret gnome-keyring    
 	)
 
@@ -25,10 +25,10 @@ function check_installation() {
 	
 # checking Yay AUR Helper
 function install_yay(){
-		git clone --quiet https://aur.archlinux.org/yay.git ~
-		cd ~/yay
+		git clone --quiet https://aur.archlinux.org/yay.git /opt
+		cd /opt/yay
 		makepkg -si
-		sudo rm -rf yay
+		#sudo rm -rf ~/yay
 }
 
 	# making sure yay is installed
@@ -54,7 +54,7 @@ function install_yay(){
 	xdg-user-dirs-update
 
 	#enabling some settings for vim
-	cp ~/mainconf/varied/vifm/.vimrc ~
+	cp ~/dotfiles/vifm/.vimrc ~
 
 	#installing cursor themes
 	echo "|--> Installing Cursor Themes" ; 
