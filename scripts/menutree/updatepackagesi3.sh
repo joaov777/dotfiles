@@ -30,7 +30,6 @@ function install_yay(){
 		makepkg -si
 		#sudo rm -rf ~/yay
 }
-
 	# making sure yay is installed
 	install_yay
 	   

@@ -24,13 +24,10 @@ function check_yay(){
 		makepkg -si
 		#sudo rm -rf yay
 }
-	#if [ -z "$(pacman -Qi yay)" ]; then sudo pacman -S yay --needed --noconfirm; else echo "|--> Yay is installed" && sleep 1; fi
 	check_yay
 	   
 for pkg in "${packages_required[@]}"; do
 	subMenu "Dotfiles" "Update Packages"
-
-	#subMenu "MAINCONF - i3" "Update Packages XFCE"
 
 	#manage installation
 	if [ -z "$(pacman -Qi $pkg)" ]; then 

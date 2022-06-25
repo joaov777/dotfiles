@@ -11,6 +11,7 @@ while [ true ];
         echo "3 - Enable config files"
         echo "4 - Install ZSH"
         echo "5 - Update .ZSHRC"
+        echo "6 - Install System Fonts"
         line
         read -p "Option: " menuChoice
         
@@ -22,6 +23,7 @@ while [ true ];
                 3) ~/dotfiles/scripts/menutree/enableconfigfiles.sh ;;
                 4) ~/dotfiles/scripts/menutree/installzsh.sh ;;
                 5) ~/dotfiles/scripts/menutree/updatezshrc.sh ;;  
+                6) ~/dotfiles/scripts/menutree/install_system_fonts.sh ;; 
                 *) echo "Not defined!" && sleep 1 ;;
         esac
 

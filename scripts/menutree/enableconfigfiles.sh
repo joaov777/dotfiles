@@ -19,8 +19,8 @@
         }
 
         checkFileExists /etc/xdg/picom.conf && sudo rm /etc/xdg/picom.conf
-        sudo cp ~/dotfiles/config/i3related/picom/picom.conf /etc/xdg/ && changeOwnership $USER $USER /etc/xdg/picom.conf &&
-        echo "|--> Picom compositor enabled" ; sleep 1
+                sudo cp ~/dotfiles/config/i3related/picom/picom.conf /etc/xdg/ && changeOwnership $USER $USER /etc/xdg/picom.conf &&
+                echo "|--> Picom compositor enabled" ; sleep 1
 
         createFolderAndAssignOwnership ~/.config/autorandr $USER $USER && {
                 cp -r ~/dotfiles/config/monitors/autorandr/* ~/.config/autorandr && echo "|--> Autorandr profiles loaded" ; sleep 1
@@ -33,7 +33,7 @@
         }
 
         dconf load /com/gexperts/Tilix/ < ~/dotfiles/config/tilix/monowhite.dconf &&
-        echo "|--> Tilix enabled" ; sleep 1
+                echo "|--> Tilix enabled" ; sleep 1
 
         createFolderAndAssignOwnership ~/.config/rofi $USER $USER && {
                 cp ~/dotfiles/config/i3related/rofi/config ~/.config/rofi/ && echo "|--> Rofi launcher enabled" ; sleep 1
@@ -47,7 +47,7 @@
                 cp ~/dotfiles/config/i3related/EnableTapToClick_touchpad/90-touchpad.conf /etc/X11/xorg.conf.d/ &&
 
         sudo cp ~/dotfiles/config/i3related/picom/picom.conf /etc/xdg/ && changeOwnership $USER $USER /etc/xdg/picom.conf &&
-        echo "|--> Picom compositor enabled" ; sleep 1
+                echo "|--> Picom compositor enabled" ; sleep 1
 
         createFolderAndAssignOwnership ~/.config/autorandr $USER $USER && {
                 cp -r ~/dotfiles/config/monitors/autorandr/* ~/.config/autorandr && echo "|--> Autorandr profiles loaded" ; sleep 1
@@ -60,7 +60,7 @@
         }
 
         dconf load /com/gexperts/Tilix/ < ~/dotfiles/config/tilix/monowhite.dconf &&
-        echo "|--> Tilix enabled" ; sleep 1
+                echo "|--> Tilix enabled" ; sleep 1
 
         createFolderAndAssignOwnership ~/.config/rofi $USER $USER && {
                 cp ~/dotfiles/config/i3related/rofi/config ~/.config/rofi/ && echo "|--> Rofi launcher enabled" ; sleep 1
