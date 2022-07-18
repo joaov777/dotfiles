@@ -1,6 +1,5 @@
 #!/bin/bash
 
-#main script
 while [ true ];
         do
 
