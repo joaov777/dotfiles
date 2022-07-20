@@ -5,11 +5,13 @@
 
 subMenu "Dotfiles" "Install AUR Helper" 
 
-	pacman -S --needed git base-devel && \
-	git clone --quiet https://aur.archlinux.org/yay.git /home/"$USER" && \ 
-	cd /home/$USER/yay && \
+yay_dir="/home/$USER/yay"
+
+	[ -d "$yay_dir" ] && sudo rm -rf "$yay_dir"
+	sudo pacman -S --needed git base-devel && \
+	git clone --quiet https://aur.archlinux.org/yay.git "$yay_dir" && cd "$yay_dir" && \
 	makepkg -si && \
-	rm -rf /home/$USER/yay
+	rm -rf "$yay_dir"
 
 	isPackageInstalled yay && sleep 2
 

@@ -2,7 +2,7 @@
 . ~/dotfiles/scripts/misc/menus.sh
 
 packages_required=(
-	ly i3 pdfarranger openssh tcpdump tldr fzf thunar rclone \
+	dconf ly i3 pdfarranger openssh tcpdump tldr fzf thunar rclone \
 	visual-studio-code-bin bind-tools rofi dmenu keepassxc brightnessctl netctl \
 	git tilda notepadqq gparted papirus-folders-git acpi pulseaudio-alsa xfce4-notifyd \
 	filezilla telegram-desktop copyq flameshot ranger pulseaudio-ctl xfce4-power-manager \
