@@ -18,20 +18,8 @@ packages_required=(
 	alsa-utils alsa-plugins alsa-lib pavucontrol zathura zathura-pdf-mupdf xdg-utils libsecret gnome-keyring    
 	)
 
-# check if package installed (success or fail)
-function check_installation() {
-	if [ -z "$(pacman -Qi $1)" ]; then echo "|--> ERROR: Package $1" && sleep 1; else echo "|--> SUCCESS: Package $1" && sleep 1; fi
-}
-	
-# checking Yay AUR Helper
-function install_yay(){
-		git clone --quiet https://aur.archlinux.org/yay.git /opt
-		cd /opt/yay
-		makepkg -si
-		#sudo rm -rf ~/yay
-}
-	# making sure yay is installed
-	install_yay
+	# warning on yay helper installation
+ 	if [ -z "$(pacman -Qi yay)" ]; then echo "|--> ERROR: Make sure you install YAY before installing packages" && sleep 1; fi
 	   
 	# installing all packages
 	for pkg in "${packages_required[@]}"; do
@@ -40,7 +28,7 @@ function install_yay(){
 		if [ -z "$(pacman -Qi $pkg)" ]; then 
 			echo "|--> Installing $pkg..." 
 			yay -S "$pkg" --noconfirm --needed 
-			check_installation "$pkg"
+			isPackageInstalled "$pkg"
 		else
 		echo "|--> $pkg is already installed!!" > /dev/null 
 		fi
