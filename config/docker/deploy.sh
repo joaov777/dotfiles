@@ -20,5 +20,5 @@ echo "--- Building image..."
 docker build -t "$IMAGE_NAME" -f Dockerfile .
 
 echo "--- Building container..."
-docker run --rm -it --name "$CONTAINER_NAME" -v $(pwd):/home/joao/dotfiles "$IMAGE_NAME"
+docker run --rm -it --name "$CONTAINER_NAME" -v $:/home/joao/dotfiles "$IMAGE_NAME"
 
