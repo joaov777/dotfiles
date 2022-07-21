@@ -1,5 +1,6 @@
 FROM archlinux
 
+
 # instaling base packages
 RUN pacman -Sy && pacman -S git net-tools iputils vi vim sudo --noconfirm --needed
 
@@ -13,4 +14,3 @@ RUN echo -e "joao ALL=(ALL:ALL) ALL\nvictor ALL=(ALL:ALL) ALL\n%wheel ALL=(ALL:A
 # changing users passwords
 RUN echo joao:joao | chpasswd
 RUN echo victor:victor | chpasswd
-
