@@ -4,8 +4,44 @@
     "actions": 
     [
         {
-            "command": "paste",
-            "keys": "ctrl+v"
+            "command": 
+            {
+                "action": "resizePane",
+                "direction": "up"
+            },
+            "keys": "alt+shift+k"
+        },
+        {
+            "command": "unbound",
+            "keys": "alt+shift+down"
+        },
+        {
+            "command": "unbound",
+            "keys": "alt+shift+left"
+        },
+        {
+            "command": "unbound",
+            "keys": "alt+shift+up"
+        },
+        {
+            "command": "unbound",
+            "keys": "alt+shift+right"
+        },
+        {
+            "command": "unbound",
+            "keys": "alt+left"
+        },
+        {
+            "command": "unbound",
+            "keys": "alt+right"
+        },
+        {
+            "command": "unbound",
+            "keys": "alt+up"
+        },
+        {
+            "command": "unbound",
+            "keys": "alt+down"
         },
         {
             "command": 
@@ -16,8 +52,27 @@
             "keys": "ctrl+c"
         },
         {
+            "command": 
+            {
+                "action": "moveFocus",
+                "direction": "up"
+            },
+            "keys": "alt+k"
+        },
+        {
+            "command": "paste",
+            "keys": "ctrl+v"
+        },
+        {
             "command": "find",
             "keys": "ctrl+shift+f"
+        },
+        {
+            "command": 
+            {
+                "action": "quakeMode"
+            },
+            "keys": "ctrl+space"
         },
         {
             "command": 
@@ -27,55 +82,144 @@
                 "splitMode": "duplicate"
             },
             "keys": "alt+shift+d"
+        },
+        {
+            "command": 
+            {
+                "action": "resizePane",
+                "direction": "left"
+            },
+            "keys": "alt+shift+h"
+        },
+        {
+            "command": 
+            {
+                "action": "resizePane",
+                "direction": "down"
+            },
+            "keys": "alt+shift+j"
+        },
+        {
+            "command": 
+            {
+                "action": "resizePane",
+                "direction": "right"
+            },
+            "keys": "alt+shift+l"
+        },
+        {
+            "command": 
+            {
+                "action": "moveFocus",
+                "direction": "right"
+            },
+            "keys": "alt+l"
+        },
+        {
+            "command": 
+            {
+                "action": "moveFocus",
+                "direction": "left"
+            },
+            "keys": "alt+h"
+        },
+        {
+            "command": 
+            {
+                "action": "moveFocus",
+                "direction": "down"
+            },
+            "keys": "alt+j"
         }
     ],
     "copyFormatting": "none",
     "copyOnSelect": false,
-    "defaultProfile": "{17bf3de4-5353-5709-bcf9-835bd952a95e}",
+    "defaultProfile": "{5a069d55-87bd-57cf-8a07-2726b203d3e5}",
     "profiles": 
     {
         "defaults": 
         {
-            "colorScheme": "Dracula"
+            "colorScheme": "Color Scheme 11"
         },
         "list": 
         [
             {
-                "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                "colorScheme": "Galaxy",
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "hidden": false,
                 "name": "Windows PowerShell"
             },
             {
-                "commandline": "%SystemRoot%\\System32\\cmd.exe",
+                "colorScheme": "Galaxy",
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
                 "hidden": false,
-                "name": "Prompt de comando"
+                "name": "Command Prompt"
             },
             {
                 "colorScheme": "Dracula",
-                "font": 
-                {
-                    "face": "JetBrainsMono NF",
-                    "size": 9,
-                    "weight": "normal"
-                },
-                "guid": "{17bf3de4-5353-5709-bcf9-835bd952a95e}",
-                "hidden": true,
-                "name": "Ubuntu-22.04",
+                "guid": "{58ad8b0c-3ef8-5f4d-bc6f-13e4c00f2530}",
+                "hidden": false,
+                "name": "Debian",
                 "source": "Windows.Terminal.Wsl"
             },
             {
+                "colorScheme": "Dracula",
+                "guid": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
+                "hidden": false,
+                "name": "Ubuntu-20.04",
+                "source": "Windows.Terminal.Wsl"
+            },
+            {
+                "colorScheme": "Galaxy",
                 "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
                 "hidden": false,
                 "name": "Azure Cloud Shell",
                 "source": "Windows.Terminal.Azure"
             },
             {
-                "guid": "{f9ceaf27-504c-58d7-927c-d1d6a7ac7d3c}",
+                "backgroundImage": null,
+                "backgroundImageOpacity": 0.23000000000000001,
+                "colorScheme": "Dracula",
+                "cursorShape": "bar",
+                "font": 
+                {
+                    "face": "JetBrainsMono Nerd Font",
+                    "size": 9,
+                    "weight": "normal"
+                },
+                "guid": "{5a069d55-87bd-57cf-8a07-2726b203d3e5}",
                 "hidden": false,
-                "name": "Ubuntu 22.04.1 LTS",
-                "source": "CanonicalGroupLimited.Ubuntu22.04LTS_79rhkp1fndgsc"
+                "name": "Ubuntu 20.04.4 LTS",
+                "opacity": 100,
+                "padding": "15",
+                "source": "CanonicalGroupLimited.Ubuntu20.04LTS_79rhkp1fndgsc",
+                "useAcrylic": false
+            },
+            {
+                "backgroundImage": "C:\\Users\\joao\\Downloads\\space_nebula_constellation_104640_1920x1080.jpg",
+                "backgroundImageOpacity": 0.19,
+                "colorScheme": "Dracula",
+                "cursorShape": "bar",
+                "experimental.retroTerminalEffect": false,
+                "font": 
+                {
+                    "face": "JetBrains Mono NL",
+                    "size": 9,
+                    "weight": "semi-bold"
+                },
+                "guid": "{60c3e313-8e1a-58f6-8175-3650c2bd2b26}",
+                "hidden": false,
+                "name": "Ubuntu 22.04 LTS",
+                "scrollbarState": "hidden",
+                "source": "CanonicalGroupLimited.Ubuntu22.04LTS_79rhkp1fndgsc",
+                "useAcrylic": true
+            },
+            {
+                "colorScheme": "Galaxy",
+                "guid": "{17bf3de4-5353-5709-bcf9-835bd952a95e}",
+                "hidden": true,
+                "name": "Ubuntu-22.04",
+                "source": "Windows.Terminal.Wsl"
             }
         ]
     },
@@ -128,18 +272,18 @@
             "yellow": "#C19C00"
         },
         {
-            "background": "#282A36",
-            "black": "#21222C",
+            "background": "#1E1F29",
+            "black": "#000000",
             "blue": "#BD93F9",
-            "brightBlack": "#6272A4",
-            "brightBlue": "#D6ACFF",
-            "brightCyan": "#A4FFFF",
-            "brightGreen": "#69FF94",
-            "brightPurple": "#FF92DF",
-            "brightRed": "#FF6E6E",
+            "brightBlack": "#555555",
+            "brightBlue": "#BD93F9",
+            "brightCyan": "#8BE9FD",
+            "brightGreen": "#50FA7B",
+            "brightPurple": "#FF79C6",
+            "brightRed": "#FF5555",
             "brightWhite": "#FFFFFF",
-            "brightYellow": "#FFFFA5",
-            "cursorColor": "#F8F8F2",
+            "brightYellow": "#F1FA8C",
+            "cursorColor": "#BBBBBB",
             "cyan": "#8BE9FD",
             "foreground": "#F8F8F2",
             "green": "#50FA7B",
@@ -147,8 +291,54 @@
             "purple": "#FF79C6",
             "red": "#FF5555",
             "selectionBackground": "#44475A",
-            "white": "#F8F8F2",
+            "white": "#BBBBBB",
             "yellow": "#F1FA8C"
+        },
+        {
+            "background": "#1F1D27",
+            "black": "#1F1D27",
+            "blue": "#FFC284",
+            "brightBlack": "#353147",
+            "brightBlue": "#FFC284",
+            "brightCyan": "#2488FF",
+            "brightGreen": "#2DCD73",
+            "brightPurple": "#DE8D40",
+            "brightRed": "#D9393E",
+            "brightWhite": "#EAE5FF",
+            "brightYellow": "#D9B76E",
+            "cursorColor": "#FF9839",
+            "cyan": "#2488FF",
+            "foreground": "#B7A1FF",
+            "green": "#0F4527",
+            "name": "Duotone Dark",
+            "purple": "#DE8D40",
+            "red": "#D9393E",
+            "selectionBackground": "#353147",
+            "white": "#B7A1FF",
+            "yellow": "#D9B76E"
+        },
+        {
+            "background": "#1D2837",
+            "black": "#000000",
+            "blue": "#589DF6",
+            "brightBlack": "#555555",
+            "brightBlue": "#589DF6",
+            "brightCyan": "#3979BC",
+            "brightGreen": "#35BB9A",
+            "brightPurple": "#E75699",
+            "brightRed": "#FA8C8F",
+            "brightWhite": "#FFFFFF",
+            "brightYellow": "#FFFF55",
+            "cursorColor": "#BBBBBB",
+            "cyan": "#1F9EE7",
+            "foreground": "#FFFFFF",
+            "green": "#115945",
+            "name": "Galaxy",
+            "purple": "#944D95",
+            "red": "#F9555F",
+            "selectionBackground": "#B5D5FF",
+            "white": "#BBBBBB",
+            "yellow": "#FEF02A"
         },
         {
             "background": "#282C34",
@@ -287,6 +477,29 @@
             "selectionBackground": "#FFFFFF",
             "white": "#D3D7CF",
             "yellow": "#C4A000"
+        },
+        {
+            "background": "#300A24",
+            "black": "#171421",
+            "blue": "#0037DA",
+            "brightBlack": "#767676",
+            "brightBlue": "#08458F",
+            "brightCyan": "#2C9FB3",
+            "brightGreen": "#26A269",
+            "brightPurple": "#A347BA",
+            "brightRed": "#C01C28",
+            "brightWhite": "#F2F2F2",
+            "brightYellow": "#A2734C",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#3A96DD",
+            "foreground": "#FFFFFF",
+            "green": "#26A269",
+            "name": "Ubuntu-20.04-ColorScheme",
+            "purple": "#881798",
+            "red": "#C21A23",
+            "selectionBackground": "#FFFFFF",
+            "white": "#CCCCCC",
+            "yellow": "#A2734C"
         },
         {
             "background": "#300A24",
