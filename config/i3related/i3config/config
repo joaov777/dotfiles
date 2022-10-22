@@ -75,7 +75,8 @@ exec --no-startup-id nm-applet
 bindsym F10 exec /usr/bin/i3lock-fancy 
 
 # enable compositor
-exec --no-startup-id picom -b
+#exec --no-startup-id picom -b
+exec --no-startup-id picom --experimental-backends -b
 
 # file manager 
 bindsym $mod+e exec /usr/bin/thunar
