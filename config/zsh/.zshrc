@@ -124,7 +124,7 @@ tks(){tmux kill-session -t $1}
 
 #> Rclone
 rcl(){rclone listremotes}	
-rcm(){mkdir ~/Desktop/$1 ; xdg-open ~/Desktop/$1 ; rclone mount $1:/ ~/Desktop/$1 ; fusermount -uz $1 >/dev/null 2>&1 ; rm -rf ~/Desktop/$1}	
+rcm(){mkdir ~/Desktop/$1 ; xdg-open ~/Desktop/$1 ; rclone mount $1:/ ~/Desktop/$1 ; fusermount -u $1 >/dev/null 2>&1 ; rm -rf ~/Desktop/$1}	
 
 # Git Github Gitlab
 alias grs="git remote set-url --add origin git@github.com:$1/$2.git" #set git remote for ssh	
