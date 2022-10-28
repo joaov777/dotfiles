@@ -164,7 +164,8 @@ workspace $ws14 output $laptop_monitor
 workspace $ws15 output $laptop_monitor
 
 ## Home multi-monitor setup
-exec --no-startup-id xrandr --output HDMI-1 --auto --primary --left-of DP-2 --output DP-2 --auto --output eDP-1 --off
+#exec --no-startup-id xrandr --output HDMI-1 --auto --primary --left-of DP-2 --output DP-2 --auto --output eDP-1 --off
+exec --no-startup-id xrandr --output eDP-1 --auto --primary
 
 ## IFCE multi-monitor setup
 
@@ -275,7 +276,7 @@ mode "resize" {
 #        separator  #454947
 #
 #                     	    border  backgr. text
-#        focused_workspace  #ffffff #222D31 #EEE8D5
+#        focused_workspace  #333333 #222D31 #EEE8D5
 #        active_workspace   #595B5B #353836 #FDF6E3
 #        inactive_workspace #595B5B #222D31 #EEE8D5
 #        binding_mode       #16a085 #2C2C2C #F9FAF9
@@ -315,7 +316,7 @@ mode "resize" {
 
 #Colors
 
-client.focused          #ededed	#ededed	#ededed	#ededed	
+client.focused          #ededed	#545454	#333333	#333333	
 client.focused_inactive #000000	#000000	#000000	#000000
 client.unfocused        #000000	#000000	#000000	#000000
 client.urgent           #ff00d9	#ff00d9	#ff00d9	#ff00d9
