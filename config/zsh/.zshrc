@@ -38,7 +38,7 @@ rbn(){sudo /sbin/reboot}
 sdn(){sudo /sbin/shutdown -h now}		
 
 #> Misc
-alias env="sudo redshift -O 3000" #enabling night view	
+alias env="sudo redshift -P -O $1" #enabling night view	
 alias dnv="sudo redshift -x" #disabling night view	
 alias fkw="sudo rm ~/.config/KeeWeb/runtime-data.json"
 alias ds="youtube-dl --extract-audio --audio-format mp3 $1 -o '~/Music/%(title)s.%(ext)s'"	
