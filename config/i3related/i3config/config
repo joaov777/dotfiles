@@ -59,11 +59,6 @@ bindsym Ctrl+space exec /usr/bin/dmenu_run -fn " Consolas-8 "
 # screenshot tool
 bindsym Print exec --no-startup-id /usr/bin/flameshot gui 
 
-# clipboard manager
-#bindsym $mod+space exec /usr/bin/copyq && /usr/bin/copyq toggle 
-bindsym $mod+space exec /usr/bin/copyq menu
-exec --no-startup-id /usr/bin/copyq
-
 exec --no-startup-id xfce4-power-manager
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id setcursor
@@ -76,7 +71,8 @@ bindsym F10 exec /usr/bin/i3lock-fancy
 
 # enable compositor
 #exec --no-startup-id picom -b
-exec --no-startup-id picom --experimental-backends -b
+#exec --no-startup-id picom --experimental-backends -b
+exec --no-startup-id picom -CGb
 
 # file manager 
 bindsym $mod+e exec /usr/bin/thunar
