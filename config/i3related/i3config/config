@@ -310,7 +310,9 @@ mode "resize" {
 
 #==========================| BARS END
 
-#Colors
+#Color
+
+
 
 client.focused          #ededed	#545454	#333333	#333333	
 client.focused_inactive #000000	#000000	#000000	#000000
@@ -362,25 +364,6 @@ mode "$mode_gaps_outer" {
         bindsym Escape mode "default"
 }
 #==========================| GAPS END
-
-#==========================> VPN MODE
-bindsym Shift+v mode "$VPN_MODE"
-set $VPN_MODE VPN MODE: (i) ifce, (n) nordvpn
-mode "$VPN_MODE" {
-     
-    #connect to ifce vpn 
-    #bindsym i exec sudo openvpn --config <path_to_vpn_file_here>
-    #bindsym Shift+i exec sudo pkill openvpn
-    
-    #connect to nord vpn
-    bindsym n exec /usr/bin/nordvpn connect United_States
-    bindsym Shift+n exec /usr/bin/nordvpn disconnect
-
-    bindsym Escape mode "default"
-    bindsym Return mode "default"
-    bindsym Shift+v mode "default"
-}
-#==========================| VPN MODE END
 
 #==========================> BRIGHTNESS MODE
 bindsym Shift+b mode "$BRIGHTNESS_MODE"
