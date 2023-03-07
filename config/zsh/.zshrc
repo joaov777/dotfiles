@@ -149,7 +149,8 @@ nc(){nordvpn connect}
 ncus(){nordvpn connect United_States}	
 nd(){nordvpn disconnect}	
 ns(){nordvpn status}
-ifc(){/home/$USER/dotfiles/scripts/misc/ifc.sh $1}  
+alias ifcreitoria="sudo openvpn --config /home/joao/ifce/joao.galvino.ifce.ovpn --daemon"
+alias ifdreitoria="sudo pkill -f 'openvpn --config /home/joao/ifce/joao.galvino.ifce.ovpn'"
 
 # FUNCTIONS 
 ppp(){python3 $PWD/$1}	
