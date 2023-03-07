@@ -15,7 +15,7 @@ set $mod Mod4
 ## alt Key (secondary)
 set $mod2 Mod1
 
-default_border pixel 1
+default_border pixel 2
 default_floating_border normal
 hide_edge_borders none
 
