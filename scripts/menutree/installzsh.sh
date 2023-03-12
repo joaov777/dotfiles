@@ -1,12 +1,13 @@
 #!/bin/bash
 
 . ~/dotfiles/scripts/misc/menus.sh
+. ~/dotfiles/scripts/misc/functions.sh
 
 clear
         
 		subMenu "Dotfiles" "Install ZSH"
 
-		if [ -z "$(pacman -Qi zsh)" ]; then sudo pacman -S zsh --needed --noconfirm; else echo "|--> zsh already installed" ; fi
+		[ $(isPackageInstalled zsh) ] && echo "|--> zsh already installed" || echo "|--> Installing zsh..." && sudo pacman -S zsh --needed --noconfirm
 	
 		# if oh-my-zsh folder exists, deletes it
 		echo "|--> Checking $HOME/.oh-my-zsh folder" 
@@ -19,14 +20,14 @@ clear
 		sudo chsh -s /bin/zsh $USER #sudo usermod -s /bin/zsh $USER
 		
 	    	# installing zsh-autosuggestions plugin
-		echo "|--> Installing auto suggestions plugin" 
-		if [ -d ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions ]; then sudo rm -rf ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions; fi
-		git clone --quiet https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
-		
-		# installing powerline fonts
-		echo "|--> Downloading Powerline fonts" 
-		git clone --quiet https://github.com/powerline/fonts.git $HOME/.local/share/fonts/ &>/dev/null
-		$HOME/.local/share/fonts/install.sh &>/dev/null
+		echo "|--> Installing Auto-Suggestions plugin" 
+		git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+		echo "|--> Installing Syntax-Highlighting..."
+		git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+		echo "|--> Installing Zsh-Completions plugin..."
+		git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions
 	
 		# installing pi theme https://github.com/tobyjamesthomas/pi
 		echo "|--> Installing custom zsh theme - moody" 

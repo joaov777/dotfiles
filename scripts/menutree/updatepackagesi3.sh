@@ -1,5 +1,6 @@
 #!/bin/bash
 . ~/dotfiles/scripts/misc/menus.sh
+. ~/dotfiles/scripts/misc/functions.sh
 
 packages_required=(
 	dconf ly i3 pdfarranger openssh tcpdump ntfs-3g tldr fzf thunar rclone \
@@ -18,17 +19,17 @@ packages_required=(
 	alsa-utils alsa-plugins alsa-lib redshift pavucontrol zathura zathura-pdf-mupdf xdg-utils libsecret gnome-keyring    
 	)
 
-	# warning on yay helper installation
- 	if [ -z "$(pacman -Qi yay)" ]; then echo "|--> ERROR: Make sure you install YAY before installing packages" && sleep 1; fi
+	# checking yay helper installation
+	[ installYayHelper ] && echo "|--> Yay successfully installed!" || echo "|--> Yay not installed!" ; sleep 3
 	   
 	# installing all packages
 	for pkg in "${packages_required[@]}"; do
 		subMenu "Dotfiles" "Update packages"
 
-		if [ -z "$(pacman -Qi $pkg)" ]; then 
+		if [ -z "$(pacman -Qi $pkg 2>/dev/null)" ]; then 
 			echo "|--> Installing $pkg..." 
 			yay -S "$pkg" --noconfirm --needed 
-			isPackageInstalled "$pkg"
+			[ isPackageInstalled "$pkg" ] && echo "|--> $pkg successfully installed!" || echo "|--> $pkg not installed!"
 		else
 		echo "|--> $pkg is already installed!!" > /dev/null 
 		fi
@@ -40,41 +41,10 @@ packages_required=(
 	papirus-folders -C white > /dev/null
 	xdg-user-dirs-update
 
-	#enabling some settings for vim
-	cp ~/dotfiles/vifm/.vimrc ~
-
-	#installing cursor themes
-	echo "|--> Installing Cursor Themes" ; 
-	sudo cp -r ~/dotfiles/config/cursors/* /usr/share/icons/
-
-	#installing themes
-	echo "|--> Installing Themes" ; 
-	sudo cp -r ~/dotfiles/config/themes/* /usr/share/themes/
-
 	#teamviewer related
 	echo "|--> Enabling TeamViewer" ; 
 	sudo teamviewer --daemon enable > /dev/null
 	sudo systemctl enable teamviewerd.service --now > /dev/null
-
-	#tmux related
-	echo "|--> Setting up TMUX" ; 
-	cp ~/dotfiles/config/tmux/.tmux.conf ~
-	
-	#notepadqq
-	echo "|--> Setting up Notepadqq" ; 
-	notepadqq=~/.config/Notepadqq
-    [ -f $notepadqq/Notepadqq.ini ] && rm $notepadqq/Notepadqq.ini || mkdir -p $notepadqq
-    cp ~/dotfiles/config/notepadqq/Notepadqq.ini $notepadqq && ln -sf ~/dotfiles/config/notepadqq/Notepadqq.ini $notepadqq
-
-	#tilix
-	echo "|--> Setting up Tilix" ; 
-	dconf load /com/gexperts/Tilix/ < ~/dotfiles/config/tilix/tilix.dconf
-
-	#albert
-	echo "|--> Setting up Albert" ; 
-	[ -f ~/.config/albert/albert.conf ] && rm ~/.config/albert/albert.conf 
-	cp ~/dotfiles/config/albert/albert.conf ~/.config/albert
-	pkill /usr/bin/albert > /dev/null
 
 	#nord related
 	echo "|--> Enabling and Starting VPN service" ; 

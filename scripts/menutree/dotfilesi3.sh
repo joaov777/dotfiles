@@ -7,7 +7,7 @@ while [ true ];
 
         menu "Dotfiles - i3"
         echo "1 - Update System (Mirrors and packages)"
-        echo "2 - Install AUR Helper"
+        echo "2 - Install Yay AUR Helper"
         echo "3 - Update Packages"
         echo "4 - Enable config files"
         echo "5 - Install ZSH"
@@ -20,7 +20,7 @@ while [ true ];
         case $menuChoice in
                 q|Q|quit|QUIT|Quit|qUIT|exit|EXIT|Exit) exit 1 ;;
                 1) ~/dotfiles/scripts/menutree/updatesystem.sh ;;
-                2) ~/dotfiles/scripts/menutree/install_helper.sh ;;
+                2) ~/dotfiles/scripts/menutree/install_yay_helper.sh ;;
                 3) ~/dotfiles/scripts/menutree/updatepackagesi3.sh ;;
                 4) ~/dotfiles/scripts/menutree/enableconfigfiles.sh ;;
                 5) ~/dotfiles/scripts/menutree/installzsh.sh ;;

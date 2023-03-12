@@ -13,12 +13,7 @@ FONTS_DIR="~/.local/share/fonts"
 		cp /home/$USER/dotfiles/config/systemfonts/consolas/con* "$FONTS_DIR"
 		cp /home/$USER/dotfiles/config/systemfonts/jetbrains/Jet* "$FONTS_DIR"
 		cp /home/$USER/dotfiles/config/systemfonts/noto/Noto* "$FONTS_DIR"
+		cp /home/$USER/dotfiles/config/systemfonts/fonteawesome5/Font* "$FONTS_DIR"
+		cp /home/$USER/dotfiles/config/systemfonts/siji/sij* "$FONTS_DIR"
 
 		fc-cache -f -v
-
-		[ "$(fc-list | grep -E 'consolas*|Jet*|Noto*')" > /dev/null ] && {
-			echo "|--> Fonts installed!" && sleep 1
-		} || {
-			echo "|--> Some fonts were not installed!" && sleep 1
-		}
-
