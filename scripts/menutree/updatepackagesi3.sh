@@ -42,12 +42,16 @@ packages_required=(
 	xdg-user-dirs-update
 
 	#teamviewer related
-	echo "|--> Enabling TeamViewer" ; 
+	echo "|--> Enabling TeamViewer" ;
 	sudo teamviewer --daemon enable > /dev/null
 	sudo systemctl enable teamviewerd.service --now > /dev/null
 
 	#nord related
-	echo "|--> Enabling and Starting VPN service" ; 
+	echo "|--> Enabling and Starting VPN service" ;
 	sudo systemctl enable nordvpnd --now
+
+	#bluetooth related
+	echo "|--> Enabling bluetooth service"
+	sudo systemctl enable bluetooth.service --now
 	
     clear
