@@ -1,16 +1,33 @@
 #!/bin/bash
 
-while [ true ];
-        do
+# returning current directory
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-        if [ "$1" == "i3" ]; then 
-                exec ~/dotfiles/scripts/menutree/dotfilesi3.sh
-        elif [ "$1" == "xfce" ]; then 
-                exec ~/dotfiles/scripts/menutree/dotfilesxfce.sh
-        elif [ "$1" == "q" ]; then 
-                exit
-        else
-                echo -e "Usage:\n$0 i3\n$0 xfce" && exit
-        fi
+# sourcing necessary packages
+. "$SCRIPT_DIR"/scripts/misc/menus.sh
+. "$SCRIPT_DIR"/scripts/misc/functions.sh
 
-        done ##Menu Boundary
+while [ true ]; do
+        menu "Dotfiles"
+        echo "0 - Set up permissions"
+        echo "1 - Update System (Mirrors and packages)"
+        echo "2 - Install Yay AUR Helper"
+        echo "3 - Update Packages"
+        echo "4 - Enable config files"
+        echo "5 - Install ZSH and update .zshrc"
+        echo "6 - Install System Fonts"
+        line
+        read -p "Option: " menuChoice
+        
+        case $menuChoice in
+                q|Q|quit|QUIT|Quit|qUIT|exit|EXIT|Exit) exit 1 ;;
+                0) $SCRIPT_DIR/scripts/menutree/permissions.sh ;;
+                1) $SCRIPT_DIR/scripts/menutree/updatesystem.sh ;;
+                2) $SCRIPT_DIR/scripts/menutree/install_yay_helper.sh ;;
+                3) $SCRIPT_DIR/scripts/menutree/updatepackagesi3.sh ;;
+                4) $SCRIPT_DIR/scripts/menutree/enableconfigfiles.sh ;;
+                5) $SCRIPT_DIR/scripts/menutree/zsh.sh ;;  
+                6) $SCRIPT_DIR/scripts/menutree/install_system_fonts.sh ;; 
+                *) echo "Not defined!" && sleep 1 ;;
+        esac
+        done

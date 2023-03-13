@@ -1,7 +1,11 @@
 #!/bin/bash
 
-. ~/dotfiles/scripts/misc/menus.sh
-. ~/dotfiles/scripts/misc/functions.sh
+# returning current directory
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+# sourcing necessary packages
+. "$SCRIPT_DIR"/../misc/menus.sh
+. "$SCRIPT_DIR"/../misc/functions.sh
 
 FONTS_DIR="~/.local/share/fonts"
         

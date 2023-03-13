@@ -1,7 +1,6 @@
 ### My arch-based distros dotfiles
 ##### How to use it? 
-Run the main script choosing i3 or xfce
+Run the main script
 ```bash
-./dotfiles.sh i3 
-./dotfiles.sh xfce
+./dotfiles.sh
 ```

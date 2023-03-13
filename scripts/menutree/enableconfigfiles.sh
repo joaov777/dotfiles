@@ -1,7 +1,11 @@
 #!/bin/bash
 
-. ~/dotfiles/scripts/misc/menus.sh
-. ~/dotfiles/scripts/misc/functions.sh
+# returning current directory
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+# sourcing necessary packages
+. "$SCRIPT_DIR"/../misc/menus.sh
+. "$SCRIPT_DIR"/../misc/functions.sh
         
         subMenu "Dotfiles" "Enable Config files"
 
@@ -47,20 +51,20 @@
 
         createFolderAndAssignOwnership /etc/bluetooth $USER $USER && {
                 [ $(cp ~/dotfiles/config/i3related/bluetooth/main.conf /etc/bluetooth/ 2>/dev/null) ] && 
-                echo "|--> Bluetooth enabled" || echo "Bluetooth not enabled"
+                echo "|--> Bluetooth enabled" || echo "|--> Bluetooth not enabled"
         }
 
         [ $(cp ~/dotfiles/config/tmux/.tmux.conf /home/$USER 2>/dev/null) ] &&
                 echo "|--> Tmux conf file enabled" || echo "Tmux conf file not enabled"
 
         [ $(cp -r ~/dotfiles/config/themes/* /usr/share/themes/ 2>/dev/null) ] &&
-                echo "|--> Themes enabled" || echo "Themes not enabled"
+                echo "|--> Themes enabled" || echo "|--> Themes not enabled"
 
         [ $(cp -r ~/dotfiles/config/cursors/* /usr/share/icons/ 2>/dev/null) ] &&
-                echo "|--> Cursor themes enabled" || echo "Cursor themes not enabled"
+                echo "|--> Cursor themes enabled" || echo "|--> Cursor themes not enabled"
 
         [ $(cp ~/dotfiles/config/notepadqq/Notepadqq.ini ~/.config/Notepadqq 2>/dev/null) ] &&
-                echo "|--> Notepadqq config file enabled" || "|--> Notepadqq config file not enabled"
+                echo "|--> Notepadqq config file enabled" || echo "|--> Notepadqq config file not enabled"
 
         createFolderAndAssignOwnership ~/.config/i3 $USER $USER && {
                 [ $(cp ~/dotfiles/config/i3related/i3config/config ~/.config/i3/ 2>/dev/null) ] && 
