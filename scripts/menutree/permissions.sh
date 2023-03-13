@@ -7,9 +7,6 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 . "$SCRIPT_DIR"/../misc/menus.sh
 . "$SCRIPT_DIR"/../misc/functions.sh
 
-# . ~/dotfiles/scripts/misc/menus.sh
-# . ~/dotfiles/scripts/misc/functions.sh
-
 SUDOERS="/etc/sudoers.bak"
 
 clear
@@ -18,7 +15,7 @@ clear
 	
 	echo "|--> Creating backup sudoers file at $SUDOERS" 
 	[ -f "$SUDOERS" ] || sudo cp /etc/sudoers /etc/sudoers.bak 
-	
+
 	echo "|--> Allowing root permissions for $USER (adding to sudoers file)" && 
 		[ $(id -u) != 0 ] && {
     		sudo bash -c "echo '$(whoami) ALL=(ALL) ALL' >> /etc/sudoers"
@@ -35,4 +32,7 @@ clear
 		sudo usermod -aG wheel $USER
 	}
 
+	echo "|--> Setting git credentials"
+	git config --local user.email joaov777@gmail.com
+	git config --local user.name joaov777
 
