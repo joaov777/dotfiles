@@ -16,7 +16,9 @@ clear
         
 	subMenu "Dotfiles" "Set up permissions for user $USER"
 	
-	echo "|--> Creating backup sudoers file at $SUDOERS" && sudo cp /etc/sudoers /etc/sudoers.bak 
+	echo "|--> Creating backup sudoers file at $SUDOERS" 
+	[ -f "$SUDOERS" ] || sudo cp /etc/sudoers /etc/sudoers.bak 
+	
 	echo "|--> Allowing root permissions for $USER (adding to sudoers file)" && 
 		[ $(id -u) != 0 ] && {
     		sudo bash -c "echo '$(whoami) ALL=(ALL) ALL' >> /etc/sudoers"
