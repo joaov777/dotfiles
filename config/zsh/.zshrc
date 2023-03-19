@@ -12,6 +12,7 @@
 # Jv dotfiles home folder
 PROJECT_HOME=""
 USER_HOME="/home/$USER"
+WALLPAPER_DIR="$USER_HOME/repos/wallpapers/FULL HD/"
 
 # Path to your oh-my-zsh installation.	
 export ZSH="/home/$USER/.oh-my-zsh"	
@@ -51,7 +52,7 @@ alias btu="$PROJECT_HOME/scripts/misc/scripts/brltousd.sh"
 alias utb="$PROJECT_HOME/scripts/misc/scripts/usdtobrl.sh"	
 dr(){echo "DR: $(curl -s https://www.x-rates.com/table/\?from\=USD\&amount\=1 | grep ";to=BRL" | awk '{print $3}' | cut -c59-62)"} #check current dollar rate
 alias -g cc="| xclip -selection c" #copying whatever command output to the clipboard
-sb(){feh --randomize --bg-fill ~/Pictures/wallpapers/FULL\ HD/"$1".*}
+sb(){sudo feh --bg-fill --randomize $WALLPAPER_DIR}
 ft(){timedatectl set-ntp true} #fix time
 
 #> System services
