@@ -1,0 +1,9 @@
+
+
+# command to create all base ranger files
+ranger --copy-config=all
+
+# ranger base dir
+~/.config/ranger
+
+

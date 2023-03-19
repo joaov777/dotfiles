@@ -8,7 +8,7 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 . "$SCRIPT_DIR"/../misc/functions.sh
 
 packages_required=(
-	dconf ly i3 pdfarranger openssh tcpdump ntfs-3g tldr fzf thunar rclone \
+	dconf ly i3 pdfarranger openssh w3m tcpdump ntfs-3g tldr fzf thunar rclone \
 	visual-studio-code-bin bind-tools rofi dmenu keepassxc brightnessctl netctl \
 	git tilda notepadqq gparted papirus-folders-git acpi pulseaudio-alsa xfce4-notifyd \
 	filezilla telegram-desktop copyq flameshot ranger pulseaudio-ctl xfce4-power-manager \

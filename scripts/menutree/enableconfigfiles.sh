@@ -9,6 +9,10 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
         
         subMenu "Dotfiles" "Enable Config files"
 
+        createFolderAndAssignOwnership ~/.config/ranger $USER $USER && {
+                [ $(cp -r $SCRIPT_DIR/../../config/i3related/ranger/ ~/.config/ranger 2>/dev/null) ] && 
+                echo "|--> Ranger enabled" || echo "|--> Ranger not enabled"
+        
         createFolderAndAssignOwnership ~/.config/Dharkael $USER $USER && {
                 [ $(cp $SCRIPT_DIR/../../config/i3related/flameshot/flameshot.ini ~/.config/Dharkael/ 2>/dev/null) ] && 
                 echo "|--> Flameshot enabled" || echo "|--> Flameshot not enabled"
@@ -70,3 +74,5 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
                 [ $(cp $SCRIPT_DIR/../../config/i3related/i3config/config ~/.config/i3/ 2>/dev/null) ] && 
                 echo "|--> i3 config enabled"  || echo "i3 config not enabled"
         }
+
+
