@@ -31,9 +31,8 @@ alert = #bd2c40
 [bar/topbar]
 inherit = bar/bottom_right
 monitor = ${env:MONITOR:}
-modules-center = 
+modules-center = i3
 modules-right = 
-modules-left = 
 bottom = false
 
 ;BOTTOM RIGHT BAR - 
@@ -62,17 +61,16 @@ module-margin-left = 0
 module-margin-right = 2
 
 ;font-0 = fixed:pixelsize=9;1
-font-0 = consolas:weight=bold:pixelsize=7.5;1
+font-0 = consolas:weight=bold:pixelsize=8.5;1
 font-1 = unifont:fontformat=truetype:size=12:antialias=false;0
-font-2 = siji:pixelsize=8;1
+font-2 = siji:pixelsize=9;1
 font-3 = Font Awesome 5 Free:pixelsize=8;2
 font-4 = Font Awesome 5 Free Solid:pixelsize=8;2
 font-5 = Font Awesome 5 Brands:pixelsize=8;2
 
-modules-left = i3
-modules-center = filesystem xkeyboard memory cpu battery dollarrate keyboardlayout vpn wlan eth gatewaywan gatewaylan
-modules-right = pulseaudio date 
-;modules-right powermenu 
+;modules-left = i3
+modules-center = filesystem xkeyboard memory cpu battery date dollarrate keyboardlayout vpn wlan eth gatewaywan gatewaylan
+modules-right = powermenu
 
 [module/gatewaylan]
 type = custom/script
@@ -110,22 +108,25 @@ ramp-signal-foreground = #ffffff
 
 [module/eth]
 type = internal/network
-interface = enp1s0
+interface = enp0s25
 interval = 1.0
 
 ;format-connected-underline = #666666
 format-connected-prefix = " "
 format-connected-prefix-foreground = #ffffff
 label-connected = %local_ip% %linkspeed%
+
  
 format-disconnected = <label-disconnected>
 ;format-disconnected-underline = #666666
 label-disconnected =  OFF
 label-disconnected-foreground = #666666
 
+
+
 [module/vpn]
 type = custom/script
-exec = "if [[ $(pgrep -x openvpn) ]]; then echo 'VPN ON'; else echo 'VPN OFF'; fi"
+exec = "[ $(pgrep -x openvpn) ] && echo VPN ON || echo VPN OFF"
 ;exec-if = pgrep -x openvpn
 interval = 1
 format =  <label>
@@ -182,8 +183,8 @@ font-3 = Font Awesome 5 Free:pixelsize=8;2
 font-4 = Font Awesome 5 Free Solid:pixelsize=8;2
 font-5 = Font Awesome 5 Brands:pixelsize=8;2
 
-;modules-left = i3
-;modules-center = i3
+modules-left = 
+modules-center = i3
 modules-right = powermenu
 ;modules-right = filesystem xbacklight pulseaudio xkeyboard memory cpu wlan eth battery date powermenu 
 
@@ -305,7 +306,7 @@ label = %percentage_used%%
 type = internal/date
 interval = 1.0
 
-date = " %d/%m/%Y"
+date = " %Y-%m-%d"
 date-alt = " %Y-%m-%d"
 
 time = %H:%M
@@ -315,41 +316,34 @@ format-prefix =
 format-prefix-foreground = ${colors.foreground-alt}
 ;format-underline = #0a6cf5
 
-label = %date%  %time%
+label = %date% %time%
 
 [module/pulseaudio]
 type = internal/pulseaudio
 
-click-right = pavucontrol
-
-format-volume = <ramp-volume> <label-volume>
-;format-volume = <label-volume> <bar-volume>
+format-volume = <label-volume> <bar-volume>
 label-volume =  %percentage%%
 label-volume-foreground = #fff
 
 label-muted =  MUTED
 label-muted-foreground = #666
 
-ramp-volume-0=🔈
-ramp-volume-1=🔉
-ramp-volume-2=🔊
-
-;bar-volume-width = 10
-;bar-volume-foreground-0 = #55aa55
-;bar-volume-foreground-1 = #55aa55
-;bar-volume-foreground-2 = #55aa55
-;bar-volume-foreground-3 = #55aa55
-;bar-volume-foreground-4 = #55aa55
-;bar-volume-foreground-5 = #f5a70a
-;bar-volume-foreground-6 = #ff5555
-;bar-volume-gradient = false
-;bar-volume-indicator = |
-;bar-volume-indicator-font = 2
-;bar-volume-fill = ─
-;bar-volume-fill-font = 2
-;bar-volume-empty = ─
-;bar-volume-empty-font = 2
-;bar-volume-empty-foreground = ${colors.foreground-alt}
+bar-volume-width = 10
+bar-volume-foreground-0 = #55aa55
+bar-volume-foreground-1 = #55aa55
+bar-volume-foreground-2 = #55aa55
+bar-volume-foreground-3 = #55aa55
+bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-5 = #f5a70a
+bar-volume-foreground-6 = #ff5555
+bar-volume-gradient = false
+bar-volume-indicator = |
+bar-volume-indicator-font = 2
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [module/battery]
 type = internal/battery

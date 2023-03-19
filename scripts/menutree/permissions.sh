@@ -2,37 +2,39 @@
 
 # returning current directory
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+SCRIPT_HOME=$(cd $SCRIPT_DIR/../.. && pwd)
 
 # sourcing necessary packages
 . "$SCRIPT_DIR"/../misc/menus.sh
 . "$SCRIPT_DIR"/../misc/functions.sh
 
 SUDOERS="/etc/sudoers.bak"
+FIND_USER_IN_SUDOERS="$(sudo grep "$USER ALL=(ALL) ALL" /etc/sudoers)"
 
 clear
         
 	subMenu "Dotfiles" "Set up permissions for user $USER"
 	
-	echo "|--> Creating backup sudoers file at $SUDOERS" 
+	echo "|--> Creating backup sudoers file at $SUDOERS" && sleep 1
 	[ -f "$SUDOERS" ] || sudo cp /etc/sudoers /etc/sudoers.bak 
 
-	echo "|--> Allowing root permissions for $USER (adding to sudoers file)" && 
+	echo "|--> Allowing root permissions for $USER (adding to sudoers file)" && sleep 1 &&
 		[ $(id -u) != 0 ] && {
-    		sudo bash -c "echo '$(whoami) ALL=(ALL) ALL' >> /etc/sudoers"
+    		[ ! "$FIND_USER_IN_SUDOERS" ] && sudo bash -c "echo '$(whoami) ALL=(ALL) ALL' >> /etc/sudoers"
 		} || {
-    		echo "$(whoami) ALL=(ALL) ALL" >> /etc/sudoers
+    		[ ! "$FIND_USER_IN_SUDOERS" ] && echo "$(whoami) ALL=(ALL) ALL" >> /etc/sudoers
 		}
 
-	echo "|--> Adding sudo group to $USER" && usermod -aG sudo $USER
+	#echo "|--> Adding sudo group to $USER" && usermod -aG sudo $USER && sleep 1
 	
 	# if arch based
 	[ -f "/etc/arch-release" ] && {
-		echo "|--> Adding wheel group and updating sudoers for user $USER"
+		echo "|--> Adding wheel group and updating sudoers for user $USER" && sleep 1
 		sudo sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/g' /etc/sudoers
 		sudo usermod -aG wheel $USER
 	}
 
-	echo "|--> Setting git credentials"
-	git config --local user.email joaov777@gmail.com
-	git config --local user.name joaov777
+	echo "|--> Setting git credentials" && sleep 1
+	cd $SCRIPT_DIR/../.. && git config --local user.email joaov777@gmail.com &&
+	cd $SCRIPT_DIR/../.. && git config --local user.name joaov777 
 
