@@ -31,7 +31,6 @@ font pango:Source Code Variable 9
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
-
 #==========================> PERSONAL APPS
 # NetworkManager is the most popular way to manage wireless networks on Linux
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -53,7 +52,7 @@ exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
 # brave browser
 bindsym $mod+b exec /usr/bin/brave
 
-#dmenu
+# dmenu
 bindsym Ctrl+space exec /usr/bin/dmenu_run -fn " Consolas-8 "
 
 # screenshot tool
@@ -82,7 +81,6 @@ bindsym $mod+m exec /usr/bin/tilix -e /usr/bin/mocp -T /usr/share/moc/themes/bla
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
-
 # start a terminal
 #bindsym $mod+Return exec /usr/bin/termite
 bindsym $mod+Return exec /usr/bin/tilix
@@ -90,21 +88,16 @@ bindsym $mod+Return exec /usr/bin/tilix
 #==========================| PERSONAL APPS END
 
 #==========================> GENERAL COMMANDS
-#switch to left workspace
+# switch to left workspace
 bindsym mod1+l workspace next
-
-#switch to right workspace
+# switch to right workspace
 bindsym mod1+h workspace prev
-
 # reload the configuration file
 bindsym $mod+Shift+c reload
-
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
-
 # kill focused window
 bindsym $mod+x kill
 
@@ -311,9 +304,6 @@ mode "resize" {
 #==========================| BARS END
 
 #Color
-
-
-
 client.focused          #ededed	#545454	#333333	#333333	
 client.focused_inactive #000000	#000000	#000000	#000000
 client.unfocused        #000000	#000000	#000000	#000000
@@ -535,10 +525,19 @@ mode "$PM_MODE" {
 }
 #==========================| PASSWORD MANAGER MODE END
 
+#==========================> WALLPAPER MODE
+bindsym Shift+w mode "$WALLPAPER_MODE"
+set $WALLPAPER_MODE WALLPAPER MODE: (v) view 
+mode "$WALLPAPER_MODE" {
 
 
+    # Press n (next) or p (previous) and right click to choose the wallpaper
+    bindsym v exec /sbin/feh "/home/$USER/repos/wallpapers/FULL HD/" --fullscreen
 
-
-
+    bindsym Escape mode "default"
+    bindsym Return mode "default"
+    bindsym Shift+w mode "default"
+}
+#==========================| WALLPAPER MODE END
 
 #==========================| END OF FILE
