@@ -52,7 +52,8 @@ alias btu="$PROJECT_HOME/scripts/misc/scripts/brltousd.sh"
 alias utb="$PROJECT_HOME/scripts/misc/scripts/usdtobrl.sh"	
 dr(){echo "DR: $(curl -s https://www.x-rates.com/table/\?from\=USD\&amount\=1 | grep ";to=BRL" | awk '{print $3}' | cut -c59-62)"} #check current dollar rate
 alias -g cc="| xclip -selection c" #copying whatever command output to the clipboard
-sb(){sudo feh --bg-fill --randomize $WALLPAPER_DIR}
+sb(){sudo feh --bg-fill --randomize $WALLPAPER_DIR} # switch background randomly
+cb(){feh --recursive --randomize --bg-fill $WALLPAPER_DIR} # choose background interactively
 ft(){timedatectl set-ntp true} #fix time
 
 #> System services
