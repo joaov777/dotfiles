@@ -10,7 +10,7 @@
 #==========================> BEGINNING OF FILE
 
 # Jv dotfiles home folder
-PROJECT_HOME=""
+PROJECT_HOME="/home/$USER/.dotfiles"
 USER_HOME="/home/$USER"
 WALLPAPER_DIR="$USER_HOME/repos/wallpapers/FULL HD/"
 

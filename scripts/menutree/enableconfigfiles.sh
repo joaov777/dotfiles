@@ -35,8 +35,11 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
                 echo '|--> Polybar enabled' || echo "|--> Polybar not enabled"
         }
 
-        [ $(dconf load /com/gexperts/Tilix/ < $SCRIPT_DIR/../../config/tilix/grape.dconf 2>/dev/null) ] &&
-                echo "|--> Tilix enabled" || echo "|--> Tilix not enabled"
+        createFolderAndAssignOwnership /usr/share/tilix/schemes $USER $USER && {
+                [ $(dconf load /com/gexperts/Tilix/ < $SCRIPT_DIR/../../config/tilix/grape.dconf 2>/dev/null &&
+                cp $SCRIPT_DIR/../../config/tilix/themes/* /usr/share/tilix/schemes) ] &&
+                echo "|--> Tilix config and themes enabled" || echo "|--> Tilix config and themes not enabled"
+        }
 
         createFolderAndAssignOwnership ~/.config/rofi $USER $USER && {
                 [ $(cp $SCRIPT_DIR/../../config/i3related/rofi/config ~/.config/rofi/ 2>/dev/null) ] && 
