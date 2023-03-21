@@ -70,9 +70,17 @@ font-4 = Font Awesome 5 Free Solid:pixelsize=8;2
 font-5 = Font Awesome 5 Brands:pixelsize=8;2
 
 modules-left = i3
-modules-center = filesystem xkeyboard memory cpu battery dollarrate keyboardlayout vpn wlan eth gatewaywan gatewaylan
-modules-right = pulseaudio clickdate 
+modules-center = updates filesystem xkeyboard memory cpu battery dollarrate keyboardlayout vpn wlan eth gatewaywan gatewaylan 
+modules-right = pulseaudio bth clickdate 
 ;modules-right powermenu 
+
+[module/updates]
+type = custom/script
+exec = "if [[ $(($(checkupdates | wc -l) + $(yay -Qua | wc -l))) -eq 0 ]]; then echo "0" ;else echo "$(($(checkupdates | wc -l) + $(yay -Qua | wc -l)))" ; fi"
+format =  <label> 
+click-right= tilix --working-directory=/home/$USER --command='yay -Syu --aur' 
+click-left= tilix --working-directory=/home/$USER --command='sudo pacman -Syyuu'
+interval = 600
 
 [module/gatewaylan]
 type = custom/script
@@ -85,6 +93,13 @@ type = custom/script
 exec = echo "$(curl -s https://ipinfo.io/ip) $(curl -s https://ipinfo.io/city)"
 format =  <label>
 interval = 30 
+
+[module/bth]
+type = custom/script
+exec = "systemctl is-active --quiet bluetooth && echo 'ON' || echo 'OFF'"
+interval = 2
+click-left = blueman-manager &
+format =  <label>
 
 [module/wlan]
 type = internal/network

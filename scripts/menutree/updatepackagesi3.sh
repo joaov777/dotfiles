@@ -9,7 +9,7 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 packages_required=(
 	dconf ly i3 pdfarranger openssh w3m discord spotify-launcher postgresql gsimplecal tcpdump ntfs-3g tldr fzf thunar rclone \
-	visual-studio-code-bin bind-tools rofi dmenu keepassxc brightnessctl netctl \
+	visual-studio-code-bin bind-tools rofi dmenu keepassxc brightnessctl pacman-contrib netctl \
 	git tilda notepadqq gparted papirus-folders-git acpi pulseaudio-alsa xfce4-notifyd \
 	filezilla telegram-desktop copyq flameshot ranger pulseaudio-ctl xfce4-power-manager \
 	gedit pwgen openssh vim rdesktop i3lock i3lock-fancy-git mtr tmux iw py3status \

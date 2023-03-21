@@ -164,12 +164,13 @@ ppp(){python3 $PWD/$1}
 run(){$PWD/$1} #run local script without ./	
 
 #> Package managers
-alias um="sudo pacman-mirrors -g"	
-alias upup="sudo pacman -Syyuu"	
-alias uk="sudo pacman -S manjaro-keyring"
-dpt(){trizen -S $1 --noconfirm} #download package via trizen
-spt(){[[ $2 = "" ]] && trizen -Ss $1 || trizen -Ss $1 | grep $2} #search package	
-rpt(){trizen -R $1 --noconfirm} #remove package via trizen
+alias um="sudo pacman-mirrors -g" # update mirrors	
+alias upman="sudo pacman -Syyuu" # overall pacman update
+alias upyay="yay -Qua | xargs yay -Syu --aur" #overall yay AUR helper update
+alias uk="sudo pacman -S manjaro-keyring" #update keyring
+dpy(){yay -S $1 --noconfirm} #download package via yay
+spy(){[[ $2 = "" ]] && yay -Ss $1 || yay -Ss $1 | grep $2} #search package	
+rpy(){yay -R $1 --noconfirm} #remove package via trizen
 dpp(){sudo pacman -S $1} #download package via pacman
 spp(){sudo pacman -Ss $1}
 rpp(){sudo pacman -Rcnsu $1 --noconfirm} #Removing a package and its dependencies	 via pacman
