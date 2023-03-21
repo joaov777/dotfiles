@@ -71,7 +71,7 @@ font-5 = Font Awesome 5 Brands:pixelsize=8;2
 
 modules-left = i3
 modules-center = filesystem xkeyboard memory cpu battery dollarrate keyboardlayout vpn wlan eth gatewaywan gatewaylan
-modules-right = pulseaudio date 
+modules-right = pulseaudio clickdate 
 ;modules-right powermenu 
 
 [module/gatewaylan]
@@ -112,6 +112,8 @@ ramp-signal-foreground = #ffffff
 type = internal/network
 interface = enp1s0
 interval = 1.0
+
+click-right = "exec nm-connection-editor"
 
 ;format-connected-underline = #666666
 format-connected-prefix = " "
@@ -316,6 +318,16 @@ format-prefix-foreground = ${colors.foreground-alt}
 ;format-underline = #0a6cf5
 
 label = %date%  %time%
+
+[module/clickdate]
+type = custom/script
+format-prefix = 
+format-prefix-foreground = ${colors.accent}
+exec = date +' %a. %d %b. %Y  %H:%M'
+tail = false
+interval = 5
+click-left = gsimplecal
+;click-right = thunderbird
 
 [module/pulseaudio]
 type = internal/pulseaudio
