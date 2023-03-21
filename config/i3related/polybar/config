@@ -70,9 +70,21 @@ font-4 = Font Awesome 5 Free Solid:pixelsize=8;2
 font-5 = Font Awesome 5 Brands:pixelsize=8;2
 
 modules-left = i3
-modules-center = updates filesystem xkeyboard memory cpu battery dollarrate keyboardlayout vpn wlan eth gatewaywan gatewaylan 
-modules-right = pulseaudio bth clickdate 
+modules-center = current_user updates filesystem xkeyboard memory cpu battery dollarrate vpn wlan eth_custom gatewaylan gatewaywan
+modules-right = pulseaudio bth keyboardlayout clickdate 
 ;modules-right powermenu 
+
+[module/current_user]
+type = custom/script
+exec = whoami
+interval = 10
+format =  <label>
+
+[module/eth_custom]
+type = custom/script
+exec = ip route | grep src | awk '{print $9}'
+format =  <label>
+interval = 10
 
 [module/updates]
 type = custom/script
@@ -87,6 +99,7 @@ type = custom/script
 exec = /sbin/ip route | awk '/default/ {print $3}'
 format =  <label>
 interval = 1
+click-right = "nm-connection-editor &"
 
 [module/gatewaywan]
 type = custom/script
@@ -127,8 +140,6 @@ ramp-signal-foreground = #ffffff
 type = internal/network
 interface = enp1s0
 interval = 1.0
-
-click-right = "exec nm-connection-editor"
 
 ;format-connected-underline = #666666
 format-connected-prefix = " "
