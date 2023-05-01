@@ -131,8 +131,8 @@ tks(){tmux kill-session -t $1}
 
 #> Rclone
 rcl(){rclone listremotes}	
-rcm(){[[ -d /tmp/$1 ]] && sudo umount -l /tmp/$1 ; rm -rf /tmp/$1 ; mkdir /tmp/$1 && rclone mount $1:/ /tmp/$1 &} 
-rcu(){sudo umount -l /tmp/$1 && rm -rf /tmp/$1}
+rcm(){[[ -d /tmp/$1 ]] && fusermount -u /tmp/$1 ; rclone mount --daemon $1:/ /tmp/$1} 
+rcu(){fusermount -u /tmp/$1}
 
 # Git Github Gitlab
 alias grs="git remote set-url --add origin git@github.com:$1/$2.git" #set git remote for ssh	
@@ -156,8 +156,8 @@ nc(){nordvpn connect}
 ncus(){nordvpn connect United_States}	
 nd(){nordvpn disconnect}	
 ns(){nordvpn status}
-alias ifcreitoria="sudo openvpn --config /home/joao/ifce/joao.galvino.ifce.ovpn --daemon"
-alias ifdreitoria="sudo pkill -f 'openvpn --config /home/joao/ifce/joao.galvino.ifce.ovpn'"
+alias ifcreitoria="sudo openvpn --config /home/joao/Documents/IFCE/joao.galvino.ifce.ovpn --daemon"
+alias ifdreitoria="sudo pkill -f 'openvpn --config /home/joao/Documents/IFCE/joao.galvino.ifce.ovpn'"
 
 # FUNCTIONS 
 ppp(){python3 $PWD/$1}	
