@@ -1,0 +1,3 @@
+- Copy the contents of this folder into /usr/share/icons
+
+sudo cp -R . /usr/share/icons

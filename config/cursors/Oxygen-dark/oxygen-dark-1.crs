@@ -1,0 +1,45 @@
+﻿[Arrow]
+Path=Oxygen Normal Select.cur
+
+[Help]
+Path=Oxygen Help Select.cur
+
+[AppStarting]
+Path=Oxygen Working in Background.ani
+
+[Wait]
+Path=Oxygen Busy.ani
+
+[Crosshair]
+Path=Oxygen Precision Select.cur
+
+[IBeam]
+Path=Oxygen Text Select.cur
+
+[NWPen]
+Path=Oxygen Handwriting.cur
+
+[No]
+Path=Oxygen Unavailable.cur
+
+[SizeNS]
+Path=Oxygen Vertical Resize.cur
+
+[SizeWE]
+Path=Oxygen Horizontal Resize.cur
+
+[SizeNWSE]
+Path=Oxygen Diagonal Resize 1.cur
+
+[SizeNESW]
+Path=Oxygen Diagonal Resize 2.cur
+
+[SizeAll]
+Path=Oxygen Move.cur
+
+[UpArrow]
+Path=Oxygen Alternate Select.cur
+
+[Hand]
+Path=Oxygen Link Select.cur
+
