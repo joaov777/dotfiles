@@ -13,7 +13,7 @@ LIST_RCLONE="rclone listremotes"
 	exit 1
 }
 
-[ ! -d "$MANAGED_DIR"/$1 ] && mkdir "$MANAGED_DIR"/$1
+[ ! -d "$MANAGED_DIR"/$2 ] && mkdir "$MANAGED_DIR"/$2
 
 case "$1" in 
 	"mount") eval $MOUNT_RCLONE ;;
