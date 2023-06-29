@@ -36,8 +36,7 @@ source $ZSH/oh-my-zsh.sh
 
 #> Dotfiles
 alias cddf="cd $PROJECT_HOME"
-dotfiles(){[ -d $USER_HOME/.dotfiles ] && $USER_HOME/.dotfiles/dotfiles.sh || echo "|--> Rename the dotfiles project folder to .dotfiles"}
-
+dotfiles(){[ -d $USER_HOME/.dotfiles ] && `$($USER_HOME/.dotfiles/dotfiles.sh)` || echo "|--> Rename the dotfiles project folder to .dotfiles"}
 
 #> System
 rbn(){sudo /sbin/reboot}	
@@ -50,7 +49,7 @@ alias fkw="sudo rm ~/.config/KeeWeb/runtime-data.json"
 alias ds="youtube-dl --extract-audio --audio-format mp3 $1 -o '~/Music/%(title)s.%(ext)s'"	
 alias btu="$PROJECT_HOME/scripts/misc/scripts/brltousd.sh"
 alias utb="$PROJECT_HOME/scripts/misc/scripts/usdtobrl.sh"	
-dr(){echo "DR: $(curl -s https://www.x-rates.com/table/\?from\=USD\&amount\=1 | grep ";to=BRL" | awk '{print $3}' | cut -c59-62)"} #check current dollar rate
+dr(){echo "DR: $(curl -s https://www.x-rates.com/table/\?from\=USD\&amount\=1 | grep \";to=BRL\" | awk '{print $3}' | cut -c59-62)"} #check current dollar rate
 alias -g cc="| xclip -selection c" #copying whatever command output to the clipboard
 sb(){sudo feh --bg-fill --randomize $WALLPAPER_DIR} # switch background randomly
 cb(){feh $WALLPAPER_DIR} # choose background interactively
