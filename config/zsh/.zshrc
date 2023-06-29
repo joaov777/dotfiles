@@ -10,7 +10,7 @@
 #==========================> BEGINNING OF FILE
 
 # Jv dotfiles home folder
-PROJECT_HOME="/home/$USER/.dotfiles"
+PROJECT_HOME="/home/$USER/repos/dotfiles"
 USER_HOME="/home/$USER"
 WALLPAPER_DIR="$USER_HOME/repos/wallpapers/FULL HD/"
 
@@ -129,8 +129,7 @@ tks(){tmux kill-session -t $1}
 
 #> Rclone
 rcl(){rclone listremotes}	
-rcm(){[[ -d /tmp/$1 ]] && fusermount -u /tmp/$1 ; nohup rclone mount $1: /tmp/$1 --daemon >/dev/null 2>&1 &}
-rcu(){fusermount -u /tmp/$1}
+alias rc="$PROJECT_HOME/scripts/misc/rclone.sh $1 $2"
 
 # Git Github Gitlab
 alias grs="git remote set-url --add origin git@github.com:$1/$2.git" #set git remote for ssh	
