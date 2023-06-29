@@ -121,7 +121,6 @@ cl(){clear}
 alias zc="vim ~/.zshrc"
 alias sz="source ~/.zshrc"
 alias rf="sudo rm -rf" #remove folder	
-alias setuptilda="$PROJECT_HOME/scripts/misc/setuptilda.sh"
 
 #> Tmux	
 tns(){tmux new -s $1 -d}	
@@ -131,7 +130,7 @@ tks(){tmux kill-session -t $1}
 
 #> Rclone
 rcl(){rclone listremotes}	
-rcm(){[[ -d /tmp/$1 ]] && fusermount -u /tmp/$1 ; rclone mount --daemon $1:/ /tmp/$1} 
+rcm(){[[ -d /tmp/$1 ]] && fusermount -u /tmp/$1 ; nohup rclone mount $1: /tmp/$1 --daemon >/dev/null 2>&1 &}
 rcu(){fusermount -u /tmp/$1}
 
 # Git Github Gitlab
