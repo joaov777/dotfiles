@@ -1,11 +1,11 @@
 #!/bin/bash
 
 MANAGED_DIR="/tmp"
-MOUNT_RCLONE="nohup rclone mount $2: /tmp/$2 --daemon >/dev/null 2>&1 &"
+MOUNT_RCLONE="nohup rclone mount $2: $MANAGED_DIR/$2 --daemon >/dev/null 2>&1 &"
 UMOUNT_RCLONE="fusermount -u $MANAGED_DIR/$2"
 LIST_RCLONE="rclone listremotes"
 
-[ "$1" == "list" ] && eval $LIST_RCLONE && exit 0
+[ "$1" == "list" ] && eval "$LIST_RCLONE" && exit 0
 
 [ -z "$2" ] && {
 	echo "Error! Missing mount name."
@@ -16,7 +16,7 @@ LIST_RCLONE="rclone listremotes"
 [ ! -d "$MANAGED_DIR"/$2 ] && mkdir "$MANAGED_DIR"/$2
 
 case "$1" in 
-	"mount") eval $MOUNT_RCLONE && ln -sf /tmp/"$2" /home/"$USER"/"$2";;
-	"umount") eval $UMOUNT_RCLONE && unlink /home/"$USER"/"$2" ;;
+	"mount") eval "$MOUNT_RCLONE" && ln -sf "$MANAGED_DIR"/"$2" /home/$USER/rclone-"$2"  ;; 
+	"umount") unlink /home/$USER/rclone-"$2" && eval "$UMOUNT_RCLONE" && rm -rf "$MANAGED_DIR"/"$2" ;; 
 	*) echo "-- Invalid option! Use 'mount' or 'umount'" ;;
 esac
