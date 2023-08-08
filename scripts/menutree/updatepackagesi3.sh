@@ -20,7 +20,7 @@ packages_required=(
 	pulseaudio-alsa pulseaudio-bluetooth bluez bluez-libs bluez-utils blueman tilix autorandr feh \
 	noto-fonts ttf-ubuntu-font-family ttf-dejavu openvpn ttf-freefont ttf-liberation dialog polybar  \
   	ttf-droid ttf-inconsolata ttf-roboto terminus-font ttf-font-awesome ttf-font-awesome-5 otf-font-awesome \
-	xournalpp font-awesome ttf-unifont siji-git docker docker-compose geoclue brave rclone-browser-git \
+	xournalpp font-awesome ttf-unifont siji-git docker docker-compose geoclue rclone-browser-git \
 	alsa-utils alsa-plugins alsa-lib redshift pavucontrol zathura zathura-pdf-mupdf xdg-utils libsecret gnome-keyring    
 	)
 

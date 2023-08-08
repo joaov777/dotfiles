@@ -42,6 +42,17 @@ dotfiles(){[ -d $USER_HOME/.dotfiles ] && `$($USER_HOME/.dotfiles/dotfiles.sh)` 
 rbn(){sudo /sbin/reboot}	
 sdn(){sudo /sbin/shutdown -h now}		
 
+#> VMs
+vmlist(){VBoxManage list vms}
+vmon(){VBoxManage startvm $1 --type headless}
+vmoff(){VBoxManage controlvm $1 poweroff}
+vmlistsnap(){VBoxManage snapshot $1 list}
+vmres(){VBoxManage snapshot $1 restore $2}
+vmrescurrent(){VBoxManage snapshot $1 restorecurrent}
+vmliston(){VBoxManage list runningvms}
+vmtakesnap(){VBoxManage snapshot $1 take $2}
+vmdelsnap(){VBoxManage snapshot $1 delete $2}
+
 #> Misc
 alias env="sudo redshift -P -O $1" #enabling night view	
 alias dnv="sudo redshift -x" #disabling night view	

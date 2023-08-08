@@ -12,7 +12,7 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
         createFolderAndAssignOwnership ~/.config/ranger $USER $USER && {
                 [ $(cp -r $SCRIPT_DIR/../../config/i3related/ranger/ ~/.config/ranger 2>/dev/null) ] && 
                 echo "|--> Ranger enabled" || echo "|--> Ranger not enabled"
-        
+	}
         createFolderAndAssignOwnership ~/.config/Dharkael $USER $USER && {
                 [ $(cp $SCRIPT_DIR/../../config/i3related/flameshot/flameshot.ini ~/.config/Dharkael/ 2>/dev/null) ] && 
                 echo "|--> Flameshot enabled" || echo "|--> Flameshot not enabled"

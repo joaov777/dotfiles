@@ -16,7 +16,7 @@ LIST_RCLONE="rclone listremotes"
 [ ! -d "$MANAGED_DIR"/$2 ] && mkdir "$MANAGED_DIR"/$2
 
 case "$1" in 
-	"mount") eval "$MOUNT_RCLONE" && ln -sf "$MANAGED_DIR"/"$2" /home/$USER/rclone-"$2"  ;; 
-	"umount") unlink /home/$USER/rclone-"$2" && eval "$UMOUNT_RCLONE" && rm -rf "$MANAGED_DIR"/"$2" ;; 
+	"mount") eval "$MOUNT_RCLONE" ;; 
+	"umount") eval "$UMOUNT_RCLONE" && rm -rf "$MANAGED_DIR"/"$2" ;; 
 	*) echo "-- Invalid option! Use 'mount' or 'umount'" ;;
 esac
