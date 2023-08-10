@@ -16,7 +16,7 @@ WALLPAPER_DIR="$USER_HOME/repos/wallpapers/FULL HD/"
 
 # Path to your oh-my-zsh installation.	
 export ZSH="/home/$USER/.oh-my-zsh"	
- 
+
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes	
 #ZSH_THEME="robbyrussell"	
 ZSH_THEME="moody"	
@@ -42,7 +42,7 @@ dotfiles(){[ -d $USER_HOME/.dotfiles ] && `$($USER_HOME/.dotfiles/dotfiles.sh)` 
 rbn(){sudo /sbin/reboot}	
 sdn(){sudo /sbin/shutdown -h now}		
 
-#> VMs
+#> VMs with virtualbox
 vmlist(){VBoxManage list vms}
 vmon(){VBoxManage startvm $1 --type headless}
 vmoff(){VBoxManage controlvm $1 poweroff}
@@ -52,6 +52,13 @@ vmrescurrent(){VBoxManage snapshot $1 restorecurrent}
 vmliston(){VBoxManage list runningvms}
 vmtakesnap(){VBoxManage snapshot $1 take $2}
 vmdelsnap(){VBoxManage snapshot $1 delete $2}
+
+# SUAP
+suaprestoredb(){/home/$USER/repos/scripts/suap/useful-scripts/restoredb.sh "$1" "$2"} # database_name and dump file location
+suaplistdb(){docker exec -it suapdb psql -U postgres -c "\l" }
+suapdeletedb(){docker exec -i suapdb psql --username postgres --dbname=postgres -c "DROP DATABASE IF EXISTS "$1" WITH (FORCE);"}
+setpasswordsto123(){/home/$USER/repos/scripts/suap/useful-scripts/settings.sh "$1" && docker exec -i suap python /suap/manage.py set_passwords_to_123}
+suapsetsettings(){/home/$USER/repos/scripts/suap/useful-scripts/settings.sh "$1"}
 
 #> Misc
 alias env="sudo redshift -P -O $1" #enabling night view	
