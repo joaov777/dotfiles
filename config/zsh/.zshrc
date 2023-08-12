@@ -56,8 +56,9 @@ vmdelsnap(){VBoxManage snapshot $1 delete $2}
 # SUAP
 suaprestoredb(){/home/$USER/repos/scripts/suap/useful-scripts/restoredb.sh "$1" "$2"} # database_name and dump file location
 suaplistdb(){docker exec -it suapdb psql -U postgres -c "\l" }
+suapcheckdb(){docker exec -it suap grep "'NAME': os.environ.get('DATABASE_NAME'," /suap/suap/settings.py} 
 suapdeletedb(){docker exec -i suapdb psql --username postgres --dbname=postgres -c "DROP DATABASE IF EXISTS "$1" WITH (FORCE);"}
-setpasswordsto123(){/home/$USER/repos/scripts/suap/useful-scripts/settings.sh "$1" && docker exec -i suap python /suap/manage.py set_passwords_to_123}
+suapsetpasswordsto123(){/home/$USER/repos/scripts/suap/useful-scripts/settings.sh "$1" && docker exec -i suap python /suap/manage.py set_passwords_to_123}
 suapsetsettings(){/home/$USER/repos/scripts/suap/useful-scripts/settings.sh "$1"}
 
 #> Misc
@@ -195,7 +196,8 @@ ii(){pacman -Q $1} #checking whether a package is installed
 #> Starship shell
 #eval "$(starship init zsh)"
 
-
+#> Run neofetch automatically
+neofetch || sudo pacman -S neofetch --noconfirm --needed || sudo apt install neofetch -y
 
 
 
