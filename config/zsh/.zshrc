@@ -15,7 +15,7 @@ USER_HOME="/home/$USER"
 WALLPAPER_DIR="$USER_HOME/repos/wallpapers/FULL HD/"
 
 # Path to your oh-my-zsh installation.	
-export ZSH="/home/$USER/.oh-my-zsh"	
+export ZSH="$HOME/.oh-my-zsh"	
 
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes	
 #ZSH_THEME="robbyrussell"	
