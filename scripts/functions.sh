@@ -43,34 +43,3 @@ changeOwnership() {
 isPackageInstalled() {
     if [ ! -z "$(pacman -Qi $1 2>/dev/null)" ]; then return 0; else return 1; fi
 }
-
-installYayHelper() {
-    yay_dir="$HOME/yay"
-
-    # if the package is not installed
-    [ ! isPackageInstalled yay ] && {
-            [ -d "$yay_dir" ] && sudo rm -rf "$yay_dir"
-            sudo pacman -S --needed --noconfirm git base-devel && \
-            git clone --quiet https://aur.archlinux.org/yay.git "$yay_dir" && cd "$yay_dir" && \
-            makepkg -si && cd .. && \
-            rm -rf "$yay_dir"
-
-            # checking whether the package was successfully installed
-            [ isPackageInstalled yay ] && {
-                return 0
-            } || {
-                return 1
-            }
-    } || {
-        # in case the package had already been installed
-        return 0
-    }
-
-    
-    
-    
-
-    
-
-	
-}

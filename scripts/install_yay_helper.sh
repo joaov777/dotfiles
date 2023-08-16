@@ -9,5 +9,22 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 subMenu "Dotfiles" "Install AUR Helper" 
 
-	[ installYayHelper ] && echo "|--> Yay successfully installed!" || echo "|--> Yay not installed!" ; sleep 3
-	clear
+    yay_dir="$HOME/yay"
+
+    # if the package is not installed
+    if ! isPackageInstalled yay; then
+
+            echo "|--> Yay has not been installed yet!" ; sleep 3
+            [ -d "$yay_dir" ] && sudo rm -rf "$yay_dir"
+            sudo pacman -S --needed --noconfirm git base-devel && \
+            git clone --quiet https://aur.archlinux.org/yay.git "$yay_dir" && cd "$yay_dir" && \
+            makepkg -si && cd .. && \
+            rm -rf "$yay_dir"
+
+            # checking whether the package was successfully installed
+            if isPackageInstalled yay; then
+                echo "|--> Yay successfully installed!" ; sleep 3
+            else
+                echo "|--> Yay not installed!" ; sleep 3
+            fi
+	fi
