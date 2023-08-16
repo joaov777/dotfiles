@@ -4,9 +4,13 @@
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 SCRIPT_HOME=$(cd $SCRIPT_DIR/../.. && pwd)
 
+echo $SCRIPT_HOME && echo $SCRIPT_DIR && sleep 100
+
 # sourcing necessary packages
-. "$SCRIPT_DIR"/../menus.sh
-. "$SCRIPT_DIR"/../functions.sh
+. "$SCRIPT_DIR"/../scripts/menus.sh
+. "$SCRIPT_DIR"/../scripts/functions.sh
+
+ZSH_THEME="pi"
 
 clear
         
@@ -18,6 +22,7 @@ clear
 
 			if [[ $zsh_option == [yY] ]]; then
 
+				# checking whether zsh is already installed
 				[ $(isPackageInstalled zsh) ] && echo "|--> zsh already installed" || echo "|--> Installing zsh..." && sudo pacman -S zsh --needed --noconfirm
 				
 				# if oh-my-zsh folder exists, deletes it
@@ -28,9 +33,9 @@ clear
 				yes | sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" &>/dev/null
 
 				# change user default shell to zsh
-				sudo chsh -s /bin/zsh $USER #sudo usermod -s /bin/zsh $USER
+				sudo chsh -s /bin/zsh $USER
 				
-					# installing zsh-autosuggestions plugin
+				# installing zsh plugins
 				echo "|--> Installing Auto-Suggestions plugin" 
 				git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
@@ -42,15 +47,14 @@ clear
 			
 				# installing pi theme https://github.com/tobyjamesthomas/pi
 				echo "|--> Installing custom zsh theme - moody" 
-				cp $SCRIPT_DIR/../../config/zsh/moody.zsh-theme ~/.oh-my-zsh/themes/
-				#cp ~/dotfiles/config/zsh/moody.zsh-theme ~/.oh-my-zsh/themes/
+				cp $SCRIPT_DIR/../config/zsh/$ZSH_THEME.zsh-theme ~/.oh-my-zsh/themes/
 				
 				break
 
 			elif [[ $zsh_option == [nN] ]]; then
 				break
 			else
-				echo "|--> Insira uma opção válida!" && sleep 1
+				echo "|--> Choose a valid option!" && sleep 1
 			fi
 
 		done # end of loop
@@ -60,21 +64,15 @@ clear
 			read -p "|--> Update .zshrc? (y/n) " user_option
 
 			if [[ $user_option == [yY] ]]; then
-				checkFileExists ~/.zshrc && sudo rm ~/.zshrc 
-				cp $SCRIPT_DIR/../../config/zsh/.zshrc /home/$USER && echo "|--> .zshrc restored" && sleep 1
-				changeOwnership $USER $USER ~/.zshrc
-
-				# updating project home folder on the .zshrc copy file located at the current user's home directory
-				#sed -i "/PROJECT_HOME=/c\PROJECT_HOME="$SCRIPT_HOME"" /home/$USER/.zshrc
-				
-				# update the zsh shell
-				#/bin/zsh -c ". ~/.zshrc"
+				checkFileExists "$HOME"/.zshrc && sudo rm "$HOME"/.zshrc 
+				cp $SCRIPT_DIR/../config/zsh/.zshrc "$HOME" && echo "|--> .zshrc restored" && sleep 1
+				changeOwnership $USER $USER "$HOME"/.zshrc
 				break
 
 			elif [[ $user_option == [nN] ]]; then
 				break
 			else
-				echo "|--> Insira uma opção válida!" && sleep 1
+				echo "|--> Choose a valid option!" && sleep 1
 			fi
 
 		done # end of loop

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 	#ovpn keys directory - CHANGE WHEN NECESSARY
-	directory="/home/$USER/Documents/IFCERelated/VPN/"
+	directory="$HOME/Documents/IFCERelated/VPN/"
 
 	#convert campus name to UPPERCASE
 	campus=`echo "$1" | awk '{ print toupper($0) }'`

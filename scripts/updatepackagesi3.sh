@@ -4,8 +4,8 @@
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # sourcing necessary packages
-. "$SCRIPT_DIR"/../menus.sh
-. "$SCRIPT_DIR"/../functions.sh
+. "$SCRIPT_DIR"/../scripts/menus.sh
+. "$SCRIPT_DIR"/../scripts/functions.sh
 
 packages_required=(
 	dconf ly i3 pdfarranger openssh w3m discord spotify-launcher postgresql gsimplecal tcpdump ntfs-3g tldr fzf thunar rclone \
@@ -15,7 +15,7 @@ packages_required=(
 	gedit pwgen openssh vim rdesktop i3lock i3lock-fancy-git mtr tmux iw py3status \
 	nmap okular viewnior ncdu inxi htop otf-fira-mono nordvpn-bin nitrogen netctl \
 	veracrypt papirus-icon-theme neofetch lxappearance vlc picom i3status trayer vifm exa \
-	arp-scan net-tools teamviewer peek xorg-server xorg-apps xorg-init networkmanager-dmenu-git \ 
+	arp-scan net-tools peek xorg-server xorg-apps xorg-init networkmanager-dmenu-git \ 
 	imagewriter wget dnsutils xorg-xrandr arandr sshfs nm-connection-editor nerd-fonts-fira-code \ 
 	pulseaudio-alsa pulseaudio-bluetooth bluez bluez-libs bluez-utils blueman tilix autorandr feh \
 	noto-fonts ttf-ubuntu-font-family ttf-dejavu openvpn ttf-freefont ttf-liberation dialog polybar  \
@@ -45,11 +45,6 @@ packages_required=(
 	sudo smbpasswd -a $USER 
 	papirus-folders -C white > /dev/null
 	xdg-user-dirs-update
-
-	#teamviewer related
-	echo "|--> Enabling TeamViewer" ;
-	sudo teamviewer --daemon enable > /dev/null
-	sudo systemctl enable teamviewerd.service --now > /dev/null
 
 	#nord related
 	echo "|--> Enabling and Starting VPN service" ;

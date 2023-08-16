@@ -5,11 +5,13 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 SCRIPT_HOME=$(cd $SCRIPT_DIR/../.. && pwd)
 
 # sourcing necessary packages
-. "$SCRIPT_DIR"/../menus.sh
-. "$SCRIPT_DIR"/../functions.sh
+. "$SCRIPT_DIR"/../scripts/menus.sh
+. "$SCRIPT_DIR"/../scripts/functions.sh
 
 SUDOERS="/etc/sudoers.bak"
 FIND_USER_IN_SUDOERS="$(sudo grep "$USER ALL=(ALL) ALL" /etc/sudoers)"
+GIT_EMAIL="joaov777@gmail.com"
+GIT_USER="joaov777"
 
 clear
         
@@ -24,8 +26,6 @@ clear
 		} || {
     		[ ! "$FIND_USER_IN_SUDOERS" ] && echo "$(whoami) ALL=(ALL) ALL" >> /etc/sudoers
 		}
-
-	#echo "|--> Adding sudo group to $USER" && usermod -aG sudo $USER && sleep 1
 	
 	# if arch based
 	[ -f "/etc/arch-release" ] && {
@@ -35,6 +35,6 @@ clear
 	}
 
 	echo "|--> Setting git credentials" && sleep 1
-	cd $SCRIPT_DIR/../.. && git config --local user.email joaov777@gmail.com &&
-	cd $SCRIPT_DIR/../.. && git config --local user.name joaov777 
+	cd $SCRIPT_DIR/../.. && git config --local user.email "$GIT_EMAIL" &&
+	cd $SCRIPT_DIR/../.. && git config --local user.name "$GIT_USER" 
 

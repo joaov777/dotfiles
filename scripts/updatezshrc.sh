@@ -4,10 +4,10 @@
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # sourcing necessary packages
-. "$SCRIPT_DIR"/../menus.sh
-. "$SCRIPT_DIR"/../functions.sh
+. "$SCRIPT_DIR"/../scripts/menus.sh
+. "$SCRIPT_DIR"/../scripts/functions.sh
 
 	subMenu "Dotfiles" "Update .zshrc" 
-	checkFileExists ~/.zshrc && sudo rm ~/.zshrc 
-	sudo cp ~/dotfiles/config/zsh/.zshrc /home/$USER && echo "|--> .zshrc restored" 
+	checkFileExists "$HOME"/.zshrc && sudo rm "$HOME"/.zshrc 
+	sudo cp "$HOME"/dotfiles/config/zsh/.zshrc "$HOME" && echo "|--> .zshrc restored" 
 	changeOwnership $USER $USER ~/.zshrc

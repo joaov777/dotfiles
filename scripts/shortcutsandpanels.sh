@@ -4,21 +4,20 @@
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # sourcing necessary packages
-. "$SCRIPT_DIR"/../menus.sh
-. "$SCRIPT_DIR"/../functions.sh
+. "$SCRIPT_DIR"/../scripts/menus.sh
+. "$SCRIPT_DIR"/../scripts/functions.sh
     
     # In case the config files below change, it is necessary to copy the file from 
     # "~/.config/xfce4/xfconf/xfce-perchannel-xml/" into "~/mainconf/varied/wiki/"
 
-   
 	subMenu "Dotfiles" "Update System" 
 
     echo "|--> Copying shortcuts and xsettings..." && sleep 1
 
     #variables
-    shortcuts=~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
-    xsettings=~/.config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
-    panel=~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml
+    shortcuts="$HOME"/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
+    xsettings="$HOME"/.config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
+    panel="$HOME"/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml
 
     #deleting previous configs if they exist
     if [ -f $shortcuts ]; then echo "|--> Deleting shortcuts.xml" ; rm $shortcuts > /dev/null ; fi
@@ -26,7 +25,6 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
     #downloading xfce4-keyboard-shortcuts.xml from github
     wget -q -O $shortcuts https://raw.githubusercontent.com/joaov777/mainconf/master/varied/xfcepanels/xfce4-keyboard-shortcuts.xml
-    #cp ~/mainconf/varied/wiki/xfcepanels/panels04/xfce4-keyboard-shortcuts.xml ~/.config/xfce4/xfconf/xfce-perchannel-xml/
     
     #downloading xsettings.xml from github
     wget -q -O $xsettings https://raw.githubusercontent.com/joaov777/mainconf/master/varied/xfcepanels/xsettings.xml

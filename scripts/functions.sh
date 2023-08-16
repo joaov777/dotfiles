@@ -45,7 +45,7 @@ isPackageInstalled() {
 }
 
 installYayHelper() {
-    yay_dir="/home/$USER/yay"
+    yay_dir="$HOME/yay"
 
     # if the package is not installed
     [ ! isPackageInstalled yay ] && {
