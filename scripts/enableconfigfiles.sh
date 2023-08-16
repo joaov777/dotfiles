@@ -4,8 +4,8 @@
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # sourcing necessary packages
-. "$SCRIPT_DIR"/../misc/menus.sh
-. "$SCRIPT_DIR"/../misc/functions.sh
+. "$SCRIPT_DIR"/../menus.sh
+. "$SCRIPT_DIR"/../functions.sh
         
         subMenu "Dotfiles" "Enable Config files"
 

@@ -19,7 +19,7 @@ export ZSH="$HOME/.oh-my-zsh"
 
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes	
 #ZSH_THEME="robbyrussell"	
-ZSH_THEME="moody"	
+ZSH_THEME="pi"	
 export VISUAL="/usr/bin/vim"	
 export EDITOR="$VISUAL"	
 
@@ -66,10 +66,9 @@ alias env="sudo redshift -P -O $1" #enabling night view
 alias dnv="sudo redshift -x" #disabling night view	
 alias fkw="sudo rm ~/.config/KeeWeb/runtime-data.json"
 alias ds="youtube-dl --extract-audio --audio-format mp3 $1 -o '~/Music/%(title)s.%(ext)s'"	
-alias btu="$PROJECT_HOME/scripts/misc/scripts/brltousd.sh"
-alias utb="$PROJECT_HOME/scripts/misc/scripts/usdtobrl.sh"	
+alias btu="$PROJECT_HOME/scripts/scripts/brltousd.sh"
+alias utb="$PROJECT_HOME/scripts/scripts/usdtobrl.sh"	
 dr(){echo "DR: $(curl -s https://www.x-rates.com/table/\?from\=USD\&amount\=1 | grep \";to=BRL\" | awk '{print $3}' | cut -c59-62)"} #check current dollar rate
-alias -g cc="| xclip -selection c" #copying whatever command output to the clipboard
 sb(){sudo feh --bg-fill --randomize $WALLPAPER_DIR} # switch background randomly
 cb(){feh $WALLPAPER_DIR} # choose background interactively
 ft(){timedatectl set-ntp true} #fix time
@@ -78,16 +77,6 @@ ft(){timedatectl set-ntp true} #fix time
 sk(){ssh-copy-id -i $1 $2} #send ssh keys to remote
 ck(){ssh-keygen -t rsa -b 4096} #create ssh keys locally
 pk(){cat ~/.ssh/id_rsa.pub}
-alias sshdstart="sudo systemctl start sshd"	
-alias sshdenable="sudo systemctl enable sshd --now"	
-alias sshdstop="sudo systemctl stop sshd"	
-alias sshdstatus="sudo systemctl status sshd"	
-alias sshdrestart="sudo systemctl restart sshd"	
-alias sstart="sudo systemctl start $1"	
-alias sstop="sudo systemctl stop $1"	
-alias sstatus="sudo systemctl status $1"	
-alias srestart="sudo systemctl restart $1"	
-alias rn="sudo systemctl restart NetworkManager.service"	
 
 #> Keyboard layout
 alias keyus="setxkbmap us intl"	
@@ -116,13 +105,13 @@ ml(){watch -n 1 'du -h --max-depth=0 ./*' --time} #local monitoring
 #> Navigation 
 alias l="ls -liar"
 alias bl="acpi -V" #check battery info  
-alias tt="$PROJECT_HOME/scripts/misc/tilixthemechooser.sh"
-alias xp="$PROJECT_HOME/scripts/misc/panel.sh" #xfce4 panel enable/disable
+alias tt="$PROJECT_HOME/scripts/tilixthemechooser.sh"
+alias xp="$PROJECT_HOME/scripts/panel.sh" #xfce4 panel enable/disable
 alias .="cd .."	
 alias ..="cd ../../"	
 alias ...="cd ../../../"	
 alias ....="cd ../../../../"	
-alias .....="cd ../../../../../"	
+alias .....="cd ../../../../../"
 alias lsc='exa --long --header --inode --git --group --created --modified --accessed' # complete
 alias ls='exa -lg' # normal listing
 alias l.='exa -a --color=always --group-directories-first' # hidden files and folders
@@ -148,7 +137,7 @@ tks(){tmux kill-session -t $1}
 
 #> Rclone
 rcl(){rclone listremotes}	
-alias rc="$PROJECT_HOME/scripts/misc/rclone.sh $1 $2"
+alias rc="$PROJECT_HOME/scripts/rclone.sh $1 $2"
 
 # Git Github Gitlab
 alias grs="git remote set-url --add origin git@github.com:$1/$2.git" #set git remote for ssh	
@@ -195,9 +184,3 @@ ii(){pacman -Q $1} #checking whether a package is installed
 
 #> Starship shell
 #eval "$(starship init zsh)"
-
-#> Run neofetch automatically
-neofetch || sudo pacman -S neofetch --noconfirm --needed || sudo apt install neofetch -y
-
-
-

@@ -4,8 +4,8 @@
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # sourcing necessary packages
-. "$SCRIPT_DIR"/../misc/menus.sh
-. "$SCRIPT_DIR"/../misc/functions.sh
+. "$SCRIPT_DIR"/../menus.sh
+. "$SCRIPT_DIR"/../functions.sh
 
 packages_required=(
 	dconf ly i3 pdfarranger openssh w3m discord spotify-launcher postgresql gsimplecal tcpdump ntfs-3g tldr fzf thunar rclone \
