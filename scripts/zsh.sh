@@ -4,8 +4,6 @@
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 SCRIPT_HOME=$(cd $SCRIPT_DIR/../.. && pwd)
 
-echo $SCRIPT_HOME && echo $SCRIPT_DIR && sleep 100
-
 # sourcing necessary packages
 . "$SCRIPT_DIR"/../scripts/menus.sh
 . "$SCRIPT_DIR"/../scripts/functions.sh

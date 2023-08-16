@@ -10,72 +10,65 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
         subMenu "Dotfiles" "Enable Config files"
 
         createFolderAndAssignOwnership "$HOME"/.config/ranger $USER $USER && {
-                [ $(cp -r $SCRIPT_DIR/../config/i3related/ranger/ "$HOME"/.config/ranger 2>/dev/null) ] && 
-                echo "|--> Ranger enabled" || echo "|--> Ranger not enabled"
+                if cp -r $SCRIPT_DIR/../config/i3related/ranger/ "$HOME"/.config/ranger 2>/dev/null; then
+                echo "|--> Ranger enabled"; else echo "|--> Ranger not enabled"; fi
 	}
         createFolderAndAssignOwnership "$HOME"/.config/Dharkael $USER $USER && {
-                [ $(cp $SCRIPT_DIR/../config/i3related/flameshot/flameshot.ini "$HOME"/.config/Dharkael/ 2>/dev/null) ] && 
-                echo "|--> Flameshot enabled" || echo "|--> Flameshot not enabled"
+                if cp -r $SCRIPT_DIR/../config/i3related/flameshot/flameshot.ini "$HOME"/.config/Dharkael/ 2>/dev/null; then
+                echo "|--> Flameshot enabled"; else echo "|--> Flameshot not enabled"; fi
         }
 
         createFolderAndAssignOwnership "$HOME"/.config/vifm $USER $USER && {
-                [ $(cp -r $SCRIPT_DIR/../config/vifm/themes "$HOME"/.config/vifm/colors/ &&
-                cp $SCRIPT_DIR/../config/vifm/vifmrc "$HOME"/.config/vifm/ 2>/dev/null) ] && 
-                echo "|--> Vifm enabled" || echo "|--> Vifm not enabled"
-        }
-
-        createFolderAndAssignOwnership "$HOME"/.config/autorandr $USER $USER && {
-                [ $(cp -r $SCRIPT_DIR/../config/monitors/autorandr/* "$HOME"/.config/autorandr 2>/dev/null) ] && 
-                echo "|--> Autorandr profiles loaded" || echo "|--> Autorandr profiles not loaded"
+                if cp -r $SCRIPT_DIR/../config/vifm/themes "$HOME"/.config/vifm/colors/ &&
+                cp $SCRIPT_DIR/../config/vifm/vifmrc "$HOME"/.config/vifm/ 2>/dev/null; then
+                echo "|--> Vifm enabled"; else echo "|--> Vifm not enabled"; fi
         }
 
         createFolderAndAssignOwnership "$HOME"/.config/polybar $USER $USER && {
-                [ $(cp $SCRIPT_DIR/../config/i3related/polybar/config "$HOME"/.config/polybar/ &&
-                cp $SCRIPT_DIR/../config/i3related/polybar/launch_polybar.sh "$HOME"/.config/polybar/ 2>/dev/null) ] &&
-                echo '|--> Polybar enabled' || echo "|--> Polybar not enabled"
+                if cp -r $SCRIPT_DIR/../config/i3related/polybar/config "$HOME"/.config/polybar/ &&
+                cp $SCRIPT_DIR/../config/i3related/polybar/launch_polybar.sh "$HOME"/.config/polybar/ 2>/dev/null; then
+                echo '|--> Polybar enabled'; else echo "|--> Polybar not enabled"; fi
         }
 
         createFolderAndAssignOwnership /usr/share/tilix/schemes $USER $USER && {
-                [ $(dconf load /com/gexperts/Tilix/ < $SCRIPT_DIR/../../config/tilix/grape.dconf 2>/dev/null &&
-                cp $SCRIPT_DIR/../config/tilix/themes/* /usr/share/tilix/schemes) ] &&
-                echo "|--> Tilix config and themes enabled" || echo "|--> Tilix config and themes not enabled"
+                if $(dconf load /com/gexperts/Tilix/ < $SCRIPT_DIR/../config/tilix/grape.dconf 2>/dev/null &&
+                cp $SCRIPT_DIR/../config/tilix/themes/* /usr/share/tilix/schemes); then
+                echo "|--> Tilix config and themes enabled"; else echo "|--> Tilix config and themes not enabled"; fi
         }
 
         createFolderAndAssignOwnership "$HOME"/.config/rofi $USER $USER && {
-                [ $(cp $SCRIPT_DIR/../config/i3related/rofi/config "$HOME"/.config/rofi/ 2>/dev/null) ] && 
-                echo "|--> Rofi launcher enabled" || echo "|--> Rofi launcher not enabled"
+                if cp -r $SCRIPT_DIR/../config/i3related/rofi/config "$HOME"/.config/rofi/ 2>/dev/null; then
+                echo "|--> Rofi launcher enabled"; else echo "|--> Rofi launcher not enabled"; fi
         }
 
         createFolderAndAssignOwnership "$HOME"/.config/zathura $USER $USER && {
-                [ $(cp $SCRIPT_DIR/../config/i3related/zathura/zathurarc "$HOME"/.config/zathura/ 2>/dev/null) ] && 
-                echo "|--> Zathura enabled" || echo "|--> Zathura not enabled"
+                if cp -r $SCRIPT_DIR/../config/i3related/zathura/zathurarc "$HOME"/.config/zathura/ 2>/dev/null; then 
+                echo "|--> Zathura enabled"; else echo "|--> Zathura not enabled"; fi
         }
 
         createFolderAndAssignOwnership /etc/X11/xorg.conf.d $USER $USER && {
-                [ $(cp $SCRIPT_DIR/../config/i3related/EnableTapToClick_touchpad/90-touchpad.conf /etc/X11/xorg.conf.d/ 2>/dev/null) ] &&
-                echo "|--> Tap to click enabled" || echo "|--> Tap to click not enabled"
+                if cp -r $SCRIPT_DIR/../config/i3related/EnableTapToClick_touchpad/90-touchpad.conf /etc/X11/xorg.conf.d/ 2>/dev/null; then
+                echo "|--> Tap to click enabled"; else echo "|--> Tap to click not enabled"; fi
         }
 
         createFolderAndAssignOwnership /etc/bluetooth $USER $USER && {
-                [ $(cp $SCRIPT_DIR/../config/i3related/bluetooth/main.conf /etc/bluetooth/ 2>/dev/null) ] && 
-                echo "|--> Bluetooth enabled" || echo "|--> Bluetooth not enabled"
+                if cp -r $SCRIPT_DIR/../config/i3related/bluetooth/main.conf /etc/bluetooth/ 2>/dev/null; then
+                echo "|--> Bluetooth enabled"; else echo "|--> Bluetooth not enabled"; fi
         }
 
-        [ $(cp $SCRIPT_DIR/../config/tmux/.tmux.conf "$HOME" 2>/dev/null) ] &&
-                echo "|--> Tmux conf file enabled" || echo "Tmux conf file not enabled"
+        if cp -r $SCRIPT_DIR/../config/tmux/.tmux.conf "$HOME" 2>/dev/null; then
+                echo "|--> Tmux conf file enabled"; else echo "|--> Tmux conf file not enabled"; fi
 
-        [ $(cp -r $SCRIPT_DIR/../config/themes/* /usr/share/themes/ 2>/dev/null) ] &&
-                echo "|--> Themes enabled" || echo "|--> Themes not enabled"
+        if cp -r $SCRIPT_DIR/../config/themes/* /usr/share/themes/ 2>/dev/null; then
+                echo "|--> Themes enabled"; else echo "|--> Themes not enabled"; fi
 
-        [ $(cp -r $SCRIPT_DIR/../config/cursors/* /usr/share/icons/ 2>/dev/null) ] &&
-                echo "|--> Cursor themes enabled" || echo "|--> Cursor themes not enabled"
+        if cp -r $SCRIPT_DIR/../config/cursors/* /usr/share/icons/ 2>/dev/null; then
+                echo "|--> Cursor themes enabled"; else echo "|--> Cursor themes not enabled"; fi
 
-        [ $(cp $SCRIPT_DIR/../config/notepadqq/Notepadqq.ini ~/.config/Notepadqq 2>/dev/null) ] &&
-                echo "|--> Notepadqq config file enabled" || echo "|--> Notepadqq config file not enabled"
+        if cp -r $SCRIPT_DIR/../config/notepadqq/Notepadqq.ini ~/.config/Notepadqq 2>/dev/null; then
+                echo "|--> Notepadqq config file enabled"; else echo "|--> Notepadqq config file not enabled"; fi
 
         createFolderAndAssignOwnership "$HOME"/.config/i3 $USER $USER && {
-                [ $(cp $SCRIPT_DIR/../config/i3related/i3config/config ~/.config/i3/ 2>/dev/null) ] && 
-                echo "|--> i3 config enabled"  || echo "i3 config not enabled"
+                if cp -r $SCRIPT_DIR/../config/i3related/i3config/config ~/.config/i3/ 2>/dev/null; then
+                echo "|--> i3 config enabled"; else echo "|--> i3 config not enabled"; fi
         }
-
-

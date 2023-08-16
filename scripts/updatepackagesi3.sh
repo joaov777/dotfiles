@@ -62,6 +62,5 @@ packages_required=(
 	#docker related
 	echo "|--> Setting up docker"
 	sudo usermod -aG docker $USER
-	newgrp docker
 	
     clear
