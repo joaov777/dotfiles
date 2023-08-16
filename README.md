@@ -1,12 +1,9 @@
-#### My arch-based distros dotfiles
-##### How to use it? 
+#### Dotfiles
 Clone this repo
 ```bash
-git clone https://github.com/joaov777/dotfiles ~/.dotfiles
-#OR
-git clone git@github.com:joaov777/dotfiles ~/.dotfiles
+git clone https://github.com/joaov777/dotfiles "$HOME"/dotfiles
 ```
 Run the main script
 ```bash
-./home/$USER/.dotfiles/dotfiles.sh
+$HOME/dotfiles/dotfiles.sh
 ```
