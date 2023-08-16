@@ -44,7 +44,7 @@ clear
 				git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions
 			
 				# installing pi theme https://github.com/tobyjamesthomas/pi
-				echo "|--> Installing custom zsh theme - moody" 
+				echo "|--> Installing custom zsh theme" 
 				cp $SCRIPT_DIR/../config/zsh/$ZSH_THEME.zsh-theme ~/.oh-my-zsh/themes/
 				
 				break
