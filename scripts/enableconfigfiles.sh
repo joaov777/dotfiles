@@ -32,7 +32,7 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
         createFolderAndAssignOwnership /usr/share/tilix/schemes $USER $USER && {
                 if $(dconf load /com/gexperts/Tilix/ < $SCRIPT_DIR/../config/tilix/grape.dconf 2>/dev/null &&
-                cp $SCRIPT_DIR/../config/tilix/themes/* /usr/share/tilix/schemes); then
+                cp -r $SCRIPT_DIR/../config/tilix/themes/* /usr/share/tilix/schemes); then
                 echo "|--> Tilix config and themes enabled"; else echo "|--> Tilix config and themes not enabled"; fi
         }
 
