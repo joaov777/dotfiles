@@ -9,5 +9,5 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 	subMenu "Dotfiles" "Update .zshrc" 
 	checkFileExists "$HOME"/.zshrc && sudo rm "$HOME"/.zshrc 
-	sudo cp "$HOME"/dotfiles/config/zsh/.zshrc "$HOME" && echo "|--> .zshrc restored" 
-	changeOwnership $USER $USER ~/.zshrc
+	sudo cp "$SCRIPT_DIR"/../config/zsh/.zshrc "$HOME" && echo "|--> .zshrc restored" 
+	changeOwnership $USER $USER "$HOME"/.zshrc
