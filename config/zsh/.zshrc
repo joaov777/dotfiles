@@ -11,8 +11,7 @@
 
 # Jv dotfiles home folder
 PROJECT_HOME="/home/$USER/repos/dotfiles"
-USER_HOME="/home/$USER"
-WALLPAPER_DIR="$USER_HOME/repos/wallpapers/FULL HD/"
+WALLPAPER_DIR="$HOME/repos/wallpapers/FULL HD/"
 
 # Path to your oh-my-zsh installation.	
 export ZSH="$HOME/.oh-my-zsh"	
@@ -36,7 +35,7 @@ source $ZSH/oh-my-zsh.sh
 
 #> Dotfiles
 alias cddf="cd $PROJECT_HOME"
-dotfiles(){[ -d $USER_HOME/.dotfiles ] && `$($USER_HOME/.dotfiles/dotfiles.sh)` || echo "|--> Rename the dotfiles project folder to .dotfiles"}
+dotfiles(){[ -d $HOME/dotfiles ] && $HOME/dotfiles/dotfiles.sh || echo "|--> Make sure the dotfiles project is located at $HOME"}
 
 #> System
 rbn(){sudo /sbin/reboot}	
@@ -156,17 +155,11 @@ gplm(){cd $PROJECT_HOME && git pull && cd -} #git pull dotfiles
 mcpush(){cd $PROJECT_HOME && git add . && git commit -m "$1" && git push origin master && cd -} #pushing dotfiles to git
 mcpull(){cd $PROJECT_HOME && git pull && cd -}
 
-# Vpn
+# VPN
 nc(){nordvpn connect}	
 ncus(){nordvpn connect United_States}	
 nd(){nordvpn disconnect}	
 ns(){nordvpn status}
-alias ifcreitoria="sudo openvpn --config /home/joao/Documents/IFCE/joao.galvino.ifce.ovpn --daemon"
-alias ifdreitoria="sudo pkill -f 'openvpn --config /home/joao/Documents/IFCE/joao.galvino.ifce.ovpn'"
-
-# FUNCTIONS 
-ppp(){python3 $PWD/$1}	
-run(){$PWD/$1} #run local script without ./	
 
 #> Package managers
 alias um="sudo pacman-mirrors -g" # update mirrors	
