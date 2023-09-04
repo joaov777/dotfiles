@@ -70,7 +70,7 @@ font-4 = Font Awesome 5 Free Solid:pixelsize=8;2
 font-5 = Font Awesome 5 Brands:pixelsize=8;2
 
 modules-left = i3
-modules-center = current_user updates filesystem xkeyboard memory cpu battery dollarrate vpn wlan eth_custom gatewaylan gatewaywan
+modules-center = filesystem xkeyboard memory cpu battery dollarrate vpn wlan eth_custom
 modules-right = pulseaudio bth keyboardlayout clickdate 
 ;modules-right powermenu 
 
