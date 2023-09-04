@@ -312,7 +312,7 @@ client.urgent           #ff00d9	#ff00d9	#ff00d9	#ff00d9
 #==========================> GAPS
 # Set inner/outer gaps
 gaps inner 12
-gaps outer 5
+gaps outer 6
 
 #smart_gaps on
 smart_borders on

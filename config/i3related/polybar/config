@@ -127,7 +127,7 @@ format-disconnected = <label-disconnected>
 ;format-disconnected = <label-disconnected>
 ;format-disconnected-underline = #ff0000
 label-disconnected =  OFF
-label-disconnected-foreground = #666666
+label-disconnected-foreground = #ff0000
 
 ramp-signal-0 = 
 ramp-signal-1 = 
