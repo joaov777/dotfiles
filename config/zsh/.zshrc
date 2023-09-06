@@ -85,35 +85,27 @@ alias keyus="setxkbmap us intl"
 alias keybr="setxkbmap -layout br -model abnt2"	
 
 #> Networking and System settings
-alias sw="nmcli dev wifi list"
-alias cw="sudo wifi-menu"  
 alias systeminfo="inxi -Fxz"	
 alias gwl="/sbin/ip route | awk '/default/ { print $3 }'" #gateway lan
 alias gww="curl https://ipinfo.io/ip"	#gateway wan
-alias pgpg="ping 8.8.8.8"	
 alias crd="ssh -C $1@$2 -p $3 ncdu -o- / | ncdu -f-" #check remote disk
 sf(){sudo rsync -avz --progress "$1" "$2"} #syncfolder - syncs folder path 1 to folder path 2	
 mp(){watch -n 1 inxi -t cm10} #monitoring 10 most active processes
 mn(){watch -n 1 inxi -Nni} #monitoring NICs
 mm(){watch -n 1 inxi -t m} #monitoring RAM
-sdp(){xrandr -q | grep " connected" | cut -d ' ' -f1} #show available displays
-findip(){echo " -- IP FOUND: $(sudo arp-scan $1 | grep $2 | cut -f 1)"}	
-findmac(){echo "-- MAC FOUND: $(sudo arp-scan $1 | sed -n '3p' | cut -f 2,3)"}
 alias rdprdp="rdesktop -u $1 -p $2 -g 800x600 $3" #user, password and machine
-sl(){du -sh ./*} #local folder and files sizes
-mf(){[ $1 != "" ] && watch --interval 1 du -sh $1 || watch --interval 1 du -sh $PWD/} #monitor remote or local folder
-ml(){watch -n 1 'du -h --max-depth=0 ./*' --time} #local monitoring
+alias sl="du -sh ./*" #local folder and files sizes
+alias ml="watch -n 1 'du -h --max-depth=0 ./*' --time" #local monitoring
 
 #> Navigation 
-alias l="ls -liar"
 alias bl="acpi -V" #check battery info  
 alias tt="$PROJECT_HOME/scripts/tilixthemechooser.sh"
-alias xp="$PROJECT_HOME/scripts/panel.sh" #xfce4 panel enable/disable
 alias .="cd .."	
 alias ..="cd ../../"	
 alias ...="cd ../../../"	
 alias ....="cd ../../../../"	
 alias .....="cd ../../../../../"
+alias l="ls -liar"
 alias lsc="exa --long --header --inode --git --group --created --modified --accessed" # complete
 alias ls="exa -lg" # normal listing
 alias l.="exa -a --color=always --group-directories-first" # hidden files and folders
@@ -124,12 +116,7 @@ mkcd(){mkdir -pv "$1"; cd "$1"} #Creating folder (including parents) and enterin
 hs(){print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac --height "50%" | sed -E 's/ *[0-9]*\*? *//' | sed -E 's/\\/\\\\/g')} #search commands in history	
 alias se='vim -o "$(rg --files | fzf -e)"' #fuzzy search for files
 alias seh='vim -o "$(rg --files --hidden | fzf -e)"' #fuzzy search for hidden files
-cl(){clear}	
-
-#> Shell and terminal emulators
-alias zc="vim ~/.zshrc"
-alias sz="source ~/.zshrc"
-alias rf="sudo rm -rf" #remove folder	
+alias="clear"	
 
 #> Tmux	
 tns(){tmux new -s $1 -d}	
@@ -144,19 +131,7 @@ alias rc="$PROJECT_HOME/scripts/rclone.sh $1 $2"
 # Git Github Gitlab
 alias grs="git remote set-url --add origin git@github.com:$1/$2.git" #set git remote for ssh	
 alias grh="git remote set-url --add origin https://github.com/$1/$2.git" #set git remote for http.
-alias gsr="git remote -v"
-alias gaa="git add ."
-alias ga="git add"
-alias gdf="git diff"
-alias gst="git status"
-alias gc="git commit -m $1"
-alias gpl="git pull"
-alias gps="git push origin master"
 gus(){git config --global user.name "$1" && git config --global user.email "$2" && git config --global core.editor vim}
-gpsm(){cd $PROJECT_HOME && git add . && git commit -m "$1" && git push origin master && cd -} #git push dotfiles 
-gplm(){cd $PROJECT_HOME && git pull && cd -} #git pull dotfiles
-mcpush(){cd $PROJECT_HOME && git add . && git commit -m "$1" && git push origin master && cd -} #pushing dotfiles to git
-mcpull(){cd $PROJECT_HOME && git pull && cd -}
 
 # VPN
 nc(){nordvpn connect}	
@@ -167,16 +142,8 @@ ns(){nordvpn status}
 #> Package managers
 alias um="sudo pacman-mirrors -g" # update mirrors	
 alias upman="sudo pacman -Syyuu" # overall pacman update
-alias upyay="yay -Qua | xargs yay -Syu --aur" #overall yay AUR helper update
-alias uk="sudo pacman -S manjaro-keyring" #update keyring
-dpy(){yay -S $1 --noconfirm} #download package via yay
-spy(){[[ $2 = "" ]] && yay -Ss $1 || yay -Ss $1 | grep $2} #search package	
-rpy(){yay -R $1 --noconfirm} #remove package via trizen
-dpp(){sudo pacman -S $1} #download package via pacman
-spp(){sudo pacman -Ss $1}
-rpp(){sudo pacman -Rcnsu $1 --noconfirm} #Removing a package and its dependencies	 via pacman
-rup(){sudo pacman -R $(pacman -Qdtq) --noconfirm} #Removing unnecessary dependencies	
-ii(){pacman -Q $1} #checking whether a package is installed	
-
-#> Starship shell
-#eval "$(starship init zsh)"
+alias upyay="yay -Qua | xargs yay -Syu --aur" # overall yay AUR helper update
+alias uk="sudo pacman -S manjaro-keyring" # update keyring
+rpp(){sudo pacman -Rcnsu $1 --noconfirm} # removing a package and its dependencies	 via pacman
+rup(){sudo pacman -R $(pacman -Qdtq) --noconfirm} # removing unnecessary dependencies	
+ii(){pacman -Q $1} # checking whether a package is installed	
