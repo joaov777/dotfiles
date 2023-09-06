@@ -38,7 +38,7 @@ case "$OS" in
                 done
         ;;
         "Debian")
-                echo "menu for debian" && sleep 100
+                # TODO - menu for Debian here
         ;;
         *) echo "|--> OS architecture $OS not supported" && sleep 2 && exit 1
         ;;
