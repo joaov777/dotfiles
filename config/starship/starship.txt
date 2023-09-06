@@ -1,3 +1,0 @@
-Starship config file must be placed at ~/.config
-
-
