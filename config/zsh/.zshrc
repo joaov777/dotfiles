@@ -54,15 +54,6 @@ vmliston(){VBoxManage list runningvms}
 vmtakesnap(){VBoxManage snapshot $1 take $2}
 vmdelsnap(){VBoxManage snapshot $1 delete $2}
 
-# SUAP
-suaprestoredb(){$SCRIPTS/suap/useful-scripts/restoredb.sh} # database_name and dump file location
-suaplistdb(){docker exec -it suapdb psql -U postgres -c "\l" }
-suapcheckdb(){docker exec -it suap grep "'NAME': os.environ.get('DATABASE_NAME'," /suap/suap/settings.py} 
-suapdeletedb(){docker exec -i suapdb psql --username postgres --dbname=postgres -c "DROP DATABASE IF EXISTS "$1" WITH (FORCE);"}
-suapsetpasswordsto123(){$SCRIPTS/suap/useful-scripts/settings.sh "$1" && docker exec -i suap python /suap/manage.py set_passwords_to_123}
-suapsetsettings(){$SCRIPTS/suap/useful-scripts/settings.sh "$1"}
-suaphelp(){grep suap $HOME/.zshrc}
-
 #> Misc
 alias env="sudo redshift -P -O $1" #enabling night view	
 alias dnv="sudo redshift -x" #disabling night view	
