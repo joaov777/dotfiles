@@ -7,11 +7,6 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 . "$SCRIPT_DIR"/scripts/menus.sh
 . "$SCRIPT_DIR"/scripts/functions.sh
 
-# detecting OS type (Arch, Debian, Ubuntu, etc)
-OS=$(lsb_release --id | awk '{print $NF}')
-
-case "$OS" in
-        "Arch")
                 while [ true ]; do
                 menu "Dotfiles (Working folder: $SCRIPT_DIR)"
                 echo "0 - Set up permissions"
@@ -36,11 +31,4 @@ case "$OS" in
                         *) echo "Not defined!" && sleep 1 ;;
                 esac
                 done
-        ;;
-        "Debian")
-                # TODO - menu for Debian here
-        ;;
-        *) echo "|--> OS architecture $OS not supported" && sleep 2 && exit 1
-        ;;
-esac
 
