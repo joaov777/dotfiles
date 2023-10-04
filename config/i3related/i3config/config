@@ -129,8 +129,8 @@ bindsym $mod+f fullscreen toggle
 
 #==========================> MULTI-MONITOR
 ##In case you have two monitors, execute xrandr --listmonitors and replace them on the variables
-set $SCREEN_LEFT "HDMI-1"
-set $SCREEN_RIGHT "DP-2"
+set $SCREEN_LEFT "DP-1"
+set $SCREEN_RIGHT "HDMI-1"
 set $home_laptop_monitor "eDP-1"
 
 ## Setting workspaces for HOME context
@@ -154,7 +154,7 @@ workspace $ws15 output $laptop_monitor
 
 ## Home multi-monitor setup
 #exec --no-startup-id xrandr --output HDMI-1 --auto --primary --left-of DP-2 --output DP-2 --auto --output eDP-1 --off
-exec --no-startup-id xrandr --output eDP-1 --auto --primary
+exec --no-startup-id xrandr --output DP-1 --auto --primary --left-of HDMI-1 --auto
 
 ## IFCE multi-monitor setup
 
@@ -304,9 +304,13 @@ mode "resize" {
 #==========================| BARS END
 
 #Color
-client.focused          #ededed	#545454	#333333	#333333	
+#client.focused          #ededed	#1c1c1c	#333333	#333333	
+client.focused          #ededed	#b3b3b3	#333333	#333333	
+#client.focused_inactive #000000	#000000	#000000	#000000
 client.focused_inactive #000000	#000000	#000000	#000000
+#client.unfocused        #000000	#000000	#000000	#000000
 client.unfocused        #000000	#000000	#000000	#000000
+#client.urgent           #ff00d9	#ff00d9	#ff00d9	#ff00d9
 client.urgent           #ff00d9	#ff00d9	#ff00d9	#ff00d9
 
 #==========================> GAPS
