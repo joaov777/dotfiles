@@ -8,7 +8,7 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 . "$SCRIPT_DIR"/../scripts/functions.sh
 
 packages_required=(
-	dconf i3 pdfarranger openssh w3m discord spotify-launcher postgresql gsimplecal tcpdump ntfs-3g \
+	dconf i3 xclip pdfarranger openssh w3m discord spotify-launcher postgresql gsimplecal tcpdump ntfs-3g \
 	bind-tools rofi dmenu keepassxc brightnessctl pacman-contrib netctl \
 	git notepadqq gparted papirus-folders-git acpi pulseaudio-alsa xfce4-notifyd \
 	filezilla telegram-desktop copyq flameshot ranger pulseaudio-ctl xfce4-power-manager \

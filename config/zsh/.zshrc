@@ -65,6 +65,7 @@ dr(){echo "DR: $(curl -s https://www.x-rates.com/table/\?from\=USD\&amount\=1 | 
 sb(){sudo feh --bg-fill --randomize $WALLPAPER_DIR} # switch background randomly
 cb(){feh $WALLPAPER_DIR} # choose background interactively
 ft(){timedatectl set-ntp true} #fix time
+alias clip='() { "$@" | xclip -selection clipboard; }'
 
 #> System services
 sk(){ssh-copy-id -i $1 $2} #send ssh keys to remote
