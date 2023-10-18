@@ -48,13 +48,16 @@ packages_required=(
 
 	papirus-folders -C white > /dev/null
 
-	#nord related
+	# nord related
 	echo "|--> Enabling NordVPN..." && sudo systemctl enable nordvpnd --now
 
-	#bluetooth related
+	# bluetooth related
 	echo "|--> Enabling bluetooth..." && sudo systemctl enable bluetooth.service --now
 
-	#docker related
+	# docker related
 	echo "|--> Setting up Docker..." && sudo usermod -aG docker $USER
-	
-    clear
+
+	# update local crontab
+	(crontab -l 2>/dev/null; echo "@reboot $HOME/dotfiles/scripts/mount-rclone-remotes.sh --mount --all >/dev/null 2>&1") | crontab -
+
+	clear
