@@ -60,7 +60,7 @@ case "$1" in
         fi
         ;; 
     *) 
-        echo "-- Invalid option! Use 'mount', 'umount' or 'list'" 
+        echo "-- Invalid option! Use '--mount', '--umount' or '--list'" 
         ;;
 esac
 
