@@ -31,7 +31,7 @@ case "$1" in
         if [ "$2" == "--all" ]; then
             for remote in "${REMOTES[@]}"; do
 				mkdir -p "$MANAGED_DIR/$remote"
-                ($RCLONE_PATH mount $remote: "$MANAGED_DIR/$remote" --daemon >/dev/null 2>&1 &)
+                ($RCLONE_PATH mount $remote: "$MANAGED_DIR/$remote" --daemon --vfs-cache-mode writes --poll-interval 2s >/dev/null 2>&1 &)
                 sleep 1
                 echo "Mounted remote $remote."
             done
