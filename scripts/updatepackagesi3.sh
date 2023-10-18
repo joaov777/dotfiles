@@ -45,22 +45,16 @@ packages_required=(
 		fi
 	done
 
-	#enabling sharing
-	echo "|--> Enabling Samba permissions" ; 
-	sudo smbpasswd -a $USER 
+
 	papirus-folders -C white > /dev/null
-	xdg-user-dirs-update
 
 	#nord related
-	echo "|--> Enabling and Starting VPN service" ;
-	sudo systemctl enable nordvpnd --now
+	echo "|--> Enabling NordVPN..." && sudo systemctl enable nordvpnd --now
 
 	#bluetooth related
-	echo "|--> Enabling bluetooth service"
-	sudo systemctl enable bluetooth.service --now
+	echo "|--> Enabling bluetooth..." && sudo systemctl enable bluetooth.service --now
 
 	#docker related
-	echo "|--> Setting up docker"
-	sudo usermod -aG docker $USER
+	echo "|--> Setting up Docker..." && sudo usermod -aG docker $USER
 	
     clear
