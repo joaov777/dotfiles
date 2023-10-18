@@ -3,7 +3,7 @@
 # This script mounts/umounts rclone remotes 
 # mount-rclone-remotes.sh --mount --all
 # mount-rclone-remotes.sh --umount --all
-# mount-rclone-remotes.sh -mount <remote>
+# mount-rclone-remotes.sh --mount <remote>
 # mount-rclone-remotes.sh --umount <remote>
 
 # variables
