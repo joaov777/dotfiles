@@ -18,7 +18,7 @@ subMenu "Dotfiles" "Install AUR Helper"
         [ -d "$yay_dir" ] && sudo rm -rf "$yay_dir"
         sudo pacman -S --needed --noconfirm git base-devel && \
         git clone --quiet https://aur.archlinux.org/yay.git "$yay_dir" && cd "$yay_dir" && \
-        makepkg -si && cd .. && \
+        makepkg -si --noconfirm && cd .. && \
         rm -rf "$yay_dir"
 
         # checking whether the package was successfully installed
