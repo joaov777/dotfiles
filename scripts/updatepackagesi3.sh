@@ -8,7 +8,7 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 . "$SCRIPT_DIR"/../scripts/functions.sh
 
 packages_required=(
-	dconf i3 xclip pdfarranger gvfs openssh w3m discord spotify-launcher postgresql gsimplecal tcpdump ntfs-3g \
+	conf i3 xclip pdfarranger gvfs openssh w3m discord spotify-launcher postgresql gsimplecal tcpdump ntfs-3g \
 	bind-tools rofi dmenu keepassxc brightnessctl pacman-contrib netctl \
 	git notepadqq gparted papirus-folders-git acpi pulseaudio-alsa xfce4-notifyd \
 	filezilla telegram-desktop copyq flameshot ranger pulseaudio-ctl xfce4-power-manager \
@@ -22,7 +22,7 @@ packages_required=(
   	ttf-droid ttf-inconsolata ttf-roboto terminus-font ttf-font-awesome ttf-font-awesome-5 otf-font-awesome \
 	xournalpp font-awesome ttf-unifont siji-git docker docker-compose geoclue \
 	alsa-utils alsa-plugins alsa-lib redshift pavucontrol zathura zathura-pdf-mupdf xdg-utils libsecret gnome-keyring \
-	brave-bin visual-studio-code-bin
+	visual-studio-code-bin
 	)
 
 	# yay helper needed

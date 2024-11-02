@@ -59,10 +59,10 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
         if cp -r $SCRIPT_DIR/../config/tmux/.tmux.conf "$HOME" 2>/dev/null; then
                 echo "|--> Tmux conf file enabled"; else echo "|--> Tmux conf file not enabled"; fi
 
-        if mkdir -p "$HOME/.local/share/themes" && cp -r $SCRIPT_DIR/../config/themes/* "$HOME/.local/share/themes" 2>/dev/null; then
+        if mkdir -p "/usr/share/themes/" && cp -r $SCRIPT_DIR/../config/themes/* "/usr/share/themes" 2>/dev/null; then
                 echo "|--> Themes enabled"; else echo "|--> Themes not enabled"; fi
 
-        if mkdir -p "$HOME/.local/share/icons" && cp -r $SCRIPT_DIR/../config/cursors/* "$HOME/.local/share/icons" 2>/dev/null; then
+        if mkdir -p "/usr/share/icons/" && cp -r $SCRIPT_DIR/../config/cursors/* "/usr/share/icons/" 2>/dev/null; then
                 echo "|--> Cursor themes enabled"; else echo "|--> Cursor themes not enabled"; fi
 
         # if mkdir -p "$HOME/.config/notepadqq" && cp -r $SCRIPT_DIR/../config/notepadqq/Notepadqq.ini "$HOME/.config/notepadqq" 2>/dev/null; then
