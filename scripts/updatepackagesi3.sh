@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-set -euo pipefail  # Exit on error, unset vars, and pipeline errors
+set -euo pipefail
+IFS=$'\n\t'
 
 # --- Configuration ---
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -7,95 +8,122 @@ PARENT_DIR="$SCRIPT_DIR/.."
 USERNAME="$(whoami)"
 LOG_FILE="$PARENT_DIR/install.log"
 
-# --- Error Handling Functions ---
+# --- Color Definitions ---
+RED='\033[1;31m'
+GREEN='\033[1;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[1;34m'
+NC='\033[0m' # No Color
+
+# --- Error Handling ---
 die() {
-    echo -e "\033[1;31mERROR: $*\033[0m" >&2
+    echo -e "${RED}ERROR: $*${NC}" >&2
     exit 1
 }
 
+# --- Dependency Checks ---
 check_dependencies() {
+    local required_commands=(pacman sudo git)
+    local missing=()
+
+    for cmd in "${required_commands[@]}"; do
+        command -v "$cmd" >/dev/null 2>&1 || missing+=("$cmd")
+    done
+
+    ((${#missing[@]})) && die "Missing required commands: ${missing[*]}"
+    
     [[ -f "$PARENT_DIR/scripts/menus.sh" && -f "$PARENT_DIR/scripts/functions.sh" ]] ||
         die "Required script files missing"
-    
-    command -v pacman >/dev/null 2>&1 || die "Must run on an Arch-based system"
 }
 
-# --- Package Management Functions ---
+# --- Package Installation ---
 install_yay() {
     if ! command -v yay >/dev/null 2>&1; then
-        echo "|--> Installing yay helper..."
-        "$PARENT_DIR/scripts/install_yay_helper" || die "Failed to install yay"
+        echo -e "${BLUE}|--> Installing yay helper...${NC}"
+        sudo -u "$USERNAME" git clone https://aur.archlinux.org/yay-bin.git /tmp/yay-bin
+        (cd /tmp/yay-bin && sudo -u "$USERNAME" makepkg -si --noconfirm --needed) ||
+            die "Failed to install yay"
+        rm -rf /tmp/yay-bin
     else
-        echo "|--> Yay already installed"
+        echo -e "${GREEN}|--> Yay already installed${NC}"
     fi
 }
 
 install_packages() {
     local packages=(
         # Core System
-        conf i3 xorg-server xorg-apps xorg-xrandr arandr \
-        networkmanager-dmenu-git netctl nm-connection-editor autorandr \
-        bind-tools dnsutils net-tools inxi htop ncdu mtr tcpdump nmap \
-        arp-scan iw openssh sshfs rdesktop docker docker-compose geoclue \
-        nordvpn-bin openvpn
+        base-devel linux-headers iwd networkmanager
+        xorg-server xorg-xrandr xorg-xinit arandr
+        docker docker-compose geoclue openssh
 
-        # Audio & Bluetooth (PipeWire)
-        pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber pipewire-audio \
-        libldac libfreeaptx libspa-bluetooth alsa-utils alsa-plugins alsa-lib \
-        bluez bluez-libs bluez-utils blueman pavucontrol
+        # PipeWire Audio Stack
+        pipewire pipewire-alsa pipewire-pulse pipewire-jack
+        wireplumber pipewire-audio libldac libfreeaptx
+        alsa-utils alsa-plugins pavucontrol
 
-        # GUI & Desktop
-        rofi dmenu polybar i3status py3status trayer nitrogen picom feh \
-        xfce4-notifyd xfce4-power-manager lxappearance \
-        papirus-icon-theme papirus-folders-git siji-git \
-        nerd-fonts-fira-code ttf-font-awesome ttf-font-awesome-5 \
-        ttf-ubuntu-font-family ttf-dejavu ttf-freefont ttf-liberation \
-        otf-fira-mono ttf-droid ttf-inconsolata ttf-roboto terminus-font \
-        noto-fonts ttf-unifont otf-font-awesome
+        # Bluetooth
+        bluez bluez-utils blueman libspa-bluetooth
+
+        # i3 Essentials
+        i3-gaps i3status i3lock i3lock-fancy-git
+        rofi dmenu polybar py3status picom feh
+        nitrogen xfce4-notifyd xfce4-power-manager
 
         # Applications
-        thunar ranger vifm flameshot peek tilix xournalpp zathura zathura-pdf-mupdf \
-        okular viewnior gparted imagewriter gsimplecal copyq keepassxc \
-        telegram-desktop discord spotify-launcher vlc \
-        gedit notepadqq visual-studio-code-bin pdfarranger xclip wget tmux fzf tldr exa rclone
+        thunar ranger vifm flameshot tilix
+        zathura zathura-pdf-mupdb okular viewnior
+        telegram-desktop discord spotify-launcher
+        visual-studio-code-bin neovim firefox
 
         # Utilities
-        brightnessctl pacman-contrib acpi dialog pwgen i3lock i3lock-fancy-git \
-        ntfs-3g gvfs libsecret gnome-keyring xdg-utils redshift neofetch veracrypt
+        brightnessctl pacman-contrib acpi dialog
+        ntfs-3g gvfs libsecret gnome-keyring
+        redshift neofetch exa fzf rclone
 
-        # Development
-        git vim python python-pip nodejs npm go rust
-
-        # Optional Tools
-        qpwgraph helvum python-pywal python-requests libnotify jq
+        # Fonts & Themes
+        ttf-fira-code ttf-font-awesome ttf-nerd-fonts-symbols
+        papirus-icon-theme papirus-folders-git
+        noto-fonts ttf-dejavu ttf-liberation
     )
 
-    echo "|--> Installing packages..."
+    echo -e "${BLUE}|--> Installing packages...${NC}"
     for pkg in "${packages[@]}"; do
         if ! pacman -Qi "$pkg" &>/dev/null; then
-            echo "|--> Installing $pkg..."
-            yay -S "$pkg" --noconfirm --needed || echo "|--> Warning: Failed to install $pkg"
+            echo -e "${YELLOW}|--> Installing $pkg...${NC}"
+            yay -S "$pkg" --noconfirm --needed || 
+                echo -e "${RED}|--> Warning: Failed to install $pkg${NC}"
         fi
     done
 }
 
-# --- Post-Installation Setup ---
-configure_system() {
-    echo "|--> Configuring Papirus folders..."
-    command -v papirus-folders >/dev/null && papirus-folders -C white
+# --- Post-Install Setup ---
+configure_services() {
+    local services=(
+        NetworkManager
+        bluetooth
+        docker
+    )
 
-    echo "|--> Enabling NordVPN..."
-    sudo systemctl enable --now nordvpnd || echo "|--> NordVPN enable failed"
+    echo -e "${BLUE}|--> Configuring services...${NC}"
+    for service in "${services[@]}"; do
+        sudo systemctl enable "$service" --now ||
+            echo -e "${RED}|--> Failed to enable $service${NC}"
+    done
 
-    echo "|--> Configuring Bluetooth..."
-    sudo systemctl enable --now bluetooth.service || echo "|--> Bluetooth enable failed"
+    # PipeWire user services
+    systemctl --user enable pipewire pipewire-pulse wireplumber --now
+}
 
-    echo "|--> Setting up Docker..."
-    sudo usermod -aG docker "$USERNAME" || echo "|--> Docker group config failed"
+configure_user() {
+    echo -e "${BLUE}|--> Configuring user environment...${NC}"
+    sudo usermod -aG docker,input,video "$USERNAME"
+    
+    # Font configuration
+    sudo ln -sf /etc/fonts/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d
+    sudo fc-cache -fv
 
-    echo "|--> Updating crontab..."
-    (crontab -l 2>/dev/null | grep -v "mount-rclone-remotes";
-     echo "@reboot $HOME/dotfiles/scripts/mount-rclone-remotes.sh --mount --all >/dev/null 2>&1") | crontab -
+    # Papirus folders
+    command -v papirus-folders >/dev/null && papirus-folders -C blue --theme Papirus-Dark
 }
 
 # --- Main Execution ---
@@ -104,14 +132,22 @@ main() {
     source "$PARENT_DIR/scripts/menus.sh"
     source "$PARENT_DIR/scripts/functions.sh"
 
-    exec > >(tee -a "$LOG_FILE") 2>&1  # Log all output
+    exec > >(tee -a "$LOG_FILE") 2>&1  # Log everything
 
+    echo -e "${GREEN}\n=== Starting System Setup ===${NC}"
     install_yay
     install_packages
-    configure_system
+    configure_services
+    configure_user
 
-    echo -e "\n\033[1;32mInstallation complete!\033[0m"
-    echo "|--> You should reboot to apply all changes"
+    echo -e "${GREEN}\n=== Audio Configuration ===${NC}"
+    echo -e "${YELLOW}1. Remove PulseAudio (recommended):"
+    echo -e "   sudo pacman -Rns pulseaudio pulseaudio-{alsa,bluetooth}"
+    echo -e "2. Verify audio stack:"
+    echo -e "   pactl info | grep 'Server Name'${NC}"
+
+    echo -e "${GREEN}\n=== Installation Complete! ===${NC}"
+    echo -e "Reboot your system to apply all changes\n"
 }
 
 main "$@"
