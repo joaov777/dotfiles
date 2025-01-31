@@ -4,9 +4,10 @@ IFS=$'\n\t'
 
 # --- Configuration ---
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PARENT_DIR="$SCRIPT_DIR/.."
-USERNAME="$(whoami)"
-LOG_FILE="$PARENT_DIR/install.log"
+USERNAME=${SUDO_USER:-$(whoami)}
+LOG_DIR="/var/log/dotfiles"
+LOG_DATE="$(date +'%Y.%m.%d')"
+LOG_FILE="${LOG_DIR}/${LOG_DATE}-${USERNAME}.log"
 
 # --- Color Definitions ---
 RED='\033[1;31m'
@@ -21,6 +22,15 @@ die() {
     exit 1
 }
 
+# --- Log Directory Setup ---
+setup_logging() {
+    echo -e "${BLUE}|--> Setting up system logging...${NC}"
+    sudo mkdir -p "$LOG_DIR" || die "Failed to create log directory"
+    sudo chmod 755 "$LOG_DIR"
+    sudo touch "$LOG_FILE"
+    sudo chmod 644 "$LOG_FILE"
+}
+
 # --- Dependency Checks ---
 check_dependencies() {
     local required_commands=(pacman sudo git)
@@ -32,8 +42,9 @@ check_dependencies() {
 
     ((${#missing[@]})) && die "Missing required commands: ${missing[*]}"
     
-    [[ -f "$PARENT_DIR/scripts/menus.sh" && -f "$PARENT_DIR/scripts/functions.sh" ]] ||
-        die "Required script files missing"
+    # Corrected path check (no extra "scripts" subdirectory needed)
+    [[ -f "$SCRIPT_DIR/menus.sh" && -f "$SCRIPT_DIR/functions.sh" ]] ||
+        die "Required script files missing from $SCRIPT_DIR"
 }
 
 # --- Package Installation ---
@@ -41,8 +52,7 @@ install_yay() {
     if ! command -v yay >/dev/null 2>&1; then
         echo -e "${BLUE}|--> Installing yay helper...${NC}"
         sudo -u "$USERNAME" git clone https://aur.archlinux.org/yay-bin.git /tmp/yay-bin
-        (cd /tmp/yay-bin && sudo -u "$USERNAME" makepkg -si --noconfirm --needed) ||
-            die "Failed to install yay"
+        (cd /tmp/yay-bin && sudo -u "$USERNAME" makepkg -si --noconfirm --needed) || die "Failed to install yay"
         rm -rf /tmp/yay-bin
     else
         echo -e "${GREEN}|--> Yay already installed${NC}"
@@ -90,8 +100,9 @@ install_packages() {
     for pkg in "${packages[@]}"; do
         if ! pacman -Qi "$pkg" &>/dev/null; then
             echo -e "${YELLOW}|--> Installing $pkg...${NC}"
-            yay -S "$pkg" --noconfirm --needed || 
-                echo -e "${RED}|--> Warning: Failed to install $pkg${NC}"
+            yay -S "$pkg" --noconfirm --needed || echo -e "${RED}|--> Warning: Failed to install $pkg${NC}"
+        else
+            echo -e "${GREEN}|--> $pkg already installed${NC}"
         fi
     done
 }
@@ -106,11 +117,17 @@ configure_services() {
 
     echo -e "${BLUE}|--> Configuring services...${NC}"
     for service in "${services[@]}"; do
-        sudo systemctl enable "$service" --now ||
-            echo -e "${RED}|--> Failed to enable $service${NC}"
+        if ! sudo systemctl is-enabled "$service" &>/dev/null; then
+            sudo systemctl enable "$service" --now || echo -e "${RED}|--> Failed to enable $service${NC}"
+        else
+            echo -e "${GREEN}|--> $service already enabled${NC}"
+        fi
     done
 
-    # PipeWire user services
+    # Configure PipeWire user services
+    if [[ ! -d "$HOME/.config/systemd/user" ]]; then
+        mkdir -p "$HOME/.config/systemd/user"
+    fi
     systemctl --user enable pipewire pipewire-pulse wireplumber --now
 }
 
@@ -119,20 +136,26 @@ configure_user() {
     sudo usermod -aG docker,input,video "$USERNAME"
     
     # Font configuration
-    sudo ln -sf /etc/fonts/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d
-    sudo fc-cache -fv
+    if [[ ! -f /etc/fonts/conf.d/70-no-bitmaps.conf ]]; then
+        sudo ln -sf /etc/fonts/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d
+        sudo fc-cache -fv
+    fi
 
-    # Papirus folders
-    command -v papirus-folders >/dev/null && papirus-folders -C blue --theme Papirus-Dark
+    # Papirus folders theme
+    if command -v papirus-folders >/dev/null; then
+        papirus-folders -C blue --theme Papirus-Dark
+    fi
 }
 
 # --- Main Execution ---
 main() {
+    setup_logging
     check_dependencies
-    source "$PARENT_DIR/scripts/menus.sh"
-    source "$PARENT_DIR/scripts/functions.sh"
+    source "$SCRIPT_DIR/menus.sh"
+    source "$SCRIPT_DIR/functions.sh"
 
-    exec > >(tee -a "$LOG_FILE") 2>&1  # Log everything
+    # Start logging with system-wide permissions
+    exec > >(sudo tee -a "$LOG_FILE") 2>&1
 
     echo -e "${GREEN}\n=== Starting System Setup ===${NC}"
     install_yay
@@ -148,6 +171,7 @@ main() {
 
     echo -e "${GREEN}\n=== Installation Complete! ===${NC}"
     echo -e "Reboot your system to apply all changes\n"
+    echo -e "Log file location: ${BLUE}$LOG_FILE${NC}"
 }
 
 main "$@"
