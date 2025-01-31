@@ -30,7 +30,7 @@ menu_functions=(
     "$SCRIPT_DIR/scripts/permissions.sh"
     "$SCRIPT_DIR/scripts/updatesystems.sh"
     "$SCRIPT_DIR/scripts/install_yay_helper.sh"
-    "$SCRIPT_DIR/scripts/updatepackages13.sh"
+    "$SCRIPT_DIR/scripts/updatepackagesi3.sh"
     "$SCRIPT_DIR/scripts/enableconfigfiles.sh"
     "$SCRIPT_DIR/scripts/zsh.sh"
     "$SCRIPT_DIR/scripts/install_system_fonts.sh"
