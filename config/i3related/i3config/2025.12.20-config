@@ -39,9 +39,6 @@ exec --no-startup-id nm-applet
 # bluetooth applet
 exec --no-startup-id /usr/bin/blueman-applet
 
-# clipboard manager - copyq
-bindsym $mod+c exec --no-startup-id copyq menu
-
 # starting the system with english us keyboard layout
 exec --no-startup-id exec setxkbmap us intl
 
@@ -410,18 +407,18 @@ mode "$AUDIO_MODE" {
 
 mode "$audio_mode" {
         #turn up volume by 10%
-        bindsym plus exec /usr/bin/wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%+
-        bindsym Up exec /usr/bin/wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%+
-        bindsym k exec /usr/bin/wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%+
+        bindsym plus exec /usr/bin/pulseaudio-ctl up 10%
+        bindsym Up exec /usr/bin/pulseaudio-ctl up 10%
+        bindsym k exec /usr/bin/pulseaudio-ctl up 10%
         
         #turn down volume by 10%
-        bindsym minus exec /usr/bin/wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%-
-        bindsym Down exec /usr/bin/wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%-
-        bindsym j exec /usr/bin/wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%-
+        bindsym minus exec /usr/bin/pulseaudio-ctl down 10%
+        bindsym Down exec /usr/bin/pulseaudio-ctl down 10%
+        bindsym j exec /usr/bin/pulseaudio-ctl down 10%
 	
 	#mute
-	bindsym m exec /usr/bin/wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
-	bindsym XF86AudioMute exec /usr/bin/wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+	bindsym m exec /usr/bin/pulseaudio-ctl mute 
+	bindsym XF86AudioMute exec /usr/bin/pulseaudio-ctl mute 
 
         bindsym Return mode "default"
         bindsym Escape mode "default"
